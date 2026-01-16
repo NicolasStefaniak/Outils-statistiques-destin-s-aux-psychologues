@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 5 Les données | Initiation à l’approche bayésienne du traitement des données</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="Les statistiques n’ont d’intérêt qu’à deux conditions principales. Premièrement, il faut que ce qui est mesuré ait une issue incertaine. Cela implique qu’il faut mesurer quelque chose ayant un...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 5 Les données | Initiation à l’approche bayésienne du traitement des données">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Les statistiques n’ont d’intérêt qu’à deux conditions principales. Premièrement, il faut que ce qui est mesuré ait une issue incertaine. Cela implique qu’il faut mesurer quelque chose ayant un...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 5 Les données | Initiation à l’approche bayésienne du traitement des données">
+<meta name="twitter:description" content="Les statistiques n’ont d’intérêt qu’à deux conditions principales. Premièrement, il faut que ce qui est mesuré ait une issue incertaine. Cela implique qu’il faut mesurer quelque chose ayant un...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Initiation à l’approche bayésienne du traitement des données</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="active" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="" href="comment-choisir-la-bonne-analyse.html"><span class="header-section-number">10</span> Comment choisir la bonne analyse</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="les-données" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> Les données<a class="anchor" aria-label="anchor" href="#les-donn%C3%A9es"><i class="fas fa-link"></i></a>
+</h1>
+<p>Les statistiques n’ont d’intérêt qu’à deux conditions principales.</p>
+<p>Premièrement, il faut que ce qui est mesuré ait une issue incertaine. Cela implique qu’il faut mesurer quelque chose ayant un caractère aléatoire (par exemple, on ne connait pas à l’avance la couleur des cheveux de la prochaine personne qu’on va croiser dans la rue) afin de tester une hypothèse dont l’issue est incertaine (par exemple, on peut faire l’hypothèse qu’il y a plus de personnes aux cheveux clairs dans le nord de l’Europe que dans le sud de l’Europe, mais san l’avoir mesuré, on ne peut pas en avoir la certitude).
+Cette mesure aléatoire est ce qu’on appelle une variable.</p>
+<p>La seconde condition est de réaliser les analyses sur des données de qualité. Dès lors qu’il y a des erreurs dans les données, les analyses statistiques perdent toute leur utilité. Il est donc nécessaire de préparer les données avec soin, tant lorsqu’on les encodage dans le jeu de données, que quand on les manipule. Cependant, même si on applique le plus grand soin dans la création du jeu de données, des erreurs peuvent s’immiscer. Il est bon de mettre en place des procédure de vérification pour éviter ces erreurs. Par exemple, si on utilise une échelle dont les valeurs vont de 45 à 155, alors, on ne peut pas avoir une valeur à 255. On peut donc vérifier que les données sont compatibles avec ce qui a été mesuré. Cette procédure peut sembler longue et fastidieuse alors qu’on voudrait savoir si nos résultats étayent ou non les hypothèses. Cependant, si on considère le temps qui a été investi dans la lecture de la littérature pour émettre une hypothèse, le temps pour construire le protocole expérimental, le temps pour recueillir les données, il semble flagrant que réaliser des analyses sur des données qui n’ont pas été vérifiées est faire bien mauvais usage de tout ce temps investi.</p>
+<div id="les-variables" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> Les variables<a class="anchor" aria-label="anchor" href="#les-variables"><i class="fas fa-link"></i></a>
+</h2>
+<p>Quand on veut réaliser des statistiques, il est nécessaire de manipuler et/ou de mesurer quelque chose de variable. Si nous mesurons à moult reprises la même valeur, on n’a pas besoin de statistiques car nous sommes face à des certitudes. Par exemple, il n’est pas nécessaire de faire des statistiques sur le fait de savoir si un·e étudiant·e peut réussir sans venir en cours, sans ouvrir ses cours, sans se renseigner sur ses cours, le tout en allant à l’ensemble de ses examens sans avoir de quoi écrire.</p>
+<p>Ainsi, puisque pour faire des statistiques, il faut manipuler et/ou mesurer quelque chose qui varie, ce qu’on appelle une variable, il s’ensuit que, pour comprendre les statistiques, il est indispensable de pouvoir distinguer toute une série d’informations concernant ces variables.
+Plus précisément, il faut pouvoir distinguer les variables dépendantes des variables indépendantes et pouvoir distinguer la nature des variables.</p>
+<p>Pour rappel, une variable <strong>indépendante</strong> est tout ce qu’un·e expérimentateur·rice manipule est une variable indépendante, tandis que tout ce qu’un·e expérimentateur·rice enregistre est une variable <strong>dépendante</strong>. Maîtriser cette distinction est un prérequis nécessaire pas suffisant.</p>
+<p>On peut rajouter à cette distinction toutes les variables qu’on veut contrôler, que nous appelerons les variables de <em>contrôle</em> (ou controlées).</p>
+<p>Il est également nécessaire de pouvoir distinguer une variable quantitative (appelée aussi numérique ou métrique), d’une variable ordinale, ou qualitative (appelée aussi nominale ou catégorielle).</p>
+<div style="background:      #ccebf9  ; font-size: 18px; padding: 18px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #8dcbe6    ;font-size: 18px; padding: 18px; border: 1px solid black;margin: 0 px">
+<strong>Ne pas confondre variables et modalités</strong> </legend></p>
+<p style="text-align:justify;">
+</p>
+<p>Il apparaît que beaucoup d’étudiant·es confondent la variable avec les modalités avec ses modalités. Il est également indispensable de correctement distinguer les deux. La variable a un nom qui est un résumé abstrait de <strong>l’ensemble des modalités</strong> que la variable recouvre. Par exemple, le genre est une variable qui a comme modalités : femme, homme, non binaire, autre. Ainsi, le <strong>nom de la variable</strong> doit englober l’ensemble des modalités.</p>
+
+</div>
+<div id="les-variables-qualitatives" class="section level3" number="5.1.1">
+<h3>
+<span class="header-section-number">5.1.1</span> Les variables qualitatives<a class="anchor" aria-label="anchor" href="#les-variables-qualitatives"><i class="fas fa-link"></i></a>
+</h3>
+<p>Les variables qualitatives (ou catégorielles) sont caractérisée par des étiquettes, telle que le genre, la couleur des cheveux ou l’appartenance à un groupe… Elles ne sont pas dotées d’une structure particulière. Les différentes étiquettes permettent simplement de distinguer les individus les uns pdes autres sur une caractéristique précise. Elles sont caractérisées par la propriété d’exclusivité, c’est-à-dire qu’appartenir à la catégorie des hommes implique qu’on n’appartient pas à la catégorie des femmes, non binaire ou autre, et par la propriété d’exhaustivité, c’est-à-dire que les modalités doivent pouvoir prendre en compte l’ensemble des cas de figures possibles.</p>
+<p>Dans la réalité, ces notions d’exhaustivité et d’exclusivité sont parfois compromises. Par exemple, vous voulez ranger des personnes en fonction de leur couleur de cheveux, certains ayant des cheveux bruns, d’autres des cheveux gris. Imaginons à présent une personne dont les cheveux sont bruns mais avec de nombreuses mèches grises (le fameux poivre et sel). Allez-vous le ranger dans la catégorie des cheveux bruns ou dans celle des cheveux gris ?</p>
+</div>
+<div id="les-variables-ordinales" class="section level3" number="5.1.2">
+<h3>
+<span class="header-section-number">5.1.2</span> Les variables ordinales<a class="anchor" aria-label="anchor" href="#les-variables-ordinales"><i class="fas fa-link"></i></a>
+</h3>
+<p>Les variables ordinales sont des variables pour lesquelles il est possible d’attribuer un ordre entre les différentes modalités. Classiquement, les échelles ordinales sont les échelles de Likert, qui peuvent prendre 3, 5, 7 ou parfois 9 modalités différentes. La particularité de ces échelles est que la différence observée entre deux modalités n’est pas représentative d’une différence de même ampleur entre deux autres modalités. Par exemple, si on vous pose la question « faites-vous du sport ? » et que vous devez répondre sur une échelle du type « moins d’une fois par mois – une fois par semaine – deux à trois fois par semaine – plus de trois fois par semaine ». Une personne qui répond « moins d’une fois par mois » ne fera pas trois fois moins de sport qu’une personne qui répond « deux à trois fois par semaine ». Il est à noter que les statistiques réalisées sur des variables ordinales se réalisent systématiquement sur le rang des différentes observations. Généralement, le nombre de modalités est limité, et dépasse rarement 9 modalités différentes . Il est aussi à noter que, quand les variables ont peu de modalités, en particulier quand il n’y en a que 2 ou 3, on a tendance à utiliser les propriétés qualitatives de la variables plutôt qu’ordinale.</p>
+</div>
+<div id="les-échelles-quantitatives" class="section level3" number="5.1.3">
+<h3>
+<span class="header-section-number">5.1.3</span> Les échelles quantitatives<a class="anchor" aria-label="anchor" href="#les-%C3%A9chelles-quantitatives"><i class="fas fa-link"></i></a>
+</h3>
+<p>Les échelles quantitatives (ou métrique ou continue ou numérique) sont des variables qui présentent, si pas une infinité, un très grand nombre de modalités. Il est théoriquement possible d’entre dans une distinction supplémentaire : les échelles de rapport et les échelles d’intervalle.</p>
+<p>Sans entrer dans les détails entre les échelles de rapport et les échelles d’intervalle, une des propriétés des échelles de rapport est que la différence et le rapport entre les différentes modalités ont du sens. Par exemple, si je mets deux poids de 5 kilos sur une extrémité d’une balance et un poids de 10 kg sur l’autre extrémité, la balance sera en équilibre<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;à la différence, une échelle d’intervalle, le rapport ne fait pas nécessairement sens. Par exemple, une personne qui a 10 à une échelle d’anxiété n’a pas deux fois plus d’anxiété qu’une personne qui a 5. Ces nuances ne sont néanmoins pas très importantes dans le cadre de ce cours car elles n’impacteront pas la manière dont les analyses seront menées.&lt;/p&gt;"><sup>7</sup></a>.</p>
+</div>
+<div id="type-de-variable-et-leurs-propriétés" class="section level3" number="5.1.4">
+<h3>
+<span class="header-section-number">5.1.4</span> Type de variable et leurs propriétés<a class="anchor" aria-label="anchor" href="#type-de-variable-et-leurs-propri%C3%A9t%C3%A9s"><i class="fas fa-link"></i></a>
+</h3>
+<p>Il est à noter que les échelles métriques ont toutes les propriétés des échelles ordinales et des échelles qualitatives et que les échelles ordinales possèdent toutes les propriétés des échelles qualitatives. Par contre, les variables qualitatives n’ont pas les propriétés des variables ordinales et les variables ordinales n’ont pas les propriétés des variables qunatitatives. Ces caractéristiques sont particulièrement importantes à partir du moment où, lorsqu’on réalise des statistiques, des opérations sur les variables peuvent avoir été réalisée, de sorte à ce la nature de ces variables a été modifiée. Dès lors, il est possible de réaliser toutes les analyses faites sur une variable catégorielle quand on a une variable métrique ; l’inverse n’est en revanche pas possible. Par exemple, si vous avez les poids de vos participants, vous pouvez traiter cette variable comme une variable quantitative ; vous pouvez également la traiter comme une variable ordinale en attribuant une étiquette aux personnes (par exemple : obèse, en surpoids, corpulence normale, mince, maigre ou anorexique) ; enfin, cette variable peut être transformée en une variable nominale (sans ordonnancement) en classant les individus comme présentant un trouble de la masse corporelle (incluant dès lors les obèses et les anorexiques) ou comme ne présentant pas de troubles de la masse corporelle.</p>
+<p>Lorsque vous devez choisir un test, il vous faut pouvoir identifier correctement la nature des variables. Si vous éprouvez certaines difficultés pour identifier la nature des variables que vous manipulez, deux règles vous permettront de vous aidez :</p>
+<ul>
+<li>Si vous hésitez entre une variable ordinale et une variable qualitative, considérez que la variable est qualitative puisque il est acceptable d’appliquer les tests destinés à traiter des variables qualitative sur des variables ordinales ;</li>
+<li>Si vous hésitez entre une variable ordinale et une variable quantitative, considérez le nombre de modalités différentes qui sont à votre disposition. Si votre variable présente au moins 8 modalités différentes, vous pourrez la considérer comme une variable quantitative. En-dessous de 8 modalités différentes, préférez considérer la variable comme étant ordinale<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Cette règle est arbitraire. Certains auteurs considèrent que 5 modalités différentes sont suffisantes, alors que certains logiciels, comme le logiciel lisrel, considèrent &lt;em&gt;a priori&lt;/em&gt; que toutes les variables sont ordinales sauf si le nombre de modalités différentes est supérieur à 15. Dans ce cas, un message vous indiquera que la variable est considérée comme métrique.&lt;/p&gt;"><sup>8</sup></a>.</li>
+</ul>
+</div>
+</div>
+<div id="les-objets-et-leur-nature-dans-r" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Les objets et leur nature dans R<a class="anchor" aria-label="anchor" href="#les-objets-et-leur-nature-dans-r"><i class="fas fa-link"></i></a>
+</h2>
+<div id="la-nature-des-variables-et-des-objets-dans-r" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> La nature des variables et des objets dans R<a class="anchor" aria-label="anchor" href="#la-nature-des-variables-et-des-objets-dans-r"><i class="fas fa-link"></i></a>
+</h3>
+<p>Le chiffre 5 et le mot “bonjour” ne sont pas de même nature et vous ne pourriez pas faire les mêmes traitements statistiques sur des valeurs textuelles que sur des valeurs numériques.
+Parmi les natures d’objet, celles qui sont particulièrement importantes sont les valeurs numériques, les valeurs entières, les chaînes de caractères, les valeurs logiques et les facteurs. Nous allons illustrer ces différentes natures d’informations et, grâce à la fonction <code>class</code>, vous pourrez identier la manière dont R interprète chacun des objets que vous allez créer.</p>
+<p>Commençons par la situation la plus simple : les logiques. Les logiques se résument à deux valeurs possible VRAI (TRUE en anglais) ou FAUX (FALSE en anglais). Remarquez que TRUE et FALSE sont en majuscule sans guillemets.</p>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">logique</span><span class="op">&lt;-</span><span class="cn">TRUE</span> <span class="co"># l'alternative est FALSE</span></span>
+<span><span class="va">logique2</span><span class="op">&lt;-</span><span class="cn">F</span> <span class="co"># TRUE et FALSE peuvent être résumés par T et F</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">logique</span><span class="op">)</span> <span class="co"># indique que c'est une valeur logique</span></span></code></pre></div>
+<pre><code>## [1] "logical"</code></pre>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">logique2</span><span class="op">)</span> <span class="co"># indique que c'est une valeur logique</span></span></code></pre></div>
+<pre><code>## [1] "logical"</code></pre>
+<p>Ensuite, nous avons les valeurs numériques. Les valeurs numériques peuvent être des valeurs avec ou sans virgules. Lorsqu’on a un ensemble de nombres sans virgule, R va leur attribuer comme nature ‘entier’ (integer en anglais). La raison de cette distinction est que R peut communiquer avec d’autres langages de programmation, notamment C et fortran qui requièrent moins d’espace et vont plus vite pour réaliser des calculs sur les entiers que sur les numériques. Pour vous, cette distinction n’a pas d’importance, excepté de savoir que R traite les entiers et les numériques comme des nombres.</p>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">numerique</span><span class="op">&lt;-</span><span class="fl">2.3</span> <span class="co"># valeur numérique avec virgule. Remarquez que le séparateur de décimale est un point</span></span>
+<span><span class="va">numerique.sans.virgule</span><span class="op">&lt;-</span><span class="fl">5</span> <span class="co"># valeur numérique sans virgule.</span></span>
+<span><span class="va">entier</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span> <span class="co"># valeur qui sera considérée comme un entier par R </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">numerique</span><span class="op">)</span> <span class="co"># considérée par R comme une valeur numérique. (numeric) </span></span></code></pre></div>
+<pre><code>## [1] "numeric"</code></pre>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">numerique.sans.virgule</span><span class="op">)</span><span class="co"># considérée par R comme une valeur numérique. (numeric) </span></span></code></pre></div>
+<pre><code>## [1] "numeric"</code></pre>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">entier</span><span class="op">)</span><span class="co"># considérée par R comme une chaîne un entier. (integer) </span></span></code></pre></div>
+<pre><code>## [1] "integer"</code></pre>
+<p>Enfin, la dernière nature que nous aborderons sont les valeurs textuelles, les chaînes de caractères. Dans R, elles sont toujours entre guillemets, simples ou double.</p>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">chaine_textuelle1</span><span class="op">&lt;-</span><span class="st">"hello world"</span> <span class="co"># remarquez la présence de guillemets doubles</span></span>
+<span><span class="va">chaine_textuelle2</span><span class="op">&lt;-</span><span class="st">'hello world'</span> <span class="co"># remarquez la présence de guillemets simples</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">chaine_textuelle1</span><span class="op">)</span>  <span class="co"># considérée par R comme une chaîne de lettres. (character) </span></span></code></pre></div>
+<pre><code>## [1] "character"</code></pre>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">chaine_textuelle2</span><span class="op">)</span>  <span class="co"># également considérée par R comme une chaîne de lettres. </span></span></code></pre></div>
+<pre><code>## [1] "character"</code></pre>
+<p>Ces chaînes de caractères peuvent être utilisés pour de l’analyse textuelle par exemple. Cependant, quand on veut comparer des conditions expérimentales, il faut indiquer à R qu’il s’agit d’un facteur. Comme pour la distinction entre un entier et un numérique, le facteur est plus gourmand en mémoire, raison pour laquelle R privilégie les chaîne de lettres.</p>
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">facteur</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="st">"hello world"</span> <span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">facteur</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "factor"</code></pre>
+<p>Une règle d’or que vous devriez <strong>toujours</strong> appliquer est de vérifier si R interprète correctement vos données : est-ce qu’il ne considère des valeurs numériques comme du texte ou un facteur comme une chaîne de caractères. Lorsque ce n’est pas le cas, on peut changer la nature d’une information dans le format souhaité en le faisant précéder par “as.”. Dans les exemples ci-dessus, j’ai utilisé la fonction <code>as.factor</code> pour transformer une chaîne de caractères en facteur, et j’ai utilisé <code>as.integer</code> pour transformer une valeur numérique en entier. Il y a deux situations où il faut être particulièrement prudent : la transformation d’un facteur en valeur numérique et la transformation d’une valeur en logique.</p>
+<p>Commençons par la transformation d’une valeur considérée comme un facteur en valeur numérique. Si je reprends ma valeur numérique et que je la transforme en facteur, je n’ai pas de souci.</p>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">numerique</span></span></code></pre></div>
+<pre><code>## [1] 2.3</code></pre>
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">numerique.f</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">numerique</span> <span class="op">)</span> <span class="co"># transformation de la valeur numérique en facteur</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">numerique.f</span><span class="op">)</span> <span class="co"># R l'interprète comme facteur </span></span></code></pre></div>
+<pre><code>## [1] "factor"</code></pre>
+<p>A présent, si j’essaie de transformer la valeur en numérique, la valeur n’est plus 2.3 mais 1 :</p>
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">numerique.f</span><span class="op">)</span> <span class="co"># transformation d'un facteur en numérique, renvoie ici la valeur de 1. </span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>La raison de ce phénomène est qu’un facteur peut être ordonné. Par exemple, les modalités “petit”, “moyen” et “grand” ont un ordre, et vous pourriez vouloir réaliser des analyses en fonction du rang en attribuant les valeurs 1, 2, et 3 à ces différentes modalités. En l’occurrence, ‘numerique.f’ est la première modalité et la transformation en numérique renvoie dans ce cas le chiffre 1.</p>
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">numerique.f</span><span class="op">)</span> <span class="co"># transformation d'un facteur en numérique, renvoie ici la valeur de 1. </span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Pour pouvoir transformer une valeur considérée comme facteur en numérique, il est nécessaire de passer par une étape intermédiaire, qui consiste à transformer l’information en caractère avant de la transformer en numérique.</p>
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">numerique.f</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">numerique.f</span><span class="op">)</span> <span class="co"># étape intermédiaire consistant à transformer le facteur en une chaîne de caractère</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">numerique.f</span><span class="op">)</span> <span class="co"># transformation de la chaîne de caractère en numérique, ce qui renvoie 2.3</span></span></code></pre></div>
+<pre><code>## [1] 2.3</code></pre>
+<p>La seconde situation qui mérite notre attention est la situation de la transformation en logique. Toute valeur numérique différente de 0 est considérée comme vraie, et le 0 est considéré comme faux. Pour le comprendre, il faut simplement comprendre que, par convention, faux vaut 0 en langage de programmation, et théoriquement vrai vaut 1. R étend cette logique à tous les nombres différents de 0.
+Pour les chaînes de texte, l’information n’est pas interprétable en termes de logique et R renvoie NA. On ne peut donc pas l’interpréter en tant que tel mais il est possible de transformer des valeurs textuelles en valeur logique en utilisant d’autres stratégies.</p>
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/logical.html">as.logical</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="co"># une valeur numérique transformée en valeur logique vaut toujours vrai si elle est différente de 0</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/logical.html">as.logical</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="co"># une valeur numérique transformée en valeur logique vaut toujours vrai si elle est différente de 0</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/logical.html">as.logical</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span> <span class="co"># une valeur numérique transformée en valeur logique vaut toujours faux si elle est égale 0</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/logical.html">as.logical</a></span><span class="op">(</span><span class="st">"hello world"</span><span class="op">)</span> <span class="co"># renvoie NA, pour not available car une valeur textuelle n'est pas interprétable en termes logiques. </span></span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/logical.html">as.logical</a></span><span class="op">(</span><span class="va">facteur</span><span class="op">)</span><span class="co"># renvoie NA, pour not available car une valeur textuelle n'est pas interprétable en termes logiques.</span></span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div style="background:      #ccebf9  ; font-size: 18px; padding: 18px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #8dcbe6    ;font-size: 18px; padding: 18px; border: 1px solid black;margin: 0 px">
+<strong>Les valeurs manquantes</strong> </legend></p>
+<p style="text-align:justify;">
+</p>
+<p>Les valeurs manquantes sont désignées dans R par NA, pour not available. Cette notion est essentielle car il faudra prendre régulièrement des décisions sur les valeurs manquantes. Il est donc important d’être capable de les identifier.</p>
+
+</div>
+</div>
+<div id="les-différents-types-dobjets" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Les différents types d’objets<a class="anchor" aria-label="anchor" href="#les-diff%C3%A9rents-types-dobjets"><i class="fas fa-link"></i></a>
+</h3>
+<p>Jusqu’à présent, nous avons traité d’objets pour lesquels il n’y avait qu’une information, un chiffre par exemple. Cependant, les traitements des données vont impliquer de manipuler plusieurs informations en même temps. La difficulté à laquelle vous allez être confronté.e est qu’il existe plusieurs types d’objets, qui ont chacun leurs propriétés et qu’il faut connaître pour pouvoir utiliser correctement R. Par exemple, pour calculer une moyenne, il vous faut un vecteur de valeurs numériques. Si vous ne savez pas ce qu’est un vecteur, vous ne pourrez pas utiliser la fonction. De même, si une fonction requiert une matrice, il faut savoir à quoi cela correspond.
+Les termes ‘matrices’ ou ‘vecteurs’ font généralement assez peur. Cependant,il s’agit de termes compliqués pour des notions qui peuvent être très largement simplifiées.
+Bien que ma description soit volontairement imprécise et incomplète, elle suffira largement à la compréhension de la suite.</p>
+<p>Pour en revenir à notre propos, il existe dans R une multitude de classes d’objets. Si ces différentes classes d’objet ont leur raison d’être, cela dépasse largement les objectifs d’un chapitre d’introduction à R. Nous focaliserons donc sur les manières les plus fréquentes pour stocker, manipuler et traiter un ensemble de données : les vecteurs, les matrices, les dataframes, les tibbles et les listes.</p>
+<p>Imaginons qu’au lieu de n’avoir qu’une seule valeur numérique, nous en ayant 10. Par exemple, les résultats à un examen de statistiques. Les données pourraient être 12, 13, 9, 8, 15, 18, 4, 11, 13. Nous voudrions pouvoir les regrouper dans un seul objet. Nous pouvons le faire en créant un vecteur. Un vecteur est un ensemble d’informations de même nature, c’est-à-dire seulement des numériques, seulement des logique ou encore seulement des chaînes de caractères, qui n’ont qu’une dimension. Cela signifie que vous pourriez organiser les informations dans une seule colonne OU dans une seule ligne d’un tableau. Dans R, on crée ce vecteur avec la fonction <code>c</code> où chaque élément du vecteur est séparé des autres par une virgule.</p>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">notes</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">9</span>, <span class="fl">8</span>, <span class="fl">15</span>, <span class="fl">18</span>, </span>
+<span>         <span class="fl">4</span>, <span class="fl">11</span>, <span class="fl">13</span><span class="op">)</span> <span class="co"># Création d'un vecteur avec 10 valeurs </span></span>
+<span><span class="va">notes</span></span></code></pre></div>
+<pre><code>## [1] 12 13  9  8 15 18  4 11 13</code></pre>
+<p>On identifie que stocker un ensemble d’éléments dans un seul objet plutôt que dans plusieurs présentent différents avantages. Premièrement, cela évite d’encombrer la mémoire de R avec une multitude d’objets qui risqueraient de vous perdre. Ensuite, et surtout, cela permet de réaliser des traitements sur ces objets. Par exemple, nous avons évoqué la fonction <code>mean</code> qui permet de calculer des moyennes. Cette fonction a comme argument un vecteur de valeurs numériques. Nous pouvons donc calculer la moyenne sur notre objet ‘notes’.</p>
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">notes</span><span class="op">)</span> <span class="co"># calcul de la moyenne des notes</span></span></code></pre></div>
+<pre><code>## [1] 11.44444</code></pre>
+<p>On peut également créer des vecteurs sur des chaînes de caractères. Le point important ici est qu’il ne faut pas oublier de mettre les guillemets pour chaque élement du vecteur.</p>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mot_de_fin</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Cordialement"</span>, <span class="st">"respectueusement"</span>, <span class="st">"amicalement"</span>, <span class="st">"amitiés"</span>, <span class="st">"bonne journée"</span>,<span class="st">"bien à toi"</span>,<span class="st">"bien à vous"</span><span class="op">)</span></span>
+<span><span class="va">mot_de_fin</span></span></code></pre></div>
+<pre><code>## [1] "Cordialement"     "respectueusement" "amicalement"      "amitiés"         
+## [5] "bonne journée"    "bien à toi"       "bien à vous"</code></pre>
+<p>Notez que si vous mélangez des informations de différentes natures, R va harmoniser la nature des informations en fonction de ce qui semble être le plus cohérent. Par exemple, si on mélange des lettres et des chiffres, il va considérer l’ensemble des éléments du vecteur comme étant des chaînes de caractères.</p>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="fl">1</span><span class="op">)</span> <span class="co"># remarquez les guillemets dans la sortie de résultats autour du 1, indiquant qu'il est interprété comme une chaîne de caractères. </span></span></code></pre></div>
+<pre><code>## [1] "a" "1"</code></pre>
+<p>Les matrices sont des tableaux de données dans lesquels il n’y a que des observations de même nature (que des chiffres, que des chaînes de lettres, que des logiques). Une matrice est une table à deux entrées, ayant donc des lignes et des colonnes. La matrice se différencie donc du vecteur par le fait que la matrice a plusieurs lignes ET plusieurs colonnes. Les matrices mériteraient un chapitre complet les concernant mais les compétences requises dépasseraient très largement le niveau d’introduction.</p>
+<div class="tabwid">
+<style>.cl-e7d24cb6{}.cl-e7c88276{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e7cc53f6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e7cc707a{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7cc7084{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7cc7085{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7cc708e{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e7d24cb6">
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
+<span id="tab:unnamed-chunk-45">Table 5.1: </span><span>Exemple de matrice ayant 3 lignes et 3 colonnes.</span>
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e7cc707a"><p class="cl-e7cc53f6"><span class="cl-e7c88276">V1</span></p></th>
+<th class="cl-e7cc707a"><p class="cl-e7cc53f6"><span class="cl-e7c88276">V2</span></p></th>
+<th class="cl-e7cc707a"><p class="cl-e7cc53f6"><span class="cl-e7c88276">V3</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e7cc7084"><p class="cl-e7cc53f6"><span class="cl-e7c88276">1</span></p></td>
+<td class="cl-e7cc7084"><p class="cl-e7cc53f6"><span class="cl-e7c88276">4</span></p></td>
+<td class="cl-e7cc7084"><p class="cl-e7cc53f6"><span class="cl-e7c88276">7</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e7cc7085"><p class="cl-e7cc53f6"><span class="cl-e7c88276">2</span></p></td>
+<td class="cl-e7cc7085"><p class="cl-e7cc53f6"><span class="cl-e7c88276">5</span></p></td>
+<td class="cl-e7cc7085"><p class="cl-e7cc53f6"><span class="cl-e7c88276">8</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e7cc708e"><p class="cl-e7cc53f6"><span class="cl-e7c88276">3</span></p></td>
+<td class="cl-e7cc708e"><p class="cl-e7cc53f6"><span class="cl-e7c88276">6</span></p></td>
+<td class="cl-e7cc708e"><p class="cl-e7cc53f6"><span class="cl-e7c88276">9</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div style="background:      #ccebf9  ; font-size: 18px; padding: 18px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #8dcbe6    ;font-size: 18px; padding: 18px; border: 1px solid black;margin: 0 px">
+<strong>Générer automatiquement des valeurs.</strong> </legend></p>
+<p style="text-align:justify;">
+</p>
+<p>Il existe une multitude de fonctions dans R qui permettent de générer automatiquement des valeurs sans avoir à les répéter Parmi ces fonctions, on retrouve <code>seq</code> qui permet de générer une séquence (par exemple, répète 3 fois 4 et ensuite 3 fois 5), <code>rep</code> (qui permet de répéter une information), ou encore <code>gl</code> qui permet de générer un facteur. Lorsque les valeurs à générer est une séquence de chiffres, on peut utiliser les deux points.</p>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span> <span class="co"># crée une séquence de chiffres de 1 à 5</span></span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">1</span>, times <span class="op">=</span> <span class="fl">9</span><span class="op">)</span> <span class="co"># répète 9 fois le chiffre 1 </span></span></code></pre></div>
+<pre><code>## [1] 1 1 1 1 1 1 1 1 1</code></pre>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">1</span>, to <span class="op">=</span> <span class="fl">9</span>, by <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># crée une séquence allant de 1 à 9 en ayant un écart de 2 à chaque fois</span></span></code></pre></div>
+<pre><code>## [1] 1 3 5 7 9</code></pre>
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/gl.html">gl</a></span><span class="op">(</span>n<span class="op">=</span> <span class="fl">2</span>, k <span class="op">=</span> <span class="fl">5</span> , labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"condition 1"</span>, <span class="st">"condition 2"</span><span class="op">)</span><span class="op">)</span> <span class="co"># crée un facteur ayant 2 modalités, chacune étant répétée 5 fois. </span></span></code></pre></div>
+<pre><code>##  [1] condition 1 condition 1 condition 1 condition 1 condition 1 condition 2
+##  [7] condition 2 condition 2 condition 2 condition 2
+## Levels: condition 1 condition 2</code></pre>
+
+</div>
+<p>Nous allons recréer cette matrice en utilisant la fonction <code>matrix</code>.</p>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">matrice</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="co"># les données sont une séquence de chiffres allant de 1 à 9</span></span>
+<span>                nrow <span class="op">=</span> <span class="fl">3</span>, <span class="co"># elles doivent être réparties dans 3 lignes</span></span>
+<span>                ncol <span class="op">=</span> <span class="fl">3</span>, <span class="co"># et dans 3 colonnes - un des deux arguments peut être omis puisque si on a le nombre de lignes on a le nombre de colonnes</span></span>
+<span>                byrow <span class="op">=</span> <span class="cn">F</span><span class="op">)</span> <span class="co"># logique qui permet d'indiquer si on veut que les valeurs soient organisées par ligne ou par colonne. Ici, par colonne</span></span>
+<span></span>
+<span><span class="co">## Notez que j'ai commenté chacun des arguments à l'intérieur de la fonction </span></span>
+<span><span class="co">## et que la fonction a été utilisée sur plusieurs lignes pour plus de lisibilité. </span></span>
+<span></span>
+<span><span class="va">matrice</span></span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<p>Dans la plupart des situations, vos données contiendronsdes valeurs de nature différente. Il y aura des valeurs numériques, mais également des facteurs ou des identifiants de participants. Dans ce cas, la classe d’objet dans R n’est pas une matrice mais un dataframe. Pour le formuler autrement, un dataframe a toutes les propriétés d’une matrice (s’il ne contient que des valeurs de même nature, le dataframe pourra être considéré comme une matrice), mais a également la propriété de pouvoir gérer des informations de nature différente à la condition que le nombre de ligne soit toujours identique. Ainsi, on ne peut pas avoir 5 valeurs dans la première colonne et 4 dans la seconde sans préciser qu’il y a une valeur qui manque dans la seconde colonne.
+Le Tableau <a href="les-donn%C3%A9es.html#tab:extable">5.2</a> un exemple qui pourrait représenter le genre et la taille de différents individus :</p>
+<div class="tabwid">
+<style>.cl-e7eeb6c6{}.cl-e7e61ea8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e7e99fa6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e7e99fb0{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e7e9b7f2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b7f3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b7fc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b7fd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b7fe{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b806{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e7eeb6c6">
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
+<span id="tab:extable">Table 5.2: </span><span>Exemple de dataframe avec une colonne contenant un facteur et une colonne contenant des valeurs numériques.</span>
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e7e9b7f2"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">sexe</span></p></th>
+<th class="cl-e7e9b7f3"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">taille</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e7e9b7fc"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">Homme</span></p></td>
+<td class="cl-e7e9b7fd"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">176</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e7e9b7fc"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">Femme</span></p></td>
+<td class="cl-e7e9b7fd"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">173</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e7e9b7fc"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">Homme</span></p></td>
+<td class="cl-e7e9b7fd"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">180</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e7e9b7fe"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">Femme</span></p></td>
+<td class="cl-e7e9b806"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">165</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Dans R, votre dataframe prendra la forme suivante :</p>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sexe</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Homme"</span>, <span class="st">"Femme"</span>,<span class="st">"Homme"</span>, <span class="st">"Femme"</span><span class="op">)</span></span>
+<span><span class="va">taille</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">176</span>,<span class="fl">173</span>,<span class="fl">180</span>,<span class="fl">165</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dt</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>sexe<span class="op">=</span><span class="va">sexe</span>, taille<span class="op">=</span><span class="va">taille</span><span class="op">)</span> </span>
+<span><span class="va">dt</span></span></code></pre></div>
+<pre><code>##    sexe taille
+## 1 Homme    176
+## 2 Femme    173
+## 3 Homme    180
+## 4 Femme    165</code></pre>
+<p>Ce format est donc bien plus flexible que la matrice. Il s’agit du format le plus conventionnel avec lequel vous pouvez réaliser le plus d’opérations. Néanmoins, nous devons aborder une autre manière de gérer des jeux de données qui est les tibbles. Ce format a été proposé par l’équipe de tidyverse <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-Wickham2017">Wickham et al., 2019</a>)</span>
+pour faciliter la manipulation et améliorer l’affichage dans la console. Néanmoins, tout ce que vous pouvez faire avec un tibble, vous pouvez le faire avec un dataframe, l’inverse n’est pas vrai. Par exemple, vous ne pouvez pas donner des noms aux lignes dans un tibble, ni changer la nature d’une variable. Certaines fonctions vont requérir un dataframe, et les tibbles seront incompatibles. Alors, finalement, pourquoi aborder ce type de format ? Pour deux raisons : la première est que les tibbles est le format dans lequel vos données seront importées si vous utilisez excel pour créer vos données et le package <em>readxl</em> et la seconde raison est que ce format est particulièrement utile pour manipuler les données, notamment avec le package <em>dplyr</em>. Concrètement, voici à quoi va ressembler un tibble par rapport au dataframe.</p>
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># on utilise ici la fonction tbl pour transformer notre dataframe </span></span>
+<span><span class="co"># en tibble mais vous n'aurez normalement jamais à utiliser cette fonction. </span></span>
+<span><span class="va">dt_tbl</span><span class="op">&lt;-</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span> </span>
+<span><span class="va">dt_tbl</span></span></code></pre></div>
+<pre><code>## # A tibble: 4 × 2
+##   sexe  taille
+##   &lt;chr&gt;  &lt;dbl&gt;
+## 1 Homme    176
+## 2 Femme    173
+## 3 Homme    180
+## 4 Femme    165</code></pre>
+<p>Remarquez que le tibble a fourni automatiquement les informations sur le nombre d’observations, le nombre de colonnes, ainsi que la nature des variables (character et double, pour numeric et integer). Vous pouvez obtenir ces informations pour un dataframe grâce à la fonction <code>str</code></p>
+<pre><code>## 'data.frame':    4 obs. of  2 variables:
+##  $ sexe  : chr  "Homme" "Femme" "Homme" "Femme"
+##  $ taille: num  176 173 180 165</code></pre>
+<p>Evidemment, de même qu’il est assez aisé de passer d’un dataframe à un tibble, il est assez simple de passer d’un tibble à un dataframe avec la fonction <code>as.data.frame</code>.</p>
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">dt_tbl</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "tbl_df"     "tbl"        "data.frame"</code></pre>
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt_tbl</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">dt_tbl</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">dt_tbl</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "data.frame"</code></pre>
+<p>Le dernier format pour stocker des informations dans R que nous allons aborder est la liste. Il y a deux raisons qui motivent à aborder ce type de format. La première est que les listes sont les types d’objets qui permettent de stocker des informations de la manière la plus flexible qui soit, plusieurs informations de même taille, plusieurs matrices, plusieurs dataframes ou simplement une valeur ou un vecteur. Cela peut être particulièrement utile quand on doit réaliser une tâche itérative. La seconde raison est que les sorties de résultats de la plupart des fonctions sont stockées dans des listes. Ces informations ne seront que rarement directement utilisable. En revanche, des fonctions génériques, comme <code>print</code> ou <code>summary</code>, permettront d’avoir une présentation adaptée des résultats. Illustrons la flexbilité d’une liste en créant un liste où nous allons stocker la plupart des informations que nous avons créé dans la mémoire de R.</p>
+<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ma.liste</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="co"># on crée un liste des objets de taille différentes </span></span>
+<span>  dataframe <span class="op">=</span> <span class="va">dt</span>, <span class="co"># on ajoute un dataframe </span></span>
+<span>  vecteur <span class="op">=</span> <span class="va">notes</span>, <span class="co"># un vecteur </span></span>
+<span>  matrice <span class="op">=</span> <span class="va">matrice</span>, <span class="co"># une matrice </span></span>
+<span>  valeur <span class="op">=</span> <span class="va">logique2</span><span class="op">)</span> <span class="co"># et une valeur unique. On peut évidemment continuer</span></span>
+<span><span class="va">ma.liste</span></span></code></pre></div>
+<pre><code>## $dataframe
+##    sexe taille
+## 1 Homme    176
+## 2 Femme    173
+## 3 Homme    180
+## 4 Femme    165
+## 
+## $vecteur
+## [1] 12 13  9  8 15 18  4 11 13
+## 
+## $matrice
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## $valeur
+## [1] FALSE</code></pre>
+<p>Par la suite, on peut accéder à n’importe quel élément d’un dataframe ou d’une liste en utilisant le symbole “$”.</p>
+<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt</span><span class="op">$</span><span class="va">sexe</span> </span></code></pre></div>
+<pre><code>## [1] "Homme" "Femme" "Homme" "Femme"</code></pre>
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ma.liste</span><span class="op">$</span><span class="va">vecteur</span></span></code></pre></div>
+<pre><code>## [1] 12 13  9  8 15 18  4 11 13</code></pre>
+</div>
+</div>
+<div id="la-nature-des-variables-avec-easier" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> La nature des variables avec easieR<a class="anchor" aria-label="anchor" href="#la-nature-des-variables-avec-easier"><i class="fas fa-link"></i></a>
+</h2>
+<p>Quand vous importez les données, <em>easieR</em>, en plus de l’importation, fournit plusieurs informations importantes à considérer :</p>
+<ul>
+<li>Le nombre d’observations manquantes par variable. Si aucune information de cette nature n’apparaît dans la console, c’est qu’il n’y a pas de valeurs manquantes.</li>
+<li>Le nombre d’observations et de variables.</li>
+<li>La nature des variables qui prendra essentiellement deux formes :
+<ul>
+<li>factor pour les variables qualitatives ;</li>
+<li>numeric (ou integer) pour les variables quantitatives.</li>
+</ul>
+</li>
+</ul>
+<p>C’est à cette étape qu’il faut s’assurer que les données correspondent à ce qu’on est censé avoir : est-ce le bon nombre d’observations ? Est-ce que les variables sont dans le bon format. Par exemple, est-ce qu’une variable numérique n’est pas considérée comme un facteur parce que le caractère de séparation de décimale n’a pas été correctement choisi (la virgule à la place du point ou inversément) ?</p>
+<p>Ici, il est à noter que les variables ordinales, pour pouvoir être utilisées comme tel, doivent avoir un format numérique. Il est possible de faire la transformation directement dans R. Cependant, si l’objectif est d’éviter d’utiliser R en ligne de commande, il est préférable de l’anticiper en préparant correctement les données dans le tableur.</p>
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></div>
+<div class="next"><a href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#les-donn%C3%A9es"><span class="header-section-number">5</span> Les données</a></li>
+<li>
+<a class="nav-link" href="#les-variables"><span class="header-section-number">5.1</span> Les variables</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#les-variables-qualitatives"><span class="header-section-number">5.1.1</span> Les variables qualitatives</a></li>
+<li><a class="nav-link" href="#les-variables-ordinales"><span class="header-section-number">5.1.2</span> Les variables ordinales</a></li>
+<li><a class="nav-link" href="#les-%C3%A9chelles-quantitatives"><span class="header-section-number">5.1.3</span> Les échelles quantitatives</a></li>
+<li><a class="nav-link" href="#type-de-variable-et-leurs-propri%C3%A9t%C3%A9s"><span class="header-section-number">5.1.4</span> Type de variable et leurs propriétés</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#les-objets-et-leur-nature-dans-r"><span class="header-section-number">5.2</span> Les objets et leur nature dans R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#la-nature-des-variables-et-des-objets-dans-r"><span class="header-section-number">5.2.1</span> La nature des variables et des objets dans R</a></li>
+<li><a class="nav-link" href="#les-diff%C3%A9rents-types-dobjets"><span class="header-section-number">5.2.2</span> Les différents types d’objets</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#la-nature-des-variables-avec-easier"><span class="header-section-number">5.3</span> La nature des variables avec easieR</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Initiation à l’approche bayésienne du traitement des données</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

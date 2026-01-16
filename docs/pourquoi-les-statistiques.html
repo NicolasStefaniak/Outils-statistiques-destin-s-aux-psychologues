@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 Pourquoi les statistiques | Initiation à l’approche bayésienne du traitement des données</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="“Statistical thinking will one day be as necessary for efficient citizenship as the ability to read or write. (Un jour, la pensée statistiques sera aussi indispensable pour pouvoir être un citoyen...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 1 Pourquoi les statistiques | Initiation à l’approche bayésienne du traitement des données">
+<meta property="og:type" content="book">
+<meta property="og:description" content="“Statistical thinking will one day be as necessary for efficient citizenship as the ability to read or write. (Un jour, la pensée statistiques sera aussi indispensable pour pouvoir être un citoyen...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 1 Pourquoi les statistiques | Initiation à l’approche bayésienne du traitement des données">
+<meta name="twitter:description" content="“Statistical thinking will one day be as necessary for efficient citizenship as the ability to read or write. (Un jour, la pensée statistiques sera aussi indispensable pour pouvoir être un citoyen...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Initiation à l’approche bayésienne du traitement des données</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="active" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="" href="comment-choisir-la-bonne-analyse.html"><span class="header-section-number">10</span> Comment choisir la bonne analyse</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="pourquoi-les-statistiques" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> Pourquoi les statistiques<a class="anchor" aria-label="anchor" href="#pourquoi-les-statistiques"><i class="fas fa-link"></i></a>
+</h1>
+<blockquote>
+<p>“Statistical thinking will one day be as necessary for efficient citizenship as the ability to read or write. (Un jour, la pensée statistiques sera aussi indispensable pour pouvoir être un citoyen engagé qu’être capable de lire et d’écrire)”</p>
+<footer>
+— H. G. Wells
+</footer>
+</blockquote>
+<div id="á-quoi-servent-les-statistiques" class="section level2" number="1.1">
+<h2>
+<span class="header-section-number">1.1</span> Á quoi servent les statistiques ?<a class="anchor" aria-label="anchor" href="#%C3%A1-quoi-servent-les-statistiques"><i class="fas fa-link"></i></a>
+</h2>
+<p>Vous êtes-vous déjà demandé pourquoi vous aviez des cours de statistiques ? Avez-vous déjà pensé ou entendu des camarades dire « je ne vois pas pourquoi on a de tels cours, moi je veux être psy (ou biologiste, chimiste, médecin…) » Vous avez sans doute déjà pensé ou entendu « de toute façon, j’ai jamais rien compris aux maths, je veux juste arriver à compenser », voire affirmé avec force « les statistiques sont là pour nous éliminer et pour nous démotiver ». Au mieux, certain·es voulaient faire preuve de lucidité « on en aura besoin pour notre TER », mais leur voix furent rapidement étouffée par « de toute façon, on n’en aura jamais besoin dans notre vie pro ».</p>
+<p>Cependant, la véritable raison des cours de statistiques est bien plus inavouable que vous ne l’imaginez. Pour la comprendre, il faut se poser une question : à quoi sevent les statistiques ? Prenez le temps d’y répondre par vous-même avant de continuer votre lecture.</p>
+<p>Beaucoup de personnes considèrent que les statistiques permettent de rendre objectif, scientifique, indiscutable des faits qui sont présentés. Cependant, cette vision des statistiques est très étriquées et ne correspond, la plupart du temps, pas à la réalité. L’objectif premier des statistiques de faire passer un message, de convaincre et d’influencer.</p>
+<p>Comparez ces différentes phrases et questionnez-vous sur leur caractère persuasif :</p>
+<ul>
+<li>Il y a de plus en plus de personnes au chômage ;<br>
+</li>
+<li>Depuis 2023, le taux de chômage a doublé ;</li>
+<li>Depuis 2023, le taux de chômage est passé de 4% à 8% ;</li>
+<li>Depuis 2023, le taux de chômage est passé de 4% à 8%, ce qui représente un niveau historiquement haut qui n’a plus été atteint depuis 1975 ;</li>
+<li>En deux ans, le taux de chômage a doublé, passant de 4% à 8%, cette augmentation est la plus forte enregistrée dans des délais aussi court depuis les années 1970.</li>
+</ul>
+<p>On constate que les deux dernières propositions ont un pouvoir persuasif bien plus important et finalement, qui ira vérifier ? L’important est d’être convaincant, pas que ce soit vrai.</p>
+<p>Cet usage des statistiques est, qu’on le veuille ou non, extrêmement fréquente. Il est donc nécessaire de pouvoir avoir un regard critique sur ce que les chiffres signifient pour pouvoir se forger se propre opinion. En l’absence de cette capacité, on peut se trouver face à deux sortes d’écueils tout aussi graves l’un que l’autre :</p>
+<ul>
+<li>accepter sans condition le message transmis, sans que notre esprit critique n’ait quoique ce soit à y redire ;</li>
+<li>raisonner sur la base d’une incompréhension des statistiques et aboutir à des conclusions qui sont fausses.</li>
+</ul>
+<p>Au travers de quelques exemples, nous allons explorer comment les statistiques peuvent être utilisées pour duper les esprits qui y sont hermétiques.</p>
+<div id="lefficacité-du-vaccin-contre-la-covid" class="section level3" number="1.1.1">
+<h3>
+<span class="header-section-number">1.1.1</span> L’efficacité du vaccin contre la covid<a class="anchor" aria-label="anchor" href="#lefficacit%C3%A9-du-vaccin-contre-la-covid"><i class="fas fa-link"></i></a>
+</h3>
+<p>Durant la crise covid qui a eu lieu entre 2020 et 2022, la recherche d’un traitement efficace s’est avéré être d’une importance capitale pour pouvoir reprendre un mode de fonctionnement identique à celui qui précédait le confinement.</p>
+<p>Parmi ces traitements, le vaccin à ARN s’est vite imposé comme étant une solution fiable et robuste pour lutter contre les dégâts de la maladie. Cependant, à cette époque, de nombreuses critiques issues des antivax se faisaient entendre. Parmi les raisonnements les plus fréquents, on pouvait avoir celui-ci : la preuve que le vaccin ne fonctionne pas est qu’il y a autant de personnes qui sont hospitalisées à cause de la covid en étant vaccinée que de personnes qui ne le sont pas.</p>
+<p>Si on analye les chiffres bruts, les antivax ont raison : il y a autant de personnes vaccinées que de personnes vaccinées, comme le montre la Figure <a href="pourquoi-les-statistiques.html#fig:vaccin1">1.1</a>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:vaccin1"></span>
+<img src="bookdown-demo_files/figure-html/vaccin1-1.png" alt="Nombre de personnes hospitalisées en fonction du statut de vaccination" width="672"><p class="caption">
+Figure 1.1: Nombre de personnes hospitalisées en fonction du statut de vaccination
+</p>
+</div>
+<p>Cependant, un élève de CM1 sait ce qu’est la notion de proportion. Ainsi, on ne peut comparer le nombre de personnes vaccinées de personnes non vaccinées qu’à la condition d’avoir autant de personnes vaccinées et non vaccinées, ce qui n’était pas le cas. En effet, il y avait environ 10 fois plus de personnes vaccinées que de personnes non vaccinées. Ainsi, dans la Figure <a href="pourquoi-les-statistiques.html#fig:vaccin2">1.2</a>, le cadre indique les personnes qui ont été hospitalisées et on se rend compte que proportionnellement au nombre de personnes non vaccinées, les personnes vaccinées étaient moins souvent hospitalisées, ou pour le formuler autrement le rapport entre les verts en dehors du cadre sur ceux qui sont dans le cadre est plus important que le rapport des rouges en dehors du cadre par rapport à ceux qui sont à l’intérieur du cadre.</p>
+<div class="figure">
+<span style="display:block;" id="fig:vaccin2"></span>
+<img src="bookdown-demo_files/figure-html/vaccin2-1.png" alt="Nombre de personnes hospitalisées vs non hospitalisation en fonction du statut de vaccination" width="672"><p class="caption">
+Figure 1.2: Nombre de personnes hospitalisées vs non hospitalisation en fonction du statut de vaccination
+</p>
+</div>
+</div>
+<div id="la-suède-et-le-paradis-des-violeurs" class="section level3 panelset" number="1.1.2">
+<h3>
+<span class="header-section-number">1.1.2</span> La Suède et le paradis des violeurs<a class="anchor" aria-label="anchor" href="#la-su%C3%A8de-et-le-paradis-des-violeurs"><i class="fas fa-link"></i></a>
+</h3>
+<div id="version-standard" class="section level4" number="1.1.2.1">
+<h4>
+<span class="header-section-number">1.1.2.1</span> Version standard<a class="anchor" aria-label="anchor" href="#version-standard"><i class="fas fa-link"></i></a>
+</h4>
+<p>En 2015, pendant la campagne présidentielle aux USA, un site d’information d’extrême droite appelé Breitbart a publié un article qui incitait les citoyens américains à regarder ce qui se passait en Suède de la manière suivante. La particularité de cet article était qu’il s’appuyait sur une utilisation trompeuse des statistiques pour nourrir la peur, la haine et l’exclusion. Concrètement, ils effectuaient une comparaison brute de chiffres qui ne renvoyaient pas aux mêmes réalités.</p>
+<p>Concrètement l’article utilisait les statistiques de viol pour dénoncer des sociétés ouvertes à l’immigration, en particulier la Suède en tenant le raisonnement suivant : ce pays présente l’un des taux de viol les plus élevés du monde occidental ; cette situation serait la conséquence directe de l’accueil d’immigrés issus de cultures supposément plus violentes. Une telle conclusion peut sembler convaincante à première vue, mais elle repose sur une incompréhension profonde de ce que mesurent réellement ces chiffres.</p>
+<p>Comparer les taux de viol entre pays n’a de sens que si l’on compare des indicateurs construits de manière identique. Or ce n’est pas le cas. Comme l’explique von Hofer <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-VonHofer2000">Hofer, 2000</a>)</span>, les statistiques de viol sont des constructions sociales et juridiques avant d’être des reflets directs de la réalité criminelle. Ainsi, en Suède, toute plainte pour viol est comptabilisée comme telle, y compris lorsque l’affaire est ultérieurement classée sans suite ou requalifiée. Dans de nombreux autres pays, seules les condamnations judiciaires sont prises en compte. Ces deux indicateurs ne mesurent donc pas la même chose et cela ne fait dès lors pas sens de comparer les taux de viols entre des pays qui n’utilisent pas la même définition pour les comptabiliser.</p>
+<p>En outre, s’ajoutent des différences majeures dans les définitions légales. La notion de viol est plus large en Suède que dans beaucoup d’autres pays : des faits qui seraient qualifiés d’« abus sexuel » ailleurs, notamment en France, entrent dans la catégorie du viol en Suède. De plus, lorsqu’une même victime subit des viols répétés par le même agresseur, comme c’est le cas lorsqu’un mari viole sa femme, chaque acte est comptabilisé séparément dans les statistiques suédoises, alors qu’ils sont souvent regroupés en un seul événement dans d’autres pays.</p>
+<p>Les facteurs culturels jouent également un rôle déterminant. La propension à déclarer un viol dépend fortement du contexte social, du regard porté sur les victimes et des risques encourus après une plainte. Dans certaines sociétés, dénoncer un viol expose les victimes à la stigmatisation, à des représailles, voire à des violences graves. Dans ces conditions, des taux officiellement faibles ne traduisent pas une moindre prévalence des violences sexuelles, mais un sous-signalement massif. À titre d’illustration, une enquête montre qu’environ un quart des Français considèrent que l’auteur d’un viol est moins responsable si la victime portait une tenue jugée sexy <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-LeBreton2016">Le Breton, 2016</a>)</span>, ce qui donne la mesure des freins culturels à la dénonciation, y compris dans des pays occidentaux.</p>
+<p>Les écarts entre statistiques officielles et données issues de la recherche scientifique renforcent ce constat. Koss et al. <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-Koss1987">1987</a>)</span>, dans une enquête menée auprès d’étudiantes américaines, montrent que plus de la moitié rapportent avoir subi des abus sexuels au sens large, et qu’environ 15 % déclarent avoir été violées. Ces chiffres sont sans commune mesure avec ceux issus des statistiques policières ou judiciaires, ce qui illustre à quel point les données administratives sous-estiment la réalité des violences sexuelles.</p>
+<p>Ainsi, affirmer qu’un pays serait plus dangereux qu’un autre en se fondant uniquement sur des taux de viol publiés sans analyse méthodologique revient à tirer des conclusions infondées. Les chiffres ne sont pas des faits bruts : ils sont le produit de définitions juridiques, de pratiques institutionnelles et de contextes culturels. Sans cette compréhension, les comparaisons internationales deviennent non seulement invalides, mais dangereuses, car elles peuvent servir de support à des discours idéologiques qui instrumentalisent la peur.</p>
+<p>Comprendre les statistiques, c’est apprendre à se demander ce qui est réellement mesuré, comment cela l’est, et ce que les chiffres ne disent pas. C’est à cette condition seulement que les données peuvent éclairer le débat public au lieu de l’obscurcir.</p>
+</div>
+<div id="version-conte-de-fées" class="section level4" number="1.1.2.2">
+<h4>
+<span class="header-section-number">1.1.2.2</span> Version conte de fées<a class="anchor" aria-label="anchor" href="#version-conte-de-f%C3%A9es"><i class="fas fa-link"></i></a>
+</h4>
+<p>Il était une fois une forêt, appelée la forêt de Breitbart. Dans la forêt de Breitbart vivait une femme. On dit d’elle qu’elle avait des pouvoirs magiques. On l’appelait la sorcière de Breitbart. Cette sorcière n’avait pas plus de baguette magique qu’elle ne préparait de potion à base de griffes de dragons. Son pouvoir était bien plus sournois. Le pouvoir de cette sorcière était l’obscurantisme. Elle se complaisait dans la haine et l’exclusion. Elle avait ce pouvoir d’influencer et de manipuler l’esprit des plus fragiles. Elle se montrait patiente et efficace en attendant de pouvoir semer la graine de la haine dans le coeur des malheureux qui osaient s’aventurer dans cette ténébreuse forêt. Il arrivait que des promeneurs venus du monde entier passaient par la forêt de Breitbart et en ressortaient profondément changés : des agneaux transformés en loups. Quand on traversait cette forêt, il y avait comme un souffle, un murmure qui caressait les oreilles des passants. Il était si facile à écouter. C’était tellement apaisant et agréable d’entendre « vous êtes les meilleurs, la race supérieure, vous devez vous défendre » ou encore « montrer la supériorité des hommes sur les femmes » (l’auteur de ces lignes ayant des nausées en écrivant la manière de penser de cette sorcière s’est vu contraint de ne pouvoir donner d’autres exemples au risque d’être atteint de vomissements durables).</p>
+<p>La perfidie de cette sorcière était sans limite. Elle éprouvait une haine sans fin pour un pays appelé Ouvertuland. Dans ce pays, les hommes considéraient les femmes comme leurs égales, les habitants étaient convaincus que l’endroit de notre naissance n’était pas un choix, mais un état de fait et que chacun avait le droit d’aspirer à un monde meilleur lorsque la guerre et les persécutions frappaient, que la souffrance n’était pas tolérable, qu’importe l’endroit où on était né.</p>
+<p>La sorcière de Breitbart étalait cette haine au grand jour. Elle criait à qui voulait l’entendre : « Ecoutez-les se plaindre, regardez ce qui se passe là-bas, ils accueillent les étrangers, leurs femmes et leurs filles se font violer ; ne laissons pas des immigrés faire, protégeons-nous ; nous sommes supérieurs, ils ne méritent pas notre plus petite considération ». Regardez ce qu’il s’y passe, leur taux de viol est le plus élevé du monde occidental (et si vous faites une petite recherche sur le taux de viol en Suède <em>notre statistique d’intérêt</em>, vous trouverez que, en 2010, les statistiques de viol montrent que la Suède arrive en <span class="math inline">\(3^{ème}\)</span> position derrière l’Afrique du Sud et le Botswana et si vous vous dites tout cela pour cela, vous auriez raison), tout cela parce qu’ils ont laissé des immigrés ayant une culture du viol entrer dans leur pays, voyez ce qui s’y passe et ne surtout ne faisons pas comme eux ».</p>
+<p>Et les esprits fragiles (dont vous ne faites pas partie… ou dont vous ne ferez bientôt plus partie) se laisseraient évidemment envahir par ces pensées, et le coeur des hommes vaillants deviendrait alors sombre et froid, intolérant et xénophobe. Comment était-il possible que ce pays tant admiré pour ses avancées sociales soit l’objet d’une situation aussi abjecte ? Et les passants qui entraient dans la forêt de Breitbart en sortaient avec la certitude que les immigrés étaient la cause de tous les problèmes de ces peuples trop ouverts, trop tolérants, trop naïfs.</p>
+<p>Un jour, un homme qui était connu sous le nom de Gandwells traversa la forêt de Breitbart. La sorcière de Breitbart exerça son pouvoir maléfique contre Gandwells. Le coeur de Gandwells vacilla, la haine commençait à le submerger, mais Gandwells avait l’esprit vif et incisif. Il concentra ses pensées pour tenter de combattre les pouvoirs de la sorcière. Il lui dit : « Donalda (c’était le prénom de la sorcière de Breitbart, et à nouveau toute ressemblance avec des personnes existant ou ayant existé est purement … volontaire), peux-tu m’expliquer comment les pays dont sont issus ces immigrés ont des taux de viols bien plus faibles que les pays dont proviennent ces immigrés ? » (Vous pouvez constater que des pays comme le Pakistan, l’Albanie ou l’Azerbaïdjan ont des taux de viols particulièrement faibles, alors que ce sont des pays qui correspondent aux critères dénoncés par Breitbart). La sorcière Breitbart argumenta :</p>
+<ul>
+<li>« C’est parce que, dans ces pays, le viol est tellement commun, qu’ils ne les comptabilisent même pas. »</li>
+</ul>
+<p>Gandwells demanda alors :</p>
+<ul>
+<li>« Et dans les autres pays, comment le taux de viol est-il calculé ? ».</li>
+</ul>
+<p>La sorcière venait d’être touchée, elle tenta de bredouiller mal à l’aise</p>
+<ul>
+<li>« Ben, euh, comme partout.</li>
+</ul>
+<p>-Je ne suis pas sûr de comprendre, reprit Gandwells. Vous avez dit que certains pays ne comptabilisent pas les viols, car c’est dans leur nature d’en perpétrer, et puis vous dites que tout le monde comptabilise les viols de la même manière… »</p>
+<p>La sorcière se tut un instant, ne sachant que répondre. Elle tenta :</p>
+<ul>
+<li>« Ça n’a strictement rien à avoir. Ce n’est pas pareil.»</li>
+</ul>
+<p>Gandwells ignora la sorcière et continua sa démonstration :</p>
+<ul>
+<li>« En réalité, je crois que le peuple d’Ouvertuland est particulièrement attentif au respect des êtres-humains, et du corps des femmes (Je me focalise sur les femmes car la très grande majorité des viols concerne les femmes). On peut penser qu’ils ne comptabilisent pas du tout les viols de la même manière » [Von Hofer <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-VonHofer2000">2000</a>)</span> explique en détail pourquoi les statistiques de viol ne peuvent pas être comparées d’un pays à l’autre. En effet, en Suède, est comptabilisé comme viol, toute plainte pour viol, même si par la suite l’affaire est classée ou que les charges sont réduites. Dans la plupart des autres pays, les statistiques de viols portent sur les condamnations uniquement. De même, en Suède, une personne qui va être violée 30 fois par son mari va compter comme 30 viols dans les statistiques, alors que, dans la plupart des autres pays, ce ne sera comptabilisé qu’une seule fois étant donné que ce sont les mêmes personnes qui sont impliquées dans chacun des viols. Par ailleurs, la définition de viol est plus large en Suède que dans d’autres pays. Ainsi, ce qui serait classé comme un abus sexuel dans un autre pays, serait considéré comme viol en Suède. On peut rajouter à cela que la culpabilisation des femmes dans la dénonciation des viols est très dépendante de la culture, avec dans certains pays, un réel risque d’être persécutée, voire tuée. Pour comprendre cet effet de la culture, 1/4 des Français estiment que l’auteur d’un viol est moins responsable si la victime portait une tenue sexy <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-LeBreton2016">Le Breton, 2016</a>)</span>. Il n’est dès lors pas étonnant de ne pas oser dénoncer un viol dans ces conditions. La Suède étant très en avance sur la considération de l’être humain, les femmes reportent plus facilement les abus sexuels dont elles ont été victimes. Pour illustrer encore plus ces différences, sans entrer dans le débat sur la manière dont on doit comptabiliser les taux de viols, on peut regarder les différences qui existent entre les statistiques officielles et celles issues des articles scientifiques, comme le montre l’article de Koss et al. <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-Koss1987">1987</a>)</span> qui montre que 53% des étudiantes américaines ont été victimes d’abus sexuels au sens large, et 15% rapportent avoir été violées, ce qui ne correspond absolument pas aux chiffres très inférieurs publiés par les autorités des pays].</li>
+</ul>
+<p>C’est ainsi que Gandwells mena son combat contre l’obscurantisme en illustrant avec force et conviction que les nombres ne renvoyaient pas aux mêmes réalités et que vouloir comparer les statistiques criminelles entre les pays et Ouvertuland n’avait pas de sens !</p>
+<p>La sorcière de Breitbart se réfugia dans une grotte cachée au fin fond de sa forêt, humiliée par Gandwells, mais le combat n’était pas gagné pour autant, le plus dur restait à venir. Il fallait que le monde sache la perfidie de Donalda, il fallait que le monde ne se laisse pas manipuler par cette sorcière, il fallait apprendre aux hommes à avoir l’esprit vif et incisif, à se poser les bonnes questions. C’était la seule issue.</p>
+</div>
+</div>
+</div>
+<div id="pourquoi-les-statistiques-sont-indispensables-pour-de-futurs-psychologues" class="section level2" number="1.2">
+<h2>
+<span class="header-section-number">1.2</span> Pourquoi les statistiques sont indispensables pour de futurs psychologues ?<a class="anchor" aria-label="anchor" href="#pourquoi-les-statistiques-sont-indispensables-pour-de-futurs-psychologues"><i class="fas fa-link"></i></a>
+</h2>
+<p>En tant que futur3es psychologues, vous serez amené·e à utiliser des statistiques de manière récurrente dans plusieurs contextes :</p>
+<ol style="list-style-type: decimal">
+<li><p>Identifier les propriétés psychométriques des outils que vous utilisez. En l’absence de cette analyse, vous risquez d’utiliser des outils dont les fondements scientifiques sont largement insuffisants <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-Lilienfeld2000">Lilienfeld et al., 2000</a>; <a href="comment-choisir-la-bonne-analyse.html#ref-Strauss2006b">Strauss et al., 2006</a>)</span> ;</p></li>
+<li><p>Être capable de réaliser des inférences relatives au niveau de fonctionnement des usagers auxquels vous serez confronté·e, c’est-à-dire déterminer si l’usage présente un déficit, un trouble, un risque pour la société … selon l’environnement de travail dans lequel vous travaillerez ;</p></li>
+<li><p>Vous former en lisant des articles scientifiques, des livres ou des rapports, ou en suivant des formations. qu’importe le moyen vous devrez pouvoir vous demander “comment est-ce que cela a été montré ?” et “est-ce que cette manière de le montrer est convaincante ?”.</p></li>
+</ol>
+<p>Ainsi, la nature même d’un cours de statistiques n’est pas de vous apprendre une suite interminable d’outils dont vous devrez maîtriser les tenants et les aboutissants mais d’identifier les fondements qui sont communs à l’ensemble des outils statistiques afin de pouvoir donner du sens aux nombres.</p>
+</div>
+<div id="exercice" class="section level2" number="1.3">
+<h2>
+<span class="header-section-number">1.3</span> Exercice<a class="anchor" aria-label="anchor" href="#exercice"><i class="fas fa-link"></i></a>
+</h2>
+<p>En 2020, la covid19 fait rage, la population est confinée et aucun traitement ne semble efficace. Des milliers de personnes meurent tous les jours dans le monde à cause de cette infection. Dans cette course effrénée visant à rechercher un traitement, Raoult et son équipe ont publié une étude qui vantait l’efficacité de l’hydroxychloroquine associée à l’azythromycine pendant au moins trois jours pour lutter efficacement contre la covid-19 <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-Lagier2020">Lagier et al., 2020</a>)</span>. Imaginez que vous, ou une personne qui vous est chère, développe une forme grave de la covid19. Allez-vous prendre ce remède miracle ? Afin d’éclairer votre réflexion, vous trouverez dans la Figure <a href="pourquoi-les-statistiques.html#fig:diagRaoult">1.3</a> et dans le Tableau <a href="pourquoi-les-statistiques.html#fig:Raoult2020a">1.4</a> et <a href="pourquoi-les-statistiques.html#fig:Raoult2020b">1.5</a> les informations nécessaires pour prendre votre décision. Il est à noter que pour analyser ces résultats, nul besoin d’avoir des compétences en médecine. Les notions qui sont enseignées dans un cours d’introduction à la méthodologie, quelques connaissances d’ordre général et un peu de logique suffisent amplement à se faire une opinion.</p>
+<div class="figure">
+<span style="display:block;" id="fig:diagRaoult"></span>
+<img src="introR/raoultflux.png" alt="Diagramme de flux des participants permettant de représenter les allocations entre les différents groupes." width="370"><p class="caption">
+Figure 1.3: Diagramme de flux des participants permettant de représenter les allocations entre les différents groupes.
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:Raoult2020a"></span>
+<img src="introR/raoulta.PNG" alt="Tableau des données démographiques." width="90%"><p class="caption">
+Figure 1.4: Tableau des données démographiques.
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:Raoult2020b"></span>
+<img src="introR/raoultb.PNG" alt="Tableau des résultats." width="692"><p class="caption">
+Figure 1.5: Tableau des résultats.
+</p>
+</div>
+<details><summary>
+Solution alternative
+</summary><p>Normalement, vous devriez avoir remarqué des problèmes qui remettent considérablement en cause les conclusions de Raoult et de ses collaborateurs.</p>
+<p>Une des remarques qui est souvent faite est que l’effectif n’est pas le même dans les différents groupes. En réalité, ce point ne pose pas réellement souci car il existe des outils statistiques en mesure de prendre cet aspect en compte. Par ailleurs, si on a de bonnes raisons de penser qu’un traitement est efficace, il serait éthiquement douteux de ne pas le proposer à une plus grande proportion de personnes que celles qui ne le reçoit pas.</p>
+<p>En revanche, ce qu’on observe :</p>
+<ul>
+<li>la proportion de personnes hospitalisées qui reçoivent le traitement (13.8%) est largement inférieure à la proportion de personnes hospitalisées qui ne le reçoivent pas (39.3%) ;</li>
+<li>l’indicateur NEWS-2 est un indicateur est un indicateur permettant d’évaluer l’état du patient au moment où il est examiné. Plus cette valeur est élevée et plus son état est dégradé. Dès lors que le score est supérieur à 5, les risques d’une réponse urgente deviennent important. Pour cet indicatuer, il apparaît que les risques sont beaucoup plus élevés (19.9%) pour les personnes qui ne reçoivent pas le traitement que pour les personnes qui le reçoivent (6.3%)</li>
+<li>un troisième problème qui saute d’emblée aux yeux est que, parmi les personnes qui font partie de la condition ‘autre traitement’, certains ont reçu l’association hydoxychloroquine (HCQ) et azymothricine (AZ) pendant moins de 3 jours, d’autres ont reçu uniquement de l’hydoxychloroquine, d’autres ont reçu uniquement de l’azymothricine et enfin, certaines personnes n’ont rien reçu. Cette répartition est étonnante car :
+<ul>
+<li>on s’attend normalement à ce que le groupe de contrôle ne reçoivent pas le même traitement que le groupe traité (pendant une durée moindre). En effet, on peut raisonnablement penser que les personnes pour lesquelles le traitement n’a pas durée 3 jours ou plus sont celles dont l’état s’est dégradé et qu’elles ont basculé du bras “traité” au bras “contrôle”. Cette manière de faire est méthodologique douteuse. On ne change pas les membres d’une équipe en cours de match. Cela reviendrait à ce que, à un moment du match, un joueur de l’OM se mette à jouer pour le PSG (ou inversément).</li>
+<li>Il est possible de comparer HCQ+AZ &gt;3 jours avec HCQ &gt; 3 jours, AZ &gt; 3 jours et aucun traitement. Cependant, dans ce cas, on n’est pas dans un plan avec deux bras parallèles mais dans un plan factoriel. Il est donc anormal de regrouper ces trois groupes ensemble.</li>
+</ul>
+</li>
+</ul>
+<p>Par ailleurs, le Tableau <a href="pourquoi-les-statistiques.html#fig:Raoult2020a">1.4</a> montre que les personnes dans “autres groupes” sont plus âgés que dans le groupê HCQ+AZ. Concrètement, on a 3.6% de personnes de plus de 74 ans dans le groupe HCQ+AZ, alors que cette proportion est de 16% dans “autres traitements”. Or, on sait que les personnes les plus à risque de complication dus à la covid19 sont les personnes âgées. Remarquez que ce phénomène est valable pour chacun des sous-groupe, et en particulier le sous-groupe (à l’exception de l’hydroxychloroquine seule) qui a reçu le traitement pendant moins de trois jours. Ce tableau nous indique également que les scores au NEWS supérieur ou égal à 6 (donc requérant des soins urgents) est de 2.6% dans le groupe HCQ+AZ, alors que cette proportion est de 10.5% dans dans les autres groupes, avec une proportion de 14.2% dans le groupe qui a reçu le traitement pendant moins de 3 jours. Cette proportion particulièrement importante est interpellante car cela amène à penser que les personnes dont l’état se serait dégradé ou qui serait décédées en ayant reçu le traitement efficace ont été basculées dans le groupe de contrôle. Enfin, on observe également que le scanner pulmonaire est proportionnellement plus dégradé chez les personnes appartenant à “autre traitement” qu’au traitement HCQ+AZ. Ceci amène donc à se questionner sur la manière de choisir les personnes qui allaient recevoir le traitement : il semble que les personnes à risque de dégradation avaient moins de chance de recevoir le traitement, ce qui entrainement artificiellement un meilleur résultat pour les personnes traitées.</p>
+<p>Examinons à présent les personnes qui ont été hospitalisées en soins intensifs (ICU) et celles qui sont décédées dans le Tableau <a href="pourquoi-les-statistiques.html#fig:Raoult2020b">1.5</a>. Ils sont de 1.1% dans le groupe HCQ+AZ et de 9.4% dans le groupe “autre traitement”, avec un taux de 17% dans le groupe qui reçoit le traitement pendant moins de 3 jours, tandis que les personnes qui ne reçoivent rien ont une évolution vers les soins intensifs et le décès de 3.1%. Pour le formuler autrement, les personnes qui ne reçoivent rien ont un taux d’évolution négative proche du groupe traité, et le groupe pour lequel l’évolution est la plus négative est le groupe ayant reçu le traitement durant moins de trois jours. Donc, même si on laissait le bénéfice du doute concernant le fait d’avoir basculé les personnes recevant le traitement miracle dans le groupe de contrôle pour faire apparaître des résultats flatteurs, on aurait du mal à trouver une explication rationnelle pour rendre compte du fait que, si l’HCQ+AZ est efficace, les patients qui le reçoivent durant moins de 3 jours voient leur état se dégrader bien plus souvent que n’importe quel autre groupe. On devrait s’attendre à ce que cela les aide tout de même un peu (ou a minima que cela n’entraîne pas un risque supplémentaire) plutôt que de présenter un risque d’évolution négative plus important que les autres groupes</p>
+</details>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"></a></div>
+<div class="next"><a href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pourquoi-les-statistiques"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li>
+<a class="nav-link" href="#%C3%A1-quoi-servent-les-statistiques"><span class="header-section-number">1.1</span> Á quoi servent les statistiques ?</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#lefficacit%C3%A9-du-vaccin-contre-la-covid"><span class="header-section-number">1.1.1</span> L’efficacité du vaccin contre la covid</a></li>
+<li><a class="nav-link" href="#la-su%C3%A8de-et-le-paradis-des-violeurs"><span class="header-section-number">1.1.2</span> La Suède et le paradis des violeurs</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#pourquoi-les-statistiques-sont-indispensables-pour-de-futurs-psychologues"><span class="header-section-number">1.2</span> Pourquoi les statistiques sont indispensables pour de futurs psychologues ?</a></li>
+<li><a class="nav-link" href="#exercice"><span class="header-section-number">1.3</span> Exercice</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Initiation à l’approche bayésienne du traitement des données</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

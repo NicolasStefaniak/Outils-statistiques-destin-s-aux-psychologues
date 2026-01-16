@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Introduction | Initiation à l’approche bayésienne du traitement des données</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="Aborder les statistiques dans la perspective d’une mise en application requiert non seulement de fournir les fondements théoriques pour choisir et comprendre les analyses statistiques mais doit...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Introduction | Initiation à l’approche bayésienne du traitement des données">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Aborder les statistiques dans la perspective d’une mise en application requiert non seulement de fournir les fondements théoriques pour choisir et comprendre les analyses statistiques mais doit...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Introduction | Initiation à l’approche bayésienne du traitement des données">
+<meta name="twitter:description" content="Aborder les statistiques dans la perspective d’une mise en application requiert non seulement de fournir les fondements théoriques pour choisir et comprendre les analyses statistiques mais doit...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Initiation à l’approche bayésienne du traitement des données</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="pourquoi-r.html"><span class="header-section-number">2</span> Pourquoi R</a></li>
+<li><a class="active" href="introduction.html"><span class="header-section-number">3</span> Introduction</a></li>
+<li><a class="" href="pourquoi-les-statistiques-1.html"><span class="header-section-number">4</span> Pourquoi les statistiques</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+</h1>
+<p>Aborder les statistiques dans la perspective d’une mise en application requiert non seulement de fournir les fondements théoriques pour choisir et comprendre les analyses statistiques mais doit également fournir les bases nécessaires pour utiliser de manière autonome un logiciel de statistiques. Bien qu’il existe une multitude de logiciels statistiques, nous nous consacrerons dans cette section au logiciel R <span class="citation">(<a href="#ref-Rcore"><strong>Rcore?</strong></a>)</span></p>
+<p>Nous commencerons par expliquer pourquoi l’utilisation de R est bon pour vous. Ensuite, nous expliquerons comment installer et la logique sous-jacente à R. Nous continuerons avec les règles de bonnes pratiques qui vous seront utiles tout au long de cet ouvrage mais également au-delà si vous étiez amené.e à devoir réaliser des analyses qui ne sont pas couvertes par le contenu de ce livre. Enfin, nous terminerons en présentant quelques outils vous permettant de préparer vos données.</p>
+<div id="quest-ce-r-et-pourquoi-lutiliser" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Qu’est-ce R et pourquoi l’utiliser ?<a class="anchor" aria-label="anchor" href="#quest-ce-r-et-pourquoi-lutiliser"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="cover/Rlogo-1.png" width="72"></div>
+<p>Sorti pour la première fois en 1995, R est un langage de programmation ouvert, issu de langage S, spécialisé dans le traitement des données.</p>
+<p>A l’heure actuelle, il s’agit d’un des logiciels les plus utilisés dans le monde académique. D’après Choueiry <span class="citation">(<a href="pourquoi-les-statistiques-1.html#ref-Choueiry2021"><em><span>S</span>tatistical <span>S</span>oftware <span>P</span>opularity in 40,582 <span>R</span>esearch <span>P</span>apers &amp;#X2013; <span>Q</span><span>U</span><span>A</span><span>N</span><span>T</span><span>I</span><span>F</span><span>Y</span><span>I</span><span>N</span><span>G</span> <span>H</span><span>E</span><span>A</span><span>L</span><span>T</span><span>H</span> — Quantifyinghealth.com</em></a>)</span>, non seulement il arrive en seconde position pour traiter les données dans le domaine de la recherche en santé, mais arrive quasiment à égalité de la première place lorsqu’on s’intéresse aux articles publiés dans les meilleures revues (si on considère que le facteur d’impact d’une revue informe d’une manière ou d’une autre sur la qualité des articles qui y sont publiés). De plus, R fait partie des langages de programmation les plus demandés dans les offres d’emploi de l’IEEE <span class="citation">(<a href="pourquoi-les-statistiques-1.html#ref-ieee2016">https://www.facebook.com/48576411181</a>)</span>, A l’heure actuelle, de nombreux mastodontes de l’informatique, en particulier celles qui utilisent l’intelligence artificielle, comme google et Facebook, l’utilisent. Etant donné que R a pour vocation première le traitement des données statistiques, il est légitime de se demander ce qui le rend aussi populaire et pourquoi vous devriez utiliser R.</p>
+<p>Utiliser R, c’est avant tout s’engager vis-à-vis d’un système de valeurs dans lequel on considère que l’accès au savoir et à la science doit être ouvert et transparent, que l’évolution des connaissances doit être un processus collaboratif dont le but est de faire progresser l’Humanité dans son ensemble. Peut-être pensez-vous que ce projet est utopique, mais de plus en plus de personnes, et en particuliers de plus en plus de scientifiques ont la conviction qu’une science ouverte et transparente est l’avenir de la science. La place que prend R dans la publication dans les revues les plus prestigieuses, tel que nous venons de l’évoquer, n’est pas un phénomène irrationnel, mais est le fruit d’un double processus qui interagit : d’une part, les lignes éditoriales de ces revues imposent aux auteurs plus de transparence à la fois sur les données, mais également sur la manière dont elles ont été traitées et R est un outil parfaitement adapté pour répondre à ce critère ; d’autre part, les chercheurs qui adoptent les pratiques de la science ouverte vont avoir plus de citations, plus d’attention des médias, plus de collaborateurs potentiels, plus d’opportunités d’emploi et plus de facilités pour obtenir des financements <span class="citation">(<a href="pourquoi-les-statistiques-1.html#ref-McKiernan2016">McKiernan et al., 2016</a>)</span>. Pour la seconde raison, la question de la poule et de l’oeuf se pose : est-ce les meilleurs chercheurs qui favorisent la science ouverte ou est-ce le fait de favoriser la science ouverte qui rend un chercheur meilleur? Sans doute un peu les deux.</p>
+<p>Utiliser R est un pas vers cet objectif de science ouverte car R est un logiciel open source. Cela signifie qu’il est gratuit (ce qui est une bonne nouvelle pour vous), que vous pouvez analyser le code utilisé pour programmer les fonctions que vous allez utiliser, et vous pourrez également, si vous le souhaitez, contribuer à son développement. En d’autres termes, R est collaboratif, et ce processus collaboratif n’est pas restreint aux contributions que chacun peut faire. Le côté collaboratif de R se manifeste également par la communauté d’entraide qui existe sur les forums en ligne et par le fait que chaque utilisateur a la possibilité d’informer un des contributeurs s’il y a une erreur ou un bug dans son code.
+Pour comprendre en quoi cette manière de penser est avantageuse, prenons le temps de nous créer une représentation mentale de la manière dont vos logiciels commerciaux préférés fonctionnent et comparons ce fonctionnement avec celui de R. Pour le logiciel que vous avez à l’esprit, connaissez-vous les auteurs du logiciel et leurs compétences ? Probablement que non. Dans le cas de R, il y a des milliers de contributeurs, certains étant des anonymes qui veulent apporter leur pierre à l’édifice, mais d’autres sont d’éminents spécialistes, de domaines parfois très spécialisés.
+On conçoit donc aisément que, si la qualité des contributeurs est plus inégale lorsqu’on utilise R, vous pourrez cependant bénéficier des outils les plus performants pour traiter une problématique et ce en étant bien guidé et en cherchant les fonctions les plus recommandées. Cela se fait notamment grâce aux communautés actives sur le web et à la liste des packages que le noyau dur des programmeurs de R met en avant. Rappelons que ce seront des spécialistes du domaine qui auront développé la boîte à outil permettant de répondre spécifiquement à votre question.
+Ainsi, si on reprend notre comparaison avec un logiciel commercial, on imagine aisément qu’une équipe restreinte d’une entreprise commerciale, aussi bonne que soit cette équipe, ne peut se tenir à la pointe de tous les domaines pour pouvoir rivaliser avec une communauté de scientifiques spécialistes de leur domaine. Imaginons à présent que le logiciel commercial que vous utilisez a un bug, que faites-vous ? Probablement, rien. Au mieux, vous enverrez un courriel au SAV de
+la société qui commercialise le logiciel qui, avec un peu de chance, prendra vos remarques en compte pour améliorer la version suivante du logiciel, version suivante que vous serez amenés à acheter et qui sortira plus ou moins tardivement par rapport au moment où le bug a été identifié. R fonctionne sur un autre modèle : vous pouvez contacter directement le contributeur de la fonction pour laquelle vous avez identifié un souci. Ce dernier identifiera l’origine du problème et le corrigera en quelques jours. Croyez-en mon expérience, les auteurs des packages fiables sont extrêmement réactifs.</p>
+<p>Les avantages de R ne se limitent pas à être gratuit. En effet, R vous permet également d’être transparent et reproductible, car vous pouvez aisément partager le code qui a servi à analyser les données. Cela a deux avantages. Le premier, et pas le moindre, est que cela permet à d’autres personnes d’avoir accès et donc de réutiliser la méthode d’analyse qui a été utilisée dans un article donné. Ces personnes pourront alors reproduire cette méthode pour l’appliquer à un autre article. Dans cette section, on va vous présenter des lignes de commandes que vous réutiliserez pour vos propres données. Ce chapitre a été écrit en utilisant directement R. Ainsi, je suis sûr que les lignes de commandes que je vais vous présenter vont fonctionner en l’utilisant exactement de la manière dont elle est présentée. Les erreurs de copier/coller sont donc évitées.
+Le second avantage est que tout le monde peut vérifier qu’il n’y a pas d’erreur dans le traitement des données qui ont été publiées. Ces erreurs peuvent se manifester à la fois dans la manière de mener les analyses, mais également dans le report des indices. En effet, pour les articles publiés entre 1985 et 2013 dans 8 grosses revues de psychologie, Nuijten et ses collaborateurs <span class="citation">(<a href="#ref-Nuijten2016"><strong>Nuijten2016?</strong></a>)</span> ont identifié que la moitié des articles présentaient des inconsistances entre la valeur de la probabilité reportée au regard de la valeur de la statistique et des degrés de libertés <a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;si ces notions vous sont inconnues, elles sont expliquées dans les sections consacrées aux principes fondamentaux des statistiques&lt;/p&gt;"><sup>1</sup></a> qui leur étaient associés.
+Les erreurs peuvent arriver. Il est tout en fait acceptable d’en commettre mais il est moins acceptable de ne pas permettre aux autres de vérifier qu’il n’y en ait pas. Il faut se rappeler que la recherche en France, mais également dans beaucoup de pays du monde, est financée, au moins en partie, par des fonds publics. A partir du moment où de l’argent public est dépensé, il y a une nécessité de transparence à la fois sur la manière dont cet argent a été dépensé, mais également sur le fruit de ces dépenses. Ainsi, la valorisation des recherches, soit les financeurs (les contribuables lorsque la recherche est financée sur les fonds publics), doivent non seulement pouvoir accéder aux résultats de la recherche, mais également à toutes les étapes qui ont permis d’atteindre ces résultats, y compris le traitement des données. R permet cette transparence puisqu’on peut partager les données ainsi que le code utilisé et qu’il n’est pas nécessaire d’avoir une licence d’un logiciel payant pour vérifier que tout est correct.</p>
+<p>R offre bien plus de fonctionnalités que les logiciels payants, avec plus de 150 fois plus de fonctions que SAS <span class="citation">(<a href="#ref-Muenchen2015"><strong>Muenchen2015?</strong></a>)</span>, en faisant ainsi un outil extrêmement puissant et polyvalent pour l’analyse de données.</p>
+<p>On peut ajouter aux qualités de R qu’il est compatible avec tous les systèmes d’exploitation (Windows, MacOS, Linux) et qu’il existe des serveurs en ligne qui vous permettent d’utiliser R sans devoir l’installer sur votre ordinateur. Cela peut être utile lorsqu’on a peu de place sur le disque dur ou qu’on veut travailler de manière collaborative.</p>
+<p>Certains aficionados vous diront même que R va vous aider à mieux comprendre les statistiques. Je ne partage pas cet avis: un logiciel en soi n’aide pas à comprendre ou à ne pas comprendre. En revanche, la personne qui vous explique les statistiques peut utiliser R pour faire des simulations ou encore l’utiliser comme outil pédagogique pour l’enseignement des statistiques, ce qui ne peut pas être fait dans d’autres logiciels statistiques. Par exemple, Snow <span class="citation">(<a href="#ref-Snow2020"><strong>Snow2020?</strong></a>)</span> a développé toute une série d’outils permettant d’expliquer des concepts fondamentaux des statistiques. Par ailleurs, utliser R requiert de prendre des décisions statistiques et de comprendre ce que l’on fait sinon c’est le message d’erreur assuré. Ainsi, si vous ne comprenez pas les statistiques, R n’a pas le pouvoir magique de vous faire comprendre, mais si vous comprenez les statistiques, l’utilisation de R vous permettra d’aller encore plus loin. Cependant, que vous compreniez ou non les statistiques, utiliser R de manière efficiente nécessite du temps, car il faudra apprendre à utiliser des lignes de commandes, lignes de commandes qui ont des arguments. Cet apprentissage est assez ténu dans un premier temps mais l’équipe qui développe R a fait un effort important pour harmoniser la manière d’utiliser les fonctions. Et si l’apprentissage est lent dans un premier temps, par la suite, vous serez beaucoup plus rapide pour toute une série de tâches, telles que les prétraitements de vos données.</p>
+<p>Enfin, utiliser R a un intérêt indirect : l’utilisation des lignes de commande est un enseignement sans compromis à la rigueur. Comme évoqué juste avant, nous commettons tous des erreurs, quand on en commet en utilisant des lignes de commande, le résultat est sans appel : un message d’erreur. Le fait d’être exposé à ce message d’erreur n’est pas anodin, il souligne le nombre de fois que nous sommes susceptibles de nous tromper, indépendamment des statistiques, et de prendre conscience de la nécessité d’être exigeant avec nous-mêmse, avec nos productions lorsque nous rédigeons un document afin d’éviter au maximum ces erreurs car la science, au travers des articles scientifiques, a pour vocation d’être exempte autant que peu se faire d’erreurs. Si vous vous dites que vous ne voulez pas utiliser R car vous recevez constamment des messages d’erreur, est-ce que vous êtes disposés à être critiqués, comme c’est le cas lorsque nous sommes relus par des coauteurs ou dans le processus d’expertise, et à élever votre niveau pour éviter de commettre les mêmes erreurs à l’avenir. La vertu pédagogique de cet apprentissage est sans doute inégalable pour quiconque envisage une carrière dans la recherche.</p>
+<p>R, dans sa forme brute, n’est pas très conviviale. C’est pourquoi nous utiliserons Rstudio, également gratuit, qui est une interface graphique de R et un éditeur de code.</p>
+
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="pourquoi-r.html"><span class="header-section-number">2</span> Pourquoi R</a></div>
+<div class="next"><a href="pourquoi-les-statistiques-1.html"><span class="header-section-number">4</span> Pourquoi les statistiques</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction"><span class="header-section-number">3</span> Introduction</a></li>
+<li><a class="nav-link" href="#quest-ce-r-et-pourquoi-lutiliser"><span class="header-section-number">3.1</span> Qu’est-ce R et pourquoi l’utiliser ?</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Initiation à l’approche bayésienne du traitement des données</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

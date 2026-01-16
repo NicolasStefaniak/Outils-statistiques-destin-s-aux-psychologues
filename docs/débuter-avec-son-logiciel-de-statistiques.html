@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 4 Débuter avec son logiciel de statistiques | Initiation à l’approche bayésienne du traitement des données</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="4.1 Débuter avec R  4.1.1 L’environnement R dans RStudio La Figure 4.2 représente la fenêtre qui s’ouvre lorsque vous lancez RStudio,  Figure 4.1: Fenêtre d’accueil dans RStudio.  Trois parties...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 4 Débuter avec son logiciel de statistiques | Initiation à l’approche bayésienne du traitement des données">
+<meta property="og:type" content="book">
+<meta property="og:description" content="4.1 Débuter avec R  4.1.1 L’environnement R dans RStudio La Figure 4.2 représente la fenêtre qui s’ouvre lorsque vous lancez RStudio,  Figure 4.1: Fenêtre d’accueil dans RStudio.  Trois parties...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 4 Débuter avec son logiciel de statistiques | Initiation à l’approche bayésienne du traitement des données">
+<meta name="twitter:description" content="4.1 Débuter avec R  4.1.1 L’environnement R dans RStudio La Figure 4.2 représente la fenêtre qui s’ouvre lorsque vous lancez RStudio,  Figure 4.1: Fenêtre d’accueil dans RStudio.  Trois parties...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Initiation à l’approche bayésienne du traitement des données</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="active" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="" href="comment-choisir-la-bonne-analyse.html"><span class="header-section-number">10</span> Comment choisir la bonne analyse</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="débuter-avec-son-logiciel-de-statistiques" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> Débuter avec son logiciel de statistiques<a class="anchor" aria-label="anchor" href="#d%C3%A9buter-avec-son-logiciel-de-statistiques"><i class="fas fa-link"></i></a>
+</h1>
+<div id="débuter-avec-r" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Débuter avec R<a class="anchor" aria-label="anchor" href="#d%C3%A9buter-avec-r"><i class="fas fa-link"></i></a>
+</h2>
+<div id="lenvironnement-r-dans-rstudio" class="section level3" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> L’environnement R dans RStudio<a class="anchor" aria-label="anchor" href="#lenvironnement-r-dans-rstudio"><i class="fas fa-link"></i></a>
+</h3>
+<p>La Figure <a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#fig:console">4.2</a> représente la fenêtre qui s’ouvre lorsque vous lancez RStudio,</p>
+<div class="figure">
+<span style="display:block;" id="fig:console2"></span>
+<img src="introR/console.R.PNG" alt="Fenêtre d'accueil dans RStudio." width="963"><p class="caption">
+Figure 4.1: Fenêtre d’accueil dans RStudio.
+</p>
+</div>
+<p>Trois parties apparaissent :</p>
+<ul>
+<li>la console (grosse flèche noire) ;</li>
+<li>l’environnement (l’encadré jaune) ;</li>
+<li>et les graphiques (l’encadré vert).</li>
+</ul>
+<p>Il est possible de taper des lignes de commandes directement dans la console. Ainsi, vous pourriez par exemple utiliser la console comme calculatrice. Il va de soi que R offre bien plus de possibilités que de l’utiliser comme calculatrice. Se servir de R en l’utilisant comme une calculatrice reviendrait approximativement à acheter le dernier smartphone haut de gamme pour s’en servir comme réveil. Néanmoins, quand on débute, il est pédagogiquement nécessaire de comprendre comment R fonctionne et ces exemples simplistes permettent d’y contribuer.</p>
+<p>Ainsi, si vous tapez dans la console 5+3 et que vous appuyez sur la touche ‘entrée’ de votre clavier, voici ce que vous allez obtenir :</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">5</span><span class="op">+</span><span class="fl">3</span></span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+</div>
+<div id="le-script" class="section level3" number="4.1.2">
+<h3>
+<span class="header-section-number">4.1.2</span> Le script<a class="anchor" aria-label="anchor" href="#le-script"><i class="fas fa-link"></i></a>
+</h3>
+<p>Remarquez que nous avons utilisé R de manière triviale en demandant de réaliser une opération arithmétique simple. Cependant, quand le traitement des données va commencer à se complexifier et qu’il faudra utiliser plusieurs fonctions (la notion de fonction sera explicitée un peu plus loin) pour obtenir les résultats souhaités, vous conviendrez que cette pratique sera loin d’être optimale. Tout d’abord, ce ne sera pas pratique de devoir retrouver, chaque fois que vous en aurez besoin, les fonctions qui vous seront utiles et les réécrire. En d’autres termes, la console ne permet pas de garder aisément une trace des opérations qui ont été faites. Or, il semble évident qu’il est utile d’avoir une trace de ce que vous faites, avec éventuellement la possibilité d’y faire vos propres annotations pour vous aider à vous rappeler la manière dont vous devez utiliser la fonction ou à quoi elle sert. Par ailleurs,pour aller retrouver un résultat que vous avez obtenu précédemment, naviguer dans la console sera fastidieux. Enfin, si vous vous trompez et qu’un message d’erreur apparaît, il n’est pas commode d’utiliser la console pour la corriger.</p>
+<p>C’est pour cette raison qu’utiliser R directement dans la console est à proscrire. Votre courbe d’apprentissage serait bien <strong>plus lente</strong> et la <strong>démotivation</strong> vous gagnerait rapidement.</p>
+<p>Une manière bien plus adaptée d’utiliser R dans RStudio est d’utiliser un script. Pour cela, il faut cliquer sur la feuille blanche entourée d’un cercle rouge sur la Figure <a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#fig:console">4.2</a>, et choisir dans le menu déroulant ‘R script’. Vous obtenez alors une nouvelle fenêtre (voir Figure <a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#fig:script">4.3</a>) :</p>
+<div class="figure">
+<span style="display:block;" id="fig:console"></span>
+<img src="introR/Figure51.png" alt="Procédure de création d'un script dans R." width="640"><p class="caption">
+Figure 4.2: Procédure de création d’un script dans R.
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:script"></span>
+<img src="introR/Figure%205.2.png" alt="Procédure de création d'un script dans R." width="964"><p class="caption">
+Figure 4.3: Procédure de création d’un script dans R.
+</p>
+</div>
+<p>Nous allons donc commencer par donner un titre à notre script. Toute ligne ou tout information précédée par un dièse (#) est interprété comme du commentaire. Nous pourrions donc donner comme nom au script “Introduction à R”. En l’entourant de dièse, il ressortira et permettra d’identifier rapidement de quoi traite le script.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">###################################</span></span>
+<span><span class="co">###      Introduction à R      ####</span></span>
+<span><span class="co">###################################</span></span></code></pre></div>
+<p>Alternativement, vous pouvez créer des chapitres dans Rstudio en cliquant sur Code et ensuite sur Rstudio. En donnant un nom à la section, vous pourrez par la suite naviguer aisément entre les sections de votre script en cliquant sur <em>code</em> et ensuite sur <em>jump to</em>.</p>
+<p>Vous l’aurez compris, vous devriez faire un script pour chaque chapitre ou faire un seul script. Sachant que les scripts peuvent être aussi long que vous le souhaitez, il est théoriquement possible de ne faire qu’un seul et unique script avec toutes les thématiques. Néanmoins, il vous sera plus facile de faire et d’utiliser des scripts plus courts qui ne traitent que d’une thématique.</p>
+<p>Á présent que nous avons une section, nous allons pouvoir découvrir les opérations de base qu’on fait habituellement avec une calculatrice.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">5</span><span class="op">+</span><span class="fl">3</span> <span class="co"># Addition </span></span>
+<span><span class="fl">5</span><span class="op">-</span><span class="fl">3</span> <span class="co"># Soustraction </span></span>
+<span><span class="fl">5</span><span class="op">*</span><span class="fl">3</span> <span class="co"># multiplication </span></span>
+<span><span class="fl">5</span><span class="op">/</span><span class="fl">3</span> <span class="co"># division </span></span>
+<span><span class="fl">5</span><span class="op">^</span><span class="fl">3</span> <span class="co"># exposant. Donc, ici, 5 exposant 3</span></span></code></pre></div>
+<p>Dans le script, contrairement à ce qui se passe avec la console, rien ne se passe lorsque vous écrivez une ligne de commande. La raison est que la console interprète directement la ligne de commande quand on appuie sur entrée alors que le script ne le fait pas. La ligne de commande sera exécutée uniquement quand vous en ferez la demande explicite. Pour cela, il y a deux possibilités : soit vous sélectionnez une ligne (ou un ensemble de lignes à devoir exécuter), et vous cliquez sur ‘Run’ en haut à droite de la fenêtre du script ; soit vous sélectionnez une ligne (ou un ensemble de lignes à devoir exécuter), et vous appuyez sur les touches <em>ctrl</em> et <em>entrée</em> (<em>pomme</em> et <em>entrée</em> pour les mac users) de votre clavier. Dans les deux cas, les résultats vont s’afficher dans la console et vous obtiendrez ceci :</p>
+<pre><code>## [1] 8</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre><code>## [1] 1.666667</code></pre>
+<pre><code>## [1] 125</code></pre>
+<p>Avant de continuer, pensez à enregisgtrer votre script. Quand vous cliquez sur la petite disquette, RStudio vous propose de choisir un type d’encodage. Vous pouvez laisser la valeur par défaut, ou éventuellement choisir “UTF-8” (voir Encadré 1 pour plus de détails).</p>
+<div style="background:      #ccebf9  ; font-size: 18px; padding: 18px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #8dcbe6    ;font-size: 18px; padding: 18px; border: 1px solid black;margin: 0 px">
+<strong>Le type d’encodage des scripts</strong> </legend></p>
+<p style="text-align:justify;">
+</p>
+<p>Sur MacOS et sur Linux, “UTF-8” est la valeur par défaut. Pour les utilisateurs windows, la valeur par défaut est ‘ISO-8859-1’. Concrètement, cela n’a pas de réel impact tant que vous n’utilisez pas de caractères spéciaux, c’est-à-dire et sans être exhaustif l’un des caractères suivants : é,è, ê, à, ç. En revanche, dès qu’il y a des caractères spéciaux, les choses vont se compliquer. Donc si vous commentez en anglais, pas de souci d’utiliser l’un ou l’autre ; en français, cela peut poser souci. Tant que vous êtes le seul utilisateur du fichier, il sera lisible. En revanche, si vous souhaitez partager votre script, les caractères spéciaux ne seront pas lisibles si l’encodage n’est pas bon. Bref, si un utilisateur MacOS travaille avec un utilisateur Windows, il est préférable d’utiliser “UTF-8” qui est considéré comme un format universel. Si vous ouvrez un script où certains caractères ne sont pas lisibles, vous pouvez le rendre lisible en demandant à Rstudio de rouvrir le script avec le bon encodage. Pour cela, on clique sur ‘file’, ensuite sur ‘reopen with encoding’ et on choisit l’encodage.</p>
+
+</div>
+<p>Á présent que vous avez choisi l’encodage, vous pouvez donner un nom à votre script. Pour pouvoir le réutiliser par la suite, il faut que l’extension du fichier, c’est-à-dire ce qui vient après le dernier point soit un R majuscule. Ainsi, j’ai donné le nom suivant à mon fichier : <strong>Introduction_R.R</strong>.</p>
+</div>
+<div id="créer-des-sections-et-annoter-votre-script" class="section level3" number="4.1.3">
+<h3>
+<span class="header-section-number">4.1.3</span> Créer des sections et annoter votre script<a class="anchor" aria-label="anchor" href="#cr%C3%A9er-des-sections-et-annoter-votre-script"><i class="fas fa-link"></i></a>
+</h3>
+<p>Peut-être avez-vous remarqué que j’ai mis à côté de chaque opération un dièse avec une information textuelle. Cela m’a permis d’expliquer à quoi correspondait chacune des lignes de commande. Cette opération peut se faire en annotant à côté de la ligne de commande ou au-dessus de celle-ci (il est théoriquement possible d’annoter en-dessous mais ce n’est pas une procédure conventionnelle).</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Addition</span></span>
+<span><span class="fl">5</span><span class="op">+</span><span class="fl">3</span>  </span>
+<span><span class="co"># Soustraction </span></span>
+<span><span class="fl">5</span><span class="op">-</span><span class="fl">3</span> </span>
+<span><span class="co"># multiplication </span></span>
+<span><span class="fl">5</span><span class="op">*</span><span class="fl">3</span> </span>
+<span><span class="co"># division </span></span>
+<span><span class="fl">5</span><span class="op">/</span><span class="fl">3</span> </span>
+<span><span class="co"># exposant. Donc, ici, 5 exposant 3</span></span>
+<span><span class="fl">5</span><span class="op">^</span><span class="fl">3</span> </span></code></pre></div>
+<p>Même si l’utilité d’une fonction, ou son utilisation vous semble triviale, prenez le réflexe d’annoter votre script. Les annotations servent à vous rappeler à quoi sert une fonction, à expliquer à d’autres personnes (y compris à vous-même plus tard) ce que vous avez fait et à indiquer les difficultés que vous avez rencontrées avec la fonction et la manière d’y faire face.</p>
+<p>Á présent que nous avons succinctement abordé l’utilisation de R comme s’il s’agissait d’une calculatrice, nous pourrions vouloir commencer à utiliser R de manière un peu plus élaborée. On va donc aborder une nouvelle thématique.</p>
+<p>Vous pourrez (et c’est recommandé) créer des délimitations dans votre script afin d’indiquer ces changements de thématique. Ces délimitations s’appellent des sections. Vous pourriez ainsi utiliser des sections pour identifier chacun des sous-chapitres. Pour créer une section, le plus simple est de cliquer sur ‘Code’ en haut de la fenêtre, et ensuite sur ‘insert section’. L’alternative est de créer la section en appuyant simultanément sur les touches ‘Ctrl’, majuscule et ‘R’. Ainsi, en étant au-dessus des lignes de commandes relatives aux opérations mathématiques, vous pourriez créer une première section intitulée ’utiliser R comme une calculatrice et vous verriez cette ligne apparaître dans votre script (voir Figure <a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#fig:calculatrice">4.4</a>). Il faut noter que vous pouvez directement recopier cette ligne et adapter le titre pour créer de nouvelles sections.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Utiliser R comme une calculatrice ---------------------------------------</span></span></code></pre></div>
+<div class="figure">
+<span style="display:block;" id="fig:calculatrice"></span>
+<img src="introR/Figure3.png" alt="Créer une section intitulée : utiliser R comme calculatrice" width="260"><p class="caption">
+Figure 4.4: Créer une section intitulée : utiliser R comme calculatrice
+</p>
+</div>
+<div style="background:      #ccebf9  ; font-size: 18px; padding: 18px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #8dcbe6    ;font-size: 18px; padding: 18px; border: 1px solid black;margin: 0 px">
+<strong>Naviguer entre les sections de votre script.</strong> </legend></p>
+<p style="text-align:justify;">
+</p>
+<p>Astuce : si vous cliquez à présent sur ‘Code’ en haut de votre écran et ensuite sur ‘Jump to’, vous allez voir les différentes sections de votre script et vous pourrez naviguer aisément entre ces différentes parties.</p>
+
+</div>
+</div>
+<div id="les-fonctions" class="section level3" number="4.1.4">
+<h3>
+<span class="header-section-number">4.1.4</span> Les fonctions<a class="anchor" aria-label="anchor" href="#les-fonctions"><i class="fas fa-link"></i></a>
+</h3>
+<p>Les fonctions représentent des lignes de commande qui permettent de réaliser des tâches particulières. Par exemple, il y a une fonction pour calculer une moyenne, il y a une fonction aussi pour compter le nombre d’observations.
+En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous allons décrire quelques fonctions de manière succinctes, dont certaines feront l’objet d’un approfondissement dans les chapitres suivants.</p>
+<p>D’un point de vue formel, une fonction a un nom. Par exemple, la fonction pour calculer une moyenne est <code>mean</code>. Le nom de la fonction est suivi de parenthèses. Á l’intérieur de ces parenthèses, vous allez spécifier ce qu’on appelle les arguments. Si je reviens à la fonction qui permet de calculer la moyenne, un des arguments de la fonction consiste à fournir les valeurs numériques sur lesquelles la moyenne doit être calculée.</p>
+<p>Commençons avec deux fonctions assez simples car elles n’ont pas d’argument, la fonction <code>getwd</code> permet de savoir dans quel répertoire on est en train de travailler, et la fonction <code>dir</code> qui permet d’obtenir la liste des fichiers disponibles dans ce répertoire.</p>
+<p>Pour aborder ces fonctions dans le script, nous allons commencer par créer une nouvelle section que nous allons intituler <em>Les fonctions de base</em>.</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Les fonctions  de base ---------------------------------------</span></span></code></pre></div>
+<p>Nous pouvons à présent utiliser ces deux fonctions sans argument :</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># permet d'obtenir le répertoire de travail</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># permet d'obtenir la liste des fichiers disponibles dans le répertoire </span></span></code></pre></div>
+<p>Par défaut, R va utiliser le dossier ‘documents’ de votre ordinateur comme répertoire de travail, dont le chemin d’accès prendra approximativement la forme de <em>C:/Users/votre_nom/Documents</em>. Ce répertoire de travail n’est sans doute pas le répertoire dans lequel sont localisées vos données, ni celui où vous souhaiteriez travailler. Avoir comme répertoire de travail le répertoire dans lequel se situe l’ensemble des documents est une <strong>règle de bonne pratique</strong>. Vous pourriez, par exemple, créer dans vos documents un dossier intitulé <em>Statistiques</em><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;ou si vous êtes plus enthousiaste, &lt;em&gt;Vive les statistiques&lt;/em&gt;&lt;/p&gt;"><sup>3</sup></a> et à l’intérieur de ce dossier, un sous-dossier appelé “Introduction” qui contiendra le script pour ce chapitre et les données qui seront utilisées ultérieurement.</p>
+<p>Il faut à présent préciser à R que votre répertoire de travail ce situe par exemple dans <em>C:/Users/votre_nom/Documents/Statistiques/Introduction</em>. Pour cela, nous allons utiliser la fonction <code>setwd</code>. Cette fonction a un argument. Cet argument (code&gt;dir pour directory en anglais) est le répertoire dans lequel vous souhaitez travailler</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Ligne de commande permettant de préciser le répertoire de travail</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span>dir<span class="op">=</span><span class="st">"C:/Users/XXX/Documents/livre de statistiques/Introduction"</span><span class="op">)</span> <span class="co"># Attention que "XXX" renvoie à votre nom et que vous devez adapter ce chemin d'accès à votre ordinateur</span></span></code></pre></div>
+<p>Vous venez d’essayer de changer le répertoire de travail et vous avez reçu un <strong>message d’erreur</strong> qui prend la forme suivante :</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb21-1" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">setwd</span>(<span class="st">"C:/Users/XXX/Documents/Statistiques/Introduction"</span>) <span class="sc">:</span> cannot change working directory</span></code></pre></div>
+<p>Vous avez probablement commis une ou plusieurs des erreurs suivantes :</p>
+<ul>
+<li>Le dossier n’existe pas. Vous avez oublié de créer le dossier dans lequel vous voulez travailler. Le dossier doit déjà exister sur votre ordinateur ;</li>
+<li>Le chemin n’est pas correct. Vous avez fait une faute de frappe, ou oublié un sous-répertoire dans le chemin d’accès ;</li>
+<li>Vous n’avez pas respecté la casse. Comme pour les mots de passe, R est sensible à la casse, c’est-à-dire au respect des majuscules et des minuscules ;</li>
+<li>Vous êtes sur <strong>Windows</strong> et vous avez copier/coller le chemin d’accès depuis la fenêtre de navigation. Cependant, R souhaite le symbole slash pour accéder à un dossier enfant, c’est-à-dire un dossier imbriqué dans un autre dossier alors que windows utilise par défaut le backslash. Il faut donc inverser tous les backslash en slash.</li>
+</ul>
+<div style="background:      #ccebf9  ; font-size: 18px; padding: 18px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #8dcbe6    ;font-size: 18px; padding: 18px; border: 1px solid black;margin: 0 px">
+<strong>Travailler directement dans le bon environnement de travail.</strong> </legend></p>
+<p style="text-align:justify;">
+</p>
+<p>Il est possible de se trouver directement dans le bon environnement de travail sans à avoir à le préciser. Pour cela, il faut créer un projet. Dans Rstudio, il suffit de clquer sur <em>File</em> et ensuite <em>New Project</em>. Après l’avoir sauvegardé à l’endroit pertinent, il suffira d’ouvrir sur le fichier créer pour que le répertoire de travail soit automatiquement celui dans lequel le projet a été enregitré.</p>
+
+</div>
+<p>Une partie de ces fonctions sont disponibles directement lorsqu’on installe R, mais la grande majorité de ces fonctions ont été programmées par les contributeurs qui ont été évoqués à la section expliquant pourquoi il est pertinent d’utiliser R. Ces contributeurs n’ajoutent pas directement les nouvelles fonctionnalités au logiciel mais vont empaqueter les fonctionnalités qu’ils ont programmées dans ce qu’on appelle un package. Ces packages devront être installés en plus pour pouvoir être utilisés.</p>
+<p>Si vous avez du mal à comprendre ce qu’est un package, pensez à votre smartphone : quand vous l’allumez pour la première fois, il n’y a que les fonctionnalités de base et vous allez installer les applications selon vos besoins. R fonctionne sur un principe un peu similaire, à la différence qu’on ajoute ces nouvelles fonctionnalités à l’intérieur d’un logiciel. Dans un premier temps, nous allons utiliser le package <em>readxl</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-readxl">Wickham &amp; Bryan, 2022</a>)</span> pour importer des fichiers excel, et le package <em>dplyr</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-dplyr">Wickham et al., 2022</a>)</span> pour avoir des fonctionnalités de manipulation des données. Nous allons donc installer et charger ces packages. Pour installer un package, on utilise la fonction <code>install.packages</code>. Cette fonction a pas mal d’arguments mais il ne semble pas utile de les expliciter tous en détail. Nous nous limiterons à installer un package de manière classique en invoquant simplement le nom du package à installer.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"readxl"</span><span class="op">)</span> <span class="co"># installation du package readxl - en utilisant l'argument pkgs</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"dplyr"</span><span class="op">)</span> <span class="co"># installation du package dplyr - en omettant l'argument pkgs</span></span></code></pre></div>
+<p>Vous savez que les packages sont installés correctement par le fait que R vous indique que le package a été décompressé avec succès et que la somme des MD5 a été vérifiée (package ‘readxl’ successfully unpacked and MD5 sums checked). Il arrive néanmoins que certains packages ne s’installent pas aussi aisément. Nous renvoyons le lecteur vers la section “installer les packages” pour une description plus détaillée de cette fonction et les difficultés qui peuvent être associées à l’installation de certains packages.</p>
+<p>Remarquez qu’il est possible d’utiliser une fonction avec des arguments sans invoquer l’argument de manière explicite. Dans la fonction <code>install.packages</code>, le premier argument s’appelle ‘pkgs’. Il s’agit du nom du package à installer. Si vous respectez l’ordre des arguments, il n’est pas indispensable de les appeler explicitement (comme je l’ai fait pour l’installation du package <em>dplyr</em>) mais si vous ne respectez pas l’ordre ou si vous omettez des arguments intermédiaires pour lesquels vous souhaitez garder les valeurs par défaut, alors il faut les appeler explicitement. En l’occurrence, l’argument <code>pkgs</code> est le premier argument et je peux donc me permettre d’omettre de le spécifier quand j’utilise la fonction. En revanche, c’est une pratique qu’il est préférable d’utiliser uniquement avec les fonctions qu’on connait parfaitement car cela pourrait entraîner des messages d’erreur ou des résultats qui ne correspondent pas à ce qui était souhaité.</p>
+<p>Á présent que nos deux packages sont bien installés, nous pouvons les charger pour pouvoir utiliser leurs fonctionnalités ultérieurement. On les charge avec la fonction <code>library</code> en indiquant le nom du package <strong>sans les guillemets</strong>.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># chargement du package readxl </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span> <span class="co"># chargement du package dplyr </span></span></code></pre></div>
+<p>Charger les packages dont on va avoir besoin en début de script représente également une règle de <strong>bonne pratique</strong>.</p>
+<div style="background:      #ccebf9  ; font-size: 18px; padding: 18px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #8dcbe6    ;font-size: 18px; padding: 18px; border: 1px solid black;margin: 0 px">
+<strong>Trouver de l’aide sur une fonction.</strong> </legend></p>
+<p style="text-align:justify;">
+</p>
+<p>Comme évoqué précédemment, il existe une large communauté d’utilisateurs de R qui s’entraident en ligne. Néanmoins, si vous connaissez la fonction que vous devez utiliser, la stratégie de première intention que vous devriez utiliser pour comprendre comment utiliser une fonction est de consulter l’aide qui lui est associée. En effet, cela fait partie du cahier de charge de R de fournir une documentation détaillée quant à l’utilisation des fonctions, avec une explication de chacun des arguments et des exemples sur la manière d’utiliser la fonction. Pour accéder à cette aide, il existe deux manières : utiliser le point d’interrogation suivi du nom de la fonction ou utiliser la fonction <code>help</code> avec le nom de la fonction entre parenthèse.</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">setwd</span> <span class="co"># recherche de l'aide pour la fonction setwd en utilisant le point d'interrogation </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">install.packages</span><span class="op">)</span> <span class="co"># recherche de l'aide pour la fonction setwd en utilisant la fonction help</span></span></code></pre></div>
+<p>Cette manière de trouver de l’aide sur l’utilisation d’une fonction est une stratégie indispensable car, pour l’utilisateur débutant, l’utilisation des fonctions n’est pas suffisamment automatique et l’aide permet de fournir les indices indispensables pour savoir comment utiliser une fonction et, pour l’utilisateur expert, il se rappellera du nom d’une fonction qu’il n’utilise pas souvent mais pas forcément du nom des arguments ou de la manière de les utiliser.</p>
+<p>En revanche, cette stratégie ne fonctionne que si la fonction est accessible dans R. Vous ne pourriez pas trouver de l’aide de cette manière pour une fonction qui est dans un package qui n’est pas installé ou qui n’est pas chargé. Pour trouver de l’aide sur une fonction d’un package installé mais pas chargé, on peut utiliser deux points d’interrogation successifs avant le nom de la fonction. R va alors chercher dans tous les packages qui sont installés s’il trouve une fonction qui contient le nom que vous rechercher. Á des fins d’illustrations, installez le package <em>psych</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-psych">Revelle, 2025</a>)</span> sans le charger et vous pourrez trouver de l’aide sur la fonction <code>describe</code> en utilisant les deux points d’interrogation de la manière suivante :</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">?</span><span class="op">?</span><span class="va">describe</span> <span class="co"># cherche l'aide d'une fonction appelée describe dans n'importe quel package installé sur votre ordinateur, même s'il n'est pas chargé. </span></span></code></pre></div>
+
+</div>
+</div>
+<div id="les-objets-dans-r" class="section level3" number="4.1.5">
+<h3>
+<span class="header-section-number">4.1.5</span> Les objets dans R<a class="anchor" aria-label="anchor" href="#les-objets-dans-r"><i class="fas fa-link"></i></a>
+</h3>
+<p>Lorsque vous utilisez une des lignes de commande décrite ci-dessus, une fois le résultat obtenu, ce résultat est devenu inutilisable car les informations n’ont pas été stockées dans la mémoire de R. Or, il pourrait être utile de pouvoir réutiliser le résultat produit. Par exemple, lorsque vous utilisez la fonction <code>dir</code>, vous avez la liste des fichiers disponibles dans votre dossier. Imaginons que ces fichiers soient les résultats individuels de chacun de vos participants et que vous avez 200 participants. Cela pourrait être plus que fastidieux de devoir importer les données de chaque participant les uns après les autres. On voudrait pouvoir les importer en une seule fois. Cependant, si la liste des fichiers n’est plus utilisable, on ne peut pas le faire. Il est donc nécessaire de stocker ces informations dans la mémoire de R. On fait cela en créant des objets.</p>
+<p>Il existe trois manières de stocker un objet dans la mémoire de R : le symbole ‘&lt;’ et ‘-’ pour créer une flèche orientée vers la gauche ; le symbole ‘&gt;’ et ‘-’ pour créer une flèche orientée vers la droite ; le symbole ‘=’. Nous allons illustrer la création d’objets avec ces trois méthodes. Dans un premier temps, nous allons attribuer la valeur 5 à un objet appelé ‘a’. Je vais attribuer la valeur 3 à un objet que je vais appeler ‘b’ et enfin, l’objet ‘c’ sera l’addition entre a et b.</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">a</span><span class="op">&lt;-</span><span class="fl">5</span> <span class="co"># créer un objet appelé a et ayant comme valeur 5</span></span>
+<span><span class="fl">3</span> <span class="op">-&gt;</span><span class="va">b</span> <span class="co"># créer un objet appelé b et ayant comme valeur 3</span></span>
+<span><span class="va">c</span><span class="op">=</span><span class="va">a</span><span class="op">+</span><span class="va">b</span> <span class="co"># créer un objet appelé c et ayant comme valeur la somme de a et b</span></span></code></pre></div>
+<p>De ces 3 méthodes que nous avons évoquées pour créer des objets, l’utilisation du symbole ‘=’ est à déconseiller car il est préférable d’utiliser exclusivement cette procédure pour l’attribution des valeurs à un argument d’une fonction. Par exemple, lorsque nous avons utilisé la fonction <code>setwd</code>, il fallait préciser le répertoire de travail, qui est l’argument ‘dir’, et nous l’avons fait avec le symbole ‘=’.</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Identifier ici l'argument 'dir' à l'intérieur de la fonction et que le symbole utilisé pour lui attribuer une valeur est '='</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span>dir<span class="op">=</span><span class="st">"C:/Users/XXX/Documents/Statistiques/Introduction"</span><span class="op">)</span></span></code></pre></div>
+<p>L’utilisation des deux autres méthodes se valent mais préférez faire vos flèches toujours dans le même sens pour vous éviter des écueils. Je vous encourage à les faire toujours vers la gauche (comme pour le ‘a’ dans le code ci-dessus) afin d’avoir le nom des nouveaux objets en début de ligne à chaque fois. Quand vous ferez plusieurs opérations à la suite, cela vous évitera de passer du temps à chercher le nom que vous avez attribué à un objet 10 lignes de commandes plus haut.</p>
+<p>Si on exécute les trois lignes de commandes ci-dessus, apparemment rien ne se passe. Il n’y a rien qui s’affiche dans la console. Pour voir ce que contiennent les objets, il faut les appeler. Ainsi, en tapant leur nom et en cliquant sur ‘run’, vous allez voir ;</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">a</span> <span class="co"># appeler l'objet a, renvoie 5</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">b</span> <span class="co"># appeler l'objet b, renvoie 3</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">c</span> <span class="co"># appeler l'objet c, renvoie 8</span></span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<p>Le nom de ces objets est pratiquement complètement arbitraire et vous pourriez l’appeler ‘ficus’, ‘Xmen’, ‘HarryPotter’ si vous le souhaitiez. En revanche, si vous l’appelez ‘HarryPotter’, pour pouvoir l’utiliser, il faudra écrire ‘HarryPotter’. Il est donc préférable d’utiliser un nom court pour éviter de devoir retaper des noms interminables.</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Illustration du côté arbitraire des noms </span></span>
+<span><span class="va">ficus</span><span class="op">&lt;-</span><span class="fl">5</span></span>
+<span><span class="va">Xmen</span><span class="op">&lt;-</span><span class="fl">5</span></span>
+<span><span class="va">HarryPotter</span><span class="op">&lt;-</span><span class="fl">5</span></span>
+<span><span class="va">ficus</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Xmen</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">HarryPotter</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>Et si vous faites une faute de frappe (y compris sur la casse<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;c’est-à-dire le respect des majuscules et des minuscules&lt;/p&gt;"><sup>4</sup></a>), alors R va renvoyer un message d’erreur indiquant qu’il ne trouve pas l’objet appelé (Error: object ‘Harrypotter’ not found).</p>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Harrypotter</span> <span class="co"># Harrypotter avec un "p" minuscule n'existe pas et renvoie un message d'erreur</span></span></code></pre></div>
+<p>Même si on peut utiliser pratiquement n’importe quel nom pour les objets, certaines règles doivent <strong>impérativement</strong> être <strong>respectées</strong>. D’abord, vous ne pouvez pas utiliser un nom qui contient des espaces. Dans ce cas, R va renvoyer un message d’erreur indiquant qu’il y a un symbole inattendu. Ce symbole est l’espace. En revanche, vous pouvez utiliser un underscore ou un point (mais il est en revanche prohibé d’utiliser une virgule, un point-virgule ou un deux points) pour faire vos séparations.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb41-1" tabindex="-1"></a>Ma valeur cinq<span class="ot">&lt;-</span><span class="dv">5</span> <span class="co"># renvoie un message d'erreur en raison des espaces </span></span>
+<span id="cb41-2"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb41-2" tabindex="-1"></a>Mavaleurcinq<span class="ot">&lt;-</span><span class="dv">5</span> <span class="co"># ne renvoie pas de message d'erreur </span></span>
+<span id="cb41-3"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb41-3" tabindex="-1"></a>Ma_valeur_cinq<span class="ot">&lt;-</span><span class="dv">5</span> <span class="co"># ne renvoie pas de message d'erreur quand on utilise un underscore</span></span>
+<span id="cb41-4"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb41-4" tabindex="-1"></a>Ma.valeur.cinq<span class="ot">&lt;-</span><span class="dv">5</span> <span class="co"># ne renvoie pas de message d'erreur quand on utilise un point</span></span></code></pre></div>
+<p>Ensuite, il faut éviter tous les caractères spéciaux. On va commencer par la situation la plus pernicieuse : les accents, les ‘ç’, et autres trémats. Je vais attribuer la valeur “Jean” à un objet appelé “élève”</p>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">élève</span><span class="op">&lt;-</span><span class="st">"Jean"</span></span>
+<span><span class="va">élève</span></span></code></pre></div>
+<pre><code>## [1] "Jean"</code></pre>
+<p>Là, tout va bien. Cependant, certaines fonctions ne vont pas reconnaître les accents et vous ne comprendrez pas pourquoi la fonction renvoie un message d’erreur alors que votre objet ne présente aucun problème en apparence (ici le souci est lié au type d’encodage des caractères spéciaux, dont nous avons parlé précédemment). Vous pourriez passer des heures à vous demander quel est le problème et vous finiriez par vous décourager pour un problème aussi trivial. La règle à appliquer est simple : <strong>n’utilisez jamais d’accent ou de caractères spéciaux</strong>.</p>
+<p>La dernière règle à appliquer est qu’il ne faut aucun symbole :</p>
+<ul>
+<li>pas de parenthèse, R considérerait ce qui précède comme une fonction ;</li>
+<li>pas d’apostrophe car ce serait interprété comme une chaîne de caractères ;</li>
+<li>pas de symbole mathématique car il voudrait réaliser une opération mathématique.</li>
+</ul>
+<p>Voici quelques exemples de <strong>ce qu’il ne faut pas faire</strong> :</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb44-1" tabindex="-1"></a><span class="co"># Quelques exemples de ce qu'il ne faut pas faire </span></span>
+<span id="cb44-2"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb44-2" tabindex="-1"></a><span class="fu">interprete</span>(ma.fonction)<span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># ne fonctionne pas et renvoie le message d'erreur indiquant que cette fonction ne peut être trouvée</span></span>
+<span id="cb44-3"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb44-3" tabindex="-1"></a>c<span class="st">'est_pas_terrible&lt;-5 # l'</span>apostrophe pose souci </span>
+<span id="cb44-4"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb44-4" tabindex="-1"></a>ceci<span class="sc">+</span>cela<span class="sc">+</span>non<span class="sc">+</span>plus<span class="ot">&lt;-</span><span class="dv">5</span> <span class="co"># le '+' est interprété comme une opération mathématique, de même s'il y avait '-','/','*','^'. </span></span>
+<span id="cb44-5"><a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#cb44-5" tabindex="-1"></a>pas_d_egal<span class="ot">=</span>erreur<span class="ot">&lt;-</span><span class="dv">5</span> <span class="co"># mettre un "=" pose souci car on crée deux objets différents : pas_d_egal et erreur  </span></span></code></pre></div>
+<p>Remarquez également que, dans votre environnement global (l’encadré jaune de la Figure <a href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html#fig:console">4.2</a>), vous avez à présent plusieurs objets que vous pouvez réutiliser pour des traitements ultérieurs. Si pour des opérations aussi triviales que celle qu’on vient de voir, cela a peu d’intérêt, n’oubliez pas que l’objectif sera <em>in fine</em> de pouvoir utiliser des modèles statistiques sur des jeux de données réels et qu’il sera important de pouvoir passer par des étapes intermédiaires.</p>
+<p>En l’occurrence, il y a peu d’objets dans la mémoire de R. Cependant, il peut y en avoir beaucoup plus et vous pourriez vouloir en obtenir la liste. Pour cela, on utilise la fonction <code>ls</code> sans devoir préciser d’argument.</p>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># connaître la liste des objets dans la mémoire de R.</span></span></code></pre></div>
+<pre><code>##  [1] "a"               "arrows"          "b"               "boxes"          
+##  [5] "c"               "cards"           "condition_label" "easier"         
+##  [9] "élève"           "ficus"           "ft"              "HarryPotter"    
+## [13] "lines"           "tot"             "tot2"            "Xmen"</code></pre>
+</div>
+<div id="les-erreurs-les-plus-courantes-et-les-règles-de-bonnes-pratiques" class="section level3" number="4.1.6">
+<h3>
+<span class="header-section-number">4.1.6</span> Les erreurs les plus courantes et les règles de bonnes pratiques<a class="anchor" aria-label="anchor" href="#les-erreurs-les-plus-courantes-et-les-r%C3%A8gles-de-bonnes-pratiques"><i class="fas fa-link"></i></a>
+</h3>
+<p>Le plus difficile quand on débute avec R est d’être confronté à un message d’erreur et de ne pouvoir lui attribuer du sens.</p>
+<p>Il va de soi qu’il n’est pas possible de faire une liste exhaustive des erreurs possibles mais voici les plus fréquentes, et leurs solutions :</p>
+<div class="tabwid">
+<style>.cl-e7744562{}.cl-e76afcbe{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e76e2150{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e76e39c4{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39ce{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39cf{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39d0{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39d8{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39d9{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e7744562">
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
+<span id="tab:unnamed-chunk-28">Table 4.1: </span><span>Liste des erreurs les plus fréquentes et leur cause/solution</span>
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e76e39c4"><p class="cl-e76e2150"><span class="cl-e76afcbe">Erreur</span></p></th>
+<th class="cl-e76e39ce"><p class="cl-e76e2150"><span class="cl-e76afcbe">Signification et solution</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">unexpected symbol</span></p></td>
+<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">Le nom de l'objet ou de la variable est incorrect. Vérifiez les règles énoncées précédemment</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">object XXX not found</span></p></td>
+<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">L'objet n'a pas été créé ou est mal orthographie. Attention à la casse - càd. aux majuscules et minuscules</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">could not find function XXX</span></p></td>
+<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">La fonction est mal orthographiée ou est dans un package non chargé, voire non installé. Cette erreur est courante quand on utilise une fonction qu'on trouve sur le internet sans vérifier le package auquel elle appartient. Chargez le package contenant la fonction si elle existe.</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">Error in cor.test.default(c("a", "b")) : x doit être un vecteur numérique</span></p></td>
+<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">Les arguments doivent avoir certaines caractéristiques. Ici, ils doivent être numériques mais ce n'est pas le cas. Vérifiez avec la fonction class ou str si les objets sur lesquels vous souhaitez faire l'analyse ont le format correct</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">argument is of length zero</span></p></td>
+<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">Un argument indispensable a pour valeur NULL alors qu'il doit être spécifié. Vérifiez l'aide de la fonction</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">no default for argument</span></p></td>
+<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">Un argument nécessaire n'a pas été spécifié. Vérifiez l'aide de la fonction</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e76e39d8"><p class="cl-e76e2150"><span class="cl-e76afcbe">aucun package nommé XXX n'est trouvé</span></p></td>
+<td class="cl-e76e39d9"><p class="cl-e76e2150"><span class="cl-e76afcbe">Le package n'est pas installé ou est mal installé. Si vous avez tenté d'installer le package mais que le souci persiste, voir la section installer les packages récalcitrants ens section 6.</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Néanmoins, en appliquant les règles de bonnes pratiques suivantes, vous diminuerez considérablement les erreurs :</p>
+<ol style="list-style-type: decimal">
+<li>Utiliser un script pour toutes les fonctions que vous utilisez.</li>
+<li>Avant de commencer les analyses, pensez à charger les packages et vérifier qu’il n’y a pas de problème concernant leur chargement<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;s’il y a un problème, un message d’erreur s’affichera.&lt;/p&gt;"><sup>5</sup></a>.</li>
+<li>Annotez votre script pour savoir ce que vous faites, mais également pour expliquer les erreurs auxquelles vous avez été confrontées et comment cela a été résolu.</li>
+<li>Faites attention à la casse<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;les majuscules et les minuscules&lt;/p&gt;"><sup>6</sup></a>.</li>
+<li>Utilisez des noms simples et pour les noms complexes, favorisez les copier coller en utilisant la foncton <code>ls</code> pour avoir le nom des objets en mémoire et la fonction <code>names</code> pour avoir le nom des variables. PAr exemple :</li>
+</ol>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##  [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"   "am"   "gear"
+## [11] "carb"</code></pre>
+<p>Enfin, les outils d’intelligence artificiel représente des aides précieuses pour vous aider à identifier pourquoi une erreur est survenue et pour vous aider à corriger une ligne de commande. Le danger est de trop se reposer sur l’IA sans comprendre ce qu’on fait. Dans ce genre de situation, il peut arriver que l’IA ne vous fournisse pas une solution adaptée, même avec un bon prompt, et vous ne pourrez pas régler la difficulté à laquelle vous êtes confronté·e. Il est donc indispensable de comprendre en premier et de profiter de l’aide de l’IA dans un second temps.</p>
+</div>
+<div id="installer-des-packages-récalcitrants" class="section level3" number="4.1.7">
+<h3>
+<span class="header-section-number">4.1.7</span> Installer des packages récalcitrants<a class="anchor" aria-label="anchor" href="#installer-des-packages-r%C3%A9calcitrants"><i class="fas fa-link"></i></a>
+</h3>
+<p>Précédemment, nous avons décrit comment installer des packages. Néanmoins, certains peuvent être plus difficiles à installer que d’autres pour différentes raisons. Voici les solutions à envisager pour installer ces packages. Pour l’illustration, nous utiliserons le package ‘devtools’ <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-devtools">Wickham et al., 2025</a>)</span>.</p>
+<p>Ainsi, quand un package ne veux pas se charger, c’est qu’il n’est pas correctement installé. La procédure ci-dessus explique comment forcer cette installation lorsque les choses ne se passent pas correctement. Chaque étape peut se suffire à elle-même. Néanmoins, si l’installation continue à poser problème, alors, il faut passer à l’étape suivante. Pour le formuler autrement : je tente l’étape 1, ça marche, je m’arrête ; ou, je tente l’étape 1, ça ne marche pas, je passe à l’étape 2.</p>
+<ol style="list-style-type: decimal">
+<li>Forcer l’installation des dépendances, le site miroir et les packages compilés. Quand nous avons décrit la fonction <code>install.packages</code>, elle a été présentée de sorte à pouvoir l’utiliser sans argument. On peut néanmoins préciser des arguments supplémentaires. Le premier argument est l’argument <code>dependencies</code> qui permet de forcer l’installation des dépendances en indiquant l’opérateur logique <code>TRUE</code>. Le second argument qu’on va utiliser est l’argument <code>type</code> pour forcer à installer les packages sous une forme compilée (binaire) plutôt que sous une forme où le package devra être compilé (source). Ainsi, cela évite de devoir avoir un logiciel de compilation, comme Rtools. Enfin, on va préciser le site miroir sur lequel on veut télécharger les packages qu’on souhaite installer. Dans cet exemple, il s’agit du CRAN de Lyon.</li>
+</ol>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span>, <span class="co"># nom du package</span></span>
+<span>                 dependencies <span class="op">=</span> <span class="cn">TRUE</span>, <span class="co"># force l'installation des dépendances</span></span>
+<span>                 type<span class="op">=</span> <span class="st">"binary"</span>, <span class="co"># on installe uniquement les packages sous un format compilé</span></span>
+<span>                 repos <span class="op">=</span> <span class="st">"https://mirror.ibcp.fr/pub/CRAN"</span><span class="op">)</span> <span class="co"># le site miroir CRAN est celui de Lyon </span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Fermer R et refaire l’étape 1. Il arrive que certaines dépendances soient chargées, empêchant dès lors leur mise à jour et l’installation du nouveau package. Le fait de fermer R permet de régler le souci dans la plupart des situations.</p></li>
+<li><p>Vérifier l’espace sur le disque dur. Il arrive parfois que les packages ne s’installent pas parce que l’espace sur le disque dur est insuffisant. S’il est suffisant, passez à l’étape 4. S’il est insuffisant, il existe deux solutions, une assez technique qui consiste à choisir comme répertoire d’installation des packages un support externe. Cela implique de forcer R à aller chercher les packages dans ce dossier. L’autre solution est de travailler en ligne en créant un compte Rstudio cloud.</p></li>
+<li><p>Le nom d’accès du dossier d’installation des packages contient des caractères spéciaux. Á nouveau, il existe deux solutions, forcer l’installation des packages dans un autre dossier (mais cela implique de préciser le chemin de ce dossier) ou créer un compte en ligne.</p></li>
+</ol>
+</div>
+<div id="pour-conclure" class="section level3" number="4.1.8">
+<h3>
+<span class="header-section-number">4.1.8</span> Pour conclure<a class="anchor" aria-label="anchor" href="#pour-conclure"><i class="fas fa-link"></i></a>
+</h3>
+<p>L’objectif de ce chapitre était de fournir les bases indispensables à l’utilisation de R, comprendre ce qu’est un object, pouvoir utiliser une fonction et adopter les bonnes pratiques pour éviter les erreurs.
+Á présent qu’on s’est dégagé des contraintes relatives à l’utilisation du logiciel, il est possible à présent de s’intéresser au raisonnement statistique et de pouvoir réaliser les analyses adaptées.</p>
+</div>
+</div>
+<div id="débuter-avec-easier" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Débuter avec easieR<a class="anchor" aria-label="anchor" href="#d%C3%A9buter-avec-easier"><i class="fas fa-link"></i></a>
+</h2>
+<p>Comme évoqué dans la section consacrée au choix des logiciels, le package <em>easieR</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-Stefaniak2018">Stefaniak, 2018</a>)</span> peut être utilisé de différentes manières. En particulier, on peut l’utiliser en boîte de dialogue uniquement, en ligne de commande uniquement, ou un mixte entre les deux. Dans cette section, nous fournissons les informations pour l’utiliser en boîte de dialogue uniquement dans sa forme la plus générale. Ainsi, pour utiliser easieR, il faut charger la package avec la fonction <code>library</code> et on peut accéder à toutes les fonctions de <em>easieR</em> avec la fonction <code><a href="https://rdrr.io/pkg/easieR/man/easieR.html">easieR()</a></code>.</p>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">easieR</span><span class="op">)</span> <span class="co">#charge le package</span></span>
+<span><span class="co"># ouvre la boîte de dialogue permettant d'accéder à toutes les options</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/easieR.html">easieR</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></div>
+<div class="next"><a href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#d%C3%A9buter-avec-son-logiciel-de-statistiques"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li>
+<a class="nav-link" href="#d%C3%A9buter-avec-r"><span class="header-section-number">4.1</span> Débuter avec R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#lenvironnement-r-dans-rstudio"><span class="header-section-number">4.1.1</span> L’environnement R dans RStudio</a></li>
+<li><a class="nav-link" href="#le-script"><span class="header-section-number">4.1.2</span> Le script</a></li>
+<li><a class="nav-link" href="#cr%C3%A9er-des-sections-et-annoter-votre-script"><span class="header-section-number">4.1.3</span> Créer des sections et annoter votre script</a></li>
+<li><a class="nav-link" href="#les-fonctions"><span class="header-section-number">4.1.4</span> Les fonctions</a></li>
+<li><a class="nav-link" href="#les-objets-dans-r"><span class="header-section-number">4.1.5</span> Les objets dans R</a></li>
+<li><a class="nav-link" href="#les-erreurs-les-plus-courantes-et-les-r%C3%A8gles-de-bonnes-pratiques"><span class="header-section-number">4.1.6</span> Les erreurs les plus courantes et les règles de bonnes pratiques</a></li>
+<li><a class="nav-link" href="#installer-des-packages-r%C3%A9calcitrants"><span class="header-section-number">4.1.7</span> Installer des packages récalcitrants</a></li>
+<li><a class="nav-link" href="#pour-conclure"><span class="header-section-number">4.1.8</span> Pour conclure</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#d%C3%A9buter-avec-easier"><span class="header-section-number">4.2</span> Débuter avec easieR</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Initiation à l’approche bayésienne du traitement des données</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

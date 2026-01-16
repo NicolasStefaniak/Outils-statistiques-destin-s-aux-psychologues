@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Organiser les données | Initiation à l’approche bayésienne du traitement des données</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="Les ingrédients centraux pour tester une hypothèse sont les données. Aucun manuel, aucun enseignant soulignera suffisamment à quel point il est essentiel d’assurer le plus grand soin pour avoir...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Organiser les données | Initiation à l’approche bayésienne du traitement des données">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Les ingrédients centraux pour tester une hypothèse sont les données. Aucun manuel, aucun enseignant soulignera suffisamment à quel point il est essentiel d’assurer le plus grand soin pour avoir...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Organiser les données | Initiation à l’approche bayésienne du traitement des données">
+<meta name="twitter:description" content="Les ingrédients centraux pour tester une hypothèse sont les données. Aucun manuel, aucun enseignant soulignera suffisamment à quel point il est essentiel d’assurer le plus grand soin pour avoir...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Initiation à l’approche bayésienne du traitement des données</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="active" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="" href="comment-choisir-la-bonne-analyse.html"><span class="header-section-number">10</span> Comment choisir la bonne analyse</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="organiser-les-données" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Organiser les données<a class="anchor" aria-label="anchor" href="#organiser-les-donn%C3%A9es"><i class="fas fa-link"></i></a>
+</h1>
+<p>Les ingrédients centraux pour tester une hypothèse sont les données. Aucun manuel, aucun enseignant soulignera suffisamment à quel point il est essentiel d’assurer le plus grand soin pour avoir des données de qualité.
+Si les données que vous avez récoltées n’ont pas été récoltées avec soin, les traitements statistiques réalisés seront vains. Pire si vous identifiez mal la nature de vos données, les traitements que vous réaliserez seront inadaptés et donc erronés.
+En revanche, ce qui peut être expliqué est la manière d’organiser correctement votre jeu de données. Quelques règles doivent être respectées pour vous assurer que vos données puissent être utilisables pour les traitements ultérieurs.</p>
+<p>Vos données représentent un tableau à double entrée, c’est-à-dire un dataframe, où les lignes représentent les observations et les colonnes représentent vos variables. Notez que le mot observation doit être pris au sens large. Dans certains cas, notamment quand on veut construire deux formes parallèles d’une tâche, il peut être intéressant de vérifier si chaque stimulus d’une version présente des caractéristiques similaires au stimulus qui lui est apparié dans l’autre version de la tâche. Dans ce cas, chaque stimulus pourra être considéré comme une observation.
+Il y a une exception à cette organisation : les données avec des mesures répétées. Si un individu passe par différentes conditions expérimentales, le nom de la colonne va représenter la modalité de la variable indépendante en mesure répétée et le contenu en-dessous de ce nom de colonne va représenter la variable dépendante mesurée dans chacune des conditions expérimentales. Si nous reprenons l’exemple du dataframe que nous avons présenté plus haut (avec la taille et le sexe), on pourrait avoir une mesure de la taille à 4 ans, à 10 ans et à 15 ans. Le jeu de données prendrait alors la forme du Tableau <a href="organiser-les-donn%C3%A9es.html#tab:dataframe">6.1</a>.</p>
+<div class="tabwid">
+<style>.cl-e827f3be{}.cl-e81e05de{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e821b4fe{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e821b512{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e821ce3a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e821ce44{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e821ce45{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e821ce46{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e821ce4e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e821ce4f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e827f3be">
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
+<span id="tab:dataframe">Table 6.1: </span><span>Exemple de données pour lesquelles il y aurait plusieurs mesures chez les mêmes individus</span>
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e821ce3a"><p class="cl-e821b4fe"><span class="cl-e81e05de">sexe</span></p></th>
+<th class="cl-e821ce44"><p class="cl-e821b512"><span class="cl-e81e05de">Taille 4 ans</span></p></th>
+<th class="cl-e821ce44"><p class="cl-e821b512"><span class="cl-e81e05de">Taille 10 ans</span></p></th>
+<th class="cl-e821ce44"><p class="cl-e821b512"><span class="cl-e81e05de">Taille 15 ans</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e821ce45"><p class="cl-e821b4fe"><span class="cl-e81e05de">Homme</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">102</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">138</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">176</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e821ce45"><p class="cl-e821b4fe"><span class="cl-e81e05de">Femme</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">108</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">135</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">173</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e821ce45"><p class="cl-e821b4fe"><span class="cl-e81e05de">Homme</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">105</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">140</span></p></td>
+<td class="cl-e821ce46"><p class="cl-e821b512"><span class="cl-e81e05de">180</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e821ce4e"><p class="cl-e821b4fe"><span class="cl-e81e05de">Femme</span></p></td>
+<td class="cl-e821ce4f"><p class="cl-e821b512"><span class="cl-e81e05de">99</span></p></td>
+<td class="cl-e821ce4f"><p class="cl-e821b512"><span class="cl-e81e05de">142</span></p></td>
+<td class="cl-e821ce4f"><p class="cl-e821b512"><span class="cl-e81e05de">165</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>On se rend compte ici que la structure des données nous permet d’identifier si les mesures sont à mesures répétées ou à groupes indépendants. Puisque chaque ligne représente un individu et qu’on est sur la même ligne, il s’agit ici de données en mesures répétées. En revanche, on ne peut pas être totalement certain qu’il s’agit de groupes indépendants si les données sont organisées de la manière utilisée dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlong">6.2</a> :</p>
+<div class="tabwid">
+<style>.cl-e83e5514{}.cl-e834cf6c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e8382536{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e8382540{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e8383eb8{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8383eb9{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8383ec2{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8383ec3{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8383ecc{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8383ecd{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e83e5514">
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
+<span id="tab:formatlong">Table 6.2: </span><span>Exemple de données pour lesquelles il peut y avoir ambiguité sur la nature répétée ou à groupes indépendants de l'âge des personnes</span>
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e8383eb8"><p class="cl-e8382536"><span class="cl-e834cf6c">sexe</span></p></th>
+<th class="cl-e8383eb8"><p class="cl-e8382536"><span class="cl-e834cf6c">Age</span></p></th>
+<th class="cl-e8383eb9"><p class="cl-e8382540"><span class="cl-e834cf6c">Taille</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Homme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">4 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">102</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Femme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">4 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">108</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Homme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">4 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">105</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Femme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">4 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">99</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Homme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">10 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">138</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Femme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">10 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">135</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Homme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">10 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">140</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Femme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">10 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">142</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Homme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">15 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">176</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Femme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">15 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">173</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">Homme</span></p></td>
+<td class="cl-e8383ec2"><p class="cl-e8382536"><span class="cl-e834cf6c">15 ans</span></p></td>
+<td class="cl-e8383ec3"><p class="cl-e8382540"><span class="cl-e834cf6c">180</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e8383ecc"><p class="cl-e8382536"><span class="cl-e834cf6c">Femme</span></p></td>
+<td class="cl-e8383ecc"><p class="cl-e8382536"><span class="cl-e834cf6c">15 ans</span></p></td>
+<td class="cl-e8383ecd"><p class="cl-e8382540"><span class="cl-e834cf6c">165</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Pour pouvoir interprété avec certitude le jeu de données, il faut absolument avoir un <strong>identifiant</strong> pour les observations. Dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlongb">6.3</a>, les données représentent des données à groupes indépendants alors que dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlongc">6.4</a>, elles représentent des données à mesure répétées. On le sait car les identifiants des observations ne sont pas les mêmes entre les différents âges dans le Tableau <a href="#formatlongb"><strong>??</strong></a> alors qu’ils sont identiques aux différents âges dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlongc">6.4</a>.</p>
+<div class="tabwid">
+<style>.cl-e8597c86{}.cl-e850b7fe{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e8542c86{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e8542c9a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e85446a8{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e85446b2{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e85446b3{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e85446bc{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e85446bd{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e85446be{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e8597c86">
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
+<span id="tab:formatlongb">Table 6.3: </span><span>Données à groupes indépendants</span>
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e85446a8"><p class="cl-e8542c86"><span class="cl-e850b7fe">Identifiant</span></p></th>
+<th class="cl-e85446a8"><p class="cl-e8542c86"><span class="cl-e850b7fe">sexe</span></p></th>
+<th class="cl-e85446a8"><p class="cl-e8542c86"><span class="cl-e850b7fe">Age</span></p></th>
+<th class="cl-e85446b2"><p class="cl-e8542c9a"><span class="cl-e850b7fe">Taille</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">dan</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Homme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">4 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">102</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">avp</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Femme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">4 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">108</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">qaf</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Homme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">4 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">105</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">hwx</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Femme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">4 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">99</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">hrf</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Homme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">10 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">138</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">cgt</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Femme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">10 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">135</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">dzm</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Homme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">10 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">140</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">olf</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Femme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">10 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">142</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">auf</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Homme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">15 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">176</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">nut</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Femme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">15 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">173</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">omk</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">Homme</span></p></td>
+<td class="cl-e85446b3"><p class="cl-e8542c86"><span class="cl-e850b7fe">15 ans</span></p></td>
+<td class="cl-e85446bc"><p class="cl-e8542c9a"><span class="cl-e850b7fe">180</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e85446bd"><p class="cl-e8542c86"><span class="cl-e850b7fe">qnt</span></p></td>
+<td class="cl-e85446bd"><p class="cl-e8542c86"><span class="cl-e850b7fe">Femme</span></p></td>
+<td class="cl-e85446bd"><p class="cl-e8542c86"><span class="cl-e850b7fe">15 ans</span></p></td>
+<td class="cl-e85446be"><p class="cl-e8542c9a"><span class="cl-e850b7fe">165</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="tabwid">
+<style>.cl-e872c7d6{}.cl-e869be20{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e86d8ed8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e86d8ee2{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e86da972{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e86da97c{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e86da97d{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e86da986{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e86da990{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e86da991{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e86da992{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e86da99a{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e86da99b{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e872c7d6">
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
+<span id="tab:formatlongc">Table 6.4: </span><span>Données en mesures répétées</span>
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e86da972"><p class="cl-e86d8ed8"><span class="cl-e869be20">Identifiant</span></p></th>
+<th class="cl-e86da97c"><p class="cl-e86d8ed8"><span class="cl-e869be20">sexe</span></p></th>
+<th class="cl-e86da97c"><p class="cl-e86d8ed8"><span class="cl-e869be20">Age</span></p></th>
+<th class="cl-e86da97d"><p class="cl-e86d8ee2"><span class="cl-e869be20">Taille</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">dhc</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Homme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">4 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">102</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">csx</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Femme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">4 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">108</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">eca</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Homme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">4 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">105</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">pnm</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Femme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">4 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">99</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">dhc</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Homme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">10 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">138</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">csx</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Femme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">10 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">135</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">eca</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Homme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">10 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">140</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">pnm</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Femme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">10 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">142</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">dhc</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Homme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">15 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">176</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">csx</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Femme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">15 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">173</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da986"><p class="cl-e86d8ed8"><span class="cl-e869be20">eca</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">Homme</span></p></td>
+<td class="cl-e86da990"><p class="cl-e86d8ed8"><span class="cl-e869be20">15 ans</span></p></td>
+<td class="cl-e86da991"><p class="cl-e86d8ee2"><span class="cl-e869be20">180</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e86da992"><p class="cl-e86d8ed8"><span class="cl-e869be20">pnm</span></p></td>
+<td class="cl-e86da99a"><p class="cl-e86d8ed8"><span class="cl-e869be20">Femme</span></p></td>
+<td class="cl-e86da99a"><p class="cl-e86d8ed8"><span class="cl-e869be20">15 ans</span></p></td>
+<td class="cl-e86da99b"><p class="cl-e86d8ee2"><span class="cl-e869be20">165</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>La différence de présentation entre les données présentées dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:dataframe">6.1</a> et celles présentées dans le Tableau 6 est ce qu’on appelle un <strong>format large</strong> (Tableau <a href="organiser-les-donn%C3%A9es.html#tab:dataframe">6.1</a>) et un <strong>format long</strong> (Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlongc">6.4</a>).</p>
+<p>Pour terminer sur l’organisation des données, il est nécessaire de respecter quelques règles pour que l’importation se passe le mieux possible, respectez les règles suivantes :</p>
+<ul>
+<li><p>Votre feuille de données ne contient que les données (pas de graphique, pas commentaires, pas de mise en forme …)</p></li>
+<li><p>Les noms des variables doivent être courts (pas plus de 8 caractères ) rendant ainsi leur utilisation plus simple, ne doivent contenir ni accents, ni espaces. Pour enlever les espaces, utilisez la fonction rechercher/remplacer. Dans la fenêtre « rechercher », tapez un espace, dans la fenêtre « remplacer », tapez un underscore (le tiret en-dessous du 8 « _ ») ou un point.</p></li>
+<li><p>Il ne doit pas y avoir de ligne ou de colonne vide <strong>avant</strong> et <strong>dans</strong> la matrice de données. Les données commencent à la cellule A1 et s’étendent jusqu’à la dernière variable et la dernière observation sans discontinuer.</p></li>
+<li><p>Bien que ce ne soient pas indispensable lorsqu’on utilise excel mais est indispensable pour les fichiers csv, une bonne pratique consiste à indiquer dans les cellules vides la valeur NA (not available) que R reconnait comme étant une valeur non disponible. A nouveau, il est possible d’utilisez la fonction rechercher/remplacer dans le logiciel que vous avez utilisé pour stocker vos données.</p></li>
+<li><p>Si des modifications doivent être faites avant l’importation des données, ne travaillez jamais sur le fichier de données original. Enregistrez d’abord le fichier sous un autre nom.</p></li>
+<li><p>L’importation des nombres avec décimales ne pose pas de souci si vos données sont dans un fichier excel. En revanche, s’il s’agit d’un fichier csv, les nombres avec décimales sont considérés comme tels dans R à partir du moment où l’unité est séparée de la décimale par un point (« . »). Si vos décimales sont séparées des unités par des virgules, il faudra le préciser explicitement lors de l’importation des données.</p></li>
+<li><p>Ayez systématiquement un identifant pour chaque observation (càd. pour chaque participant).</p></li>
+</ul>
+<p>Si avec le temps, R s’est montré de plus en plus flexible pour la gestion des données, on ne peut que vous encourager à être très rigide sur la structure de la base de données. La première raison est que votre base de données représentent les ingrédients de vos analyses. Si les ingrédients sont de mauvaises qualités, les analyses seront de mauvaise qualité. La seconde raison est que faire preuve de laxisme sur les données est le meilleur moyen d’être confronté à des messages d’erreurs dans R que vous ne comprendrez pas.</p>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></div>
+<div class="next"><a href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#organiser-les-donn%C3%A9es"><span class="header-section-number">6</span> Organiser les données</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Initiation à l’approche bayésienne du traitement des données</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
