@@ -349,43 +349,43 @@ En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous 
 <p>Le plus difficile quand on débute avec R est d’être confronté à un message d’erreur et de ne pouvoir lui attribuer du sens.</p>
 <p>Il va de soi qu’il n’est pas possible de faire une liste exhaustive des erreurs possibles mais voici les plus fréquentes, et leurs solutions :</p>
 <div class="tabwid">
-<style>.cl-08efa84c{}.cl-08e05a2c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-08e57d4a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-08e5a1ee{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a1f8{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a1f9{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a202{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a20c{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a216{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-08efa84c">
+<style>.cl-4adef4cc{}.cl-4ad5c47e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4ad93e56{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4ad95882{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ad9588c{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ad95896{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ad95897{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ad95898{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ad958a0{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4adef4cc">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:unnamed-chunk-28">Table 4.1: </span><span>Liste des erreurs les plus fréquentes et leur cause/solution</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-08e5a1ee"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Erreur</span></p></th>
-<th class="cl-08e5a1f8"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Signification et solution</span></p></th>
+<th class="cl-4ad95882"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">Erreur</span></p></th>
+<th class="cl-4ad9588c"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">Signification et solution</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">unexpected symbol</span></p></td>
-<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Le nom de l'objet ou de la variable est incorrect. Vérifiez les règles énoncées précédemment</span></p></td>
+<td class="cl-4ad95896"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">unexpected symbol</span></p></td>
+<td class="cl-4ad95897"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">Le nom de l'objet ou de la variable est incorrect. Vérifiez les règles énoncées précédemment</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">object XXX not found</span></p></td>
-<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">L'objet n'a pas été créé ou est mal orthographie. Attention à la casse - càd. aux majuscules et minuscules</span></p></td>
+<td class="cl-4ad95896"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">object XXX not found</span></p></td>
+<td class="cl-4ad95897"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">L'objet n'a pas été créé ou est mal orthographie. Attention à la casse - càd. aux majuscules et minuscules</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">could not find function XXX</span></p></td>
-<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">La fonction est mal orthographiée ou est dans un package non chargé, voire non installé. Cette erreur est courante quand on utilise une fonction qu'on trouve sur le internet sans vérifier le package auquel elle appartient. Chargez le package contenant la fonction si elle existe.</span></p></td>
+<td class="cl-4ad95896"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">could not find function XXX</span></p></td>
+<td class="cl-4ad95897"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">La fonction est mal orthographiée ou est dans un package non chargé, voire non installé. Cette erreur est courante quand on utilise une fonction qu'on trouve sur le internet sans vérifier le package auquel elle appartient. Chargez le package contenant la fonction si elle existe.</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Error in cor.test.default(c("a", "b")) : x doit être un vecteur numérique</span></p></td>
-<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Les arguments doivent avoir certaines caractéristiques. Ici, ils doivent être numériques mais ce n'est pas le cas. Vérifiez avec la fonction class ou str si les objets sur lesquels vous souhaitez faire l'analyse ont le format correct</span></p></td>
+<td class="cl-4ad95896"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">Error in cor.test.default(c("a", "b")) : x doit être un vecteur numérique</span></p></td>
+<td class="cl-4ad95897"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">Les arguments doivent avoir certaines caractéristiques. Ici, ils doivent être numériques mais ce n'est pas le cas. Vérifiez avec la fonction class ou str si les objets sur lesquels vous souhaitez faire l'analyse ont le format correct</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">argument is of length zero</span></p></td>
-<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Un argument indispensable a pour valeur NULL alors qu'il doit être spécifié. Vérifiez l'aide de la fonction</span></p></td>
+<td class="cl-4ad95896"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">argument is of length zero</span></p></td>
+<td class="cl-4ad95897"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">Un argument indispensable a pour valeur NULL alors qu'il doit être spécifié. Vérifiez l'aide de la fonction</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">no default for argument</span></p></td>
-<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Un argument nécessaire n'a pas été spécifié. Vérifiez l'aide de la fonction</span></p></td>
+<td class="cl-4ad95896"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">no default for argument</span></p></td>
+<td class="cl-4ad95897"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">Un argument nécessaire n'a pas été spécifié. Vérifiez l'aide de la fonction</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-08e5a20c"><p class="cl-08e57d4a"><span class="cl-08e05a2c">aucun package nommé XXX n'est trouvé</span></p></td>
-<td class="cl-08e5a216"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Le package n'est pas installé ou est mal installé. Si vous avez tenté d'installer le package mais que le souci persiste, voir la section installer les packages récalcitrants ens section 6.</span></p></td>
+<td class="cl-4ad95898"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">aucun package nommé XXX n'est trouvé</span></p></td>
+<td class="cl-4ad958a0"><p class="cl-4ad93e56"><span class="cl-4ad5c47e">Le package n'est pas installé ou est mal installé. Si vous avez tenté d'installer le package mais que le souci persiste, voir la section installer les packages récalcitrants ens section 6.</span></p></td>
 </tr>
 </tbody>
 </table></div>
