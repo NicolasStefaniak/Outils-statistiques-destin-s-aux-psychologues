@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Autre méthode | Outils statistiques destinés aux psychologues</title>
+  <meta name="description" content="Cet ouvrage a pour ambition de présenter les analyses les plus courantes de l’analyse de données et de fournir les outils pour réaliser ces analyses soi-même." />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Autre méthode | Outils statistiques destinés aux psychologues" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Cet ouvrage a pour ambition de présenter les analyses les plus courantes de l’analyse de données et de fournir les outils pour réaliser ces analyses soi-même." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Autre méthode | Outils statistiques destinés aux psychologues" />
+  
+  <meta name="twitter:description" content="Cet ouvrage a pour ambition de présenter les analyses les plus courantes de l’analyse de données et de fournir les outils pour réaliser ces analyses soi-même." />
+  
+
+<meta name="author" content="Nicolas Stefaniak" />
+
+
+<meta name="date" content="2026-01-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="comment-choisir-la-bonne-analyse.html"/>
+<link rel="next" href="références.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-4.10.2/d3.min.js"></script>
+<link href="libs/collapsibleTree-0.1.6/collapsibleTree.css" rel="stylesheet" />
+<script src="libs/collapsibleTree-binding-0.1.8/collapsibleTree.js"></script>
+<link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet" />
+<script src="libs/panelset-0.3.0/panelset.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="1" data-path="pourquoi-les-statistiques.html"><a href="pourquoi-les-statistiques.html"><i class="fa fa-check"></i><b>1</b> Pourquoi les statistiques</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="06-choixanalyse.html"><a href="#%C3%A1-quoi-servent-les-statistiques"><i class="fa fa-check"></i><b>1.1</b> Á quoi servent les statistiques ?</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="06-choixanalyse.html"><a href="#lefficacit%C3%A9-du-vaccin-contre-la-covid"><i class="fa fa-check"></i><b>1.1.1</b> L’efficacité du vaccin contre la covid</a></li>
+<li class="chapter" data-level="1.1.2" data-path="06-choixanalyse.html"><a href="#la-su%C3%A8de-et-le-paradis-des-violeurs"><i class="fa fa-check"></i><b>1.1.2</b> La Suède et le paradis des violeurs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="pourquoi-les-statistiques.html"><a href="pourquoi-les-statistiques.html#pourquoi-les-statistiques-sont-indispensables-pour-de-futurs-psychologues"><i class="fa fa-check"></i><b>1.2</b> Pourquoi les statistiques sont indispensables pour de futurs psychologues ?</a></li>
+<li class="chapter" data-level="1.3" data-path="pourquoi-les-statistiques.html"><a href="pourquoi-les-statistiques.html#exercice"><i class="fa fa-check"></i><b>1.3</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html"><i class="fa fa-check"></i><b>2</b> Quel logiciel utiliser et pourquoi ?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#quest-ce-r-et-pourquoi-lutiliser"><i class="fa fa-check"></i><b>2.2</b> Qu’est-ce R et pourquoi l’utiliser ?</a></li>
+<li class="chapter" data-level="2.3" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#quest-ce-que-easier-et-pourquoi-lutiliser"><i class="fa fa-check"></i><b>2.3</b> Qu’est-ce que easieR et pourquoi l’utiliser</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#rationnel-deasier"><i class="fa fa-check"></i><b>2.3.1</b> Rationnel d’easieR</a></li>
+<li class="chapter" data-level="2.3.2" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#philosophie-sous-tendant-easier"><i class="fa fa-check"></i><b>2.3.2</b> Philosophie sous-tendant easieR</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="06-choixanalyse.html"><a href="#installer-le-logiciel-de-traitement-de-donn%C3%A9es"><i class="fa fa-check"></i><b>3</b> Installer le logiciel de traitement de données</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html"><i class="fa fa-check"></i><b>3.1</b> Installer R</a></li>
+<li class="chapter" data-level="3.2" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#je-suis-un-utilisateur-windows"><i class="fa fa-check"></i><b>3.2</b> Je suis un utilisateur windows</a></li>
+<li class="chapter" data-level="3.3" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#je-suis-un-utilisateur-apple"><i class="fa fa-check"></i><b>3.3</b> Je suis un utilisateur apple</a></li>
+<li class="chapter" data-level="3.4" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#je-suis-un-utilisateur-linux-ou-chromebook"><i class="fa fa-check"></i><b>3.4</b> Je suis un utilisateur Linux ou Chromebook</a></li>
+<li class="chapter" data-level="3.5" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#installation-de-rstudio"><i class="fa fa-check"></i><b>3.5</b> Installation de RStudio</a></li>
+<li class="chapter" data-level="3.6" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#installation-de-easier"><i class="fa fa-check"></i><b>3.6</b> Installation de easieR</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#easier-ne-sinstalle-pas-correctement"><i class="fa fa-check"></i><b>3.6.1</b> easieR ne s’installe pas correctement</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="06-choixanalyse.html"><a href="#d%C3%A9buter-avec-r"><i class="fa fa-check"></i><b>3.7</b> Débuter avec R</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#lenvironnement-r-dans-rstudio"><i class="fa fa-check"></i><b>3.7.1</b> L’environnement R dans RStudio</a></li>
+<li class="chapter" data-level="3.7.2" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#le-script"><i class="fa fa-check"></i><b>3.7.2</b> Le script</a></li>
+<li class="chapter" data-level="3.7.3" data-path="06-choixanalyse.html"><a href="#cr%C3%A9er-des-sections-et-annoter-votre-script"><i class="fa fa-check"></i><b>3.7.3</b> Créer des sections et annoter votre script</a></li>
+<li class="chapter" data-level="3.7.4" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-fonctions"><i class="fa fa-check"></i><b>3.7.4</b> Les fonctions</a></li>
+<li class="chapter" data-level="3.7.5" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-objets-dans-r"><i class="fa fa-check"></i><b>3.7.5</b> Les objets dans R</a></li>
+<li class="chapter" data-level="3.7.6" data-path="06-choixanalyse.html"><a href="#les-erreurs-les-plus-courantes-et-les-r%C3%A8gles-de-bonnes-pratiques"><i class="fa fa-check"></i><b>3.7.6</b> Les erreurs les plus courantes et les règles de bonnes pratiques</a></li>
+<li class="chapter" data-level="3.7.7" data-path="06-choixanalyse.html"><a href="#installer-des-packages-r%C3%A9calcitrants"><i class="fa fa-check"></i><b>3.7.7</b> Installer des packages récalcitrants</a></li>
+<li class="chapter" data-level="3.7.8" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#pour-conclure"><i class="fa fa-check"></i><b>3.7.8</b> Pour conclure</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="06-choixanalyse.html"><a href="#d%C3%A9buter-avec-easier"><i class="fa fa-check"></i><b>3.8</b> Débuter avec easieR</a></li>
+<li class="chapter" data-level="3.9" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-variables"><i class="fa fa-check"></i><b>3.9</b> Les variables</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-variables-qualitatives"><i class="fa fa-check"></i><b>3.9.1</b> Les variables qualitatives</a></li>
+<li class="chapter" data-level="3.9.2" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-variables-ordinales"><i class="fa fa-check"></i><b>3.9.2</b> Les variables ordinales</a></li>
+<li class="chapter" data-level="3.9.3" data-path="06-choixanalyse.html"><a href="#les-%C3%A9chelles-quantitatives"><i class="fa fa-check"></i><b>3.9.3</b> Les échelles quantitatives</a></li>
+<li class="chapter" data-level="3.9.4" data-path="06-choixanalyse.html"><a href="#type-de-variable-et-leurs-propri%C3%A9t%C3%A9s"><i class="fa fa-check"></i><b>3.9.4</b> Type de variable et leurs propriétés</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-objets-et-leur-nature-dans-r"><i class="fa fa-check"></i><b>3.10</b> Les objets et leur nature dans R</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#la-nature-des-variables-et-des-objets-dans-r"><i class="fa fa-check"></i><b>3.10.1</b> La nature des variables et des objets dans R</a></li>
+<li class="chapter" data-level="3.10.2" data-path="06-choixanalyse.html"><a href="#les-diff%C3%A9rents-types-dobjets"><i class="fa fa-check"></i><b>3.10.2</b> Les différents types d’objets</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#la-nature-des-variables-avec-easier"><i class="fa fa-check"></i><b>3.11</b> La nature des variables avec easieR</a></li>
+<li class="chapter" data-level="3.12" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#dans-r"><i class="fa fa-check"></i><b>3.12</b> Dans R</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#limportation"><i class="fa fa-check"></i><b>3.12.1</b> L’importation</a></li>
+<li class="chapter" data-level="3.12.2" data-path="06-choixanalyse.html"><a href="#pr%C3%A9parer-les-donn%C3%A9es"><i class="fa fa-check"></i><b>3.12.2</b> Préparer les données</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#avec-easier"><i class="fa fa-check"></i><b>3.13</b> Avec easieR</a>
+<ul>
+<li class="chapter" data-level="3.13.1" data-path="06-choixanalyse.html"><a href="#importer-les-donn%C3%A9es"><i class="fa fa-check"></i><b>3.13.1</b> Importer les données</a></li>
+<li class="chapter" data-level="3.13.2" data-path="06-choixanalyse.html"><a href="#pr%C3%A9parer-les-donn%C3%A9es-1"><i class="fa fa-check"></i><b>3.13.2</b> Préparer les données</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html"><i class="fa fa-check"></i><b>4</b> Les statistiques descriptives</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#un-exemple-de-travail"><i class="fa fa-check"></i><b>4.2</b> Un exemple de travail</a></li>
+<li class="chapter" data-level="4.3" data-path="06-choixanalyse.html"><a href="#aspects-th%C3%A9oriques"><i class="fa fa-check"></i><b>4.3</b> Aspects théoriques</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#les-indices-de-tendance-centrale"><i class="fa fa-check"></i><b>4.3.1</b> Les indices de tendance centrale</a></li>
+<li class="chapter" data-level="4.3.2" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#les-indices-de-dispersion"><i class="fa fa-check"></i><b>4.3.2</b> Les indices de dispersion</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#les-statistiques-descriptives-avec-r"><i class="fa fa-check"></i><b>4.4</b> Les statistiques descriptives avec R</a></li>
+<li class="chapter" data-level="4.5" data-path="06-choixanalyse.html"><a href="#traiter-des-donn%C3%A9es-quantitatives"><i class="fa fa-check"></i><b>4.5</b> Traiter des données quantitatives</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#analyse-en-sous-groupe"><i class="fa fa-check"></i><b>4.5.1</b> Analyse en sous-groupe</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="06-choixanalyse.html"><a href="#faire-une-repr%C3%A9sentation-graphique-des-donn%C3%A9es"><i class="fa fa-check"></i><b>4.6</b> Faire une représentation graphique des données</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#graphique-violon"><i class="fa fa-check"></i><b>4.6.1</b> Graphique violon</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#pourquoi-utiliser-la-loi-normale-pour-comprendre-les-graphiques-en-violon"><i class="fa fa-check"></i><b>4.7</b> Pourquoi utiliser la loi normale pour comprendre les graphiques en violon ?</a></li>
+<li class="chapter" data-level="4.8" data-path="06-choixanalyse.html"><a href="#traiter-des-donn%C3%A9es-qualitatives"><i class="fa fa-check"></i><b>4.8</b> Traiter des données qualitatives</a></li>
+<li class="chapter" data-level="4.9" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#statistiques-descriptives-avec-easier"><i class="fa fa-check"></i><b>4.9</b> Statistiques descriptives avec easieR</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="06-choixanalyse.html"><a href="#les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques"><i class="fa fa-check"></i><b>5</b> Les différentes méthodes d’inférences statistiques</a></li>
+<li class="chapter" data-level="6" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html"><i class="fa fa-check"></i><b>6</b> Comment choisir la bonne analyse</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html#comment-choisir-la-bonne-analyse-1"><i class="fa fa-check"></i><b>6.1</b> Comment choisir la bonne analyse ?</a></li>
+<li class="chapter" data-level="6.2" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html#approche-par-nombre-et-types-de-variables"><i class="fa fa-check"></i><b>6.2</b> Approche par nombre et types de variables</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html#une-variable"><i class="fa fa-check"></i><b>6.2.1</b> Une variable</a></li>
+<li class="chapter" data-level="6.2.2" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html#deux-variables"><i class="fa fa-check"></i><b>6.2.2</b> Deux variables</a></li>
+<li class="chapter" data-level="6.2.3" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html#plus-de-2-variables"><i class="fa fa-check"></i><b>6.2.3</b> Plus de 2 variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html#approche-par-objectifs"><i class="fa fa-check"></i><b>6.3</b> Approche par objectifs</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="06-choixanalyse.html"><a href="#tester-une-hypoth%C3%A8se"><i class="fa fa-check"></i><b>6.3.1</b> Tester une hypothèse</a></li>
+<li class="chapter" data-level="6.3.2" data-path="06-choixanalyse.html"><a href="#tester-un-mod%C3%A8le"><i class="fa fa-check"></i><b>6.3.2</b> Tester un modèle</a></li>
+<li class="chapter" data-level="6.3.3" data-path="06-choixanalyse.html"><a href="#cr%C3%A9er-un-questionnaire"><i class="fa fa-check"></i><b>6.3.3</b> Créer un questionnaire</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="06-choixanalyse.html"><a href="#autre-m%C3%A9thode"><i class="fa fa-check"></i><b>7</b> Autre méthode</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="06-choixanalyse.html"><a href="#de-quelle-nature-est-la-variable-d%C3%A9pendante"><i class="fa fa-check"></i><b>7.1</b> De quelle nature est la variable dépendante</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="autre-méthode.html"><a href="autre-méthode.html"><i class="fa fa-check"></i><b>7.1.1</b> Quantitative</a></li>
+<li class="chapter" data-level="7.1.2" data-path="autre-méthode.html"><a href="autre-méthode.html#ordinale-1"><i class="fa fa-check"></i><b>7.1.2</b> Ordinale</a></li>
+<li class="chapter" data-level="7.1.3" data-path="autre-méthode.html"><a href="autre-méthode.html#qualitative-1"><i class="fa fa-check"></i><b>7.1.3</b> Qualitative</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="06-choixanalyse.html"><a href="#r%C3%A9f%C3%A9rences"><i class="fa fa-check"></i><b>8</b> Références</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Outils statistiques destinés aux psychologues</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="autre-méthode" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Autre méthode<a href="#autre-m%C3%A9thode" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="de-quelle-nature-est-la-variable-dépendante" class="section level2 panelset hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> De quelle nature est la variable dépendante<a href="#de-quelle-nature-est-la-variable-d%C3%A9pendante" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="quantitative" class="section level3 panelset hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Quantitative<a href="autre-méthode.html#quantitative" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Combien de variable indépendante y a-t-il ?</p>
+<div id="une" class="section level4 panelset hasAnchor" number="7.1.1.1">
+<h4><span class="header-section-number">7.1.1.1</span> Une<a href="autre-méthode.html#une" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Quelle est la nature des variables indépendantes</p>
+<div id="quantitative-1" class="section level5 hasAnchor" number="7.1.1.1.1">
+<h5><span class="header-section-number">7.1.1.1.1</span> Quantitative<a href="autre-méthode.html#quantitative-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>L’analyse à privilégier est la corrélation de Bravais-Pearson.</p>
+<div style="background:     #F0CF71  ; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #F5C527    ;font-size: 28px; padding: 10px; border: 1px solid black;margin: 0 px">
+<strong>Conditions d’application</strong> </legend></p>
+<p style="text-align:justify;">
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Normalité du résidu</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Homogénéité des variances</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Taille d’échantillon suffisante</p>
+</p>
+</div>
+<div style="background:      #d5ffc0  ; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #6bc666    ;font-size: 28px; padding: 10px; border: 1px solid black;margin: 0 px">
+<strong>Test alternatf si les conditions d’applications ne sont pas respectées</strong> </legend></p>
+<p style="text-align:justify;">
+Rho de Spearman
+</p>
+</div>
+</div>
+<div id="ordinale" class="section level5 hasAnchor" number="7.1.1.1.2">
+<h5><span class="header-section-number">7.1.1.1.2</span> Ordinale<a href="autre-méthode.html#ordinale" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="qualitative" class="section level5 hasAnchor" number="7.1.1.1.3">
+<h5><span class="header-section-number">7.1.1.1.3</span> Qualitative<a href="autre-méthode.html#qualitative" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+</div>
+<div id="plusieurs" class="section level4 panelset hasAnchor" number="7.1.1.2">
+<h4><span class="header-section-number">7.1.1.2</span> Plusieurs<a href="autre-méthode.html#plusieurs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="ordinale-1" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Ordinale<a href="autre-méthode.html#ordinale-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="qualitative-1" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Qualitative<a href="autre-méthode.html#qualitative-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>De quelle Nature est la variable dépendante</strong></p>
+<details>
+<summary>
+Quantitative
+</summary>
+<p><strong>Combien y a-t-il de variables indépendants</strong></p>
+<details>
+<summary>
+Une seule
+</summary>
+<p><strong>De quelle nature est la variable indépendante</strong></p>
+<details>
+<summary>
+Quantitative
+</summary>
+<p>L’analyse à privilégier est la corrélation de Bravais-Pearson.</p>
+<div style="background:      #F5C527  ; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #F0CF71    ;font-size: 28px; padding: 10px; border: 1px solid black;margin: 0 px">
+<strong>Conditions d’application</strong> </legend></p>
+<p style="text-align:justify;">
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Normalité du résidu</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Homogénéité des variances</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Taille d’échantillon suffisante</p>
+</p>
+</div>
+<div style="background:      #d5ffc0  ; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #6bc666    ;font-size: 28px; padding: 10px; border: 1px solid black;margin: 0 px">
+<strong>Test alternatf si les conditions d’applications ne sont pas respectées</strong> </legend></p>
+<p style="text-align:justify;">
+Rho de Spearman
+</p>
+</div>
+</details>
+<details>
+<summary>
+Ordinale
+</summary>
+</details>
+<details>
+<summary>
+Qualitative
+</summary>
+</details>
+</details>
+<details>
+<summary>
+Plusieurs
+</summary>
+</details>
+</details>
+<details>
+<summary>
+Ordinale
+</summary>
+</details>
+<details>
+<summary>
+Qualitative
+</summary>
+</details>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="comment-choisir-la-bonne-analyse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="références.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/06-choixanalyse.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

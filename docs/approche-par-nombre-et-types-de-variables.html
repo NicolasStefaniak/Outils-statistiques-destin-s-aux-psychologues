@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Approche par nombre et types de variables | Outils statistiques destinés aux psychologues</title>
+  <meta name="description" content="Cet ouvrage a pour ambition de présenter les analyses les plus courantes de l’analyse de données et de fournir les outils pour réaliser ces analyses soi-même." />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Approche par nombre et types de variables | Outils statistiques destinés aux psychologues" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Cet ouvrage a pour ambition de présenter les analyses les plus courantes de l’analyse de données et de fournir les outils pour réaliser ces analyses soi-même." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Approche par nombre et types de variables | Outils statistiques destinés aux psychologues" />
+  
+  <meta name="twitter:description" content="Cet ouvrage a pour ambition de présenter les analyses les plus courantes de l’analyse de données et de fournir les outils pour réaliser ces analyses soi-même." />
+  
+
+<meta name="author" content="Nicolas Stefaniak" />
+
+
+<meta name="date" content="2026-01-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="comment-choisir-la-bonne-analyse.html"/>
+<link rel="next" href="références.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/d3-4.10.2/d3.min.js"></script>
+<link href="libs/collapsibleTree-0.1.6/collapsibleTree.css" rel="stylesheet" />
+<script src="libs/collapsibleTree-binding-0.1.8/collapsibleTree.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="1" data-path="pourquoi-les-statistiques.html"><a href="pourquoi-les-statistiques.html"><i class="fa fa-check"></i><b>1</b> Pourquoi les statistiques</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="06-choixanalyse.html"><a href="#%C3%A1-quoi-servent-les-statistiques"><i class="fa fa-check"></i><b>1.1</b> Á quoi servent les statistiques ?</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="06-choixanalyse.html"><a href="#lefficacit%C3%A9-du-vaccin-contre-la-covid"><i class="fa fa-check"></i><b>1.1.1</b> L’efficacité du vaccin contre la covid</a></li>
+<li class="chapter" data-level="1.1.2" data-path="06-choixanalyse.html"><a href="#la-su%C3%A8de-et-le-paradis-des-violeurs"><i class="fa fa-check"></i><b>1.1.2</b> La Suède et le paradis des violeurs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="pourquoi-les-statistiques.html"><a href="pourquoi-les-statistiques.html#pourquoi-les-statistiques-sont-indispensables-pour-de-futurs-psychologues"><i class="fa fa-check"></i><b>1.2</b> Pourquoi les statistiques sont indispensables pour de futurs psychologues ?</a></li>
+<li class="chapter" data-level="1.3" data-path="pourquoi-les-statistiques.html"><a href="pourquoi-les-statistiques.html#exercice"><i class="fa fa-check"></i><b>1.3</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html"><i class="fa fa-check"></i><b>2</b> Quel logiciel utiliser et pourquoi ?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#quest-ce-r-et-pourquoi-lutiliser"><i class="fa fa-check"></i><b>2.2</b> Qu’est-ce R et pourquoi l’utiliser ?</a></li>
+<li class="chapter" data-level="2.3" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#quest-ce-que-easier-et-pourquoi-lutiliser"><i class="fa fa-check"></i><b>2.3</b> Qu’est-ce que easieR et pourquoi l’utiliser</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#rationnel-deasier"><i class="fa fa-check"></i><b>2.3.1</b> Rationnel d’easieR</a></li>
+<li class="chapter" data-level="2.3.2" data-path="quel-logiciel-utiliser-et-pourquoi.html"><a href="quel-logiciel-utiliser-et-pourquoi.html#philosophie-sous-tendant-easier"><i class="fa fa-check"></i><b>2.3.2</b> Philosophie sous-tendant easieR</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="06-choixanalyse.html"><a href="#installer-le-logiciel-de-traitement-de-donn%C3%A9es"><i class="fa fa-check"></i><b>3</b> Installer le logiciel de traitement de données</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html"><i class="fa fa-check"></i><b>3.1</b> Installer R</a></li>
+<li class="chapter" data-level="3.2" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#je-suis-un-utilisateur-windows"><i class="fa fa-check"></i><b>3.2</b> Je suis un utilisateur windows</a></li>
+<li class="chapter" data-level="3.3" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#je-suis-un-utilisateur-apple"><i class="fa fa-check"></i><b>3.3</b> Je suis un utilisateur apple</a></li>
+<li class="chapter" data-level="3.4" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#je-suis-un-utilisateur-linux-ou-chromebook"><i class="fa fa-check"></i><b>3.4</b> Je suis un utilisateur Linux ou Chromebook</a></li>
+<li class="chapter" data-level="3.5" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#installation-de-rstudio"><i class="fa fa-check"></i><b>3.5</b> Installation de RStudio</a></li>
+<li class="chapter" data-level="3.6" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#installation-de-easier"><i class="fa fa-check"></i><b>3.6</b> Installation de easieR</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#easier-ne-sinstalle-pas-correctement"><i class="fa fa-check"></i><b>3.6.1</b> easieR ne s’installe pas correctement</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="06-choixanalyse.html"><a href="#d%C3%A9buter-avec-r"><i class="fa fa-check"></i><b>3.7</b> Débuter avec R</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#lenvironnement-r-dans-rstudio"><i class="fa fa-check"></i><b>3.7.1</b> L’environnement R dans RStudio</a></li>
+<li class="chapter" data-level="3.7.2" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#le-script"><i class="fa fa-check"></i><b>3.7.2</b> Le script</a></li>
+<li class="chapter" data-level="3.7.3" data-path="06-choixanalyse.html"><a href="#cr%C3%A9er-des-sections-et-annoter-votre-script"><i class="fa fa-check"></i><b>3.7.3</b> Créer des sections et annoter votre script</a></li>
+<li class="chapter" data-level="3.7.4" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-fonctions"><i class="fa fa-check"></i><b>3.7.4</b> Les fonctions</a></li>
+<li class="chapter" data-level="3.7.5" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-objets-dans-r"><i class="fa fa-check"></i><b>3.7.5</b> Les objets dans R</a></li>
+<li class="chapter" data-level="3.7.6" data-path="06-choixanalyse.html"><a href="#les-erreurs-les-plus-courantes-et-les-r%C3%A8gles-de-bonnes-pratiques"><i class="fa fa-check"></i><b>3.7.6</b> Les erreurs les plus courantes et les règles de bonnes pratiques</a></li>
+<li class="chapter" data-level="3.7.7" data-path="06-choixanalyse.html"><a href="#installer-des-packages-r%C3%A9calcitrants"><i class="fa fa-check"></i><b>3.7.7</b> Installer des packages récalcitrants</a></li>
+<li class="chapter" data-level="3.7.8" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#pour-conclure"><i class="fa fa-check"></i><b>3.7.8</b> Pour conclure</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="06-choixanalyse.html"><a href="#d%C3%A9buter-avec-easier"><i class="fa fa-check"></i><b>3.8</b> Débuter avec easieR</a></li>
+<li class="chapter" data-level="3.9" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-variables"><i class="fa fa-check"></i><b>3.9</b> Les variables</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-variables-qualitatives"><i class="fa fa-check"></i><b>3.9.1</b> Les variables qualitatives</a></li>
+<li class="chapter" data-level="3.9.2" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-variables-ordinales"><i class="fa fa-check"></i><b>3.9.2</b> Les variables ordinales</a></li>
+<li class="chapter" data-level="3.9.3" data-path="06-choixanalyse.html"><a href="#les-%C3%A9chelles-quantitatives"><i class="fa fa-check"></i><b>3.9.3</b> Les échelles quantitatives</a></li>
+<li class="chapter" data-level="3.9.4" data-path="06-choixanalyse.html"><a href="#type-de-variable-et-leurs-propri%C3%A9t%C3%A9s"><i class="fa fa-check"></i><b>3.9.4</b> Type de variable et leurs propriétés</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#les-objets-et-leur-nature-dans-r"><i class="fa fa-check"></i><b>3.10</b> Les objets et leur nature dans R</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#la-nature-des-variables-et-des-objets-dans-r"><i class="fa fa-check"></i><b>3.10.1</b> La nature des variables et des objets dans R</a></li>
+<li class="chapter" data-level="3.10.2" data-path="06-choixanalyse.html"><a href="#les-diff%C3%A9rents-types-dobjets"><i class="fa fa-check"></i><b>3.10.2</b> Les différents types d’objets</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#la-nature-des-variables-avec-easier"><i class="fa fa-check"></i><b>3.11</b> La nature des variables avec easieR</a></li>
+<li class="chapter" data-level="3.12" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#dans-r"><i class="fa fa-check"></i><b>3.12</b> Dans R</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#limportation"><i class="fa fa-check"></i><b>3.12.1</b> L’importation</a></li>
+<li class="chapter" data-level="3.12.2" data-path="06-choixanalyse.html"><a href="#pr%C3%A9parer-les-donn%C3%A9es"><i class="fa fa-check"></i><b>3.12.2</b> Préparer les données</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="installer-le-logiciel-de-traitement-de-données.html"><a href="installer-le-logiciel-de-traitement-de-données.html#avec-easier"><i class="fa fa-check"></i><b>3.13</b> Avec easieR</a>
+<ul>
+<li class="chapter" data-level="3.13.1" data-path="06-choixanalyse.html"><a href="#importer-les-donn%C3%A9es"><i class="fa fa-check"></i><b>3.13.1</b> Importer les données</a></li>
+<li class="chapter" data-level="3.13.2" data-path="06-choixanalyse.html"><a href="#pr%C3%A9parer-les-donn%C3%A9es-1"><i class="fa fa-check"></i><b>3.13.2</b> Préparer les données</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html"><i class="fa fa-check"></i><b>4</b> Les statistiques descriptives</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#un-exemple-de-travail"><i class="fa fa-check"></i><b>4.2</b> Un exemple de travail</a></li>
+<li class="chapter" data-level="4.3" data-path="06-choixanalyse.html"><a href="#aspects-th%C3%A9oriques"><i class="fa fa-check"></i><b>4.3</b> Aspects théoriques</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#les-indices-de-tendance-centrale"><i class="fa fa-check"></i><b>4.3.1</b> Les indices de tendance centrale</a></li>
+<li class="chapter" data-level="4.3.2" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#les-indices-de-dispersion"><i class="fa fa-check"></i><b>4.3.2</b> Les indices de dispersion</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#les-statistiques-descriptives-avec-r"><i class="fa fa-check"></i><b>4.4</b> Les statistiques descriptives avec R</a></li>
+<li class="chapter" data-level="4.5" data-path="06-choixanalyse.html"><a href="#traiter-des-donn%C3%A9es-quantitatives"><i class="fa fa-check"></i><b>4.5</b> Traiter des données quantitatives</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#analyse-en-sous-groupe"><i class="fa fa-check"></i><b>4.5.1</b> Analyse en sous-groupe</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="06-choixanalyse.html"><a href="#faire-une-repr%C3%A9sentation-graphique-des-donn%C3%A9es"><i class="fa fa-check"></i><b>4.6</b> Faire une représentation graphique des données</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#graphique-violon"><i class="fa fa-check"></i><b>4.6.1</b> Graphique violon</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#pourquoi-utiliser-la-loi-normale-pour-comprendre-les-graphiques-en-violon"><i class="fa fa-check"></i><b>4.7</b> Pourquoi utiliser la loi normale pour comprendre les graphiques en violon ?</a></li>
+<li class="chapter" data-level="4.8" data-path="06-choixanalyse.html"><a href="#traiter-des-donn%C3%A9es-qualitatives"><i class="fa fa-check"></i><b>4.8</b> Traiter des données qualitatives</a></li>
+<li class="chapter" data-level="4.9" data-path="les-statistiques-descriptives.html"><a href="les-statistiques-descriptives.html#statistiques-descriptives-avec-easier"><i class="fa fa-check"></i><b>4.9</b> Statistiques descriptives avec easieR</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="06-choixanalyse.html"><a href="#les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques"><i class="fa fa-check"></i><b>5</b> Les différentes méthodes d’inférences statistiques</a></li>
+<li class="chapter" data-level="6" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html"><i class="fa fa-check"></i><b>6</b> Comment choisir la bonne analyse</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="comment-choisir-la-bonne-analyse.html"><a href="comment-choisir-la-bonne-analyse.html#comment-choisir-la-bonne-analyse-1"><i class="fa fa-check"></i><b>6.1</b> Comment choisir la bonne analyse ?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="approche-par-nombre-et-types-de-variables.html"><a href="approche-par-nombre-et-types-de-variables.html"><i class="fa fa-check"></i><b>7</b> Approche par nombre et types de variables</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="approche-par-nombre-et-types-de-variables.html"><a href="approche-par-nombre-et-types-de-variables.html#une-variable"><i class="fa fa-check"></i><b>7.0.1</b> Une variable</a></li>
+<li class="chapter" data-level="7.0.2" data-path="approche-par-nombre-et-types-de-variables.html"><a href="approche-par-nombre-et-types-de-variables.html#variables"><i class="fa fa-check"></i><b>7.0.2</b> 2 variables</a></li>
+<li class="chapter" data-level="7.0.3" data-path="06-choixanalyse.html"><a href="#tester-une-hypoth%C3%A8se"><i class="fa fa-check"></i><b>7.0.3</b> Tester une hypothèse</a></li>
+<li class="chapter" data-level="7.0.4" data-path="06-choixanalyse.html"><a href="#cr%C3%A9er-un-questionnaire"><i class="fa fa-check"></i><b>7.0.4</b> Créer un questionnaire</a></li>
+<li class="chapter" data-level="7.1" data-path="06-choixanalyse.html"><a href="#de-quelle-nature-est-la-variable-d%C3%A9pendante"><i class="fa fa-check"></i><b>7.1</b> De quelle nature est la variable dépendante</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="approche-par-nombre-et-types-de-variables.html"><a href="approche-par-nombre-et-types-de-variables.html#quantitative"><i class="fa fa-check"></i><b>7.1.1</b> Quantitative</a></li>
+<li class="chapter" data-level="7.1.2" data-path="approche-par-nombre-et-types-de-variables.html"><a href="approche-par-nombre-et-types-de-variables.html#ordinale-1"><i class="fa fa-check"></i><b>7.1.2</b> Ordinale</a></li>
+<li class="chapter" data-level="7.1.3" data-path="approche-par-nombre-et-types-de-variables.html"><a href="approche-par-nombre-et-types-de-variables.html#qualitative-1"><i class="fa fa-check"></i><b>7.1.3</b> Qualitative</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="06-choixanalyse.html"><a href="#r%C3%A9f%C3%A9rences"><i class="fa fa-check"></i><b>8</b> Références</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Outils statistiques destinés aux psychologues</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="approche-par-nombre-et-types-de-variables" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Approche par nombre et types de variables<a href="approche-par-nombre-et-types-de-variables.html#approche-par-nombre-et-types-de-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="une-variable" class="section level3 hasAnchor" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Une variable<a href="approche-par-nombre-et-types-de-variables.html#une-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="htmlwidget-3dee0903b85ca0f83b99" style="width:1000px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3dee0903b85ca0f83b99">{"x":{"data":{"name":"1 variable","children":[{"name":"Observation","children":[{"name":"Numérique ?","children":[{"name":"Oui","children":[{"name":"Normalité de la distribution ?","children":[{"name":"Oui","children":[{"name":"Score Z"}]},{"name":"Non","children":[{"name":"Rang percentile"}]}]}]},{"name":"Non","children":[{"name":"Analyse compromise"}]}]}]},{"name":"Continue ?","children":[{"name":"Oui","children":[{"name":"Normalité de la distribution ?","children":[{"name":"Oui","children":[{"name":"t de Student : comparaison à une norme"}]},{"name":"Non","children":[{"name":"Analyse compromise"}]}]}]},{"name":"Non","children":[{"name":"Ajustement à une courbe","children":[{"name":"Effectif théorique <1 ?","children":[{"name":"Oui","children":[{"name":"Analyse compromise"}]},{"name":"Non","children":[{"name":"Effectif <5 dans +20% des situations ?","children":[{"name":"Oui","children":[{"name":"Stats robustes"}]},{"name":"Non","children":[{"name":"X^2 d'ajustement"}]}]}]}]}]}]}]}]},"options":{"hierarchy":["Types","Nature des variables","Réponse1","Condition d'application1","Réponse2","Condition d'application2","Réponse3","Condition d'application3","Réponse4","analysefinale"],"input":null,"attribute":"leafCount","linkLength":320,"fontSize":17,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":110,"right":348},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<p><u><small>Figure 1 : Arbre de décisions basé sur la présence d’une variable<small></u></p>
+</div>
+<div id="variables" class="section level3 hasAnchor" number="7.0.2">
+<h3><span class="header-section-number">7.0.2</span> 2 variables<a href="approche-par-nombre-et-types-de-variables.html#variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="htmlwidget-3db85d0c76eb5d3e0717" style="width:2000px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3db85d0c76eb5d3e0717">{"x":{"data":{"name":"2 variables","children":[{"name":"1 V continue","children":[{"name":"+ 1 V continue","children":[{"name":"Tester un lien","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Indépendance des observations ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"r de Bravais Pearson"}]},{"name":"Non","children":[{"name":"rho de Spearman"}]}]}]},{"name":"Non","children":[{"name":"rho de Spearman\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"rho de Spearman"}]}]}]},{"name":"Faire une prédiction","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Multicolinéarité ?","children":[{"name":"Oui","children":[{"name":"Régressions robustes"}]},{"name":"Non","children":[{"name":"Corrélation des erreurs ?","children":[{"name":"Oui","children":[{"name":"Régressions robustes"}]},{"name":"Non","children":[{"name":"Régression simple"}]}]}]}]}]},{"name":"Non","children":[{"name":"Régressions robustes ou\r\nModèle linéaire généralisé"}]}]}]}]},{"name":"+ 1 V ordinale","children":[{"name":"Tester un lien","children":[{"name":"rho de Spearman"}]}]}]},{"name":"1 V catégorielle","children":[{"name":"+ 1 V catégorielle","children":[{"name":"Intersujets","children":[{"name":"Effectif <1 ?","children":[{"name":"Oui","children":[{"name":"Regroupements et \r\nFisher Exact Test"}]},{"name":"Non","children":[{"name":"Effectif <5 dans + 20% des situations ?","children":[{"name":"Oui","children":[{"name":"Regroupements et \r\nFisher Exact Test"}]},{"name":"Non","children":[{"name":"Indépendances des informations ?","children":[{"name":"Oui","children":[{"name":"X^2 d'indépendance"}]},{"name":"Non","children":[{"name":"Fisher Exact Test"}]}]}]}]}]}]}]},{"name":"Intrasujets","children":[{"name":"2 modalités par variables","children":[{"name":"Effectif <1 ?","children":[{"name":"Oui","children":[{"name":"Analyse compromise"}]},{"name":"Non","children":[{"name":"Effectif <5 dans +20% des situations ?","children":[{"name":"Oui","children":[{"name":"Analyse compromise"}]},{"name":"Non","children":[{"name":"McNemar"}]}]}]}]}]}]}]},{"name":"+ 1 V continue","children":[{"name":"Toutes les deux intersujets ?\r\nEt à 2 modalités ?","children":[{"name":"Oui","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"t de Student : échantillons indépendants"}]},{"name":"Non","children":[{"name":"Wilcoxon ou\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"Wilcoxon ou\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"Toutes les deux intrasujets\r\n et à 2 modalités","children":[{"name":"Normalité de la différence entre les deux modalités ?","children":[{"name":"Oui","children":[{"name":"t de Student : échantillons indépendants"}]},{"name":"Non","children":[{"name":"Wilcoxon ou\r\nStats robustes"}]}]}]}]}]}]}]},{"name":"1 V ordinale","children":[{"name":"+ 1 V catégorielle","children":[{"name":"Catégorielle\r\nIntersujet ?","children":[{"name":"Oui","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"ANOVA simple","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou\r\nBonferroni ou\r\nTest de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Correction de Welsche","children":[{"name":"ANOVA simple","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou\r\nBonferroni ou\r\nTest de Dunnet"}]}]}]}]}]}]},{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"Catégorielle\r\nIntrasujet","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Sphéricité de la matrice de covariance ?\r\n(Intra >2 modalités)","children":[{"name":"Oui","children":[{"name":"ANOVA à mesure répétée","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou\r\nBonferroni ou\r\nTest de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Correction de Huydt et Feldt","children":[{"name":"ANOVA à mesure répétée","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou\r\nBonferroni ou\r\nTest de Dunnet"}]}]}]}]}]}]},{"name":"ANOVA de Friedman ou\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"ANOVA de Friedman ou\r\nStats robustes"}]}]}]}]}]}]},{"name":"+ 1 V ordinale","children":[{"name":"rho de Spearman"}]}]}]},"options":{"hierarchy":["nature_variable","autre_variable","objectifs","inter","reponse1","condition_application1","reponse2","condition_application2","reponse3","condition_application3","reponse4","correction","analyse_finale","f","reponse5","contrastes","types_contrastes","noms_contrastes"],"input":null,"attribute":"leafCount","linkLength":470,"fontSize":15,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":107.5,"right":310},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<p><u><small>Figure 2 : Arbre de décisions basé sur la présence de deux variables<small></u>
+### Plus de 2 variables</p>
+<div id="htmlwidget-10221920c68a6d5c51c7" style="width:1000px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-10221920c68a6d5c51c7">{"x":{"data":{"name":"+2 variables","children":[{"name":"V contiues","children":[{"name":"Toutes continues ?","children":[{"name":"Oui","children":[{"name":"Faire des liens ?","children":[{"name":"Oui","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Indépendance des observations ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"Matrices de corrélations : r de Bravais Pearson"}]},{"name":"Non","children":[{"name":"Matrices de corrélations : rho de Spearman"}]}]}]},{"name":"Non","children":[{"name":"Analyse compromise"}]}]}]},{"name":"Non","children":[{"name":"Matrices de corrélations : rho de Spearman"}]}]}]},{"name":"Non","children":[{"name":"Lien en contrôlant l'effet d'autres variables ?","children":[{"name":"Oui","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Indépendance des observations ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"Corrélation partielle : r de Bravais Pearson"}]},{"name":"Non","children":[{"name":"Corrélation partielle : rho de Spearman"}]}]}]},{"name":"Non","children":[{"name":"Corrélation partielle : rho de Spearman ou\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"Corrélation partielle : rho de Spearman"}]}]}]},{"name":"Non","children":[{"name":"Faire des prédictions","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Multicolinéarité ?","children":[{"name":"Oui","children":[{"name":"Régressions robustes"}]},{"name":"Non","children":[{"name":"Corrélation des erreurs ?","children":[{"name":"Oui","children":[{"name":"Régressions robustes"}]},{"name":"Non","children":[{"name":"Régressions multiples"}]}]}]}]}]},{"name":"Non","children":[{"name":"Modèle linéaire généralisé ou\r\nRégressions robustes"}]}]}]}]}]}]}]}]},{"name":"Non","children":[{"name":"Au moins 1VD numérique ?","children":[{"name":"+ V contrôle ?","children":[{"name":"Analyse de covariance"}]}]},{"name":"+ V catégorielle ?","children":[{"name":"Normalité des V explicatives ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"Multicolinéarité ?","children":[{"name":"Oui","children":[{"name":"Regroupements","children":[{"name":"Analyse discriminante (LDA)"}]}]},{"name":"Non","children":[{"name":"Analyse discriminante (LDA)"}]}]}]},{"name":"Non","children":[{"name":"Analyse discriminante quadratique"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]}]}]}]},{"name":"V catégorielles","children":[{"name":"Uniquement catégorielles ?","children":[{"name":"Oui","children":[{"name":"Mélange V intrasujets et intersujets ?","children":[{"name":"Oui","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"Sphéricité de la matrice de covariance ? (Intra à >2 modalités)","children":[{"name":"Oui","children":[{"name":"ANOVA mixte","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou\r\nBonferroni ou\r\nTest de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Correction de Huydt et Feldt","children":[{"name":"ANOVA mixte","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou\r\nBonferroni ou\r\nTest de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"V intersujets ?","children":[{"name":"Oui","children":[{"name":"Pas d'effectif <1","children":[{"name":"Pas d'effectif <5 dans +20% des cas ?","children":[{"name":"Analyse log linéaire"}]}]}]},{"name":"Non","children":[{"name":"V catégorielles à >2 modalités ?","children":[{"name":"Oui","children":[{"name":"Échantillon >100","children":[{"name":"Régression multinomique"}]}]}]}]}]}]}]},{"name":"VD qualitatives ?","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"Indépendance des observations ?","children":[{"name":"Oui","children":[{"name":"Multicolinéarité ?","children":[{"name":"Oui","children":[{"name":"Regroupements","children":[{"name":"MANOVA"}]}]},{"name":"Non","children":[{"name":"MANOVA"}]}]}]},{"name":"Non","children":[{"name":"MANOVA à mesures répétées"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]}]},{"name":"Non","children":[{"name":"+ 1 VD numérique","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"ANOVA factorielle","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou\r\nBonferroni ou\r\nTest de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]},{"name":"+ V contrôle ?","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"Indépendance des observations ?","children":[{"name":"Oui","children":[{"name":"ANCOVA"}]},{"name":"Non","children":[{"name":"ANCOVA à mesures répétées\r\nou mixtes"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]}]}]}]}]},{"name":"V ordinales","children":[{"name":"Uniquement ordinales ?","children":[{"name":"Oui","children":[{"name":"Matrices de corrélations : rho de Spearman"}]},{"name":"Non","children":[{"name":"+ V catégorielle","children":[{"name":"Contrôler l'effet de certaines variables","children":[{"name":"Corrélation partielle : rho de Spearman"}]}]}]}]}]},{"name":"V dichotomiques","children":[{"name":"Faire une prédiction","children":[{"name":"Échantillon >100","children":[{"name":"Régression logistique"}]}]}]}]},"options":{"hierarchy":["nature_variable1","question1","reponse1","question2","reponse2","question3","reponse3","question4","conditionapplication1","reponse4","conditionapplication2","reponse5","conditionapplication3","reponse6","conditionapplication4","reponse7","corrections","analyse_finale","F","reponse8","contrastes","types_contrastes","noms_contrastes"],"input":null,"attribute":"leafCount","linkLength":450,"fontSize":15,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":115,"right":310},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<p><u><small>Figure 3 : Arbre de décision basé sur la présence de plus de deux variables<small></u>
+# Approche par objectifs</p>
+</div>
+<div id="tester-une-hypothèse" class="section level3 hasAnchor" number="7.0.3">
+<h3><span class="header-section-number">7.0.3</span> Tester une hypothèse<a href="#tester-une-hypoth%C3%A8se" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="htmlwidget-5b5d17bd130ab68912e9" style="width:2000px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5b5d17bd130ab68912e9">{"x":{"data":{"name":"Tester une hypothèse","children":[{"name":"Tester un lien","children":[{"name":"V catégorielle","children":[{"name":"2ème V catégorielle","children":[{"name":"Effectifs <1 ?","children":[{"name":"Oui","children":[{"name":"Fisher Exact Test ou\r\nRegroupements"}]},{"name":"Non","children":[{"name":"Effectif <5 dans +20% des cas ?","children":[{"name":"Oui","children":[{"name":"Fisher Exact Test ou\r\nRegroupements"}]},{"name":"Non","children":[{"name":"Indépendance des observations ?","children":[{"name":"Oui","children":[{"name":"X^2 d'indépendance"}]},{"name":"Non","children":[{"name":"Fisher Exact Test ou\r\nRegroupements"}]}]}]}]}]}]}]},{"name":"2 variables à 2 modalités intrasujets ?","children":[{"name":"Oui","children":[{"name":"Pas d'effectif <1","children":[{"name":"Pas d'effectif <5 dans +20% des cas","children":[{"name":"Test de McNemar"}]}]}]},{"name":"Non","children":[{"name":"V intrasujet à >2 modalités","children":[{"name":"Q de Cochran"}]}]}]},{"name":">2 V intersujets","children":[{"name":"Pas d'effectif <1","children":[{"name":"Pas d'effectif <5 dans +20% des cas ?","children":[{"name":"Analyse log linéaire"}]}]}]}]},{"name":"V ordinale","children":[{"name":"2ème V catégorielle","children":[{"name":"Lien entre 2 variables","children":[{"name":"X^2 d'indépendance"}]},{"name":"1 (ou plus) V contrôle","children":[{"name":"Corrélation partielle de Spearman"}]}]}]},{"name":"VI continue","children":[{"name":"VD continue","children":[{"name":"Faire un lien entre les deux","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Indépendance des observations ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"r de Bravais Pearson"}]},{"name":"Non","children":[{"name":"rho de Spearman ou\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"rho de Spearman\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"rho de Spearman"}]}]}]},{"name":"1 (ou plus) V contrôle","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Indépendance des observations ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"Corrélation partielle de Bravais Pearson"}]},{"name":"Non","children":[{"name":"Corrélation partielle de Spearman ou\r\nStats robustes"}]}]}]}]},{"name":"Non","children":[{"name":"Corrélation partielle de Spearman ou\r\nStats robustes"}]}]},{"name":"Non","children":[{"name":"Corrélation partielle de Spearman ou\r\nStats robustes"}]}]}]}]}]}]},{"name":"Comparer des moyennes","children":[{"name":"Une observation","children":[{"name":"Normalité de la distribution ?","children":[{"name":"Oui","children":[{"name":"Score Z"}]},{"name":"Non","children":[{"name":"Rang percentile"}]}]}]},{"name":"2 moyennes","children":[{"name":"Échantillon VS Norme ou Hasard","children":[{"name":"Oui","children":[{"name":"1 V numérique","children":[{"name":"Normalité de la distribution","children":[{"name":"t de Student : comparaison à une norme"}]}]}]},{"name":"Non","children":[{"name":"2 V intersujets à 2 modalités ?","children":[{"name":"Oui","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"t de Student : échantillons indépendants"}]},{"name":"Non","children":[{"name":"Wilcoxon ou\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"Wilcoxon ou\r\nStats robustes"}]}]}]},{"name":"Non","children":[{"name":"2 V intrasujets à 2 modalités","children":[{"name":"Normalité de la différence entre les deux modalités ?","children":[{"name":"Oui","children":[{"name":"t de Student : échantillons appariés"}]},{"name":"Non","children":[{"name":"Wilcoxon ou\r\nStats robustes"}]}]}]}]}]}]}]}]},{"name":">2 moyennes","children":[{"name":"1 V catégorielle intersujet ?","children":[{"name":"Oui","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"ANOVA simple","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Correction de Welsche","children":[{"name":"ANOVA simple","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"1 V catégorielle intrasujet ?","children":[{"name":"Oui","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Sphéricité de la matrice de covariance ? (intra à >2 modalités)","children":[{"name":"Oui","children":[{"name":"ANOVA à mesures répétées","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Correction de Huydt et Feldt","children":[{"name":"ANOVA à mesures répétées","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"ANOVA de Friedman"}]}]}]},{"name":"Non","children":[{"name":"ANOVA de Friedman ou\r\nStats robustes"}]}]}]}]}]}]},{"name":"Plusieurs variables à groupe indépendant ?","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ?","children":[{"name":"Oui","children":[{"name":"ANOVA Factorielle","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]},{"name":"Mélange V intersujets et intrasujet","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Homogénéité des variances ? (intersujets)","children":[{"name":"Oui","children":[{"name":"Sphéricité de la matrice de covariance ? (intra à >2 modalités)","children":[{"name":"Oui","children":[{"name":"ANOVA mixte","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Correction de Huydt et Feldt","children":[{"name":"ANOVA mixte","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]}]}]}]},{"name":"Non","children":[{"name":"Correction de Welsche","children":[{"name":"Sphéricité de la matrice de covariance ? (intra à >2 modalités)","children":[{"name":"Oui","children":[{"name":"ANOVA mixte","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]},{"name":"Non","children":[{"name":"Correction de Huydt et Feldt","children":[{"name":"ANOVA mixte","children":[{"name":"F significatif ?","children":[{"name":"Oui","children":[{"name":"Contrastes","children":[{"name":"A priori","children":[{"name":"Orthogonaux"}]},{"name":"A posteriori","children":[{"name":"Holm ou Bonferroni ou Test de Dunnet"}]}]}]},{"name":"Non","children":[{"name":"Fin de l'analyse"}]}]}]}]}]}]}]}]}]}]},{"name":"Non","children":[{"name":"Stats robustes"}]}]}]}]}]},{"name":"Faire une prédiction","children":[{"name":"VI continue (1 ou plus)","children":[{"name":"VD continue (1 ou plus)","children":[{"name":"Normalité du résidu ?","children":[{"name":"Oui","children":[{"name":"Multicolinéarité ?","children":[{"name":"Oui","children":[{"name":"Régressions robustes"}]},{"name":"Non","children":[{"name":"Corrélation des erreurs ?","children":[{"name":"Oui","children":[{"name":"Régressions robustes"}]},{"name":"Non","children":[{"name":"Régression simple ou\r\nRégressions multiples"}]}]}]}]}]},{"name":"Non","children":[{"name":"Régressions robustes ou\r\nModèle linéaire généralisé"}]}]}]}]},{"name":"V dichotomiques","children":[{"name":"Échantillon >100","children":[{"name":"Régressions logistique"}]}]},{"name":"V catégorielle à >2 modalités","children":[{"name":"Échantillon >100","children":[{"name":"Régression multinomique"}]}]}]}]},"options":{"hierarchy":["types_tests","types_donnees1","types_donnees2","reponse1","autresconditions","reponse2","types_donnees3","reponse3","types_donnees4","conditionapplication1","reponse4","conditionapplication2","reponse5","conditionapplication3","reponse6","correction","conditionapplication4","reponse7","correction2","analyse_finale","significativite","reponse8","contrastes","types_contrastes","noms_contrastes"],"input":null,"attribute":"leafCount","linkLength":450,"fontSize":15,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":175,"right":295},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<p><u><small>Figure 4 : Arbre de décision basé sur les tests d’hypothèse<small></u>
+### Tester un modèle</p>
+<div id="htmlwidget-f2969b4c90e5f8a924f7" style="width:1000px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f2969b4c90e5f8a924f7">{"x":{"data":{"name":"Tester un modèle","children":[{"name":"Ajustement à une courbe","children":[{"name":"Effectif théorique <1 ?","children":[{"name":"Oui","children":[{"name":"Analyse compromise"}]},{"name":"Non","children":[{"name":"Effectif <5 dans +20% des situations ?","children":[{"name":"Oui","children":[{"name":"Stats robustes"}]},{"name":"Non","children":[{"name":"X^2 d'ajustement"}]}]}]}]}]}]},"options":{"hierarchy":["ajustement","capp1","reponse1","capp2","reponse2","analyses"],"input":null,"attribute":"leafCount","linkLength":320,"fontSize":17,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":161,"right":178},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<p><u><small>Figure 5 : Arbre de décisions basé sur le test d’un modèle<small></u></p>
+</div>
+<div id="créer-un-questionnaire" class="section level3 hasAnchor" number="7.0.4">
+<h3><span class="header-section-number">7.0.4</span> Créer un questionnaire<a href="#cr%C3%A9er-un-questionnaire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="htmlwidget-9eced2e4b3497139f271" style="width:1000px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9eced2e4b3497139f271">{"x":{"data":{"name":"Créer un questionnaire","children":[{"name":"Fiabilité interne","children":[{"name":"L'ordre de réponse au questionnaire compte-t-il ?","children":[{"name":"Oui","children":[{"name":"gamma de Guttman ou\r\nalpha de Cronbach"}]},{"name":"Non","children":[{"name":"Les réponses sont-elles dichotomiques ?","children":[{"name":"Oui","children":[{"name":"K-20"}]},{"name":"Non","children":[{"name":"Est-ce que j'ai beaucoup de valeurs influentes ?","children":[{"name":"Oui","children":[{"name":"lambda de Guttman"}]},{"name":"Non","children":[{"name":"Est-ce que mes items ont des poids variables ?","children":[{"name":"Oui","children":[{"name":"Oméga de McDonald"}]},{"name":"Non","children":[{"name":"K-21 ou\r\nalpha de Cronbach"}]}]}]}]}]}]}]}]}]},{"name":"Fiabilité inter-juge","children":[{"name":"Corrélations intra-classe"}]},{"name":"Accord inter-juge","children":[{"name":"Coefficient de Kendall"}]},{"name":"Validité de construit","children":[{"name":"Analyse factorielle","children":[{"name":"10 < x < 20 observations/variables (min : 200)","children":[{"name":"Oui","children":[{"name":"Corrélation entre les résidus ?","children":[{"name":"Oui","children":[{"name":"Analyse compromise"}]},{"name":"Non","children":[{"name":"Variables dichotomiques ?","children":[{"name":"Oui","children":[{"name":"Corrélations tétrachoriques","children":[{"name":"Kmo >0,5 ?\r\n(idéal >0,7)","children":[{"name":"Oui","children":[{"name":"Rotation oblimin","children":[{"name":"Choix du nombre de facteurs"}]}]},{"name":"Non","children":[{"name":"Analyse compromise"}]}]}]},{"name":"Méthode minres"}]},{"name":"Non","children":[{"name":"Variables ordinales ?","children":[{"name":"Oui","children":[{"name":"Corrélations polychoriques","children":[{"name":"Kmo >0,5 ?\r\n(idéal >0,7)","children":[{"name":"Oui","children":[{"name":"Rotation oblimin","children":[{"name":"Choix du nombre de facteurs"}]}]},{"name":"Non","children":[{"name":"Analyse compromise"}]}]}]},{"name":"Méthode minres"}]},{"name":"Non","children":[{"name":"Continues","children":[{"name":"r de Bravais Pearson","children":[{"name":"Maximum de vraisemblance"}]}]}]}]}]}]}]}]}]},{"name":"Non","children":[{"name":"Analyse compromise"}]}]}]}]},{"name":"Validité concurrante","children":[{"name":"Population pathologique VS population générale ?","children":[{"name":"Oui","children":[{"name":"ROC"}]},{"name":"Non","children":[{"name":"Mon échelle VS une autre échelle ?","children":[{"name":"Oui","children":[{"name":"r de Bravais Pearson"}]},{"name":"Non","children":[{"name":"Mes données VS données qui existent déjà ?","children":[{"name":"Oui","children":[{"name":"t de Student"}]},{"name":"Plusieurs groupes ?","children":[{"name":"ANOVA"}]}]}]}]}]}]}]},{"name":"Validité écologique","children":[{"name":"Observations en situation réelle"}]}]},"options":{"hierarchy":["a_verifier","analyse_stat","question1","reponse1","question2","reponse2","question3","reponse3","capp1","question4","reponse4","capp2","question5","reponse5","analyse_finale","rotations"],"input":null,"attribute":"leafCount","linkLength":370,"fontSize":15,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":190,"right":227.5},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<p><u><small>Figure 6 : Arbre de décisions basé sur les qualités psychométriques d’un questionnaire<small></u></p>
+</div>
+<div id="de-quelle-nature-est-la-variable-dépendante" class="section level2 panelset hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> De quelle nature est la variable dépendante<a href="#de-quelle-nature-est-la-variable-d%C3%A9pendante" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="quantitative" class="section level3 panelset hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Quantitative<a href="approche-par-nombre-et-types-de-variables.html#quantitative" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Combien de variable indépendante y a-t-il ?</p>
+<div id="une" class="section level4 panelset hasAnchor" number="7.1.1.1">
+<h4><span class="header-section-number">7.1.1.1</span> Une<a href="approche-par-nombre-et-types-de-variables.html#une" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Quelle est la nature des variables indépendantes</p>
+<div id="quantitative-1" class="section level5 hasAnchor" number="7.1.1.1.1">
+<h5><span class="header-section-number">7.1.1.1.1</span> Quantitative<a href="approche-par-nombre-et-types-de-variables.html#quantitative-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>L’analyse à privilégier est la corrélation de Bravais-Pearson.</p>
+<div style="background:      #F5C527  ; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #F0CF71    ;font-size: 28px; padding: 10px; border: 1px solid black;margin: 0 px">
+<strong>Conditions d’application</strong> </legend></p>
+<p style="text-align:justify;">
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Normalité du résidu</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Homogénéité des variances</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Taille d’échantillon suffisante</p>
+</p>
+</div>
+<div style="background:      #d5ffc0  ; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #6bc666    ;font-size: 28px; padding: 10px; border: 1px solid black;margin: 0 px">
+<strong>Test alternatf si les conditions d’applications ne sont pas respectées</strong> </legend></p>
+<p style="text-align:justify;">
+Rho de Spearman
+</p>
+</div>
+</div>
+<div id="ordinale" class="section level5 hasAnchor" number="7.1.1.1.2">
+<h5><span class="header-section-number">7.1.1.1.2</span> Ordinale<a href="approche-par-nombre-et-types-de-variables.html#ordinale" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="qualitative" class="section level5 hasAnchor" number="7.1.1.1.3">
+<h5><span class="header-section-number">7.1.1.1.3</span> Qualitative<a href="approche-par-nombre-et-types-de-variables.html#qualitative" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+</div>
+<div id="plusieurs" class="section level4 panelset hasAnchor" number="7.1.1.2">
+<h4><span class="header-section-number">7.1.1.2</span> Plusieurs<a href="approche-par-nombre-et-types-de-variables.html#plusieurs" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="ordinale-1" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Ordinale<a href="approche-par-nombre-et-types-de-variables.html#ordinale-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="qualitative-1" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Qualitative<a href="approche-par-nombre-et-types-de-variables.html#qualitative-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>De quelle Nature est la variable dépendante</strong></p>
+<details>
+<summary>
+Quantitative
+</summary>
+<p><strong>Combien y a-t-il de variables indépendants</strong></p>
+<details>
+<summary>
+Une seule
+</summary>
+<p><strong>De quelle nature est la variable indépendante</strong></p>
+<details>
+<summary>
+Quantitative
+</summary>
+<p>L’analyse à privilégier est la corrélation de Bravais-Pearson.</p>
+<div style="background:      #F5C527  ; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #F0CF71    ;font-size: 28px; padding: 10px; border: 1px solid black;margin: 0 px">
+<strong>Conditions d’application</strong> </legend></p>
+<p style="text-align:justify;">
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Normalité du résidu</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Homogénéité des variances</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Taille d’échantillon suffisante</p>
+</p>
+</div>
+<div style="background:      #d5ffc0  ; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 0px;">
+<p><legend style="background:  #6bc666    ;font-size: 28px; padding: 10px; border: 1px solid black;margin: 0 px">
+<strong>Test alternatf si les conditions d’applications ne sont pas respectées</strong> </legend></p>
+<p style="text-align:justify;">
+Rho de Spearman
+</p>
+</div>
+</details>
+<details>
+<summary>
+Ordinale
+</summary>
+</details>
+<details>
+<summary>
+Qualitative
+</summary>
+</details>
+</details>
+<details>
+<summary>
+Plusieurs
+</summary>
+</details>
+</details>
+<details>
+<summary>
+Ordinale
+</summary>
+</details>
+<details>
+<summary>
+Qualitative
+</summary>
+</details>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="comment-choisir-la-bonne-analyse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="références.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/06-choixanalyse.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

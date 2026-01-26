@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 7 Préparer les données | Initiation à l’approche bayésienne du traitement des données</title>
+<title>Chapter 7 Préparer les données | Outils statistiques destinés aux psychologues</title>
 <meta name="author" content="Nicolas Stefaniak">
 <meta name="description" content="Jusqu’à présent, les données que nous avons utilisées ne correspondent pas à un vrai jeu de données sur lequel on voudrait réaliser effectivement des traitements. R permet de travailler avec des...">
 <meta name="generator" content="bookdown 0.44 with bs4_book()">
-<meta property="og:title" content="Chapter 7 Préparer les données | Initiation à l’approche bayésienne du traitement des données">
+<meta property="og:title" content="Chapter 7 Préparer les données | Outils statistiques destinés aux psychologues">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Jusqu’à présent, les données que nous avons utilisées ne correspondent pas à un vrai jeu de données sur lequel on voudrait réaliser effectivement des traitements. R permet de travailler avec des...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 7 Préparer les données | Initiation à l’approche bayésienne du traitement des données">
+<meta name="twitter:title" content="Chapter 7 Préparer les données | Outils statistiques destinés aux psychologues">
 <meta name="twitter:description" content="Jusqu’à présent, les données que nous avons utilisées ne correspondent pas à un vrai jeu de données sur lequel on voudrait réaliser effectivement des traitements. R permet de travailler avec des...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">Initiation à l’approche bayésienne du traitement des données</a>
+        <a href="index.html" title="">Outils statistiques destinés aux psychologues</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -77,7 +77,8 @@
 <li><a class="active" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
 <li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
 <li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
-<li><a class="" href="comment-choisir-la-bonne-analyse.html"><span class="header-section-number">10</span> Comment choisir la bonne analyse</a></li>
+<li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">10</span> Quel outil choisir</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">11</span> Références</a></li>
 </ul>
 
         <div class="book-extra">
@@ -89,7 +90,7 @@
 <h1>
 <span class="header-section-number">7</span> Préparer les données<a class="anchor" aria-label="anchor" href="#pr%C3%A9parer-les-donn%C3%A9es"><i class="fas fa-link"></i></a>
 </h1>
-<p>Jusqu’à présent, les données que nous avons utilisées ne correspondent pas à un vrai jeu de données sur lequel on voudrait réaliser effectivement des traitements. R permet de travailler avec des données issues de différents formats. Les deux formats de données les plus fréquemment utilisés sont les fichiers excel et les fichiers csv. Nous focaliserons sur ces deux formats, bien que R soit en mesure d’importer des fichiers d’autres natures grâce au package <em>foreign</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-foreign">R Core Team, 2022</a>)</span>.</p>
+<p>Jusqu’à présent, les données que nous avons utilisées ne correspondent pas à un vrai jeu de données sur lequel on voudrait réaliser effectivement des traitements. R permet de travailler avec des données issues de différents formats. Les deux formats de données les plus fréquemment utilisés sont les fichiers excel et les fichiers csv. Nous focaliserons sur ces deux formats, bien que R soit en mesure d’importer des fichiers d’autres natures grâce au package <em>foreign</em> <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-foreign">R Core Team, 2022</a>)</span>.</p>
 <p>Les données sont rarement utilisable directement et il est, dans la grande majorité des cas, nécessaire de réaliser des opérations pour que les données puissent être utilisées pour tester les hypothèses. Cela peut passer par la suppression des observations d’entraînement, la transformation d’une variable, ou l’addition des items d’un questionnaire pour obtenir un score global.</p>
 <p>L’objectif de ce chapitre est d’illustrer comment on importe des données et comment on peut les préparer.</p>
 <div id="dans-r" class="section level2" number="7.1">
@@ -102,7 +103,7 @@
 </h3>
 <p>A présent que vous avez précisé le répertoire de travail où se trouve vos données, que vous avez identifié que R trouve effectivement votre fichier dans le dossier de votre répertoire de travail avec la fonction <code>dir</code>, et que vous vous êtes assuré que les règles de construction des jeux de données ont été scrupuleusement respectées, l’étape suivante consiste à importer les données.
 Cette étape peut être réalisé avec la fonction <code></code> du package <em>readxl</em> si vos données sont stockées dans un fichier excel, avec la fonction <code>read.csv2</code>, inclue de base dans R, pour un fichier csv.</p>
-<p>Pour la suite du chapitre, nous allons utiliser des données d’amorçage sémantique <span class="citation">(données non publiées mais pour des données publiées avec cette tâche et une description en détail de la tâche, voir <a href="comment-choisir-la-bonne-analyse.html#ref-Stefaniak2010">Stefaniak et al., 2010</a>)</span>. Plus précisément, la tâche que les participants devaient réaliser est une tâche de double décision lexicale. Dans cette tâche, les participants doivent déterminer le plus rapidement et le plus précisémant possible si deux chaînes de lettres présentées simultanément à l’écran sont des mots (par exemple, MOIS - CADEAU) ou non (par exemple, AJÛT - MARRER). A leur insu, certaines paires de mots sont reliés sémantiquement (par exemple, MAIN - BAGUE) alors que d’autres ne le sont pas. Dans cette tâche, on s’attend à ce que les items reliés sémantiquement soient traités plus rapidement que ceux qui ne le sont pas. La tâche est composée de 185 essais répartis entre 5 essais d’entraînement (les 5 premiers) et 180 essais à inclure dans les analyses.</p>
+<p>Pour la suite du chapitre, nous allons utiliser des données d’amorçage sémantique <span class="citation">(données non publiées mais pour des données publiées avec cette tâche et une description en détail de la tâche, voir <a href="r%C3%A9f%C3%A9rences.html#ref-Stefaniak2010">Stefaniak et al., 2010</a>)</span>. Plus précisément, la tâche que les participants devaient réaliser est une tâche de double décision lexicale. Dans cette tâche, les participants doivent déterminer le plus rapidement et le plus précisémant possible si deux chaînes de lettres présentées simultanément à l’écran sont des mots (par exemple, MOIS - CADEAU) ou non (par exemple, AJÛT - MARRER). A leur insu, certaines paires de mots sont reliés sémantiquement (par exemple, MAIN - BAGUE) alors que d’autres ne le sont pas. Dans cette tâche, on s’attend à ce que les items reliés sémantiquement soient traités plus rapidement que ceux qui ne le sont pas. La tâche est composée de 185 essais répartis entre 5 essais d’entraînement (les 5 premiers) et 180 essais à inclure dans les analyses.</p>
 <p>Dans le jeu de données mis à disposition, nous avons les données de 40 participants. Les variables d’intérêt sont :</p>
 <ul>
 <li><p>Subject : l’identifiant du participant ;</p></li>
@@ -119,12 +120,12 @@ Cette étape peut être réalisé avec la fonction <code></code> du package <em>
 <h4>
 <span class="header-section-number">7.1.1.1</span> Importer un fichier excel<a class="anchor" aria-label="anchor" href="#importer-un-fichier-excel"><i class="fas fa-link"></i></a>
 </h4>
-<p>Pour importer, des données en formation excel, on va s’appuyer sur le package <em>readxl</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-readxl">Wickham &amp; Bryan, 2022</a>)</span> et on va utiliser les fonctions <code>read_excel</code> et <code>excel_sheets</code></p>
+<p>Pour importer, des données en formation excel, on va s’appuyer sur le package <em>readxl</em> <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-readxl">Wickham &amp; Bryan, 2022</a>)</span> et on va utiliser les fonctions <code>read_excel</code> et <code>excel_sheets</code></p>
 <p>La premère étape consiste à vérifier si le fichier est effectivement dans mon répertoire de travail avec la fonction <code>dir</code></p>
 <div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Cette fonction m’indique que mon fichier “semantic_priming.xlsx” est présent dans le répertoire.</p>
-<p>A partir d’ici,je pourrais ouvrir le fichier excel pour voir quel est le nom de la feuille de calcul que je dois importer mais une manière plus rapide de le faire est d’utiliser la fonction <code>excel_sheets</code>. Deux points sont importants ici. Il faut avoir chargé le package <em>readxl</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-readxl">Wickham &amp; Bryan, 2022</a>)</span>, ce qui normalement devrait être fait (voir la ligne 34 du script) et il faut que le fichier excel soit fermé. Dans le cas contraire, vous aurez un message vous indiquant que le fichier excel ne peut pas être ouvert alors que le chemin d’accès est correct.</p>
+<p>A partir d’ici,je pourrais ouvrir le fichier excel pour voir quel est le nom de la feuille de calcul que je dois importer mais une manière plus rapide de le faire est d’utiliser la fonction <code>excel_sheets</code>. Deux points sont importants ici. Il faut avoir chargé le package <em>readxl</em> <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-readxl">Wickham &amp; Bryan, 2022</a>)</span>, ce qui normalement devrait être fait (voir la ligne 34 du script) et il faut que le fichier excel soit fermé. Dans le cas contraire, vous aurez un message vous indiquant que le fichier excel ne peut pas être ouvert alors que le chemin d’accès est correct.</p>
 <div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="st">"./introR/semantic_priming.xlsx"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "tout_direct"</code></pre>
@@ -212,47 +213,47 @@ Cette étape peut être réalisé avec la fonction <code></code> du package <em>
 <p>Sans surprise, les essais s’appellent les essais. Pour sélectionner des valeurs textuelles, on a deux possibilités : 1) selectionner les chaînes que nous souhaitons conserver ; 2) supprimer celles que nous ne voulons pas conserver. Etant donné qu’il y a 3 possibilités (“essais”, “expe”, “List1”) et qu’on veut garder tout ce qui n’est pas “essais”, on va donc décider d’utiliser la seconde stratégie. La logique consiste à sélectionner <strong>tout ce qui ne correspond pas à un critère</strong>. En l’occurrence, notre critère consiste à ne pas être un essai.</p>
 <p>Pour atteindre cet objectif, en plus d’utiliser la fonction <code>filter</code>, il faut connaître la liste des opérateurs logiques dans R. Le Tableau <a href="pr%C3%A9parer-les-donn%C3%A9es.html#tab:ope">7.1</a> une liste non exhaustive.</p>
 <div class="tabwid">
-<style>.cl-e9020900{}.cl-e8f941da{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e8fce7ea{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e8fd007c{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd0086{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd0090{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd0091{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd0092{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd0093{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd009a{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd009b{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd00a4{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd00ae{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd00af{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd00b0{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd00b1{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd00b8{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd00b9{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e8fd00c2{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e9020900">
+<style>.cl-0b70fcf6{}.cl-0b640c30{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0b69286e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-0b694db2{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694dc6{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694dc7{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694dd0{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694dd1{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694dda{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694ddb{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694de4{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694de5{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694dee{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694def{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694df8{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694df9{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694e02{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694e03{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0b694e0c{width:3.776in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-0b70fcf6">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:ope">Table 7.1: </span><span>Liste des opérateurs logiques les plus fréquents</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-e8fd007c"><p class="cl-e8fce7ea"><span class="cl-e8f941da">Opérateur</span></p></th>
-<th class="cl-e8fd0086"><p class="cl-e8fce7ea"><span class="cl-e8f941da">Signification</span></p></th>
+<th class="cl-0b694db2"><p class="cl-0b69286e"><span class="cl-0b640c30">Opérateur</span></p></th>
+<th class="cl-0b694dc6"><p class="cl-0b69286e"><span class="cl-0b640c30">Signification</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e8fd0090"><p class="cl-e8fce7ea"><span class="cl-e8f941da">==</span></p></td>
-<td class="cl-e8fd0091"><p class="cl-e8fce7ea"><span class="cl-e8f941da">égal à </span></p></td>
+<td class="cl-0b694dc7"><p class="cl-0b69286e"><span class="cl-0b640c30">==</span></p></td>
+<td class="cl-0b694dd0"><p class="cl-0b69286e"><span class="cl-0b640c30">égal à </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e8fd0092"><p class="cl-e8fce7ea"><span class="cl-e8f941da">!=</span></p></td>
-<td class="cl-e8fd0093"><p class="cl-e8fce7ea"><span class="cl-e8f941da">Différent de</span></p></td>
+<td class="cl-0b694dd1"><p class="cl-0b69286e"><span class="cl-0b640c30">!=</span></p></td>
+<td class="cl-0b694dda"><p class="cl-0b69286e"><span class="cl-0b640c30">Différent de</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e8fd009a"><p class="cl-e8fce7ea"><span class="cl-e8f941da">&gt;</span></p></td>
-<td class="cl-e8fd009b"><p class="cl-e8fce7ea"><span class="cl-e8f941da">plus grand</span></p></td>
+<td class="cl-0b694ddb"><p class="cl-0b69286e"><span class="cl-0b640c30">&gt;</span></p></td>
+<td class="cl-0b694de4"><p class="cl-0b69286e"><span class="cl-0b640c30">plus grand</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e8fd00a4"><p class="cl-e8fce7ea"><span class="cl-e8f941da">&gt;=</span></p></td>
-<td class="cl-e8fd00ae"><p class="cl-e8fce7ea"><span class="cl-e8f941da">plus grand ou égal (le égal se met toujours à droite)</span></p></td>
+<td class="cl-0b694de5"><p class="cl-0b69286e"><span class="cl-0b640c30">&gt;=</span></p></td>
+<td class="cl-0b694dee"><p class="cl-0b69286e"><span class="cl-0b640c30">plus grand ou égal (le égal se met toujours à droite)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e8fd00af"><p class="cl-e8fce7ea"><span class="cl-e8f941da">&lt;</span></p></td>
-<td class="cl-e8fd00b0"><p class="cl-e8fce7ea"><span class="cl-e8f941da">plus petit</span></p></td>
+<td class="cl-0b694def"><p class="cl-0b69286e"><span class="cl-0b640c30">&lt;</span></p></td>
+<td class="cl-0b694df8"><p class="cl-0b69286e"><span class="cl-0b640c30">plus petit</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e8fd00a4"><p class="cl-e8fce7ea"><span class="cl-e8f941da">&lt;=</span></p></td>
-<td class="cl-e8fd00ae"><p class="cl-e8fce7ea"><span class="cl-e8f941da">plus petit ou égal (le égal se met toujours à droite)</span></p></td>
+<td class="cl-0b694de5"><p class="cl-0b69286e"><span class="cl-0b640c30">&lt;=</span></p></td>
+<td class="cl-0b694dee"><p class="cl-0b69286e"><span class="cl-0b640c30">plus petit ou égal (le égal se met toujours à droite)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e8fd00b1"><p class="cl-e8fce7ea"><span class="cl-e8f941da">&amp;</span></p></td>
-<td class="cl-e8fd00b8"><p class="cl-e8fce7ea"><span class="cl-e8f941da">et</span></p></td>
+<td class="cl-0b694df9"><p class="cl-0b69286e"><span class="cl-0b640c30">&amp;</span></p></td>
+<td class="cl-0b694e02"><p class="cl-0b69286e"><span class="cl-0b640c30">et</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e8fd00b9"><p class="cl-e8fce7ea"><span class="cl-e8f941da">|</span></p></td>
-<td class="cl-e8fd00c2"><p class="cl-e8fce7ea"><span class="cl-e8f941da">ou</span></p></td>
+<td class="cl-0b694e03"><p class="cl-0b69286e"><span class="cl-0b640c30">|</span></p></td>
+<td class="cl-0b694e0c"><p class="cl-0b69286e"><span class="cl-0b640c30">ou</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -563,7 +564,7 @@ Figure 7.12: Ligne de commande qui correspond à l’importation du fichier. Att
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Initiation à l’approche bayésienne du traitement des données</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-15.</p>
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

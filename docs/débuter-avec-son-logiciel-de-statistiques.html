@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 4 Débuter avec son logiciel de statistiques | Initiation à l’approche bayésienne du traitement des données</title>
+<title>Chapter 4 Débuter avec son logiciel de statistiques | Outils statistiques destinés aux psychologues</title>
 <meta name="author" content="Nicolas Stefaniak">
 <meta name="description" content="4.1 Débuter avec R  4.1.1 L’environnement R dans RStudio La Figure 4.2 représente la fenêtre qui s’ouvre lorsque vous lancez RStudio,  Figure 4.1: Fenêtre d’accueil dans RStudio.  Trois parties...">
 <meta name="generator" content="bookdown 0.44 with bs4_book()">
-<meta property="og:title" content="Chapter 4 Débuter avec son logiciel de statistiques | Initiation à l’approche bayésienne du traitement des données">
+<meta property="og:title" content="Chapter 4 Débuter avec son logiciel de statistiques | Outils statistiques destinés aux psychologues">
 <meta property="og:type" content="book">
 <meta property="og:description" content="4.1 Débuter avec R  4.1.1 L’environnement R dans RStudio La Figure 4.2 représente la fenêtre qui s’ouvre lorsque vous lancez RStudio,  Figure 4.1: Fenêtre d’accueil dans RStudio.  Trois parties...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 4 Débuter avec son logiciel de statistiques | Initiation à l’approche bayésienne du traitement des données">
+<meta name="twitter:title" content="Chapter 4 Débuter avec son logiciel de statistiques | Outils statistiques destinés aux psychologues">
 <meta name="twitter:description" content="4.1 Débuter avec R  4.1.1 L’environnement R dans RStudio La Figure 4.2 représente la fenêtre qui s’ouvre lorsque vous lancez RStudio,  Figure 4.1: Fenêtre d’accueil dans RStudio.  Trois parties...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">Initiation à l’approche bayésienne du traitement des données</a>
+        <a href="index.html" title="">Outils statistiques destinés aux psychologues</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -77,7 +77,8 @@
 <li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
 <li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
 <li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
-<li><a class="" href="comment-choisir-la-bonne-analyse.html"><span class="header-section-number">10</span> Comment choisir la bonne analyse</a></li>
+<li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">10</span> Quel outil choisir</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">11</span> Références</a></li>
 </ul>
 
         <div class="book-extra">
@@ -240,7 +241,7 @@ En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous 
 
 </div>
 <p>Une partie de ces fonctions sont disponibles directement lorsqu’on installe R, mais la grande majorité de ces fonctions ont été programmées par les contributeurs qui ont été évoqués à la section expliquant pourquoi il est pertinent d’utiliser R. Ces contributeurs n’ajoutent pas directement les nouvelles fonctionnalités au logiciel mais vont empaqueter les fonctionnalités qu’ils ont programmées dans ce qu’on appelle un package. Ces packages devront être installés en plus pour pouvoir être utilisés.</p>
-<p>Si vous avez du mal à comprendre ce qu’est un package, pensez à votre smartphone : quand vous l’allumez pour la première fois, il n’y a que les fonctionnalités de base et vous allez installer les applications selon vos besoins. R fonctionne sur un principe un peu similaire, à la différence qu’on ajoute ces nouvelles fonctionnalités à l’intérieur d’un logiciel. Dans un premier temps, nous allons utiliser le package <em>readxl</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-readxl">Wickham &amp; Bryan, 2022</a>)</span> pour importer des fichiers excel, et le package <em>dplyr</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-dplyr">Wickham et al., 2022</a>)</span> pour avoir des fonctionnalités de manipulation des données. Nous allons donc installer et charger ces packages. Pour installer un package, on utilise la fonction <code>install.packages</code>. Cette fonction a pas mal d’arguments mais il ne semble pas utile de les expliciter tous en détail. Nous nous limiterons à installer un package de manière classique en invoquant simplement le nom du package à installer.</p>
+<p>Si vous avez du mal à comprendre ce qu’est un package, pensez à votre smartphone : quand vous l’allumez pour la première fois, il n’y a que les fonctionnalités de base et vous allez installer les applications selon vos besoins. R fonctionne sur un principe un peu similaire, à la différence qu’on ajoute ces nouvelles fonctionnalités à l’intérieur d’un logiciel. Dans un premier temps, nous allons utiliser le package <em>readxl</em> <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-readxl">Wickham &amp; Bryan, 2022</a>)</span> pour importer des fichiers excel, et le package <em>dplyr</em> <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-dplyr">Wickham et al., 2022</a>)</span> pour avoir des fonctionnalités de manipulation des données. Nous allons donc installer et charger ces packages. Pour installer un package, on utilise la fonction <code>install.packages</code>. Cette fonction a pas mal d’arguments mais il ne semble pas utile de les expliciter tous en détail. Nous nous limiterons à installer un package de manière classique en invoquant simplement le nom du package à installer.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"readxl"</span><span class="op">)</span> <span class="co"># installation du package readxl - en utilisant l'argument pkgs</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"dplyr"</span><span class="op">)</span> <span class="co"># installation du package dplyr - en omettant l'argument pkgs</span></span></code></pre></div>
@@ -261,7 +262,7 @@ En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous 
 <code class="sourceCode R"><span><span class="op">?</span><span class="va">setwd</span> <span class="co"># recherche de l'aide pour la fonction setwd en utilisant le point d'interrogation </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">install.packages</span><span class="op">)</span> <span class="co"># recherche de l'aide pour la fonction setwd en utilisant la fonction help</span></span></code></pre></div>
 <p>Cette manière de trouver de l’aide sur l’utilisation d’une fonction est une stratégie indispensable car, pour l’utilisateur débutant, l’utilisation des fonctions n’est pas suffisamment automatique et l’aide permet de fournir les indices indispensables pour savoir comment utiliser une fonction et, pour l’utilisateur expert, il se rappellera du nom d’une fonction qu’il n’utilise pas souvent mais pas forcément du nom des arguments ou de la manière de les utiliser.</p>
-<p>En revanche, cette stratégie ne fonctionne que si la fonction est accessible dans R. Vous ne pourriez pas trouver de l’aide de cette manière pour une fonction qui est dans un package qui n’est pas installé ou qui n’est pas chargé. Pour trouver de l’aide sur une fonction d’un package installé mais pas chargé, on peut utiliser deux points d’interrogation successifs avant le nom de la fonction. R va alors chercher dans tous les packages qui sont installés s’il trouve une fonction qui contient le nom que vous rechercher. Á des fins d’illustrations, installez le package <em>psych</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-psych">Revelle, 2025</a>)</span> sans le charger et vous pourrez trouver de l’aide sur la fonction <code>describe</code> en utilisant les deux points d’interrogation de la manière suivante :</p>
+<p>En revanche, cette stratégie ne fonctionne que si la fonction est accessible dans R. Vous ne pourriez pas trouver de l’aide de cette manière pour une fonction qui est dans un package qui n’est pas installé ou qui n’est pas chargé. Pour trouver de l’aide sur une fonction d’un package installé mais pas chargé, on peut utiliser deux points d’interrogation successifs avant le nom de la fonction. R va alors chercher dans tous les packages qui sont installés s’il trouve une fonction qui contient le nom que vous rechercher. Á des fins d’illustrations, installez le package <em>psych</em> <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-psych">Revelle, 2025</a>)</span> sans le charger et vous pourrez trouver de l’aide sur la fonction <code>describe</code> en utilisant les deux points d’interrogation de la manière suivante :</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">?</span><span class="op">?</span><span class="va">describe</span> <span class="co"># cherche l'aide d'une fonction appelée describe dans n'importe quel package installé sur votre ordinateur, même s'il n'est pas chargé. </span></span></code></pre></div>
 
@@ -348,43 +349,43 @@ En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous 
 <p>Le plus difficile quand on débute avec R est d’être confronté à un message d’erreur et de ne pouvoir lui attribuer du sens.</p>
 <p>Il va de soi qu’il n’est pas possible de faire une liste exhaustive des erreurs possibles mais voici les plus fréquentes, et leurs solutions :</p>
 <div class="tabwid">
-<style>.cl-e7744562{}.cl-e76afcbe{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e76e2150{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e76e39c4{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39ce{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39cf{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39d0{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39d8{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e76e39d9{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e7744562">
+<style>.cl-08efa84c{}.cl-08e05a2c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-08e57d4a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-08e5a1ee{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a1f8{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a1f9{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a202{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a20c{width:4.901in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-08e5a216{width:18.838in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-08efa84c">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:unnamed-chunk-28">Table 4.1: </span><span>Liste des erreurs les plus fréquentes et leur cause/solution</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-e76e39c4"><p class="cl-e76e2150"><span class="cl-e76afcbe">Erreur</span></p></th>
-<th class="cl-e76e39ce"><p class="cl-e76e2150"><span class="cl-e76afcbe">Signification et solution</span></p></th>
+<th class="cl-08e5a1ee"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Erreur</span></p></th>
+<th class="cl-08e5a1f8"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Signification et solution</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">unexpected symbol</span></p></td>
-<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">Le nom de l'objet ou de la variable est incorrect. Vérifiez les règles énoncées précédemment</span></p></td>
+<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">unexpected symbol</span></p></td>
+<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Le nom de l'objet ou de la variable est incorrect. Vérifiez les règles énoncées précédemment</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">object XXX not found</span></p></td>
-<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">L'objet n'a pas été créé ou est mal orthographie. Attention à la casse - càd. aux majuscules et minuscules</span></p></td>
+<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">object XXX not found</span></p></td>
+<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">L'objet n'a pas été créé ou est mal orthographie. Attention à la casse - càd. aux majuscules et minuscules</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">could not find function XXX</span></p></td>
-<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">La fonction est mal orthographiée ou est dans un package non chargé, voire non installé. Cette erreur est courante quand on utilise une fonction qu'on trouve sur le internet sans vérifier le package auquel elle appartient. Chargez le package contenant la fonction si elle existe.</span></p></td>
+<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">could not find function XXX</span></p></td>
+<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">La fonction est mal orthographiée ou est dans un package non chargé, voire non installé. Cette erreur est courante quand on utilise une fonction qu'on trouve sur le internet sans vérifier le package auquel elle appartient. Chargez le package contenant la fonction si elle existe.</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">Error in cor.test.default(c("a", "b")) : x doit être un vecteur numérique</span></p></td>
-<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">Les arguments doivent avoir certaines caractéristiques. Ici, ils doivent être numériques mais ce n'est pas le cas. Vérifiez avec la fonction class ou str si les objets sur lesquels vous souhaitez faire l'analyse ont le format correct</span></p></td>
+<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Error in cor.test.default(c("a", "b")) : x doit être un vecteur numérique</span></p></td>
+<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Les arguments doivent avoir certaines caractéristiques. Ici, ils doivent être numériques mais ce n'est pas le cas. Vérifiez avec la fonction class ou str si les objets sur lesquels vous souhaitez faire l'analyse ont le format correct</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">argument is of length zero</span></p></td>
-<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">Un argument indispensable a pour valeur NULL alors qu'il doit être spécifié. Vérifiez l'aide de la fonction</span></p></td>
+<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">argument is of length zero</span></p></td>
+<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Un argument indispensable a pour valeur NULL alors qu'il doit être spécifié. Vérifiez l'aide de la fonction</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e76e39cf"><p class="cl-e76e2150"><span class="cl-e76afcbe">no default for argument</span></p></td>
-<td class="cl-e76e39d0"><p class="cl-e76e2150"><span class="cl-e76afcbe">Un argument nécessaire n'a pas été spécifié. Vérifiez l'aide de la fonction</span></p></td>
+<td class="cl-08e5a1f9"><p class="cl-08e57d4a"><span class="cl-08e05a2c">no default for argument</span></p></td>
+<td class="cl-08e5a202"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Un argument nécessaire n'a pas été spécifié. Vérifiez l'aide de la fonction</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e76e39d8"><p class="cl-e76e2150"><span class="cl-e76afcbe">aucun package nommé XXX n'est trouvé</span></p></td>
-<td class="cl-e76e39d9"><p class="cl-e76e2150"><span class="cl-e76afcbe">Le package n'est pas installé ou est mal installé. Si vous avez tenté d'installer le package mais que le souci persiste, voir la section installer les packages récalcitrants ens section 6.</span></p></td>
+<td class="cl-08e5a20c"><p class="cl-08e57d4a"><span class="cl-08e05a2c">aucun package nommé XXX n'est trouvé</span></p></td>
+<td class="cl-08e5a216"><p class="cl-08e57d4a"><span class="cl-08e05a2c">Le package n'est pas installé ou est mal installé. Si vous avez tenté d'installer le package mais que le souci persiste, voir la section installer les packages récalcitrants ens section 6.</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -395,7 +396,7 @@ En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous 
 <li>Avant de commencer les analyses, pensez à charger les packages et vérifier qu’il n’y a pas de problème concernant leur chargement<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;s’il y a un problème, un message d’erreur s’affichera.&lt;/p&gt;"><sup>5</sup></a>.</li>
 <li>Annotez votre script pour savoir ce que vous faites, mais également pour expliquer les erreurs auxquelles vous avez été confrontées et comment cela a été résolu.</li>
 <li>Faites attention à la casse<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;les majuscules et les minuscules&lt;/p&gt;"><sup>6</sup></a>.</li>
-<li>Utilisez des noms simples et pour les noms complexes, favorisez les copier coller en utilisant la foncton <code>ls</code> pour avoir le nom des objets en mémoire et la fonction <code>names</code> pour avoir le nom des variables. PAr exemple :</li>
+<li>Utilisez des noms simples et pour les noms complexes, favorisez les copier coller en utilisant la fonction <code>ls</code> pour avoir le nom des objets en mémoire et la fonction <code>names</code> pour avoir le nom des variables. Par exemple :</li>
 </ol>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span>
@@ -408,7 +409,7 @@ En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous 
 <h3>
 <span class="header-section-number">4.1.7</span> Installer des packages récalcitrants<a class="anchor" aria-label="anchor" href="#installer-des-packages-r%C3%A9calcitrants"><i class="fas fa-link"></i></a>
 </h3>
-<p>Précédemment, nous avons décrit comment installer des packages. Néanmoins, certains peuvent être plus difficiles à installer que d’autres pour différentes raisons. Voici les solutions à envisager pour installer ces packages. Pour l’illustration, nous utiliserons le package ‘devtools’ <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-devtools">Wickham et al., 2025</a>)</span>.</p>
+<p>Précédemment, nous avons décrit comment installer des packages. Néanmoins, certains peuvent être plus difficiles à installer que d’autres pour différentes raisons. Voici les solutions à envisager pour installer ces packages. Pour l’illustration, nous utiliserons le package ‘devtools’ <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-devtools">Wickham et al., 2025</a>)</span>.</p>
 <p>Ainsi, quand un package ne veux pas se charger, c’est qu’il n’est pas correctement installé. La procédure ci-dessus explique comment forcer cette installation lorsque les choses ne se passent pas correctement. Chaque étape peut se suffire à elle-même. Néanmoins, si l’installation continue à poser problème, alors, il faut passer à l’étape suivante. Pour le formuler autrement : je tente l’étape 1, ça marche, je m’arrête ; ou, je tente l’étape 1, ça ne marche pas, je passe à l’étape 2.</p>
 <ol style="list-style-type: decimal">
 <li>Forcer l’installation des dépendances, le site miroir et les packages compilés. Quand nous avons décrit la fonction <code>install.packages</code>, elle a été présentée de sorte à pouvoir l’utiliser sans argument. On peut néanmoins préciser des arguments supplémentaires. Le premier argument est l’argument <code>dependencies</code> qui permet de forcer l’installation des dépendances en indiquant l’opérateur logique <code>TRUE</code>. Le second argument qu’on va utiliser est l’argument <code>type</code> pour forcer à installer les packages sous une forme compilée (binaire) plutôt que sous une forme où le package devra être compilé (source). Ainsi, cela évite de devoir avoir un logiciel de compilation, comme Rtools. Enfin, on va préciser le site miroir sur lequel on veut télécharger les packages qu’on souhaite installer. Dans cet exemple, il s’agit du CRAN de Lyon.</li>
@@ -436,7 +437,7 @@ En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous 
 <h2>
 <span class="header-section-number">4.2</span> Débuter avec easieR<a class="anchor" aria-label="anchor" href="#d%C3%A9buter-avec-easier"><i class="fas fa-link"></i></a>
 </h2>
-<p>Comme évoqué dans la section consacrée au choix des logiciels, le package <em>easieR</em> <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-Stefaniak2018">Stefaniak, 2018</a>)</span> peut être utilisé de différentes manières. En particulier, on peut l’utiliser en boîte de dialogue uniquement, en ligne de commande uniquement, ou un mixte entre les deux. Dans cette section, nous fournissons les informations pour l’utiliser en boîte de dialogue uniquement dans sa forme la plus générale. Ainsi, pour utiliser easieR, il faut charger la package avec la fonction <code>library</code> et on peut accéder à toutes les fonctions de <em>easieR</em> avec la fonction <code><a href="https://rdrr.io/pkg/easieR/man/easieR.html">easieR()</a></code>.</p>
+<p>Comme évoqué dans la section consacrée au choix des logiciels, le package <em>easieR</em> <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-Stefaniak2018">Stefaniak, 2018</a>)</span> peut être utilisé de différentes manières. En particulier, on peut l’utiliser en boîte de dialogue uniquement, en ligne de commande uniquement, ou un mixte entre les deux. Dans cette section, nous fournissons les informations pour l’utiliser en boîte de dialogue uniquement dans sa forme la plus générale. Ainsi, pour utiliser easieR, il faut charger la package avec la fonction <code>library</code> et on peut accéder à toutes les fonctions de <em>easieR</em> avec la fonction <code><a href="https://rdrr.io/pkg/easieR/man/easieR.html">easieR()</a></code>.</p>
 <div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">easieR</span><span class="op">)</span> <span class="co">#charge le package</span></span>
 <span><span class="co"># ouvre la boîte de dialogue permettant d'accéder à toutes les options</span></span>
@@ -480,7 +481,7 @@ En réalité, il y a des milliers de fonctions dans R. Dans cette section, nous 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Initiation à l’approche bayésienne du traitement des données</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-15.</p>
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

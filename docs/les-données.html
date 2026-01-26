@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 Les données | Initiation à l’approche bayésienne du traitement des données</title>
+<title>Chapter 5 Les données | Outils statistiques destinés aux psychologues</title>
 <meta name="author" content="Nicolas Stefaniak">
 <meta name="description" content="Les statistiques n’ont d’intérêt qu’à deux conditions principales. Premièrement, il faut que ce qui est mesuré ait une issue incertaine. Cela implique qu’il faut mesurer quelque chose ayant un...">
 <meta name="generator" content="bookdown 0.44 with bs4_book()">
-<meta property="og:title" content="Chapter 5 Les données | Initiation à l’approche bayésienne du traitement des données">
+<meta property="og:title" content="Chapter 5 Les données | Outils statistiques destinés aux psychologues">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Les statistiques n’ont d’intérêt qu’à deux conditions principales. Premièrement, il faut que ce qui est mesuré ait une issue incertaine. Cela implique qu’il faut mesurer quelque chose ayant un...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 Les données | Initiation à l’approche bayésienne du traitement des données">
+<meta name="twitter:title" content="Chapter 5 Les données | Outils statistiques destinés aux psychologues">
 <meta name="twitter:description" content="Les statistiques n’ont d’intérêt qu’à deux conditions principales. Premièrement, il faut que ce qui est mesuré ait une issue incertaine. Cela implique qu’il faut mesurer quelque chose ayant un...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">Initiation à l’approche bayésienne du traitement des données</a>
+        <a href="index.html" title="">Outils statistiques destinés aux psychologues</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -77,7 +77,8 @@
 <li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
 <li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
 <li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
-<li><a class="" href="comment-choisir-la-bonne-analyse.html"><span class="header-section-number">10</span> Comment choisir la bonne analyse</a></li>
+<li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">10</span> Quel outil choisir</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">11</span> Références</a></li>
 </ul>
 
         <div class="book-extra">
@@ -101,7 +102,8 @@ Cette mesure aléatoire est ce qu’on appelle une variable.</p>
 <p>Ainsi, puisque pour faire des statistiques, il faut manipuler et/ou mesurer quelque chose qui varie, ce qu’on appelle une variable, il s’ensuit que, pour comprendre les statistiques, il est indispensable de pouvoir distinguer toute une série d’informations concernant ces variables.
 Plus précisément, il faut pouvoir distinguer les variables dépendantes des variables indépendantes et pouvoir distinguer la nature des variables.</p>
 <p>Pour rappel, une variable <strong>indépendante</strong> est tout ce qu’un·e expérimentateur·rice manipule est une variable indépendante, tandis que tout ce qu’un·e expérimentateur·rice enregistre est une variable <strong>dépendante</strong>. Maîtriser cette distinction est un prérequis nécessaire pas suffisant.</p>
-<p>On peut rajouter à cette distinction toutes les variables qu’on veut contrôler, que nous appelerons les variables de <em>contrôle</em> (ou controlées).</p>
+<p>On peut rajouter à cette distinction toutes les variables dont on veut s’assurer qu’elles ne peuvent être une explication plausible aux résultats qui ont été obtenus. Nous appellerons ces variables les variables de <strong>contrôle</strong> (ou controlées).</p>
+<p>Enfin, il existe une catégorie de variables qui sont loin d’être négligeables dans le cadre des statistiques mais dont la compréhension est plus subtile : il s’agit des variables aléatoires. Quand un chercheur·se recrute des participant·es pour prendre part à leur étude, iel n’a pas volontairement choisi ces participant·es. Les personnes ont été recrutées parce qu’elles étaient là à ce moment, mais cela aurait pu être n’importe qui d’autre si l’expérience avait été réalisée deux semaines plus tard ou 50 km plus loin. De la même manière, si on s’intéresse à la vitesse de lecture pour des textes écrits après 1900 et avant 1900, on va choisir un ou plusieurs textes avant 1900 et un ou plusieurs textes après 1900, mais les textes choisis en tant que tels ont été choisis au hasard. Á l’inverse, si ce qui nous intéresse est la vitesse de lecture pour le premier chapitre des Misérables de Victor Hugo par rapport au premier chapitre du Seigneur des Anneaux de Tolkien, les textes ne sont plus choisis au hasard et ne sont donc pas des variables aléatoires. Si cette catégorie de variables vous semble difficile à saisir, vous pouvez, pour le moment, l’ignorer car, dans la plupart des cas, ces variables ne sont pas modélisées de manière explicite. Néanmoins, si elles sont abordées ici, c’est parce que, pour certaines analyses, comme les modèles linéaires mixtes, il est nécessaire de les formaliser.</p>
 <p>Il est également nécessaire de pouvoir distinguer une variable quantitative (appelée aussi numérique ou métrique), d’une variable ordinale, ou qualitative (appelée aussi nominale ou catégorielle).</p>
 <div style="background:      #ccebf9  ; font-size: 18px; padding: 18px; border: 1px solid lightgray; margin: 0px;">
 <p><legend style="background:  #8dcbe6    ;font-size: 18px; padding: 18px; border: 1px solid black;margin: 0 px">
@@ -267,31 +269,31 @@ Bien que ma description soit volontairement imprécise et incomplète, elle suff
 <pre><code>## [1] "a" "1"</code></pre>
 <p>Les matrices sont des tableaux de données dans lesquels il n’y a que des observations de même nature (que des chiffres, que des chaînes de lettres, que des logiques). Une matrice est une table à deux entrées, ayant donc des lignes et des colonnes. La matrice se différencie donc du vecteur par le fait que la matrice a plusieurs lignes ET plusieurs colonnes. Les matrices mériteraient un chapitre complet les concernant mais les compétences requises dépasseraient très largement le niveau d’introduction.</p>
 <div class="tabwid">
-<style>.cl-e7d24cb6{}.cl-e7c88276{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e7cc53f6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e7cc707a{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7cc7084{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7cc7085{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7cc708e{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e7d24cb6">
+<style>.cl-0982a6a6{}.cl-097580ac{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-097a2d64{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-097a53e8{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-097a53e9{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-097a53f2{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-097a53fc{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-0982a6a6">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:unnamed-chunk-45">Table 5.1: </span><span>Exemple de matrice ayant 3 lignes et 3 colonnes.</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-e7cc707a"><p class="cl-e7cc53f6"><span class="cl-e7c88276">V1</span></p></th>
-<th class="cl-e7cc707a"><p class="cl-e7cc53f6"><span class="cl-e7c88276">V2</span></p></th>
-<th class="cl-e7cc707a"><p class="cl-e7cc53f6"><span class="cl-e7c88276">V3</span></p></th>
+<th class="cl-097a53e8"><p class="cl-097a2d64"><span class="cl-097580ac">V1</span></p></th>
+<th class="cl-097a53e8"><p class="cl-097a2d64"><span class="cl-097580ac">V2</span></p></th>
+<th class="cl-097a53e8"><p class="cl-097a2d64"><span class="cl-097580ac">V3</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e7cc7084"><p class="cl-e7cc53f6"><span class="cl-e7c88276">1</span></p></td>
-<td class="cl-e7cc7084"><p class="cl-e7cc53f6"><span class="cl-e7c88276">4</span></p></td>
-<td class="cl-e7cc7084"><p class="cl-e7cc53f6"><span class="cl-e7c88276">7</span></p></td>
+<td class="cl-097a53e9"><p class="cl-097a2d64"><span class="cl-097580ac">1</span></p></td>
+<td class="cl-097a53e9"><p class="cl-097a2d64"><span class="cl-097580ac">4</span></p></td>
+<td class="cl-097a53e9"><p class="cl-097a2d64"><span class="cl-097580ac">7</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e7cc7085"><p class="cl-e7cc53f6"><span class="cl-e7c88276">2</span></p></td>
-<td class="cl-e7cc7085"><p class="cl-e7cc53f6"><span class="cl-e7c88276">5</span></p></td>
-<td class="cl-e7cc7085"><p class="cl-e7cc53f6"><span class="cl-e7c88276">8</span></p></td>
+<td class="cl-097a53f2"><p class="cl-097a2d64"><span class="cl-097580ac">2</span></p></td>
+<td class="cl-097a53f2"><p class="cl-097a2d64"><span class="cl-097580ac">5</span></p></td>
+<td class="cl-097a53f2"><p class="cl-097a2d64"><span class="cl-097580ac">8</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e7cc708e"><p class="cl-e7cc53f6"><span class="cl-e7c88276">3</span></p></td>
-<td class="cl-e7cc708e"><p class="cl-e7cc53f6"><span class="cl-e7c88276">6</span></p></td>
-<td class="cl-e7cc708e"><p class="cl-e7cc53f6"><span class="cl-e7c88276">9</span></p></td>
+<td class="cl-097a53fc"><p class="cl-097a2d64"><span class="cl-097580ac">3</span></p></td>
+<td class="cl-097a53fc"><p class="cl-097a2d64"><span class="cl-097580ac">6</span></p></td>
+<td class="cl-097a53fc"><p class="cl-097a2d64"><span class="cl-097580ac">9</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -336,31 +338,31 @@ Bien que ma description soit volontairement imprécise et incomplète, elle suff
 <p>Dans la plupart des situations, vos données contiendronsdes valeurs de nature différente. Il y aura des valeurs numériques, mais également des facteurs ou des identifiants de participants. Dans ce cas, la classe d’objet dans R n’est pas une matrice mais un dataframe. Pour le formuler autrement, un dataframe a toutes les propriétés d’une matrice (s’il ne contient que des valeurs de même nature, le dataframe pourra être considéré comme une matrice), mais a également la propriété de pouvoir gérer des informations de nature différente à la condition que le nombre de ligne soit toujours identique. Ainsi, on ne peut pas avoir 5 valeurs dans la première colonne et 4 dans la seconde sans préciser qu’il y a une valeur qui manque dans la seconde colonne.
 Le Tableau <a href="les-donn%C3%A9es.html#tab:extable">5.2</a> un exemple qui pourrait représenter le genre et la taille de différents individus :</p>
 <div class="tabwid">
-<style>.cl-e7eeb6c6{}.cl-e7e61ea8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e7e99fa6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e7e99fb0{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e7e9b7f2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b7f3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b7fc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b7fd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b7fe{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e7e9b806{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e7eeb6c6">
+<style>.cl-09b115cc{}.cl-09a31b66{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-09a92934{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-09a92948{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-09a95468{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a95469{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a95472{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a95473{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a9547c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a9547d{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-09b115cc">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:extable">Table 5.2: </span><span>Exemple de dataframe avec une colonne contenant un facteur et une colonne contenant des valeurs numériques.</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-e7e9b7f2"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">sexe</span></p></th>
-<th class="cl-e7e9b7f3"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">taille</span></p></th>
+<th class="cl-09a95468"><p class="cl-09a92934"><span class="cl-09a31b66">sexe</span></p></th>
+<th class="cl-09a95469"><p class="cl-09a92948"><span class="cl-09a31b66">taille</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e7e9b7fc"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">Homme</span></p></td>
-<td class="cl-e7e9b7fd"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">176</span></p></td>
+<td class="cl-09a95472"><p class="cl-09a92934"><span class="cl-09a31b66">Homme</span></p></td>
+<td class="cl-09a95473"><p class="cl-09a92948"><span class="cl-09a31b66">176</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e7e9b7fc"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">Femme</span></p></td>
-<td class="cl-e7e9b7fd"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">173</span></p></td>
+<td class="cl-09a95472"><p class="cl-09a92934"><span class="cl-09a31b66">Femme</span></p></td>
+<td class="cl-09a95473"><p class="cl-09a92948"><span class="cl-09a31b66">173</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e7e9b7fc"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">Homme</span></p></td>
-<td class="cl-e7e9b7fd"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">180</span></p></td>
+<td class="cl-09a95472"><p class="cl-09a92934"><span class="cl-09a31b66">Homme</span></p></td>
+<td class="cl-09a95473"><p class="cl-09a92948"><span class="cl-09a31b66">180</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e7e9b7fe"><p class="cl-e7e99fa6"><span class="cl-e7e61ea8">Femme</span></p></td>
-<td class="cl-e7e9b806"><p class="cl-e7e99fb0"><span class="cl-e7e61ea8">165</span></p></td>
+<td class="cl-09a9547c"><p class="cl-09a92934"><span class="cl-09a31b66">Femme</span></p></td>
+<td class="cl-09a9547d"><p class="cl-09a92948"><span class="cl-09a31b66">165</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -377,7 +379,7 @@ Le Tableau <a href="les-donn%C3%A9es.html#tab:extable">5.2</a> un exemple qui po
 ## 2 Femme    173
 ## 3 Homme    180
 ## 4 Femme    165</code></pre>
-<p>Ce format est donc bien plus flexible que la matrice. Il s’agit du format le plus conventionnel avec lequel vous pouvez réaliser le plus d’opérations. Néanmoins, nous devons aborder une autre manière de gérer des jeux de données qui est les tibbles. Ce format a été proposé par l’équipe de tidyverse <span class="citation">(<a href="comment-choisir-la-bonne-analyse.html#ref-Wickham2017">Wickham et al., 2019</a>)</span>
+<p>Ce format est donc bien plus flexible que la matrice. Il s’agit du format le plus conventionnel avec lequel vous pouvez réaliser le plus d’opérations. Néanmoins, nous devons aborder une autre manière de gérer des jeux de données qui est les tibbles. Ce format a été proposé par l’équipe de tidyverse <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-Wickham2017">Wickham et al., 2019</a>)</span>
 pour faciliter la manipulation et améliorer l’affichage dans la console. Néanmoins, tout ce que vous pouvez faire avec un tibble, vous pouvez le faire avec un dataframe, l’inverse n’est pas vrai. Par exemple, vous ne pouvez pas donner des noms aux lignes dans un tibble, ni changer la nature d’une variable. Certaines fonctions vont requérir un dataframe, et les tibbles seront incompatibles. Alors, finalement, pourquoi aborder ce type de format ? Pour deux raisons : la première est que les tibbles est le format dans lequel vos données seront importées si vous utilisez excel pour créer vos données et le package <em>readxl</em> et la seconde raison est que ce format est particulièrement utile pour manipuler les données, notamment avec le package <em>dplyr</em>. Concrètement, voici à quoi va ressembler un tibble par rapport au dataframe.</p>
 <div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># on utilise ici la fonction tbl pour transformer notre dataframe </span></span>
@@ -496,7 +498,7 @@ pour faciliter la manipulation et améliorer l’affichage dans la console. Néa
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Initiation à l’approche bayésienne du traitement des données</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-15.</p>
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
