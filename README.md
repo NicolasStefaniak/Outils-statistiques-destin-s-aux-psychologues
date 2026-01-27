@@ -1,3 +1,5 @@
+Ce répertoire github reprend le bookdown "outils statistiques destinés aux psychologues", les codes et les jeux de données qui y sont associés. 
+
 © 2026 Stefaniak Nicolas  
 Licence CC BY-NC 4.0
 
