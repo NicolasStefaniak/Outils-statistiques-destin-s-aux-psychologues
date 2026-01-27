@@ -19,7 +19,12 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -68,6 +73,7 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"></a></li>
+<li><a class="" href="licence.html">Licence</a></li>
 <li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
 <li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
 <li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
@@ -96,294 +102,294 @@ En revanche, ce qui peut être expliqué est la manière d’organiser correctem
 <p>Vos données représentent un tableau à double entrée, c’est-à-dire un dataframe, où les lignes représentent les observations et les colonnes représentent vos variables. Notez que le mot observation doit être pris au sens large. Dans certains cas, notamment quand on veut construire deux formes parallèles d’une tâche, il peut être intéressant de vérifier si chaque stimulus d’une version présente des caractéristiques similaires au stimulus qui lui est apparié dans l’autre version de la tâche. Dans ce cas, chaque stimulus pourra être considéré comme une observation.
 Il y a une exception à cette organisation : les données avec des mesures répétées. Si un individu passe par différentes conditions expérimentales, le nom de la colonne va représenter la modalité de la variable indépendante en mesure répétée et le contenu en-dessous de ce nom de colonne va représenter la variable dépendante mesurée dans chacune des conditions expérimentales. Si nous reprenons l’exemple du dataframe que nous avons présenté plus haut (avec la taille et le sexe), on pourrait avoir une mesure de la taille à 4 ans, à 10 ans et à 15 ans. Le jeu de données prendrait alors la forme du Tableau <a href="organiser-les-donn%C3%A9es.html#tab:dataframe">6.1</a>.</p>
 <div class="tabwid">
-<style>.cl-4baf1e22{}.cl-4ba383be{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4ba79c56{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4ba79c60{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4ba7b84e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ba7b858{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ba7b859{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ba7b85a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ba7b862{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4ba7b863{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4baf1e22">
+<style>.cl-464878ba{}.cl-463efdee{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-46423a9a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-46423aa4{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4642552a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-46425534{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-46425535{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4642553e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4642553f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-46425548{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-464878ba">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:dataframe">Table 6.1: </span><span>Exemple de données pour lesquelles il y aurait plusieurs mesures chez les mêmes individus</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-4ba7b84e"><p class="cl-4ba79c56"><span class="cl-4ba383be">sexe</span></p></th>
-<th class="cl-4ba7b858"><p class="cl-4ba79c60"><span class="cl-4ba383be">Taille 4 ans</span></p></th>
-<th class="cl-4ba7b858"><p class="cl-4ba79c60"><span class="cl-4ba383be">Taille 10 ans</span></p></th>
-<th class="cl-4ba7b858"><p class="cl-4ba79c60"><span class="cl-4ba383be">Taille 15 ans</span></p></th>
+<th class="cl-4642552a"><p class="cl-46423a9a"><span class="cl-463efdee">sexe</span></p></th>
+<th class="cl-46425534"><p class="cl-46423aa4"><span class="cl-463efdee">Taille 4 ans</span></p></th>
+<th class="cl-46425534"><p class="cl-46423aa4"><span class="cl-463efdee">Taille 10 ans</span></p></th>
+<th class="cl-46425534"><p class="cl-46423aa4"><span class="cl-463efdee">Taille 15 ans</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4ba7b859"><p class="cl-4ba79c56"><span class="cl-4ba383be">Homme</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">102</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">138</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">176</span></p></td>
+<td class="cl-46425535"><p class="cl-46423a9a"><span class="cl-463efdee">Homme</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">102</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">138</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">176</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4ba7b859"><p class="cl-4ba79c56"><span class="cl-4ba383be">Femme</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">108</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">135</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">173</span></p></td>
+<td class="cl-46425535"><p class="cl-46423a9a"><span class="cl-463efdee">Femme</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">108</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">135</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">173</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4ba7b859"><p class="cl-4ba79c56"><span class="cl-4ba383be">Homme</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">105</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">140</span></p></td>
-<td class="cl-4ba7b85a"><p class="cl-4ba79c60"><span class="cl-4ba383be">180</span></p></td>
+<td class="cl-46425535"><p class="cl-46423a9a"><span class="cl-463efdee">Homme</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">105</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">140</span></p></td>
+<td class="cl-4642553e"><p class="cl-46423aa4"><span class="cl-463efdee">180</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4ba7b862"><p class="cl-4ba79c56"><span class="cl-4ba383be">Femme</span></p></td>
-<td class="cl-4ba7b863"><p class="cl-4ba79c60"><span class="cl-4ba383be">99</span></p></td>
-<td class="cl-4ba7b863"><p class="cl-4ba79c60"><span class="cl-4ba383be">142</span></p></td>
-<td class="cl-4ba7b863"><p class="cl-4ba79c60"><span class="cl-4ba383be">165</span></p></td>
+<td class="cl-4642553f"><p class="cl-46423a9a"><span class="cl-463efdee">Femme</span></p></td>
+<td class="cl-46425548"><p class="cl-46423aa4"><span class="cl-463efdee">99</span></p></td>
+<td class="cl-46425548"><p class="cl-46423aa4"><span class="cl-463efdee">142</span></p></td>
+<td class="cl-46425548"><p class="cl-46423aa4"><span class="cl-463efdee">165</span></p></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <p>On se rend compte ici que la structure des données nous permet d’identifier si les mesures sont à mesures répétées ou à groupes indépendants. Puisque chaque ligne représente un individu et qu’on est sur la même ligne, il s’agit ici de données en mesures répétées. En revanche, on ne peut pas être totalement certain qu’il s’agit de groupes indépendants si les données sont organisées de la manière utilisée dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlong">6.2</a> :</p>
 <div class="tabwid">
-<style>.cl-4bc794fc{}.cl-4bbbaa34{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4bc0436e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4bc04378{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4bc06100{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bc0610a{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bc0610b{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bc06114{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bc0611e{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bc0611f{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4bc794fc">
+<style>.cl-465e7674{}.cl-4655911c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4658d386{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4658d39a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4658f438{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4658f442{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4658f44c{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4658f44d{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4658f44e{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4658f456{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-465e7674">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:formatlong">Table 6.2: </span><span>Exemple de données pour lesquelles il peut y avoir ambiguité sur la nature répétée ou à groupes indépendants de l'âge des personnes</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-4bc06100"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">sexe</span></p></th>
-<th class="cl-4bc06100"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Age</span></p></th>
-<th class="cl-4bc0610a"><p class="cl-4bc04378"><span class="cl-4bbbaa34">Taille</span></p></th>
+<th class="cl-4658f438"><p class="cl-4658d386"><span class="cl-4655911c">sexe</span></p></th>
+<th class="cl-4658f438"><p class="cl-4658d386"><span class="cl-4655911c">Age</span></p></th>
+<th class="cl-4658f442"><p class="cl-4658d39a"><span class="cl-4655911c">Taille</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Homme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">4 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">102</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Homme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">4 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">102</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Femme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">4 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">108</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Femme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">4 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">108</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Homme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">4 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">105</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Homme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">4 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">105</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Femme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">4 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">99</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Femme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">4 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">99</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Homme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">10 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">138</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Homme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">10 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">138</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Femme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">10 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">135</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Femme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">10 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">135</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Homme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">10 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">140</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Homme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">10 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">140</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Femme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">10 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">142</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Femme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">10 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">142</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Homme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">15 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">176</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Homme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">15 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">176</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Femme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">15 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">173</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Femme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">15 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">173</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Homme</span></p></td>
-<td class="cl-4bc0610b"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">15 ans</span></p></td>
-<td class="cl-4bc06114"><p class="cl-4bc04378"><span class="cl-4bbbaa34">180</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">Homme</span></p></td>
+<td class="cl-4658f44c"><p class="cl-4658d386"><span class="cl-4655911c">15 ans</span></p></td>
+<td class="cl-4658f44d"><p class="cl-4658d39a"><span class="cl-4655911c">180</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bc0611e"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">Femme</span></p></td>
-<td class="cl-4bc0611e"><p class="cl-4bc0436e"><span class="cl-4bbbaa34">15 ans</span></p></td>
-<td class="cl-4bc0611f"><p class="cl-4bc04378"><span class="cl-4bbbaa34">165</span></p></td>
+<td class="cl-4658f44e"><p class="cl-4658d386"><span class="cl-4655911c">Femme</span></p></td>
+<td class="cl-4658f44e"><p class="cl-4658d386"><span class="cl-4655911c">15 ans</span></p></td>
+<td class="cl-4658f456"><p class="cl-4658d39a"><span class="cl-4655911c">165</span></p></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <p>Pour pouvoir interprété avec certitude le jeu de données, il faut absolument avoir un <strong>identifiant</strong> pour les observations. Dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlongb">6.3</a>, les données représentent des données à groupes indépendants alors que dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlongc">6.4</a>, elles représentent des données à mesure répétées. On le sait car les identifiants des observations ne sont pas les mêmes entre les différents âges dans le Tableau <a href="#formatlongb"><strong>??</strong></a> alors qu’ils sont identiques aux différents âges dans le Tableau <a href="organiser-les-donn%C3%A9es.html#tab:formatlongc">6.4</a>.</p>
 <div class="tabwid">
-<style>.cl-4bec4e00{}.cl-4be06c7a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4be56130{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4be5613a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4be5820a{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4be58214{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4be58215{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4be58216{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4be5821e{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4be58228{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4bec4e00">
+<style>.cl-4679c762{}.cl-4670518c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-46740eee{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-46740ef8{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-46743130{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467431b2{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467431f8{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467431f9{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-46743202{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-46743203{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4679c762">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:formatlongb">Table 6.3: </span><span>Données à groupes indépendants</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-4be5820a"><p class="cl-4be56130"><span class="cl-4be06c7a">Identifiant</span></p></th>
-<th class="cl-4be5820a"><p class="cl-4be56130"><span class="cl-4be06c7a">sexe</span></p></th>
-<th class="cl-4be5820a"><p class="cl-4be56130"><span class="cl-4be06c7a">Age</span></p></th>
-<th class="cl-4be58214"><p class="cl-4be5613a"><span class="cl-4be06c7a">Taille</span></p></th>
+<th class="cl-46743130"><p class="cl-46740eee"><span class="cl-4670518c">Identifiant</span></p></th>
+<th class="cl-46743130"><p class="cl-46740eee"><span class="cl-4670518c">sexe</span></p></th>
+<th class="cl-46743130"><p class="cl-46740eee"><span class="cl-4670518c">Age</span></p></th>
+<th class="cl-467431b2"><p class="cl-46740ef8"><span class="cl-4670518c">Taille</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">swc</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Homme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">4 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">102</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">dlh</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Homme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">4 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">102</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">npc</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Femme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">4 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">108</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">hnz</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Femme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">4 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">108</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">dlh</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Homme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">4 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">105</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">gbp</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Homme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">4 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">105</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">oji</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Femme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">4 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">99</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">jiu</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Femme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">4 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">99</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">siz</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Homme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">10 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">138</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">umi</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Homme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">10 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">138</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">ubr</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Femme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">10 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">135</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">hay</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Femme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">10 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">135</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">fal</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Homme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">10 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">140</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">fsr</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Homme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">10 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">140</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">fps</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Femme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">10 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">142</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">miv</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Femme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">10 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">142</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">xck</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Homme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">15 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">176</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">uyr</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Homme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">15 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">176</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">otw</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Femme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">15 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">173</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">xew</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Femme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">15 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">173</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">son</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">Homme</span></p></td>
-<td class="cl-4be58215"><p class="cl-4be56130"><span class="cl-4be06c7a">15 ans</span></p></td>
-<td class="cl-4be58216"><p class="cl-4be5613a"><span class="cl-4be06c7a">180</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">bpl</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">Homme</span></p></td>
+<td class="cl-467431f8"><p class="cl-46740eee"><span class="cl-4670518c">15 ans</span></p></td>
+<td class="cl-467431f9"><p class="cl-46740ef8"><span class="cl-4670518c">180</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4be5821e"><p class="cl-4be56130"><span class="cl-4be06c7a">dfx</span></p></td>
-<td class="cl-4be5821e"><p class="cl-4be56130"><span class="cl-4be06c7a">Femme</span></p></td>
-<td class="cl-4be5821e"><p class="cl-4be56130"><span class="cl-4be06c7a">15 ans</span></p></td>
-<td class="cl-4be58228"><p class="cl-4be5613a"><span class="cl-4be06c7a">165</span></p></td>
+<td class="cl-46743202"><p class="cl-46740eee"><span class="cl-4670518c">kio</span></p></td>
+<td class="cl-46743202"><p class="cl-46740eee"><span class="cl-4670518c">Femme</span></p></td>
+<td class="cl-46743202"><p class="cl-46740eee"><span class="cl-4670518c">15 ans</span></p></td>
+<td class="cl-46743203"><p class="cl-46740ef8"><span class="cl-4670518c">165</span></p></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="tabwid">
-<style>.cl-4c088e08{}.cl-4bfdb9a6{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4c01613c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4c016146{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4c023224{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4c02322e{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4c02322f{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4c023238{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4c023239{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4c023242{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4c023243{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4c023244{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4c02324c{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4c088e08">
+<style>.cl-4692d018{}.cl-4688ffe8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-468d19b6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-468d19ca{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-468d323e{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-468d3248{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-468d3249{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-468d324a{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-468d3252{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-468d3253{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-468d3254{width:1.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-468d325c{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-468d325d{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4692d018">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:formatlongc">Table 6.4: </span><span>Données en mesures répétées</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-4c023224"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Identifiant</span></p></th>
-<th class="cl-4c02322e"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">sexe</span></p></th>
-<th class="cl-4c02322e"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Age</span></p></th>
-<th class="cl-4c02322f"><p class="cl-4c016146"><span class="cl-4bfdb9a6">Taille</span></p></th>
+<th class="cl-468d323e"><p class="cl-468d19b6"><span class="cl-4688ffe8">Identifiant</span></p></th>
+<th class="cl-468d3248"><p class="cl-468d19b6"><span class="cl-4688ffe8">sexe</span></p></th>
+<th class="cl-468d3248"><p class="cl-468d19b6"><span class="cl-4688ffe8">Age</span></p></th>
+<th class="cl-468d3249"><p class="cl-468d19ca"><span class="cl-4688ffe8">Taille</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">ngj</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Homme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">4 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">102</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">uhr</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Homme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">4 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">102</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">gzq</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Femme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">4 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">108</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">qte</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Femme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">4 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">108</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">ish</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Homme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">4 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">105</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">rlc</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Homme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">4 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">105</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">kls</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Femme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">4 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">99</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">xtn</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Femme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">4 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">99</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">ngj</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Homme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">10 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">138</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">uhr</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Homme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">10 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">138</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">gzq</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Femme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">10 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">135</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">qte</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Femme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">10 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">135</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">ish</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Homme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">10 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">140</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">rlc</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Homme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">10 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">140</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">kls</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Femme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">10 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">142</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">xtn</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Femme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">10 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">142</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">ngj</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Homme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">15 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">176</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">uhr</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Homme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">15 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">176</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">gzq</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Femme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">15 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">173</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">qte</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Femme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">15 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">173</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023238"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">ish</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Homme</span></p></td>
-<td class="cl-4c023239"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">15 ans</span></p></td>
-<td class="cl-4c023242"><p class="cl-4c016146"><span class="cl-4bfdb9a6">180</span></p></td>
+<td class="cl-468d324a"><p class="cl-468d19b6"><span class="cl-4688ffe8">rlc</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">Homme</span></p></td>
+<td class="cl-468d3252"><p class="cl-468d19b6"><span class="cl-4688ffe8">15 ans</span></p></td>
+<td class="cl-468d3253"><p class="cl-468d19ca"><span class="cl-4688ffe8">180</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4c023243"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">kls</span></p></td>
-<td class="cl-4c023244"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">Femme</span></p></td>
-<td class="cl-4c023244"><p class="cl-4c01613c"><span class="cl-4bfdb9a6">15 ans</span></p></td>
-<td class="cl-4c02324c"><p class="cl-4c016146"><span class="cl-4bfdb9a6">165</span></p></td>
+<td class="cl-468d3254"><p class="cl-468d19b6"><span class="cl-4688ffe8">xtn</span></p></td>
+<td class="cl-468d325c"><p class="cl-468d19b6"><span class="cl-4688ffe8">Femme</span></p></td>
+<td class="cl-468d325c"><p class="cl-468d19b6"><span class="cl-4688ffe8">15 ans</span></p></td>
+<td class="cl-468d325d"><p class="cl-468d19ca"><span class="cl-4688ffe8">165</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -422,7 +428,7 @@ Il y a une exception à cette organisation : les données avec des mesures rép�
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-26.</p>
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-27.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

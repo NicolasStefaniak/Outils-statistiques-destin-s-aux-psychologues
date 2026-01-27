@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 10 L’approche par maximum de vraisemblance. | Outils statistiques destinés aux psychologues</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="Le maximum de vraisemblance est un concept essentiel au niveau statistique car il amène la personne qui veut réaliser des statistiques à penser en termes de modèle. Il s’agit habituellement d’un...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 10 L’approche par maximum de vraisemblance. | Outils statistiques destinés aux psychologues">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Le maximum de vraisemblance est un concept essentiel au niveau statistique car il amène la personne qui veut réaliser des statistiques à penser en termes de modèle. Il s’agit habituellement d’un...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 10 L’approche par maximum de vraisemblance. | Outils statistiques destinés aux psychologues">
+<meta name="twitter:description" content="Le maximum de vraisemblance est un concept essentiel au niveau statistique car il amène la personne qui veut réaliser des statistiques à penser en termes de modèle. Il s’agit habituellement d’un...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Outils statistiques destinés aux psychologues</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="licence.html">Licence</a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="active" href="lapproche-par-maximum-de-vraisemblance..html"><span class="header-section-number">10</span> L’approche par maximum de vraisemblance.</a></li>
+<li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">11</span> Quel outil choisir</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">12</span> Références</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="lapproche-par-maximum-de-vraisemblance." class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> L’approche par maximum de vraisemblance.<a class="anchor" aria-label="anchor" href="#lapproche-par-maximum-de-vraisemblance."><i class="fas fa-link"></i></a>
+</h1>
+<p>Le maximum de vraisemblance est un concept essentiel au niveau statistique car il amène la personne qui veut réaliser des statistiques à penser en termes de modèle. Il s’agit habituellement d’un estimateur qui est utilisé dans les techniques statistiques plus avancées telles que la régression logistique, les analyses factorielles ou les modèles linéaires mixtes, et plus généralement dans tous les modèles non linéaires. Néanmoins, on peut l’utiliser pour estimer n’importe quel paramètre.</p>
+<p>En général, le maximum de vraisemblance est un méthode pour obtenir les estimations de paramètres inconnus en optimisant la fonction de vraisemblance.</p>
+<p>Le principe la vraisemblance est d’estimer la probabilité d’observer les données de manière itérative. Ainsi, on part d’une valeur “aléatoire”, qui va être la solution initiale, et on va chercher à améliorer cette solution initiale de sorte à augmenter, c’est-à-dire optimiser, la probabilité d’observer cette distribution de données par simulation. Le maximum de vraisemblance est la valeur de la probabilité pour laquelle les paramètre seront optimisés pour avoir la probabilité maximale. Quand cette probabilité a atteint un maximum (moyennant une certaine tolérance), on dit que le modèle a convergé.</p>
+<div id="explication-mathématique" class="section level3" number="10.0.1">
+<h3>
+<span class="header-section-number">10.0.1</span> Explication mathématique<a class="anchor" aria-label="anchor" href="#explication-math%C3%A9matique"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>AVERTISSEMENT</strong> : cette section peut être ignorée, en particulier pour ceux à qui les formules mathématiques donnent la nausée. Dans ce cas, vous pouvez vous reporter à la section suivante sur le ratio de vraisemblance. Pour les autres, que Dieu ait votre âme.</p>
+<p>D’un point de vue mathématique, la vraisemblance est la densité de probabilité associée aux données observées :</p>
+<p><span class="math display">\[L_x(\theta)= f(x)\]</span></p>
+<p>Pour illustrer le concept, nous allons reprendre l’exemple des chocs électriques reçus par les participants quand ils s’éloignent du centre de la cible. On peut calculer la vraisemblance de la moyenne</p>
+<p>Pour une variable numérique, la vraisemblance est maximale lorsque la moyenne et l’écart-type sont identiques à la moyenne et l’écart-type calculés.</p>
+<div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">fleche</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 41.88</code></pre>
+<div class="sourceCode" id="cb417"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">fleche</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 9.425627</code></pre>
+<p>Dans cet exemple assez simpliste, nous voulons donc estimer la moyenne et l’écart-type. Fondamentale, on peut les calculer l’un après l’autre assez aisément. Cependant, dans des situations plus complexes, ce ne sera pas le cas. Nous allons donc essayer de deviner la moyenne et l’écart-type sur la base des données :</p>
+<div class="sourceCode" id="cb419"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fleche</span></span></code></pre></div>
+<pre><code>##  [1] 40 53 37 47 35 32 47 41 53 35 56 47 43 55 40 38 43 23 36 58 46 34 37 39 29
+## [26] 45 46 29 54 42 38 36 50 50 32 37 40 44 41 59 33 55 47 51 46 31 43 51 11 39</code></pre>
+<p>Les données sont comprises grosso modo entre 20 et 68. Il est raisonnable de considérer que la vraie moyenne se situe quelque part entre ces deux valeurs et que l’écart-type vaut environ <span class="math inline">\(1/4\)</span> de cette distance puisque 95% des observations sont comprises entre -1.96 et +1.96 écart-types. Ainsi, je devine que la moyenne est à 44 et l’écart-type vaut 12.</p>
+<p>Je peux calculer la vraisemblance de cette estimation en calculant la densité de probabilité associée aux données (en considérant que les données suivent une distribution normale)</p>
+<p>Ainsi, pour chaque observation d’une variable numérique, on peut estimer la densité de probabilité de cette observation sur la base d’une distribution normale (pour simplifier un peu, la hauteur de la courbe normale).</p>
+<div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">fleche</span>, mean<span class="op">=</span> <span class="fl">44</span> , sd<span class="op">=</span> <span class="fl">12</span>, log<span class="op">=</span><span class="cn">F</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span> <span class="co"># on obtient la densité de probabilité pour chaque observation </span></span></code></pre></div>
+<pre><code>##  [1] 0.03144860 0.02509479 0.02804390 0.03222234 0.02509479 0.02016423
+##  [7] 0.03222234 0.03222234 0.02509479 0.02509479</code></pre>
+<p>La fonction de vraisemblance est obtenue en appliquant le logarithme à chacune des observations.</p>
+<div class="sourceCode" id="cb423"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">fleche</span>, mean<span class="op">=</span> <span class="fl">44</span> , sd<span class="op">=</span> <span class="fl">12</span>, log<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span> <span class="co"># on obtient la fonction de vraisemblance pour chaque observation </span></span></code></pre></div>
+<pre><code>##  [1] -3.459401 -3.685095 -3.573984 -3.435095 -3.685095 -3.903845 -3.435095
+##  [8] -3.435095 -3.685095 -3.685095</code></pre>
+<p>On obtient la vraisemblance en additionnant le logarithme des probabilités d’observer cette distribution.</p>
+<div class="sourceCode" id="cb425"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">fleche</span>, mean<span class="op">=</span> <span class="fl">44</span> , sd<span class="op">=</span> <span class="fl">12</span>, log<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## [1] -186.0881</code></pre>
+<p>La valeur de la vraisemblance est ici particulièrement faible. Nous allons tenter de l’améliorer. Pour cela, je vais modifier les paramètres et déterminer si on peut augmenter la vraisemblance. Par exemple, je peux tester si la moyenne n’est pas à 43 plutôt qu’à 44.</p>
+<div class="sourceCode" id="cb427"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">fleche</span>, mean<span class="op">=</span> <span class="fl">43</span> , sd<span class="op">=</span> <span class="fl">12</span>, log<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## [1] -185.5256</code></pre>
+<p>La vraisemblance à augmenter. Je vais donc continuer et tenter de voir si la moyenne n’est pas à 42 au lieu de 43.</p>
+<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">fleche</span>, mean<span class="op">=</span> <span class="fl">42</span> , sd<span class="op">=</span> <span class="fl">12</span>, log<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## [1] -185.3103</code></pre>
+<p>La vraisemblance continue à augmenter. On va donc continuer à estimer nos deux paramètres de manière itérative jusqu’à atteindre un maximum. Ce maximum sera atteint quand la moyenne testé sur la moyenne de nos données et l’écart-type sera l’écart-type des données :</p>
+<div class="sourceCode" id="cb431"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">fleche</span>, mean<span class="op">=</span> <span class="fl">39.72</span> , sd<span class="op">=</span> <span class="fl">10.876</span>, log<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## [1] -184.6622</code></pre>
+<p>On peut évidemment obtenir directement ces valeurs. Le package ‘EstimationTools’ permet de manipuler les différents paramères avec la fonction <code>maxlog</code>.</p>
+<div class="sourceCode" id="cb433"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://jaimemosg.github.io/EstimationTools/">"EstimationTools"</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Le chargement a nécessité le package : survival</code></pre>
+<pre><code>## 
+## Attachement du package : 'survival'</code></pre>
+<pre><code>## L'objet suivant est masqué depuis 'package:boot':
+## 
+##     aml</code></pre>
+<pre><code>## 
+## &gt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;   EstimationTools Version 4.3.1   &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&lt;
+##   Feel free to report bugs in https://github.com/Jaimemosg/EstimationTools/issues</code></pre>
+<div class="sourceCode" id="cb438"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fit1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://jaimemosg.github.io/EstimationTools/reference/maxlogL.html">maxlogL</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">fleche</span>, dist <span class="op">=</span> <span class="st">'dnorm'</span>, start<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,lower<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">5</span><span class="op">)</span>, upper<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">65</span>, <span class="fl">20</span><span class="op">)</span><span class="op">)</span> </span>
+<span><span class="va">fit1</span><span class="op">$</span><span class="va">fit</span><span class="op">$</span><span class="va">par</span></span></code></pre></div>
+<pre><code>##      mean        sd 
+## 41.880000  9.330895</code></pre>
+<div class="sourceCode" id="cb440"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fit1</span><span class="op">$</span><span class="va">fit</span><span class="op">$</span><span class="va">objective</span></span></code></pre></div>
+<pre><code>## [1] -182.6135</code></pre>
+<p>Remarquez qu’il y a une toute petite différence. Cela est dû au fait que l’estimation de l’écart-type est légèrement différente de celle calculée.</p>
+<p>Dans ce modèle, la vraisemblance est égale à -188.7698. Cette valeur n’est pas directement utilisable. Il est nécessaire de calculer la déviance en la multipliant par -2.</p>
+<div class="sourceCode" id="cb442"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">-</span><span class="fl">2</span><span class="op">*</span><span class="op">-</span><span class="fl">188.9068</span> <span class="co"># calcul de la déviance</span></span></code></pre></div>
+<pre><code>## [1] 377.8136</code></pre>
+</div>
+<div id="le-ratio-de-vraisemblance-lrt" class="section level3" number="10.0.2">
+<h3>
+<span class="header-section-number">10.0.2</span> Le ratio de vraisemblance (LRT)<a class="anchor" aria-label="anchor" href="#le-ratio-de-vraisemblance-lrt"><i class="fas fa-link"></i></a>
+</h3>
+<p>Le ratio de vraisemblance (LRT) est la différence entre deux déviances. Cette différence se distribue approximativement comme un <span class="math inline">\(\chi^2\)</span> ayant comme degrés de liberté le nombre de paramètres estimés.</p>
+<p><span class="math display">\[LRT = -2 [l(\theta-l(\hat\theta))]\]</span></p>
+<div class="sourceCode" id="cb444"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">LRT</span><span class="op">&lt;-</span><span class="op">(</span><span class="op">-</span><span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">fleche</span>, mean<span class="op">=</span> <span class="fl">44</span> , sd<span class="op">=</span> <span class="fl">12</span>, log<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">)</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">fleche</span>, mean<span class="op">=</span> <span class="fl">39.72</span> , sd<span class="op">=</span> <span class="fl">10.876</span>, log<span class="op">=</span><span class="cn">T</span><span class="op">)</span><span class="op">)</span> <span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">LRT</span></span></code></pre></div>
+<pre><code>## [1] 2.851758</code></pre>
+<p>Ainsi, il faut se demander un <span class="math inline">\(\chi^2\)</span> de 2.851758 ayant 2 degrés de liberté est significatif.</p>
+<div class="sourceCode" id="cb446"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Chisquare.html">pchisq</a></span><span class="op">(</span><span class="va">LRT</span>, df<span class="op">=</span><span class="fl">2</span>, lower<span class="op">=</span><span class="cn">F</span><span class="op">)</span> <span class="co"># calcule la probabilité de la valeur LRT avec 2 degrés de liberté, en donnant la probabilité d'avoir une valeur supérieure à cette valeur (lower = F)  </span></span></code></pre></div>
+<pre><code>## [1] 0.2402972</code></pre>
+</div>
+<div id="les-critères-dinformation." class="section level3" number="10.0.3">
+<h3>
+<span class="header-section-number">10.0.3</span> Les critères d’information.<a class="anchor" aria-label="anchor" href="#les-crit%C3%A8res-dinformation."><i class="fas fa-link"></i></a>
+</h3>
+<p>Les critères d’information fournissent une manière d’évaluer l’ajustement d’un modèle sur la base de la valeur optimale du log de vraisemblance tout en pénalisant les modèles qui ne sont pas parcimonieux.</p>
+<p>L’intérêt des critères d’information est qu’ils permettent de comparer n’importe quels modèles ajustés sur le même jeu de données. Il n’est donc pas nécessaire que les modèles soient emboîtés.</p>
+<p>Il existe deux critères d’information qui sont particulièrement utilisés : le AIC (Critère d’Informations d’Akaike) et le BIC (Critère d’Information de Bayes).</p>
+<p>Dans les deux cas, la logique est la même : on va s’appuyer sur le calcul de la vraisemblance, mais en pénalisant le modèle à chaque paramètre estimé.</p>
+<p>Pour le AIC, la déviance va être pénalisée en additionnant 2 fois le nombre de prédicteur.</p>
+<p><span class="math display">\[ AIC=-2×l(β ̂,θ ̂ )+2p \]</span></p>
+<p>Dans notre modèle, le log de vraisemblance vaut 2.851758, la déviance vaut donc -2$$2.851758, ce qui donne -5.703516. Les degrés de liberté résiduels sont de 2. Le AIC vaut donc :</p>
+<div class="sourceCode" id="cb448"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">-</span><span class="fl">2</span><span class="op">*</span><span class="va">fit1</span><span class="op">$</span><span class="va">fit</span><span class="op">$</span><span class="va">objective</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="fl">2</span> <span class="co"># ou le second 2 représente le nombre de paramètres estimés </span></span></code></pre></div>
+<pre><code>## [1] 369.2269</code></pre>
+<p>qu’on obtient directement avec la fonction AIC :</p>
+<div class="sourceCode" id="cb450"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/AIC.html">AIC</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">fleche</span><span class="op">~</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="co"># on réalise un modèle linéaire où on ne calcule que la constante, ce qui permet d'estimer la moyenne et la variance (ou l'écart-type)</span></span></code></pre></div>
+<pre><code>## [1] 369.2269</code></pre>
+<p>Pour le critère d’information de Bayes, le principe est assez similaire, la différence porte sur la manière de calculer la pénalité pour le manque de parcimonie. Ainsi, le nombre de paramètres estimés sera multiplié par le logarithme de la taille de l’échantillon.</p>
+<p><span class="math display">\[BIC=-2×l(β ̂,θ ̂ )+p×ln(n) \]</span></p>
+<div class="sourceCode" id="cb452"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">-</span><span class="fl">2</span><span class="op">*</span><span class="va">fit1</span><span class="op">$</span><span class="va">fit</span><span class="op">$</span><span class="va">objective</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">50</span>, base<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 373.051</code></pre>
+<p>qu’on obtient directement avec la fonction BIC :</p>
+<div class="sourceCode" id="cb454"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/AIC.html">BIC</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">fleche</span><span class="op">~</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="co"># on réalise un modèle linéaire où on ne calcule que la constante, ce qui permet d'estimer la moyenne et la variance (ou l'écart-type)</span></span></code></pre></div>
+<pre><code>## [1] 373.051</code></pre>
+<p>Puisque ces deux critères d’informations s’appuient sur la déviance pour le calcul, à laquelle on va ajouter une pénalité aux modèles pour lesquels de nombreux paramètres sont estimés, cela signifie que, comme pour la déviance où, plus la valeur est faible, plus les données sont ajustées, plus la valeur pour ces deux critères d’informations est petite, meilleur est l’ajustement.</p>
+</div>
+<div id="lapproche-bayesienne" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> L’approche bayesienne<a class="anchor" aria-label="anchor" href="#lapproche-bayesienne"><i class="fas fa-link"></i></a>
+</h2>
+<p>Comme nous l’avons évoqué, pour publier, il faut des résultats, résultats dits positifs. La raison de ce phénomène est que lorsqu’on tolère l’hypothèse nulle, nous n’avons pas d’information sur le fait qu’on n’a pas assez d’information pour avoir un résultat significatif ou s’il n’y a vraiment pas d’effet.</p>
+<p>Pour le formuler autrement l’absence de preuve n’est pas la preuve de l’absence. Cette difficulté est une des grosses limites des tests d’hypothèse nulle.</p>
+<p>Une autre critique fréquemment adressée aux tests d’hypothèse nulle est que le seuil à 0.05 est arbitraire, c’est pourquoi un certain nombre de chercheurs encouragent l’utilisation des facteurs bayesiens.</p>
+<div id="les-facteurs-bayesiens-un-rapport-entre-deux-vraisemblances" class="section level3" number="10.1.1">
+<h3>
+<span class="header-section-number">10.1.1</span> Les facteurs bayesiens : un rapport entre deux vraisemblances<a class="anchor" aria-label="anchor" href="#les-facteurs-bayesiens-un-rapport-entre-deux-vraisemblances"><i class="fas fa-link"></i></a>
+</h3>
+<p>Supposons un amphi pour lequel on se demande si la parité est respectée. Dans cet amphi, il y a 200 personnes, dont 160 femmes. La probabilité que la parité soit respectée s’obtient par une binomiale</p>
+<p><span class="math display">\[ \begin{pmatrix} 200 \\160  \end{pmatrix} 0,5 ^{160} (1-0,5)^{40}\ \]</span></p>
+<p>et vaut</p>
+<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p.h0</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">200</span>, <span class="fl">0.5</span>,<span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">p.h0</span></span></code></pre></div>
+<pre><code>## [1] 1.275816e-18</code></pre>
+<p>L’hypothèse alternative à cette hypothèse est que la parité n’est pas respectée.
+La probabilité que la parité ne soit pas respectée (le ratio h/f est n’importe quelle autre valeur que 0,5) s’obtient par :</p>
+<p><span class="math display">\[\int_{0}^{1} \begin{pmatrix} 200 \\160  \end{pmatrix} p ^{160} (1-p)^{40}\, \mathrm{d}p \]</span></p>
+<p>** note : pour être parfaitement précis, il faudrait retirer de l’intégrale la probabilité d’avoir 0.5)</p>
+<p>et vaut :</p>
+<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fdbinom</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">=</span><span class="cn">NULL</span><span class="op">)</span><span class="op">{</span></span>
+<span>         <span class="va">r</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="fl">160</span>, <span class="fl">200</span>, <span class="va">p</span>,<span class="cn">FALSE</span><span class="op">)</span></span>
+<span>        <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span></span>
+<span>        <span class="op">}</span></span>
+<span></span>
+<span><span class="va">p.h1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/integrate.html">integrate</a></span><span class="op">(</span><span class="va">fdbinom</span>, <span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">p.h1</span><span class="op">$</span><span class="va">value</span></span></code></pre></div>
+<pre><code>## [1] 0.004975124</code></pre>
+<p>Selon les tests d’hypothèse nulle, on est amené à rejeter à la fois l’hypothèse de la parité et l’hypothèse selon laquelle la parité n’est pas respectée.</p>
+<p>Le facteur bayesien peut résoudre ce problème. En effet, il s’agit du rapport entre ces deux probabilités.</p>
+<pre><code>## 1.275816e-18 / 0.004975124 = 3.899561e+15</code></pre>
+<p>Ainsi, on sait quel est l’hypothèse la plus probable.</p>
+<p>Un facteur bayesien s’interprète de la manière indiquée dans le Tableau 4. Notez que ce tableau teste l’hypothèse nulle. Les critères doivent être inversés si on teste l’hypothèse alternative.</p>
+<small>Tableau 4. Seuil pour interpréter les facteurs bayesiens (Wagenmakers et al., 2011)</small>
+<div class="centered">
+<div class="inline-figure"><img src="inference/evidencefor.png" width="300px"></div>
+</div>
+<p>Cette approche permet donc de résoudre le problème des tests d’hypothèse nulle consistant à pouvoir tester une absence de différence.</p>
+<p>Pour le comprendre, prenons deux groupes de 1000 personnes ayant exactement la même moyenne (i.e., 0) et le même écart-type (i.e.,1).</p>
+<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">groupe1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">groupe2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<p>Pour comparer ces deux groupes, on va classiquement réaliser un t de Student pour échantillons indépendants.</p>
+<p>Nous allons à présent pouvoir comparer l’évolution de la décision lorsque la taille d’échantillon augmente par rapport tant lorsqu’on adopte un test d’hypothèse que lorsqu’on utilise les facteurs bayesiens.</p>
+<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://richarddmorey.github.io/BayesFactor/">BayesFactor</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Le chargement a nécessité le package : coda</code></pre>
+<pre><code>## Le chargement a nécessité le package : Matrix</code></pre>
+<pre><code>## ************
+## Welcome to BayesFactor 0.9.12-4.7. If you have questions, please contact Richard Morey (richarddmorey@gmail.com).
+## 
+## Type BFManual() to open the manual.
+## ************</code></pre>
+<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="va">list.t</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">list.bf</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">5</span><span class="op">:</span><span class="fl">1000</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">ttest</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">groupe1</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="va">i</span><span class="op">]</span>, <span class="va">groupe2</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span>  <span class="va">list.t</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">list.t</span>,  <span class="va">ttest</span><span class="op">$</span><span class="va">p.value</span><span class="op">)</span></span>
+<span>  <span class="va">bf</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/BayesFactor/man/ttestBF.html">ttestBF</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">groupe1</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="va">i</span><span class="op">]</span>, y <span class="op">=</span> <span class="va">groupe2</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="va">i</span><span class="op">]</span>, rscale <span class="op">=</span> <span class="st">"medium"</span><span class="op">)</span></span>
+<span>  <span class="va">list.bf</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">list.bf</span>, <span class="fu"><a href="https://rdrr.io/pkg/BayesFactor/man/extractBF-methods.html">extractBF</a></span><span class="op">(</span><span class="va">bf</span><span class="op">)</span><span class="op">$</span><span class="va">bf</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="va">simul</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>index<span class="op">=</span><span class="fl">5</span><span class="op">:</span><span class="fl">1000</span>, <span class="st">"Bayes.Factor"</span><span class="op">=</span><span class="va">list.bf</span>,<span class="st">"test.t.p"</span><span class="op">=</span><span class="va">list.t</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">cutoff.bf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span> x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span>, y <span class="op">=</span><span class="fl">0.33</span>, cutoff <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span> <span class="op">)</span></span>
+<span><span class="va">cutoff.bf2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span> x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span>, y <span class="op">=</span><span class="fl">3</span>, cutoff <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span> <span class="op">)</span></span>
+<span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">simul</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">index</span>, y<span class="op">=</span><span class="va">Bayes.Factor</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">3.5</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span> <span class="va">x</span>, <span class="va">y</span>, linetype <span class="op">=</span> <span class="va">cutoff</span> <span class="op">)</span>, <span class="va">cutoff.bf</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span> <span class="va">x</span>, <span class="va">y</span>, linetype <span class="op">=</span> <span class="va">cutoff</span> <span class="op">)</span>, <span class="va">cutoff.bf2</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Taille de l'échantillon"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Valeur du facteur bayesien"</span><span class="op">)</span><span class="op">+</span></span>
+<span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"none"</span><span class="op">)</span><span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title<span class="op">=</span><span class="st">"Figure 11. Evolution de la valeur du Facteur Bayesien pour un t de Student \n en fonction de la taille de l'échantillon."</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.line.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"black"</span>, size <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span>,</span>
+<span>                         axis.line.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"black"</span>, size <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size<span class="op">=</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">cutoff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span> x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span>, y <span class="op">=</span> <span class="fl">0.05</span>, cutoff <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span> <span class="op">)</span></span>
+<span><span class="va">p2</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">simul</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">index</span>, y<span class="op">=</span><span class="va">test.t.p</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span> <span class="va">x</span>, <span class="va">y</span>, linetype <span class="op">=</span> <span class="va">cutoff</span> <span class="op">)</span>, <span class="va">cutoff</span><span class="op">)</span><span class="op">+</span></span>
+<span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Taille de l'échantillon"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Valeur de la probabilité du test t"</span><span class="op">)</span><span class="op">+</span></span>
+<span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"none"</span><span class="op">)</span><span class="op">+</span></span>
+<span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title<span class="op">=</span><span class="st">"Figure 10. Evolution de la probabilité pour un t de Student \n en fonction de la taille de l'échantillon."</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.line.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"black"</span>, size <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span>,</span>
+<span>                         axis.line.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"black"</span>, size <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size<span class="op">=</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Commençons pour regarder l’évolution de la probabilité, qui est présentée en Figure 10. On se rend compte que peu importe la taille de l’échantillon, la probabilité associée au test de Student peut se situer entre n’importe quelle valeur sur une échelle allant de 0 à 1, avec un certain nombre de valeurs inférieures au seuil de significativité à 0.05, identifié par la droite horizontale. Ceci amène donc à la conclusion que peu importe la probabilité, nous ne sommes pas en mesure de tirer une conclusion.</p>
+<div class="inline-figure"><img src="bookdown-demo_files/figure-html/unnamed-chunk-233-1.png" width="672"></div>
+<p>Si on s’intéresse à présent à l’évolution du Facteur Bayes (Figure 11). On constate que le FB ne dépasse jamais le seuil de 3 (ligne horizontale du haut) qui indique la présence d’une différence significative entre les deux groupes. En revanche, à partir d’un échantillon suffisamment élevé, le FB ne dépasse plus le seuil de 0.33 (la ligne horizontale du bas) qui indique des éléments en faveur de l’absence de différence. Il s’agit donc d’une grosse plus-value des facteurs bayesiens.</p>
+<div class="inline-figure"><img src="bookdown-demo_files/figure-html/unnamed-chunk-234-1.png" width="672"></div>
+<p>Pour utiliser les facteurs bayesiens, on applique le même raisonnement que pour les tests d’hypothèse nulle : donc si vous devez un t de Student, vous ferez un t de Student avec une approche bayesienne aussi.</p>
+<p>Le package R qui permet d’adopter cette approche est le package ‘BayesFactor’ (il en existe d’autres, mais ils sont un peu plus complexes d’utilisation).</p>
+<p>Nous pouvons reprendre notre exemple sur la force des super-héros pour illustrer la manière dont la fonction doit être utilisée.</p>
+<div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="va">bf</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/BayesFactor/man/ttestBF.html">ttestBF</a></span><span class="op">(</span>formula<span class="op">=</span><span class="va">Force</span><span class="op">~</span><span class="va">Groupe</span>, data<span class="op">=</span><span class="va">super</span>, rscale <span class="op">=</span> <span class="st">"medium"</span>, paired<span class="op">=</span><span class="cn">F</span><span class="op">)</span></span>
+<span><span class="va">bf</span></span></code></pre></div>
+<pre><code>## Bayes factor analysis
+## --------------
+## [1] Alt., r=0.707 : 0.3628706 ±0%
+## 
+## Against denominator:
+##   Null, mu1-mu2 = 0 
+## ---
+## Bayes factor type: BFindepSample, JZS</code></pre>
+<p>Vous avez peut-être identifié que, par rapport à la fonction du test de Student classique, il y a un argument supplémentaire, qui est le rscale.</p>
+<p>Le r-scale correspond à la taille d’effet en valeur absolue que le chercheur estime pouvoir observer dans plus de 50% des situations. La valeur par défaut (“medium”) pour le test t est de 0.707.
+En d’autres termes, dans les facteurs bayesiens, il faut explicitement préciser la taille d’effet. C’est ce qu’on appelle le prior. Pour les utilisateurs des tests d’hypothèse nulle, il est raisonnable d’utiliser comme prior la valeur du d de Cohen qu’on s’attend à observer (Lakens, 2018).</p>
+<p>Une autre différence par rapport aux tests d’hypothèse nulle classique est que la distribution qui est utilisée est une distribution Cauchy plutôt qu’une distribution normale. Cependant, comme le montre la Figure 12, la différence entre les deux distribution est suffisamment subtile pour ne pas devoir s’en soucier. En effet, il n’est pas moins ou plus raisonnable de faire l’hypothèse d’une distribution normale et d’une distribution Cauchy pour a distribution des données.</p>
+<div class="inline-figure"><img src="bookdown-demo_files/figure-html/unnamed-chunk-236-1.png" width="672"></div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></div>
+<div class="next"><a href="quel-outil-choisir.html"><span class="header-section-number">11</span> Quel outil choisir</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#lapproche-par-maximum-de-vraisemblance."><span class="header-section-number">10</span> L’approche par maximum de vraisemblance.</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#explication-math%C3%A9matique"><span class="header-section-number">10.0.1</span> Explication mathématique</a></li>
+<li><a class="nav-link" href="#le-ratio-de-vraisemblance-lrt"><span class="header-section-number">10.0.2</span> Le ratio de vraisemblance (LRT)</a></li>
+<li><a class="nav-link" href="#les-crit%C3%A8res-dinformation."><span class="header-section-number">10.0.3</span> Les critères d’information.</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#lapproche-bayesienne"><span class="header-section-number">10.1</span> L’approche bayesienne</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#les-facteurs-bayesiens-un-rapport-entre-deux-vraisemblances"><span class="header-section-number">10.1.1</span> Les facteurs bayesiens : un rapport entre deux vraisemblances</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-27.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

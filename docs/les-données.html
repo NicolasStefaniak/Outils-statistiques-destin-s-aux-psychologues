@@ -19,7 +19,12 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -68,6 +73,7 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"></a></li>
+<li><a class="" href="licence.html">Licence</a></li>
 <li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
 <li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
 <li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
@@ -269,31 +275,31 @@ Bien que ma description soit volontairement imprécise et incomplète, elle suff
 <pre><code>## [1] "a" "1"</code></pre>
 <p>Les matrices sont des tableaux de données dans lesquels il n’y a que des observations de même nature (que des chiffres, que des chaînes de lettres, que des logiques). Une matrice est une table à deux entrées, ayant donc des lignes et des colonnes. La matrice se différencie donc du vecteur par le fait que la matrice a plusieurs lignes ET plusieurs colonnes. Les matrices mériteraient un chapitre complet les concernant mais les compétences requises dépasseraient très largement le niveau d’introduction.</p>
 <div class="tabwid">
-<style>.cl-4b49cb4e{}.cl-4b3f8274{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4b431ab0{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4b433f5e{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b433f68{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b433f72{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b433f7c{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4b49cb4e">
+<style>.cl-45f0d1dc{}.cl-45e696b8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-45ea29ea{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-45ea4650{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-45ea465a{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-45ea465b{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-45ea4664{width:0.472in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-45f0d1dc">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:unnamed-chunk-45">Table 5.1: </span><span>Exemple de matrice ayant 3 lignes et 3 colonnes.</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-4b433f5e"><p class="cl-4b431ab0"><span class="cl-4b3f8274">V1</span></p></th>
-<th class="cl-4b433f5e"><p class="cl-4b431ab0"><span class="cl-4b3f8274">V2</span></p></th>
-<th class="cl-4b433f5e"><p class="cl-4b431ab0"><span class="cl-4b3f8274">V3</span></p></th>
+<th class="cl-45ea4650"><p class="cl-45ea29ea"><span class="cl-45e696b8">V1</span></p></th>
+<th class="cl-45ea4650"><p class="cl-45ea29ea"><span class="cl-45e696b8">V2</span></p></th>
+<th class="cl-45ea4650"><p class="cl-45ea29ea"><span class="cl-45e696b8">V3</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4b433f68"><p class="cl-4b431ab0"><span class="cl-4b3f8274">1</span></p></td>
-<td class="cl-4b433f68"><p class="cl-4b431ab0"><span class="cl-4b3f8274">4</span></p></td>
-<td class="cl-4b433f68"><p class="cl-4b431ab0"><span class="cl-4b3f8274">7</span></p></td>
+<td class="cl-45ea465a"><p class="cl-45ea29ea"><span class="cl-45e696b8">1</span></p></td>
+<td class="cl-45ea465a"><p class="cl-45ea29ea"><span class="cl-45e696b8">4</span></p></td>
+<td class="cl-45ea465a"><p class="cl-45ea29ea"><span class="cl-45e696b8">7</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4b433f72"><p class="cl-4b431ab0"><span class="cl-4b3f8274">2</span></p></td>
-<td class="cl-4b433f72"><p class="cl-4b431ab0"><span class="cl-4b3f8274">5</span></p></td>
-<td class="cl-4b433f72"><p class="cl-4b431ab0"><span class="cl-4b3f8274">8</span></p></td>
+<td class="cl-45ea465b"><p class="cl-45ea29ea"><span class="cl-45e696b8">2</span></p></td>
+<td class="cl-45ea465b"><p class="cl-45ea29ea"><span class="cl-45e696b8">5</span></p></td>
+<td class="cl-45ea465b"><p class="cl-45ea29ea"><span class="cl-45e696b8">8</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4b433f7c"><p class="cl-4b431ab0"><span class="cl-4b3f8274">3</span></p></td>
-<td class="cl-4b433f7c"><p class="cl-4b431ab0"><span class="cl-4b3f8274">6</span></p></td>
-<td class="cl-4b433f7c"><p class="cl-4b431ab0"><span class="cl-4b3f8274">9</span></p></td>
+<td class="cl-45ea4664"><p class="cl-45ea29ea"><span class="cl-45e696b8">3</span></p></td>
+<td class="cl-45ea4664"><p class="cl-45ea29ea"><span class="cl-45e696b8">6</span></p></td>
+<td class="cl-45ea4664"><p class="cl-45ea29ea"><span class="cl-45e696b8">9</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -338,31 +344,31 @@ Bien que ma description soit volontairement imprécise et incomplète, elle suff
 <p>Dans la plupart des situations, vos données contiendronsdes valeurs de nature différente. Il y aura des valeurs numériques, mais également des facteurs ou des identifiants de participants. Dans ce cas, la classe d’objet dans R n’est pas une matrice mais un dataframe. Pour le formuler autrement, un dataframe a toutes les propriétés d’une matrice (s’il ne contient que des valeurs de même nature, le dataframe pourra être considéré comme une matrice), mais a également la propriété de pouvoir gérer des informations de nature différente à la condition que le nombre de ligne soit toujours identique. Ainsi, on ne peut pas avoir 5 valeurs dans la première colonne et 4 dans la seconde sans préciser qu’il y a une valeur qui manque dans la seconde colonne.
 Le Tableau <a href="les-donn%C3%A9es.html#tab:extable">5.2</a> un exemple qui pourrait représenter le genre et la taille de différents individus :</p>
 <div class="tabwid">
-<style>.cl-4b69fb12{}.cl-4b5f30d8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4b62e548{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4b62e55c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4b63014a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b630154{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b63015e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b63015f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b630168{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b630169{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4b69fb12">
+<style>.cl-460eb238{}.cl-460555f8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4608e51a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4608e524{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4608fe1a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4608fe1b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4608fe24{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4608fe25{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4608fe26{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4608fe2e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-460eb238">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:extable">Table 5.2: </span><span>Exemple de dataframe avec une colonne contenant un facteur et une colonne contenant des valeurs numériques.</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-4b63014a"><p class="cl-4b62e548"><span class="cl-4b5f30d8">sexe</span></p></th>
-<th class="cl-4b630154"><p class="cl-4b62e55c"><span class="cl-4b5f30d8">taille</span></p></th>
+<th class="cl-4608fe1a"><p class="cl-4608e51a"><span class="cl-460555f8">sexe</span></p></th>
+<th class="cl-4608fe1b"><p class="cl-4608e524"><span class="cl-460555f8">taille</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4b63015e"><p class="cl-4b62e548"><span class="cl-4b5f30d8">Homme</span></p></td>
-<td class="cl-4b63015f"><p class="cl-4b62e55c"><span class="cl-4b5f30d8">176</span></p></td>
+<td class="cl-4608fe24"><p class="cl-4608e51a"><span class="cl-460555f8">Homme</span></p></td>
+<td class="cl-4608fe25"><p class="cl-4608e524"><span class="cl-460555f8">176</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4b63015e"><p class="cl-4b62e548"><span class="cl-4b5f30d8">Femme</span></p></td>
-<td class="cl-4b63015f"><p class="cl-4b62e55c"><span class="cl-4b5f30d8">173</span></p></td>
+<td class="cl-4608fe24"><p class="cl-4608e51a"><span class="cl-460555f8">Femme</span></p></td>
+<td class="cl-4608fe25"><p class="cl-4608e524"><span class="cl-460555f8">173</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4b63015e"><p class="cl-4b62e548"><span class="cl-4b5f30d8">Homme</span></p></td>
-<td class="cl-4b63015f"><p class="cl-4b62e55c"><span class="cl-4b5f30d8">180</span></p></td>
+<td class="cl-4608fe24"><p class="cl-4608e51a"><span class="cl-460555f8">Homme</span></p></td>
+<td class="cl-4608fe25"><p class="cl-4608e524"><span class="cl-460555f8">180</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4b630168"><p class="cl-4b62e548"><span class="cl-4b5f30d8">Femme</span></p></td>
-<td class="cl-4b630169"><p class="cl-4b62e55c"><span class="cl-4b5f30d8">165</span></p></td>
+<td class="cl-4608fe26"><p class="cl-4608e51a"><span class="cl-460555f8">Femme</span></p></td>
+<td class="cl-4608fe2e"><p class="cl-4608e524"><span class="cl-460555f8">165</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -498,7 +504,7 @@ pour faciliter la manipulation et améliorer l’affichage dans la console. Néa
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-26.</p>
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-27.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

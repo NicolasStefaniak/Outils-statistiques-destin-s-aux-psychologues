@@ -19,7 +19,12 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -68,6 +73,7 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"></a></li>
+<li><a class="" href="licence.html">Licence</a></li>
 <li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
 <li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
 <li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
@@ -125,7 +131,7 @@ Données=Modèle + Erreur
 <li>Identifier la nature de la variable dépendante</li>
 <li>Identifier le nombre de variables indépendantes et de contrôle</li>
 <li>Identifier la nature des variables indépendantes et de contrôle</li>
-<li>Si les variables indépendantes sont qualitatives, il vous faudra aussi identifier le nombre de modalités de la variable indépendante ainsi que la nature inter<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;ce sont des personnes &lt;strong&gt;différentes&lt;/strong&gt; qui passent par les différentes modalités de la variable indépendante&lt;/p&gt;"><sup>10</sup></a> ou intra-indivudelle<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;ce sont les &lt;strong&gt;mêmes&lt;/strong&gt; personnes qui passent par les différentes modalités de la variable indépendante&lt;/p&gt;"><sup>11</sup></a> de ces variables.</li>
+<li>Si les variables indépendantes sont qualitatives, il vous faudra aussi identifier le nombre de modalités de la variable indépendante ainsi que la nature inter<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;ce sont des personnes &lt;strong&gt;différentes&lt;/strong&gt; qui passent par les différentes modalités de la variable indépendante&lt;/p&gt;"><sup>11</sup></a> ou intra-indivudelle<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;ce sont les &lt;strong&gt;mêmes&lt;/strong&gt; personnes qui passent par les différentes modalités de la variable indépendante&lt;/p&gt;"><sup>12</sup></a> de ces variables.</li>
 </ul>
 <p>Cet outil vous proposera alors l’analyse que vous devriez réaliser si vous êtes en licence ou master, fera un rappel sur les conditions d’application et proposera des alternatives à l’analyse de prédilectionà envisager dans l’hypothèse où les conditions d’application de l’analyse à privilégier ne sont pas respectées.</p>
 <p>Pour finir, des informations supplémentaires peuvent être fournies : des points d’attention ou des alternatives à envisager pour les personnes qui ont un niveau de maîrise des outils statistiques plus avancé.</p>
@@ -150,7 +156,10 @@ Une seule observation
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Normalité de la distribution</p>
-<p><strong>Que faire en cas de non respect des conditions d’application ?</strong> : Utilisation des centiles</p>
+<p><strong>Que faire en cas de non respect des conditions d’application ?</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Utilisation des centiles</p>
 <p><strong>Points d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -189,7 +198,10 @@ Une variable indépendante
 <details><summary>
 Une variable indépendante quantitative
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Corrélation de Bravais-Pearson</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Corrélation de Bravais-Pearson</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -215,8 +227,8 @@ Une variable indépendante quantitative
 <details><summary>
 Une variable indépendante ordinale
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> :
-<span style="color: green; font-weight: bold;">
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
 ✓
 </span> Rho de Spearman</p>
 <p><span style="color: green; font-weight: bold;">
@@ -240,11 +252,14 @@ Une variable indépendante qualitative
 <details><summary>
 Deux modalités
 </summary><blockquote>
-<p><strong>Étape 5 : déterminer si la variable est intra ou inter-participant<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;La même personne passe par les différentes modalités&lt;/p&gt;"><sup>12</sup></a></strong></p>
+<p><strong>Étape 5 : déterminer si la variable est intra ou inter-participant<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;La même personne passe par les différentes modalités&lt;/p&gt;"><sup>13</sup></a></strong></p>
 <details><summary>
 Variable intra-participant
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : <em>t</em> de Student pour échantillons appariés</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span><em>t</em> de Student pour échantillons appariés</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -263,7 +278,10 @@ Variable intra-participant
 </details><details><summary>
 Variable inter-participant
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : <em>t</em> de Student pour échantillons indépendants</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span><em>t</em> de Student pour échantillons indépendants</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -277,7 +295,7 @@ Variable inter-participant
 <p><strong>Que faire en cas de non respect des conditions d’application ?</strong></p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> Si l’homogénéité des variances n’est pas respectée, le choix de prédiction est d’appliquer la correction de Satterthwaite<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;il s’agit d’une correction des degrés de liberté, ce qui, &lt;em&gt;de facto&lt;/em&gt; entraîne une correction de la probabilité de dépassement&lt;/p&gt;"><sup>13</sup></a></p>
+</span> Si l’homogénéité des variances n’est pas respectée, le choix de prédiction est d’appliquer la correction de Satterthwaite<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;il s’agit d’une correction des degrés de liberté, ce qui, &lt;em&gt;de facto&lt;/em&gt; entraîne une correction de la probabilité de dépassement&lt;/p&gt;"><sup>14</sup></a></p>
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Test de Mann-Whitney</p>
@@ -296,7 +314,10 @@ Plus que deux modalités
 <details><summary>
 Variable intra-participant
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Anova à mesure répétée</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span>Anova à mesure répétée</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -361,7 +382,10 @@ Une variable indépendante et une ou des variables de contrôle quantitatives
 <details><summary>
 Une variable indépendante quantitative
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Corrélation partielle de Bravais-Pearson</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Corrélation partielle de Bravais-Pearson</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -372,7 +396,10 @@ Une variable indépendante quantitative
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Taille d’échantillon suffisante</p>
-<p><strong>Alternative en cas non respect des condition d’application</strong> : Rho partiel de Spearman</p>
+<p><strong>Alternative en cas non respect des condition d’application</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span>Rho partiel de Spearman</p>
 <p><strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -384,7 +411,10 @@ Une variable indépendante quantitative
 </details><br><details><summary>
 Une variable indépendante ordinale
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Rho partiel de Spearman (ou tau partiel)</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Rho partiel de Spearman (ou tau partiel)</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -395,7 +425,10 @@ Une variable indépendante ordinale
 Une variable indépendante qualitative
 </summary><blockquote>
 <div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Analyse de covariance</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Analyse de covariance</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -435,7 +468,10 @@ Plusieurs variables indépendantes qualitatives
 <details><summary>
 Plusieurs variables indépendantes qualitatives inter
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Anova factorielle inter-participants</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Anova factorielle inter-participants</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -446,8 +482,8 @@ Plusieurs variables indépendantes qualitatives inter
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Indépendance des observations</p>
-<p><strong>Alternative en cas non respect des condition d’application</strong> :
-<span style="color: green; font-weight: bold;">
+<p><strong>Alternative en cas non respect des condition d’application</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
 ✓
 </span> Anova à 2 ou 3 facteurs sur les médianes</p>
 <p><strong>Point d’attention</strong> :</p>
@@ -458,7 +494,10 @@ Plusieurs variables indépendantes qualitatives inter
 </details><details><summary>
 Plusieurs variables indépendantes qualitatives intra
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : anova factorielle intra-participant</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Anova factorielle intra-participant</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -466,8 +505,8 @@ Plusieurs variables indépendantes qualitatives intra
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Sphéricité de la matrice de covariance <strong>si au moins un des variables indépendantes a plus de deux modalités</strong></p>
-<p><strong>Alternative en cas non respect des condition d’application</strong> :
-<span style="color: green; font-weight: bold;">
+<p><strong>Alternative en cas non respect des condition d’application</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
 ✓
 </span> Utilisation de bootstrap</p>
 <p><span style="color: green; font-weight: bold;">
@@ -481,7 +520,10 @@ Plusieurs variables indépendantes qualitatives intra
 </details><details><summary>
 Mélange entre des variables inter et intra
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : anova mixte</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> anova mixte</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -489,8 +531,8 @@ Mélange entre des variables inter et intra
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Sphéricité de la matrice de covariance <strong>si au moins une des variables indépendantes intra a plus de deux modalités</strong></p>
-<p><strong>Alternative en cas non respect des condition d’application</strong> :
-<span style="color: green; font-weight: bold;">
+<p><strong>Alternative en cas non respect des condition d’application</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
 ✓
 </span> anova sur les moyennes tronquées</p>
 <p><span style="color: green; font-weight: bold;">
@@ -505,11 +547,14 @@ Mélange entre des variables inter et intra
 </blockquote>
 </details>
 </blockquote>
-<br><blockquote>
+<blockquote>
 <details><summary>
 Plusieurs variables indépendantes quantitatives
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : régressions (appelées aussi modèles linéaires)</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> régressions (appelées aussi modèles linéaires)</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -530,6 +575,10 @@ Plusieurs variables indépendantes quantitatives
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Utilisation de bootstrap</p>
+<p><strong>Points d’attention</strong></p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Dans les régressions linéaires multiples, on fait l’hypothèse que la relation qui explique le mieux le lien entre la variable dépendante et les variables indépendantes sont des relations linéaires. Il est possible néanmoins de modéliser des relations non linéaires, comme des relations quadratiques ou cubiques. On parle dans cas de régressions non linéaires.</p>
 </div>
 </details>
 </blockquote>
@@ -537,7 +586,10 @@ Plusieurs variables indépendantes quantitatives
 <details><summary>
 Mélange entre plusieurs types de variables indépendantes
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : régressions (appelées aussi modèles linéaires)</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> régressions (appelées aussi modèles linéaires)</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -551,17 +603,20 @@ Mélange entre plusieurs types de variables indépendantes
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Absence d’autocorrélation</p>
-<p><strong>Alternative en cas non respect des condition d’application</strong> :
-<span style="color: green; font-weight: bold;">
+<p><strong>Alternative en cas non respect des condition d’application</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
 ✓
 </span> régressions sur les M-estimators</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Utilisation de bootstrap</p>
-<p><strong>Point d’attentioni</strong></p>
+<p><strong>Point d’attention</strong></p>
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> si l’accent est plutôt mis sur l’impact de la variable indépendante qualitative et qu’on veut contrôler les variables quantitatives, on choisira plutôt l’analyse de covariance, même si en réalité, les deux approches reviennent au même.</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Dans les régressions linéaires multiples, on fait l’hypothèse que la relation qui explique le mieux le lien entre la variable dépendante et les variables indépendantes sont des relations linéaires. Il est possible néanmoins de modéliser des relations non linéaires, comme des relations quadratiques ou cubiques. On parle dans cas de régressions non linéaires.</p>
 </div>
 </details>
 </blockquote>
@@ -578,19 +633,27 @@ Il n’y a pas de variable indépendante
 <details><summary>
 Une seule observation
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Utilisation des centiles</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Utilisation des centiles</p>
 <p><strong>Points d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Il est nécessaire d’avoir à disposition un échantillon de référence auquel on peut comparer l’observation</p>
-<p><strong>Remarque importante</strong> :
-Si l’usage, en particulier des cliniciens, des centiles s’est, comme pour le score z, imposé, c’est surtout en raison de sa facilité de calcul. Cependant, cette manière de faire est en réalité un usage impropre centiles car, une méthode qui autorise des inférences doit prendre en compte la taille de l’échantillon de référence sur lequel on s’appuie, ce qui n’est pas le cas dans le cadre centiles. C’est pourquoi l’utilisation basées sur des modèles linéaires généralisés devraient être envisagés <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-Henry2023">Henry et al., 2023</a>)</span></p>
+<p><strong>Remarque importante</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Si l’usage, en particulier des cliniciens, des centiles s’est, comme pour le score z, imposé, c’est surtout en raison de sa facilité de calcul. Cependant, cette manière de faire est en réalité un usage impropre centiles car, une méthode qui autorise des inférences doit prendre en compte la taille de l’échantillon de référence sur lequel on s’appuie, ce qui n’est pas le cas dans le cadre centiles. C’est pourquoi l’utilisation basées sur des modèles linéaires généralisés devraient être envisagés <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-Henry2023">Henry et al., 2023</a>)</span></p>
 </div>
 </details><p><br></p>
 <details><summary>
 Un groupe
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Test de Wilcoxon</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Test de Wilcoxon</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -610,8 +673,8 @@ Une variable indépendante
 <details><summary>
 Une variable indépendante quantitative
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> :
-<span style="color: green; font-weight: bold;">
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
 ✓
 </span>Rho de Spearman</p>
 <p><span style="color: green; font-weight: bold;">
@@ -622,14 +685,16 @@ Une variable indépendante quantitative
 ✓
 </span> Indépendance des observations</p>
 <p><strong>Points d’attention</strong> :</p>
-<p>Le rho de Spearman est également adapté lorsque la relation est croissante mais non linéaire.</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Le rho de Spearman est également adapté lorsque la relation est croissante mais non linéaire.</p>
 </div>
 </details><p><br></p>
 <details><summary>
 Une variable indépendante ordinale
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> :
-<span style="color: green; font-weight: bold;">
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
 ✓
 </span> Rho de Spearman</p>
 <p><span style="color: green; font-weight: bold;">
@@ -655,8 +720,10 @@ Deux modalités
 <details><summary>
 Variable intra-participant
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p>Si la variable indépendante est intra-participant<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;La même personne passe par les différentes modalités&lt;/p&gt;"><sup>14</sup></a></p>
-<p><strong>Analyse à privilégier</strong> : Test de Wilcoxon</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Test de Wilcoxon</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -665,7 +732,10 @@ Variable intra-participant
 </details><details><summary>
 Variable inter-participant
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Test de Mann-Whitney</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Test de Mann-Whitney</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -678,16 +748,26 @@ Plus que deux modalités
 <details><summary>
 Variable intra-participant
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Anova de Friedman</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Anova de Friedman</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Aucune</p>
+<p><strong>Points d’attention</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> On ne peut faire une anova de Friedman que pour les situations où aucune valeur n’est manquante.</p>
 </div>
 </details><details><summary>
 Variable à groupes indépendants
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Test de Kruskal-Wallis</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Test de Kruskal-Wallis</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -699,13 +779,19 @@ Variable à groupes indépendants
 </blockquote>
 <blockquote>
 <details><summary>
-Une variable indépendante et une ou des variables de contrôle quantitative(s)
+Une variable indépendante et une ou des variables de contrôle quantitatives ou ordinales
 </summary><blockquote>
 <strong>Étape 3 : Identifier la nature de la variable indépendante</strong>
 <details><summary>
 Une variable indépendante quantitative
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Rho partiel de Spearman</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Rho partiel de Spearman</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> tau partiel dfe Kendall</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -713,12 +799,18 @@ Une variable indépendante quantitative
 <p><strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> Une alternative à envisager est linéaire généralisé</p>
+</span> Une alternative à envisager est le modèle linéaire généralisé</p>
 </div>
 </details><br><details><summary>
 Une variable indépendante ordinale
 </summary><div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Rho partiel de Spearman (ou tau partiel)</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span>Rho partiel de Spearman</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> tau partiel de Kendall</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -726,14 +818,17 @@ Une variable indépendante ordinale
 <p><strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> Une alternative à envisager est linéaire généralisé</p>
+</span> Une alternative à envisager est le modèle linéaire généralisé</p>
 </div>
 </details><p><br></p>
 <details><summary>
 Une variable indépendante qualitative
 </summary><blockquote>
 <div style="background-color: #c5ddf6; border-radius: 5px; border: 2px solid#1c75c8; padding: 3px;">
-<p><strong>Analyse à privilégier</strong> : Modèles linéaires généralisés</p>
+<p><strong>Analyse à privilégier</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Modèles linéaires généralisés</p>
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
@@ -741,7 +836,7 @@ Une variable indépendante qualitative
 <p><strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> L’utiisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
+</span> L’utilisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Les modèles linéaires mixtes généralisés représentent une alternative si la variable indépendante qualitative est intra-participant.</p>
@@ -767,7 +862,7 @@ Plusieurs variables indépendantes
 <p><strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> L’utiisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
+</span> L’utilisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Les modèles linéaires mixtes généralisés représentent une alternative si la variable indépendante qualitative est intra-participant.</p>
@@ -791,12 +886,18 @@ Un groupe
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Indépendance des observations</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Pour le khi² d’ajustement, les effectifs <strong>théoriques</strong> doivent être supérieurs à 5 dans au moins 80% des cases du tableau</p>
 <p><strong>Points d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Il est nécessaire de disposer d’un modèle théorique. Ce modèle théorique peut être une répartition équiprobable entre les différentes modalités</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Si les conditions d’applications ne sont pas respectées, on peut envisager de regrouper des modalités si cela fait sens.</p>
 </div>
-</details><p><br></p>
+</details></details><p><br></p>
 <details><summary>
 Une variable indépendante
 </summary><blockquote>
@@ -834,6 +935,10 @@ Une variable indépendante ordinale
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Indépendance des observations</p>
+<p><strong>Que faire en cas de non respect des conditions d’application ?</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Fisher exact test</p>
 </div>
 </details><p><br></p>
 <details><summary>
@@ -853,6 +958,9 @@ Variable intra-participant
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
+</span> La somme des deux cases pour lesquelles il y a eu un changement doit être supérieure à 10</p>
+<p><span style="color: green; font-weight: bold;">
+✓
 </span> indépendance des observations</p>
 </div>
 </details><details><summary>
@@ -866,8 +974,15 @@ Variable inter-participant
 <p><span style="color: green; font-weight: bold;">
 ✓
 </span> Indépendance des observations</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Pour le khi² d’indépendance, les effectifs <strong>théoriques</strong> doivent être supérieurs à 5 dans au moins 80% des cases du tableau</p>
+<p><strong>Que faire en cas de non respect des conditions d’application ?</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Fisher exact test</p>
 </div>
-</details></details><p><br></p>
+</details><p><br></p>
 <details><summary>
 Plus que deux modalités
 </summary><p><strong>Étape 5 : déterminer si la variable est intra ou inter-participant</strong></p>
@@ -893,14 +1008,19 @@ Variable à groupes indépendants
 <p><strong>Condition d’application</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> Indépendance des observations</p>
+</span> Indépendance des observations
+<span style="color: green; font-weight: bold;">
+✓
+</span> Pour le khi² d’indépendance, les effectifs <strong>théoriques</strong> doivent être supérieurs à 5 dans au moins 80% des cases du tableau</p>
+<p><strong>Que faire en cas de non respect des conditions d’application ?</strong> :</p>
+<p><span style="color: green; font-weight: bold;">
+✓
+</span> Fisher exact test</p>
 </div>
-</details></details>
+</details></details></details>
 </blockquote></details>
-</blockquote></details></details>
 </blockquote>
-<blockquote>
-<details><summary>
+</details><details><br><summary>
 Une variable indépendante et une ou des variables de contrôle quantitative(s)
 </summary><blockquote>
 <strong>Étape 3 : Identifier la nature de la variable indépendante</strong>
@@ -918,7 +1038,7 @@ Une variable indépendante quantitative
 <strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> L’utiisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
+</span> L’utilisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
 </div>
 </details><br><details><summary>
 Une variable indépendante ordinale
@@ -934,7 +1054,7 @@ Une variable indépendante ordinale
 <p><strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> L’utiisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
+</span> L’utilisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
 </div>
 </details><p><br></p>
 <details><summary>
@@ -952,9 +1072,7 @@ Une variable indépendante qualitative
 <p><strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> L’utiisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
-<p><span style="color: green; font-weight: bold;">
-✓</span></p>
+</span> L’utilisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
 </div>
 <p><br></p>
 </blockquote></details>
@@ -974,9 +1092,7 @@ Plusieurs variables indépendantes
 <p><strong>Point d’attention</strong> :</p>
 <p><span style="color: green; font-weight: bold;">
 ✓
-</span> L’utiisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
-<p><span style="color: green; font-weight: bold;">
-✓</span></p>
+</span> L’utilisation des modèles linéaires généralisés requiert d’être en mesure de choisir la bonne distribution.</p>
 </div>
 </details>
 </blockquote></details>
@@ -985,16 +1101,66 @@ Plusieurs variables indépendantes
 <h3>
 <span class="header-section-number">10.2.2</span> Plusieurs variables dépendantes<a class="anchor" aria-label="anchor" href="#plusieurs-variables-d%C3%A9pendantes"><i class="fas fa-link"></i></a>
 </h3>
+<p>Les situations qui ont été décrites pour les analyses de variances, les modèles linéaires, les corrélations, les modèles linéaires généralisés et les modèles linéaires mixtes ont des équivalents multivariés où l’objectif est de déterminer comment les variables dépendantes impactent un ensemble de variables dépendantes simultanément.</p>
+<p>Ainsi, l’outil d’aide à la décision décrit plus haut peut être retranscrit dans le Tableau <a href="quel-outil-choisir.html#tab:multivar">10.1</a> :</p>
+<div class="tabwid">
+<style>.cl-62f8954e{}.cl-62f0127a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-62f344e0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-62f36b50{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-62f36b64{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-62f36b65{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-62f8954e">
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
+<span id="tab:multivar">Table 10.1: </span><span>Correspondance multivariée des analyses univariées</span>
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-62f36b50"><p class="cl-62f344e0"><span class="cl-62f0127a">Analyse univariée</span></p></th>
+<th class="cl-62f36b50"><p class="cl-62f344e0"><span class="cl-62f0127a">Équivalent multivarié</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-62f36b64"><p class="cl-62f344e0"><span class="cl-62f0127a">anova, ancova</span></p></td>
+<td class="cl-62f36b64"><p class="cl-62f344e0"><span class="cl-62f0127a">manova</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-62f36b64"><p class="cl-62f344e0"><span class="cl-62f0127a">corrélations</span></p></td>
+<td class="cl-62f36b64"><p class="cl-62f344e0"><span class="cl-62f0127a">analyse canonique de corrélations</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-62f36b64"><p class="cl-62f344e0"><span class="cl-62f0127a">régressions</span></p></td>
+<td class="cl-62f36b64"><p class="cl-62f344e0"><span class="cl-62f0127a">régressions multivées</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-62f36b65"><p class="cl-62f344e0"><span class="cl-62f0127a">modèles linéaires (mixtes) généralisés</span></p></td>
+<td class="cl-62f36b65"><p class="cl-62f344e0"><span class="cl-62f0127a">modèles linéraires (mixtes) généralisés multivariés</span></p></td>
+</tr>
+</tbody>
+</table></div>
 </div>
-<div id="les-outils-statistiques-relevant-de-la-méta-science" class="section level3" number="10.2.3">
-<h3>
-<span class="header-section-number">10.2.3</span> Les outils statistiques relevant de la méta-science<a class="anchor" aria-label="anchor" href="#les-outils-statistiques-relevant-de-la-m%C3%A9ta-science"><i class="fas fa-link"></i></a>
-</h3>
 </div>
-<div id="les-outils-statistiques-relevant-de-la-psychométrie" class="section level3" number="10.2.4">
+<div id="les-analyses-statistiques-sur-de-petits-échantillons" class="section level3" number="10.2.3">
 <h3>
-<span class="header-section-number">10.2.4</span> Les outils statistiques relevant de la psychométrie<a class="anchor" aria-label="anchor" href="#les-outils-statistiques-relevant-de-la-psychom%C3%A9trie"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.2.3</span> Les analyses statistiques sur de petits échantillons<a class="anchor" aria-label="anchor" href="#les-analyses-statistiques-sur-de-petits-%C3%A9chantillons"><i class="fas fa-link"></i></a>
 </h3>
+<p>Il est très fréquents que les psychologues aient à gérer des situations où l’échantillon est de taille restreinte. Dans ce genre de situation, plutôt que de vouloir appliquer des analyses inférentielles décrites ci-dessus, il est utile d’envisager de traiter les données sous l’angle des analyses de cas unique. Il est important néanmoins de faire les choses dans l’ordre et d’être au clair sur les contraintes qu’impliquent ce type d’analyse <strong>avant</strong> de commencer le recueil pour éviter d’être dans une situation où ces outils seront inexploitables.</p>
+</div>
+<div id="les-outils-statistiques-relevant-de-la-méta-science" class="section level3" number="10.2.4">
+<h3>
+<span class="header-section-number">10.2.4</span> Les outils statistiques relevant de la méta-science<a class="anchor" aria-label="anchor" href="#les-outils-statistiques-relevant-de-la-m%C3%A9ta-science"><i class="fas fa-link"></i></a>
+</h3>
+<p>Il semble utile de préciser que certains outils statistiques permettent d’aborder les questions scientifiques d’une manière plus globale.</p>
+<p>Ainsi, quand on veut pouvoir faire une synthèse de l’ensemble des résultats d’une question particulière, la méta-analyse est l’outil de prédilection. Cependant,les résultats des méta-analyses peuvent être trompeur s’il existe un biais de publication. Les courbe p (p-curve en anglais) représente un outil complémentaire qui permettent d’évaluer ce biais.</p>
+<p>L’autre panoplie d’outils qui méritent également toute notre attention sont les outils qui permettent de développer des modèles et de les tester. S’il existe différents noms en fonction de la manière de formaliser le modèle, on peut raisonnablement considérer que l’ensemble des analyses appartiennent à la famille des modèles d’équation structurale.</p>
+</div>
+<div id="les-outils-statistiques-relevant-de-la-psychométrie" class="section level3" number="10.2.5">
+<h3>
+<span class="header-section-number">10.2.5</span> Les outils statistiques relevant de la psychométrie<a class="anchor" aria-label="anchor" href="#les-outils-statistiques-relevant-de-la-psychom%C3%A9trie"><i class="fas fa-link"></i></a>
+</h3>
+<p>Le développement d’outils psychométriques requiert d’évaluer toute une série de propriété de ces outils, que ce soit en termes de validité, de fiabilité mais également en termes de leur valeur prédictive. Dans bien des situations, on va s’appuyer sur des corrélations pour examiner ces propriétés mais certains outils sont néanmoins plus élaborés. Il ne semble pas opportun de développer dans <strong>ce</strong> chapitre les différentes moyens qui peuvent être envisagés pour examiner ces propriétés. Il semble plus pertinent de s’orienter vers le chapitre correspondant de cet ouvrage.</p>
+</div>
+<div id="les-autres-outils-qui-sappuient-sur-les-statistiques" class="section level3" number="10.2.6">
+<h3>
+<span class="header-section-number">10.2.6</span> Les autres outils qui s’appuient sur les statistiques<a class="anchor" aria-label="anchor" href="#les-autres-outils-qui-sappuient-sur-les-statistiques"><i class="fas fa-link"></i></a>
+</h3>
+<p>Que ce soit l’intelligence artificielle ou le machine learning, ces outils s’appuient peu ou prou sur des outils statistiques que nous avons déjà décrits. Si ces outils sont de plus en plus utilisés, y compris par des chercheurs en psychologie, il ne semble pas opportun de les décrire ici en détails dans la mesure où il existe une multitude d’algorithme et d’outils qui peuvent être utilisés et en faire une liste exhaustive aurait un effet plus délétère que formateur. Nous limiterons cette section à quelques banalités qui pourront éventuellement éveiller la curiosité du lecteur si ce type d’outils correspond à ses besoins.</p>
+<p>Parmi ces banalités, la première chose à comprendre est que l’objectif de ces outils de machine learning (parfois aussi appelé apprentissage statistique) est de prédire les nouvelles observations sur la base des informations relatives à ces observations. Par exemple, si on s’intéresse à la maladie d’Alzheimer, on pourrait se demander, sachant qu’une personne à 75 ans, est fumeur, a consommé l’équivalent de 4 verres de vins tous les jours de sa vie, et a obtenu le bac, quelle est la probabilité que cette personne développe une maladie d’Alzheimer.</p>
+<p>Dans ce domaine, il existe deux grandes catégories d’outils : l’apprentissage supervisé pour lequel on fournit des données permettant au modèle d’apprendre à prédire le score ou la catégoriser d’une personne (telle personne a telles caractéristiques et appartient à la catégorie A, telle autre personne présente telles autres caractéristiques et appartient à la catégorie B…) et l’apprentissage non supervisé où on ne fournit pas au modèle d’informations sur ce qu’il doit trouver, parfois parce que le chercheur ne le sait pas lui-même. Les outils basés sur les régressions ou l’analyse discriminante font partie de la première catégorie, tandis que les analyses en cluster font partie de la seconde.</p>
 
 </div>
 </div>
@@ -1012,8 +1178,10 @@ Plusieurs variables indépendantes
 <a class="nav-link" href="#comment-utiliser-loutil-daide-%C3%A0-la-d%C3%A9cision"><span class="header-section-number">10.2</span> Comment utiliser l’outil d’aide à la décision ?</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#une-seule-variable-d%C3%A9pendante"><span class="header-section-number">10.2.1</span> Une seule variable dépendante</a></li>
 <li><a class="nav-link" href="#plusieurs-variables-d%C3%A9pendantes"><span class="header-section-number">10.2.2</span> Plusieurs variables dépendantes</a></li>
-<li><a class="nav-link" href="#les-outils-statistiques-relevant-de-la-m%C3%A9ta-science"><span class="header-section-number">10.2.3</span> Les outils statistiques relevant de la méta-science</a></li>
-<li><a class="nav-link" href="#les-outils-statistiques-relevant-de-la-psychom%C3%A9trie"><span class="header-section-number">10.2.4</span> Les outils statistiques relevant de la psychométrie</a></li>
+<li><a class="nav-link" href="#les-analyses-statistiques-sur-de-petits-%C3%A9chantillons"><span class="header-section-number">10.2.3</span> Les analyses statistiques sur de petits échantillons</a></li>
+<li><a class="nav-link" href="#les-outils-statistiques-relevant-de-la-m%C3%A9ta-science"><span class="header-section-number">10.2.4</span> Les outils statistiques relevant de la méta-science</a></li>
+<li><a class="nav-link" href="#les-outils-statistiques-relevant-de-la-psychom%C3%A9trie"><span class="header-section-number">10.2.5</span> Les outils statistiques relevant de la psychométrie</a></li>
+<li><a class="nav-link" href="#les-autres-outils-qui-sappuient-sur-les-statistiques"><span class="header-section-number">10.2.6</span> Les autres outils qui s’appuient sur les statistiques</a></li>
 </ul>
 </li>
 </ul>
@@ -1032,7 +1200,7 @@ Plusieurs variables indépendantes
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-26.</p>
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-01-27.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
