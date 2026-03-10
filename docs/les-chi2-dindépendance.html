@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 12 Les \(\chi^2\) d’indépendance | Outils statistiques destinés aux psychologues</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="12.1 Réaliser un \(\chi^2\)  12.1.1 Avec les boîtes de dialogue Pour réaliser un \(\chi^2\), on peut repartir de la fonction easieR. Cependant, à présent, on choisit dans le premier menu “Analyses...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 12 Les \(\chi^2\) d’indépendance | Outils statistiques destinés aux psychologues">
+<meta property="og:type" content="book">
+<meta property="og:description" content="12.1 Réaliser un \(\chi^2\)  12.1.1 Avec les boîtes de dialogue Pour réaliser un \(\chi^2\), on peut repartir de la fonction easieR. Cependant, à présent, on choisit dans le premier menu “Analyses...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 12 Les \(\chi^2\) d’indépendance | Outils statistiques destinés aux psychologues">
+<meta name="twitter:description" content="12.1 Réaliser un \(\chi^2\)  12.1.1 Avec les boîtes de dialogue Pour réaliser un \(\chi^2\), on peut repartir de la fonction easieR. Cependant, à présent, on choisit dans le premier menu “Analyses...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Outils statistiques destinés aux psychologues</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="licence.html">Licence</a></li>
+<li><a class="" href="pr%C3%A9ambule.html">Préambule</a></li>
+<li><a class="" href="notions-et-symboles-de-math%C3%A9matiques.html">Notions et symboles de mathématiques</a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">10</span> Quel outil choisir</a></li>
+<li><a class="" href="traiter-les-variables-cat%C3%A9gorielles.html"><span class="header-section-number">11</span> Traiter les variables catégorielles</a></li>
+<li><a class="active" href="les-chi2-dind%C3%A9pendance.html"><span class="header-section-number">12</span> Les \(\chi^2\) d’indépendance</a></li>
+<li><a class="" href="les-tableaux-de-contingence.html"><span class="header-section-number">13</span> 3 Les tableaux de contingence</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">14</span> Références</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="les-chi2-dindépendance" class="section level1" number="12">
+<h1>
+<span class="header-section-number">12</span> Les <span class="math inline">\(\chi^2\)</span> d’indépendance<a class="anchor" aria-label="anchor" href="#les-chi2-dind%C3%A9pendance"><i class="fas fa-link"></i></a>
+</h1>
+<div id="réaliser-un-chi2" class="section level2 tabset tabset-fade tabset-pills" number="12.1">
+<h2>
+<span class="header-section-number">12.1</span> Réaliser un <span class="math inline">\(\chi^2\)</span><a class="anchor" aria-label="anchor" href="#r%C3%A9aliser-un-chi2"><i class="fas fa-link"></i></a>
+</h2>
+<div id="avec-les-boîtes-de-dialogue-1" class="section level3" number="12.1.1">
+<h3>
+<span class="header-section-number">12.1.1</span> Avec les boîtes de dialogue<a class="anchor" aria-label="anchor" href="#avec-les-bo%C3%AEtes-de-dialogue-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Pour réaliser un <span class="math inline">\(\chi^2\)</span>, on peut repartir de la fonction easieR.
+Cependant, à présent, on choisit dans le premier menu “Analyses - Tests d’hypothèse (Figure <a href="les-chi2-dind%C3%A9pendance.html#fig:im18">12.1</a>)</p>
+<div class="figure">
+<span style="display:block;" id="fig:im18"></span>
+<img src="chi/chi1.png" alt="Boîte de dialogue d'accueil de easieR." width="344"><p class="caption">
+Figure 12.1: Boîte de dialogue d’accueil de easieR.
+</p>
+</div>
+<p>Ensuite, un nouveau menu arrive permettant de choisir l’analyse.
+Il faut choisir “chi deux” (Figure <a href="les-chi2-dind%C3%A9pendance.html#fig:im19">12.2</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im19"></span>
+<img src="chi/chi2.png" alt="Choix des chi deux." width="132"><p class="caption">
+Figure 12.2: Choix des chi deux.
+</p>
+</div>
+<p>Il existe en réalité plusieurs <span class="math inline">\(\chi^2\)</span>.
+En l’occurrence, nous avons deux variables à groupes indépendants.
+On doit donc faire un chi² d’indépendance.
+Si nous avions un tableau <span class="math inline">\(2 \times2\)</span>, dont une des variables est en mesure répétée, nous aurions utilisé un test de McNemar.</p>
+<p><strong>Note</strong> Il est possible d’accéder directement à ce menu en utilisant la fonction <code>chi()</code></p>
+<div class="figure">
+<span style="display:block;" id="fig:im20"></span>
+<img src="chi/chi3.png" alt="Choix du type de chi deux." width="106"><p class="caption">
+Figure 12.3: Choix du type de chi deux.
+</p>
+</div>
+<p>Comme dans la mémoire de R, nous avons plusieurs jeux de données, il faut choisir le jeu de données sur lequel nous voulons réaliser des analyses.
+S’il n’y en avait qu’un, easieR choisit par défaut le jeu de données disponible.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im20b"></span>
+<img src="chi/chi4.png" alt="Choix du jeu de données sur lequel réaliser les analyses." width="105"><p class="caption">
+Figure 12.4: Choix du jeu de données sur lequel réaliser les analyses.
+</p>
+</div>
+<p>Une fois le jeu de données choisi, il faut préciser les variables sur lesquelles l’analyse doit être réalisée.
+On choisit d’abord la variables qui correspondent aux lignes du tableau (figure <a href="les-chi2-dind%C3%A9pendance.html#fig:im21">12.5</a>) et ensuite celle qui correspond aux colonnes (Figure <a href="les-chi2-dind%C3%A9pendance.html#fig:im22">12.6</a>).</p>
+<p><strong>Note</strong> Il est possible de choisir plusieurs variables à chacune des deux étapes.
+Dans ce cas, easieR fera le <span class="math inline">\(\chi^2\)</span> de tous les variables choisie dans la première boîte avec toutes celles dans la seconde boîte.
+Un rappel sur le risque de multiplication de l’erreur de première espèce sera également affiché.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im21"></span>
+<img src="chi/chi5.png" alt="Choix de la variable qui correspond aux lignes." width="152"><p class="caption">
+Figure 12.5: Choix de la variable qui correspond aux lignes.
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:im22"></span>
+<img src="chi/chi6.png" alt="Choix de la variable qui correspond aux colonnes." width="152"><p class="caption">
+Figure 12.6: Choix de la variable qui correspond aux colonnes.
+</p>
+</div>
+<p>Quand on réaliser un <span class="math inline">\(\chi^2\)</span>, les données peuvent être présentées de deux manières.
+La première manière est celle que nous avons dans notre jeu de données Clooney.
+Une seconde manière est une présentation synthétique où le tableau est présenté sous la forme d’une combinaire des associations entre les variables catégorielles et une variables avec les effectifs complète le jeu de données.
+Comme dans le tableau 2 (impact.pro).
+Lorsque les données sont présentées de manière synthétique de cette manière, il faut pondérer les deux variables précédentes en utilisant une variable effectif.
+Dans le cas du tableau 2, cette variable est la variable ‘Frequence’.
+En l’occurrence, nous ne devons pas réaliser de pondération avec le jeu de données Clooney (Figure <a href="les-chi2-dind%C3%A9pendance.html#fig:im23">12.7</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im23"></span>
+<img src="chi/chi7.png" alt="Lorsque chaque ligne ne correspond pas à un participant mais à un ensemble de participants, il faut pondérer par une variable qui indique les effectifs pour chaque ligne." width="106"><p class="caption">
+Figure 12.7: Lorsque chaque ligne ne correspond pas à un participant mais à un ensemble de participants, il faut pondérer par une variable qui indique les effectifs pour chaque ligne.
+</p>
+</div>
+<p>L’étape suivante consiste à déterminer quelles sont les sorties de résultats souhaités pour l’analyse.
+Il est possible de cocher une ou plusieurs possibilités en appuyant sur la touche “contrôle”.
+En l’occurrence, on souhaite uniquement les résultats d’un <span class="math inline">\(\chi^2\)</span> classique (Figure <a href="les-chi2-dind%C3%A9pendance.html#fig:im24">12.8</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im24"></span>
+<img src="chi/chi8.png" alt="Choix des analyses souhaitées. En l'occurrence, uniquement le chi² classique." width="174"><p class="caption">
+Figure 12.8: Choix des analyses souhaitées. En l’occurrence, uniquement le chi² classique.
+</p>
+</div>
+<p>La dernière boîte de dialogue (Figure <a href="les-chi2-dind%C3%A9pendance.html#fig:im25">12.9</a>) permet de sauvegarder les résultats en word.
+Par défaut, nous ne le feront pas (parce qu’il existe une autre option qui sera bien plus efficace pour sauvegarder les analyses que nous avons réalisées).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im25"></span>
+<img src="chi/chi9.png" alt="Faut-il sauvegarder les résultats ?" width="104"><p class="caption">
+Figure 12.9: Faut-il sauvegarder les résultats ?
+</p>
+</div>
+</div>
+<div id="avec-les-lignes-de-commande" class="section level3" number="12.1.2">
+<h3>
+<span class="header-section-number">12.1.2</span> Avec les lignes de commande<a class="anchor" aria-label="anchor" href="#avec-les-lignes-de-commande"><i class="fas fa-link"></i></a>
+</h3>
+<p>On peut obtenir les chi à l’aide de lignes de commande easieR.
+Cela se réalise à l’aide de la fonction <code>chi</code> Cette fonction a 14 arguments mais seuls ceux en <strong>gras</strong> sont importants ici.</p>
+<ul>
+<li>
+<strong>X</strong> : character. vecteur des nom des variables dont les modalités sont en en-têtes de lignes.</li>
+<li>
+<strong>Y</strong> : character. vecteur des nom des variables dont les modalités sont en en-têtes de colonnes</li>
+<li>
+<strong>Effectifs</strong> : character. Nom de la variable dans laquelle se trouve les effects.</li>
+<li>
+<strong>p</strong> : vecteur de probabilités pour les <span class="math inline">\(\chi^2\)</span> d’ajustement qui servira de distribution théorique. La somme doit valoir 1.<br>
+</li>
+<li>
+<strong>choix</strong> : Type d’analyse à devoir réaliser parmi “Independance”, “Ajustement”, ou “Test de McNemar” (un seul choix)</li>
+<li>
+<strong>data</strong> : nom du jeu de données</li>
+<li>info : logique. Faut-il afficher les aide</li>
+<li>n.boot : nombre de bootstrap pour les analyses plus robustes</li>
+<li>priorConcentration : paramètre de concentration a priori, fixé à 1 par défaut. (pour plus de détails voir ?contingencyTableBF)</li>
+<li>SampleType : le plan d’échantillonnage. A nouveau, pour plus de détails, voir ?contingencyTableBF</li>
+<li>fixedMargin : pour les plans multinomiaux, quelle est la marge qui est fixe ? (les lignes ‘rows’ ou les colonnes ‘cols’)</li>
+<li>choix2 : choix du type de résultats à présenter. Il faut sélectionner un ou plusieurs choix parmi ‘Test non parametrique’,‘Test robustes - impliquant des bootstraps’,‘Facteurs bayesiens’</li>
+<li>rscale : taille d’effet a priori pour le calcul du facteur bayesien</li>
+<li>
+<strong>html</strong> : logique. Faut-il afficher la sortie de résultats dans une page html (TRUE) ou seulement dans la console R (FALSE).</li>
+</ul>
+<p>De manière concrète pour réaliser la même analyse que celle réalisée avec les boîte de dialogue, on utilise la fonction suivante :</p>
+<div class="sourceCode" id="cb507"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">chi</span><span class="op">(</span>X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Préférence_acteur'</span><span class="op">)</span>,Y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Interprétation'</span><span class="op">)</span>,</span>
+<span>    Effectifs<span class="op">=</span><span class="cn">NULL</span>, p<span class="op">=</span><span class="cn">NULL</span>, choix<span class="op">=</span><span class="st">'Independance'</span>,</span>
+<span>    data<span class="op">=</span><span class="va">Clooney</span>,info<span class="op">=</span><span class="cn">TRUE</span>,n.boot<span class="op">=</span><span class="cn">NULL</span>,priorConcentration <span class="op">=</span><span class="fl">1</span>,</span>
+<span>    SampleType<span class="op">=</span><span class="cn">NULL</span>,fixedMargin<span class="op">=</span><span class="cn">NULL</span>,</span>
+<span>    choix2<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Test non parametrique'</span><span class="op">)</span>,</span>
+<span>    rscale<span class="op">=</span><span class="fl">0.707</span>, html<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="interprétez-les-résultats" class="section level2" number="12.2">
+<h2>
+<span class="header-section-number">12.2</span> Interprétez les résultats<a class="anchor" aria-label="anchor" href="#interpr%C3%A9tez-les-r%C3%A9sultats"><i class="fas fa-link"></i></a>
+</h2>
+<p>La première étape consiste à regarder les effectifs observés.
+Est-ce que les différentes modalités correspondent effectivement aux modalités qu’on est censé avoir dans le jeu de données.
+Est-ce que l’effectif total correspond au nombre d’observations que nous sommes censés avoir (Tableau 4).
+Cette information est également disponible dans la figure, qu’on appelle un spine plot.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c19">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c19">Table 12.1: </span> Tableau des effectifs observés.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">être_prêt_à_tout</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Gentleman</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">se_laisse_manipuler</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Total</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">4</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">11</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">9</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">24</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">11</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">43</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">Total</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">20</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">22</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">25</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">67</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ensuite, on regarde les effectifs théoriques.
+Ce tableau est important car il permet de vérifier les conditions d’applications des <span class="math inline">\(\chi^2\)</span>.
+En effet, les effectifs théoriques (ou attendus) ne doivent pas être inférieurs à 1, et ne doivent pas être inférieurs à 5 dans plus de 20% des situations.
+Lorsque cette condition n’est pas respectée, il faut s’orienter vers un test alternatif, le Fisher Exact Test.</p>
+<p>Le graphique en mosaïque permet d’avoir une représentation visuelle de la manière dont les effectifs se répartissent.</p>
+<div class="inline-figure"><img src="bookdown-demo_files/figure-html/c20-1.png" width="672"></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21">Table 12.2: </span> Tableau des effectifs attendus</caption>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">être_prêt_à_tout</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Gentleman</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">se_laisse_manipuler</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">7.16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">7.88</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">8.96</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">12.8 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">14.1 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">16   </td>
+</tr>
+</tbody>
+</table></div>
+<p>Les tableaux 5 et 6 fournissent la valeur du <span class="math inline">\(\chi^2\)</span>, les degrés de liberté et la probabilité associée.
+Dans le tableau 5 en calculant le <span class="math inline">\(\chi^2\)</span> classique et dans le tableau 6, en calculant le <span class="math inline">\(\chi^2\)</span> de vraisemblance.
+En l’occurrence, la probabilité est de .1286 pour le classique et de .1204 pour celui de vraisemblance.
+Cette probabilité étant supérieure à 0.05, on ne peut pas rejeter l’hypothèse nulle.</p>
+<p>Remarquez dans le tableau 5 qu’il est indiquer qu’il n’y a pas la correction de Yates.
+Cette correction consiste à soustraire 0.5 de chacune des différences entre les effectifs observés et théoriques afin de corriger les petits effectifs.
+Cette correction ne s’applique que pour les tableaux <span class="math inline">\(2\times2\)</span>.
+Ainsi, pour un tableau <span class="math inline">\(2\times2\)</span>, vous aurez une ligne supplémentaire avec cette correction de Yates, qui doit être considérée comme plus robuste.</p>
+<p>On peut remarquer quelques différences par ailleurs entre les deux tableaux.
+Premièrement, la taille d’effet présentée n’est pas la même.
+D’un côté, il s’agit du V de Cramer, qu’on peut interpréter comme une sorte de corrélation entre des variables qualitatives.
+Bien que cela n’ait pas réellement de sens, élevée au carré, on peut l’interpréter comme le pourcentage de variance expliquée.
+A l’inverse, pour le <span class="math inline">\(\chi^2\)</span> du maximum de vraisemblance, la taille d’effet va être calculée sur la base de la formule fournie par Johston et al. (2006).</p>
+<p>Le second point qui mérite de l’attention est que le tableau 5 fourni la probabilité exacte du test avec le Fisher Exact Test.
+Ce test représente une alternative plus robuste quand les conditons d’applications ne sont pas respectées.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21b">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21b">Table 12.3: </span> Tableau 6. Tableau du chi²</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">chi.deux</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">ddl</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Fisher.Exact.Test</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">V</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">V.carre</th>
+</tr></thead>
+<tbody><tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">Sans correction de Yates</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">4.1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">.1286</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">0.144</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">0.247</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">0.061</td>
+</tr></tbody>
+</table></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c22">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c22">Table 12.4: </span> Tableau 7. Tableau du chi² du maximum de vraisemblance</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">chi.deux</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">ddl</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Taille effet</th>
+</tr></thead>
+<tbody><tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">df</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">4.23</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">.1204</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">0.0141</td>
+</tr></tbody>
+</table></div>
+<p>Une autre manière de présenter les tailles d’effet sur les variables qualitatives est de présenter un rapport de cote (Odd Ratio en anglais).
+Le tableau 8 fournit les valeurs des OR.
+Les valeurs supérieurs à 1 signifie qu’on a X fois plus de chance qu’un événement survienne alors que les valeurs inférieures à 1 signifie qu’on a 1/X fois moins de chances que cet événement survienne.</p>
+<p>Concrètement, la valeur de référence en l’occurrence est “se laisse manipuler”.
+Les fans de Jean Dujardin ont donc 1.778 (1/0.5625) fois moins de chance de dire que Clooney est un gentleman que les fans de Clooney.
+En revanche, ils ont deux 2.25 fois plus de chance de dire qu’il faut être prêt à tout pour arriver à ses fins.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c23">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c23">Table 12.5: </span> Tableau 8. Tableau des Odd Ratio</caption>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">estimate</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">lower</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">upper</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">se_laisse_manipuler</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1    </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">    </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">   </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Gentleman</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.562</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.175</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1.81</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">être_prêt_à_tout</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2.25 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0.574</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">8.82</td>
+</tr>
+</tbody>
+</table></div>
+<p>Les tableaux 9 à 11 représente les pourcentages des effectifs qui se retrouvent dans chacune des cases, selon que ce pourcentage est calculé sur le total (Tableau 10), par colonne (Tableau 11) ou par ligne (Tableau 12)</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c24 ">
+<caption style="caption-side: top; text-align: center;">(#tab:c24 ) Tableau 9. Tableau des pourcentages des effects dans chaque case (calculé sur le total)</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">être_prêt_à_tout</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Gentleman</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">se_laisse_manipuler</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Total</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">6  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">16.4</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">13.4</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">35.8</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">23.9</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">16.4</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">23.9</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">64.2</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">Total</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">29.9</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">32.8</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">37.3</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">100  </td>
+</tr>
+</tbody>
+</table></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c25">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c25">Table 12.6: </span> Tableau 10. Tableau des pourcentages des effects dans chaque case (calculé par colonne)</caption>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Préférence_acteur</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Interprétation</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Freq</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">être_prêt_à_tout</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">20</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">être_prêt_à_tout</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">80</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">3</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">All</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">être_prêt_à_tout</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">100</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">N</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">être_prêt_à_tout</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">20</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Gentleman</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">50</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">6</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Gentleman</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">50</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">7</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">All</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Gentleman</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">100</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">8</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">N</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Gentleman</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">22</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">9</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">se_laisse_manipuler</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">36</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">10</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">se_laisse_manipuler</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">64</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">11</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">All</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">se_laisse_manipuler</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">100</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">12</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">N</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">se_laisse_manipuler</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">25</td>
+</tr>
+</tbody>
+</table></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c26">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c26">Table 12.7: </span> Tableau 11. Tableau des pourcentages des effects dans chaque case (calculé par ligne)</caption>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Préférence_acteur</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Interprétation</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Freq</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">être_prêt_à_tout</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">16.7</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">être_prêt_à_tout</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">37.2</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">3</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Gentleman</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">45.8</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Gentleman</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">25.6</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">se_laisse_manipuler</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">37.5</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">6</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">se_laisse_manipuler</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">37.2</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">7</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">All</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">100  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">8</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">All</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">100  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">9</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Clooney</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">N</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">24  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">10</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">Dujardin</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">N</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">43  </td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Note</strong> Si l’effet avait été significatif, une analyse du résidu aurait été ajouté à la sortie de résultats permettant d’identifier quelles cellules contribuent significativement au <span class="math inline">\(\chi^2\)</span>.
+Cette analyse est utile pour des tableaux plus grands que des tableaux <span class="math inline">\(2\times2\)</span>.</p>
+</div>
+<div id="exercices" class="section level2 tabset tabset-fade tabset-pills" number="12.3">
+<h2>
+<span class="header-section-number">12.3</span> Exercices<a class="anchor" aria-label="anchor" href="#exercices"><i class="fas fa-link"></i></a>
+</h2>
+<div id="enoncés" class="section level3" number="12.3.1">
+<h3>
+<span class="header-section-number">12.3.1</span> Enoncés<a class="anchor" aria-label="anchor" href="#enonc%C3%A9s"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Pour l’énoncé suivant, réalisez un test de McNemar en utilisant les boîtes de dialogue.</li>
+</ol>
+<p>Des chercheurs se sont intéressés à l’impact de d’une maladie psychiatrique sur la vie socioprofessionnelle 6 mois après l’annonce de la maladie.
+Ils se sont demandé si l’annonce d’une maladie psychiatrique a des conséquences néfastes sur la situation professionnelle de ces personnes.Ils ont donc mesuré chez des patients le statut professionnel (avec ou sans emploi) au moment de l’annonce et à 6 mois.</p>
+<p>Les données sont issues de la feuille “impact.pro”.</p>
+<p>Identifiez les similitudes et les différences dans la sortie de résultats.
+Identifiez les similitudes et les différentes dans la ligne de commande utilisée pour réaliser l’analyse de Clonney et cette analyse.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Pour l’analyse suivante, réalisez un <span class="math inline">\(\chi^2\)</span> d’indépendance en utilisant les lignes de commande.</li>
+</ol>
+<p>Relfihcs et Anaurac (2012) se sont intéressés à l’efficacité de deux techniques d’engagement comportemental : « le pied dans la porte » (PP) et « la porte au nez » (PN).
+Le PP consiste à demander d’abord un comportement peu coûteux à des participants afin d’obtenir le comportement souhaité.
+Par exemple, on leur demande d’abord de signer une pétition pour la sécurité routière (comportement peu coûteux) avant de leur demander d’installer une pancarte « roulez moins vite » sur la façade de leur maison de façon à ce qu’elle soit visible par les conducteurs (comportement souhaité).
+La PN relève d’une logique contraire.
+Elle consiste à d’abord demander aux participants un comportement trop coûteux (dont on s’attend à ce qu’il soit refusé) afin de les préparer à accepter le comportement souhaité.
+Par exemple, on leur demande d’abord s’ils sont d’accord d’aider bénévolement tous les week-ends pendant six mois à l’installation de panneaux « roulez moins vite » sur les bords de routes (comportement très coûteux), avant de leur demander d’installer la pancarte sur la façade de leur maison (comportement souhaité).
+Le but de leur étude était de comparer l’efficacité de ces deux techniques.
+Les chercheurs ont appliqué le PP sur 50 participants et la PN sur 50 autres participants.
+Le comportement souhaité était d’obtenir des participants qu’ils s’engagent à économiser l’énergie électrique en coupant certains appareils de leur foyer à certaines heures.
+Avec le PP, le comportement préparatoire demandé était de signer une pétition pour l’économie d’énergie (peu coûteux).
+Avec la PN, le comportement préparatoire demandé était de faire du porte-à-porte tous les week-ends, bénévolement, pendant six mois, afin de convaincre les gens d’économiser l’électricité.
+Les chercheurs ont relevé le nombre de participants ayant accepté/refusé le comportement souhaité.
+Ils font l’hypothèse que la technique du PP est plus efficace que la technique de la PN.</p>
+<p>Les données sont issues de la feuille “engagement”.</p>
+</div>
+<div id="solutions" class="section level3" number="12.3.2">
+<h3>
+<span class="header-section-number">12.3.2</span> Solutions<a class="anchor" aria-label="anchor" href="#solutions"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Concernant la sortie de résultats, on identifie qu’il n’y a plus que les effectifs observés. Les effectifs théoriques représente la moitié de la somme de la diagonale des situations incongruentes. Concrètement, ici, il s’agit de 29 et 8. Les effectifs théoriques sont donc : (8+29)/2 = 18.5.</li>
+</ol>
+<p>Dans la ligne de commande, ce qui a changé est évidemement le nom des variables (X et Y), le nom du jeu de données.
+Par ailleurs, l’argument “Effectifs” est à présent spécifié avec la variable ‘Fréquence’ et “Independance’ a été remplacé par ‘Test de McNemar’ pour l’argument choix.</p>
+<div class="sourceCode" id="cb508"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">chi</span><span class="op">(</span>X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="st">'A_l_annonce'</span><span class="op">)</span>,</span>
+<span>    Y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Six_mois_apres_annonce'</span><span class="op">)</span>,</span>
+<span>    Effectifs<span class="op">=</span><span class="st">"Frequence"</span>, p<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>    choix<span class="op">=</span><span class="st">'Test de McNemar'</span>,data<span class="op">=</span><span class="va">impact.pro</span>,</span>
+<span>    info<span class="op">=</span><span class="cn">TRUE</span>,n.boot<span class="op">=</span><span class="cn">NULL</span>,priorConcentration <span class="op">=</span><span class="fl">1</span>,</span>
+<span>    SampleType<span class="op">=</span><span class="cn">NULL</span>,fixedMargin<span class="op">=</span><span class="cn">NULL</span>,</span>
+<span>    choix2<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Test non parametrique'</span><span class="op">)</span>,rscale<span class="op">=</span><span class="fl">0.707</span>, html<span class="op">=</span><span class="cn">F</span><span class="op">)</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>
+</ol>
+<div class="sourceCode" id="cb509"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">chi</span><span class="op">(</span>X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Techn'</span><span class="op">)</span>,Y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Cptmt'</span><span class="op">)</span>,Effectifs<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>    p<span class="op">=</span><span class="cn">NULL</span>, choix<span class="op">=</span><span class="st">'Independance'</span>,data<span class="op">=</span><span class="va">engagement</span>,info<span class="op">=</span><span class="cn">TRUE</span>,</span>
+<span>    n.boot<span class="op">=</span><span class="cn">NULL</span>,priorConcentration <span class="op">=</span><span class="fl">1</span>,SampleType<span class="op">=</span><span class="cn">NULL</span>,fixedMargin<span class="op">=</span><span class="cn">NULL</span>,</span>
+<span>    choix2<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Test non parametrique'</span><span class="op">)</span>,rscale<span class="op">=</span><span class="fl">0.707</span>, html<span class="op">=</span><span class="cn">F</span><span class="op">)</span> <span class="co"># permet de réaliser un chi carré d'indépendance en ligne de commande</span></span></code></pre></div>
+<p>Identifiez la présente des analyses sur les résidus dans la sortie de résultats puisque le lien entre la méthode utilisée et l’engagement est significatif.</p>
+</div>
+</div>
+<div id="les-hypothèses-statistiques" class="section level2" number="12.4">
+<h2>
+<span class="header-section-number">12.4</span> les hypothèses statistiques<a class="anchor" aria-label="anchor" href="#les-hypoth%C3%A8ses-statistiques"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="principe-de-calcul" class="section level2" number="12.5">
+<h2>
+<span class="header-section-number">12.5</span> 2.3. Principe de calcul<a class="anchor" aria-label="anchor" href="#principe-de-calcul"><i class="fas fa-link"></i></a>
+</h2>
+<p>Nous avons dans l’introduction du chapitre que le principe du <span class="math inline">\(\chi^2\)</span> était de calculer un écart entre les effectifs observés et les effectifs théoriques, de l’élever au carré et de le diviser par les effectifs théoriques.</p>
+<p><span class="math display">\[\chi^2=\sum\frac{(O-T)^2}{T} \]</span></p>
+<p>Il est donc nécessaire de pouvoir calculer les effectifs théoriques. La situation la plus simple ici est de considérer que chaque modalité de la variable a la même probabilité d’occurrence. Comme nous avons 3 modalités, la probabilité est donc de 1/3.</p>
+<p>Nous pouvous donc obtenir les effectifs théoriques de la manière suivante :</p>
+<div class="sourceCode" id="cb510"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">flextable</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">curling</span>, <span class="st">"Probabilité"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"1/3"</span>,<span class="st">"1/3"</span>,<span class="st">"1/3"</span><span class="op">)</span>, <span class="st">"Effectifs attendus"</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">500</span><span class="op">/</span><span class="fl">3</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="tabwid">
+<style>.cl-e62bde34{}.cl-e619a6ec{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e620c4ae{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e621255c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e6212570{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e621257a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e62bde34">
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e621255c"><p class="cl-e620c4ae"><span class="cl-e619a6ec">Réponse</span></p></th>
+<th class="cl-e621255c"><p class="cl-e620c4ae"><span class="cl-e619a6ec">Effectifs</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6212570"><p class="cl-e620c4ae"><span class="cl-e619a6ec">Sport physique</span></p></td>
+<td class="cl-e6212570"><p class="cl-e620c4ae"><span class="cl-e619a6ec">95</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6212570"><p class="cl-e620c4ae"><span class="cl-e619a6ec">Sport sans activité physique</span></p></td>
+<td class="cl-e6212570"><p class="cl-e620c4ae"><span class="cl-e619a6ec">213</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6212570"><p class="cl-e620c4ae"><span class="cl-e619a6ec">jeu</span></p></td>
+<td class="cl-e6212570"><p class="cl-e620c4ae"><span class="cl-e619a6ec">192</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6212570"><p class="cl-e620c4ae"><span class="cl-e619a6ec">1/3</span></p></td>
+<td class="cl-e6212570"><p class="cl-e620c4ae"><span class="cl-e619a6ec">1/3</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e621257a"><p class="cl-e620c4ae"><span class="cl-e619a6ec">166.666666666667</span></p></td>
+<td class="cl-e621257a"><p class="cl-e620c4ae"><span class="cl-e619a6ec">166.666666666667</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb511"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#curling&lt;-c(rep("sport physique", 95), rep("sport sans activité physique", 213), rep("jeu",192) )</span></span>
+<span><span class="co">#curling&lt;-table(curling)</span></span>
+<span><span class="co">#curling2&lt;-data.frame("sport physique"=95, "sport sans activité physique"=213, "jeu"=192)</span></span>
+<span><span class="co">#datatable(curling2, caption ="Table 1. Répartition d'effectifs pour la représentation du curling ")</span></span></code></pre></div>
+</div>
+<div id="les-conditions-dapplication-1" class="section level2" number="12.6">
+<h2>
+<span class="header-section-number">12.6</span> 2.4. Les conditions d’application<a class="anchor" aria-label="anchor" href="#les-conditions-dapplication-1"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="réaliser-le-chi2-dajustement-avec-r." class="section level2 tabset tabset-fade tabset-pills" number="12.7">
+<h2>
+<span class="header-section-number">12.7</span> 2.5. Réaliser le <span class="math inline">\(\chi^2\)</span> d’ajustement avec R.<a class="anchor" aria-label="anchor" href="#r%C3%A9aliser-le-chi2-dajustement-avec-r."><i class="fas fa-link"></i></a>
+</h2>
+<div id="réaliser-les-analyses-avec-r-en-ligne-de-commande" class="section level3" number="12.7.1">
+<h3>
+<span class="header-section-number">12.7.1</span> Réaliser les analyses avec R en ligne de commande<a class="anchor" aria-label="anchor" href="#r%C3%A9aliser-les-analyses-avec-r-en-ligne-de-commande"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="réaliser-les-analyses-avec-easier-en-boîte-de-dialogue" class="section level3" number="12.7.2">
+<h3>
+<span class="header-section-number">12.7.2</span> Réaliser les analyses avec easieR en boîte de dialogue<a class="anchor" aria-label="anchor" href="#r%C3%A9aliser-les-analyses-avec-easier-en-bo%C3%AEte-de-dialogue"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="réaliser-les-analyses-avec-easier-en-ligne-de-commande" class="section level3" number="12.7.3">
+<h3>
+<span class="header-section-number">12.7.3</span> Réaliser les analyses avec easieR en ligne de commande<a class="anchor" aria-label="anchor" href="#r%C3%A9aliser-les-analyses-avec-easier-en-ligne-de-commande"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="interpréter-les-sorties-de-résultats-easier" class="section level3" number="12.7.4">
+<h3>
+<span class="header-section-number">12.7.4</span> Interpréter les sorties de résultats easieR<a class="anchor" aria-label="anchor" href="#interpr%C3%A9ter-les-sorties-de-r%C3%A9sultats-easier"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+</div>
+<div id="section-1" class="section level2" number="12.8">
+<h2>
+<span class="header-section-number">12.8</span> <a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Pour toute cette famille de test, les conditions d’application sont les mêmes : les effectifs <strong>théoriques</strong> ne doivent pas être inférieurs à 5 dans plus de 20% des effectifs théoriques conjoints et ne doivent jamais être inférieurs à 1.
+Par ailleurs, les observations doivent être indépendantes. Il est donc exclu qu’un même individu soit présent dans plus d’une situation d’effectif conjoint. Pour s’assurer que les observations soient indépendantes, il suffit de s’assurer que le nombre de participants correspond au nombre d’observations, et ceci peu importe la manière dont l’expérimentation a été conduite.</p>
+<p>Pour répondre à cette question, les données doivent être présentées dans R sous la forme d’un vecteur indiquant toutes les situations (les réponses correctes et erronées) :
+Variable1&lt;-c(60,140)
+D’habitude, nous importons les données et nous devons choisir dans data1 la variable sur laquelle nous voulons faire l’analyse. Dans notre exemple, nous créons le vecteur. Les codes sont établis pour pouvoir traiter un vecteur qui s’appelle « Variable1 », ce qui explique le choix de ce nom.
+Avant de continuer, il est nécessaire de s’assurer que les conditions d’applications sont respectées. En l’occurrence, elles le sont puisque les effectifs théoriques sont tous deux supérieurs à 5. Nous pouvons donc réaliser l’analyse.
+Pour ce faire, ouvrez le script « khi_carre.R ». Deux codes (présentation courte) sont disponibles pour le ² d’ajustement : un code où toutes les modalités ont la même probabilité d’occurrence et un code où il faut préciser la probabilité d’occurrence de chaque modalité.
+Situation 1 : même probabilité d’occurrence<br>
+library(plyr)
+count(levels(Variable1))-&gt;niveaux
+sum(niveaux[ ,2])-&gt;i
+rep(1/i, each = i)-&gt;p
+chisq.test(Variable1, p=p)</p>
+<p>Situation 2 : probabilité d’occurrence différente
+p&lt;-c(0.25, 0.75) # Précisez ici les probabilités
+chisq.test(Variable1, p=p)</p>
+<p>Dans notre exemple, nous allons utiliser le code de la seconde situation puisque la prboabilité de répondre faux est de 0.75 et celle de répondre correctement est de 0.25. Ce sont les probabilités par défaut dans le code (p&lt;-c(0.25, 0.75) ) mais ce ne sera pas forcément toujours le cas. Il faudra alors modifier ces probabilités. Nous pouvons donc sélectionner le code et l’exécuter .</p>
+<p>R fournit alors toute une série de résultats : la valeur de la statistique (2.667), les degrés de liberté (1) et la probabilité de dépassement (0.102). Ces résultats amènent donc à tolérer l’hypothèse selon laquelle le participant n’a pas répondu significativement au-dessus du niveau du hasard.
+Encart 20. Notion de degré de liberté
+La notion de degrés de liberté est une notion qui est difficile à expliquer. Nous l’expliquerons dès lors sous deux points de vue. Le premier est le point de vue pragmatique. Quand on veut vérifier si la valeur de la statistique est significative, nous allons la comparer à des valeurs seuils (dans les faits, c’est le logiciel qui le fera pour vous), qui changent en fonction d’un paramètre, le degré de liberté. Ainsi, dans la table du ², le seuil à partir duquel la statistique est significative (donc la probabilité est inférieure à 0.05), est 3.8415 lorsque les degrés de liberté valent 1. Cette valeur devient 5.9915, lorsque les degrés de liberté valent 2. Ce seuil évolue donc en fonction des degrés de liberté. Cette logique s’applique à l’ensemble des statistiques, excepté celle du z pour laquelle il n’y a pas de degrés de liberté.
+Cette explication était pragmatique. D’un point de vue statistique, le degré de liberté correspond au nombre d’informations dont nous ne pouvons pas nous passer lorsque nous faisons un calcul. Prenons un exemple lié au ². Imaginons que vous désirez vérifier si les étudiants fréquentent la bibliothèque avec la même régularité tous les jours de la semaine. Vous vous placez donc devant l’entrée de la bibliothèque avec un sandwich et une bouteille d’eau (éventuellement un livre mais pas trop captivant pour ne pas manquer de personnes qui entrent) et vous comptabilisez les personnes qui entrent dans la bibliothèque. Vous faites cela durant toute une semaine et vous me dites que 500 étudiants sont entrés dans la bibliothèque. Cette information ne permet pas de savoir combien d’étudiants étaient présents chaque jour. Vous me dites alors que 120 étudiants étaient présents le lundi. Je ne sais toujours pas combien d’étudiants sont venus les autres jours de la semaine. Si nous continuons ce petit jeu de devinette, je ne peux pas savoir comment les étudiants se répartissent jusqu’à ce que vous m’ayez donné le nombre d’étudiants pour 4 jours de la semaine. A partir de là, rusé comme un renard, je suis en mesure de déterminer le 5e jour en soustrayant du total les informations relatives aux 4 jours dont j’ai connaissance. Dès lors, pour 5 jours, mes degrés de liberté sont 4 (5-1). Je n’ai besoin que de 4 informations pour connaître l’information relative au 5e jour.
+Cette logique peut s’appliquer à toutes les statistiques et vous pourriez retrouver le nombre de degrés de liberté pour toutes les statistiques, si vous maîtrisez suffisamment les formules qui sous-tendent les calculs et que vous êtes en mesure d’identifier le nombre d’informations dont on peut se passer pour réaliser l’analyse.</p>
+<p>Dès lors, si la tâche était particulièrement facile, vous devriez envisager de l’exclure des analyses.
+Notez que nous avons décidé de créer le vecteur nous-mêmes. Les données sont résumées dans un vecteur de longueur 2. Il s’agit donc de ce qu’on peut appeler une présentation courte. Nous aurions pu l’importer, c’est qu’on pourrait appeler une présentation longue où nous aurions une ligne par réponse. Cette situation est la plus fréquente quand on importe des données. Nous allons simuler cette importation en créant un vecteur où « vrai » est répété 60 fois et où faux est répété 140 fois :
+c(rep(“vrai”,times=60),rep(“faux”,times=140))-&gt;Variable1
+Le même principe pour les codes s’applique pour la présentation longue que pour la présentation courte. Notez que, ici les modalités sont ordonnées par ordre alphabétique, nos probabilités de ne sont plus 0.25 et 0.75, mais 0.75 et 0.25 puisque « faux » précède « vrai » dans l’alphabet. Le reste de la procédure est la même. Entraînez-vous pour vous assurer que vous obtenez les mêmes résultats. Si vous obtenez une statistique de 216, c’est que vous avez oublié de modifier les probabilités associées à chaque modalité.
+De manière hypothétique, le ² pourrait s’appliquer à toutes les distributions. Il serait par exemple possible de vérifier si une distribution d’effectifs suit une loi normale . Parfois, la distribution théorique est connue et il faudra calculer les effectifs attendus en fonction de cette distribution théorique. Parfois, la distribution théorique est sous-entendue, comme dans l’exemple présenté ci-dessus, où il faut comprendre que la distribution théorique est le nombre de réponses correctes et incorrectes qui aurait dû être obtenu si le participant avait répondu au hasard.
+Dans les faits, ce test est relativement peu utilisé. Certains d’entre vous pourraient alors se demander pourquoi il est intéressant de le présenter. La réponse est simple : comprendre le ² d’ajustement permet de comprendre la logique qui se cache derrière certains types d’analyses plus compliquées, comme les analyses factorielles confirmatoires où l’objectif est de vérifier si les données recueillies s’ajustent à un modèle théorique. Bien qu’on ne parle plus de ² d’ajustement dans ce cas, si vous comprenez la logique du ² d’ajustement, vous pourrez comprendre la logique de l’analyse factorielle confirmatoire.</p>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="traiter-les-variables-cat%C3%A9gorielles.html"><span class="header-section-number">11</span> Traiter les variables catégorielles</a></div>
+<div class="next"><a href="les-tableaux-de-contingence.html"><span class="header-section-number">13</span> 3 Les tableaux de contingence</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#les-chi2-dind%C3%A9pendance"><span class="header-section-number">12</span> Les \(\chi^2\) d’indépendance</a></li>
+<li>
+<a class="nav-link" href="#r%C3%A9aliser-un-chi2"><span class="header-section-number">12.1</span> Réaliser un \(\chi^2\)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#avec-les-bo%C3%AEtes-de-dialogue-1"><span class="header-section-number">12.1.1</span> Avec les boîtes de dialogue</a></li>
+<li><a class="nav-link" href="#avec-les-lignes-de-commande"><span class="header-section-number">12.1.2</span> Avec les lignes de commande</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#interpr%C3%A9tez-les-r%C3%A9sultats"><span class="header-section-number">12.2</span> Interprétez les résultats</a></li>
+<li>
+<a class="nav-link" href="#exercices"><span class="header-section-number">12.3</span> Exercices</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#enonc%C3%A9s"><span class="header-section-number">12.3.1</span> Enoncés</a></li>
+<li><a class="nav-link" href="#solutions"><span class="header-section-number">12.3.2</span> Solutions</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#les-hypoth%C3%A8ses-statistiques"><span class="header-section-number">12.4</span> les hypothèses statistiques</a></li>
+<li><a class="nav-link" href="#principe-de-calcul"><span class="header-section-number">12.5</span> 2.3. Principe de calcul</a></li>
+<li><a class="nav-link" href="#les-conditions-dapplication-1"><span class="header-section-number">12.6</span> 2.4. Les conditions d’application</a></li>
+<li>
+<a class="nav-link" href="#r%C3%A9aliser-le-chi2-dajustement-avec-r."><span class="header-section-number">12.7</span> 2.5. Réaliser le \(\chi^2\) d’ajustement avec R.</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r%C3%A9aliser-les-analyses-avec-r-en-ligne-de-commande"><span class="header-section-number">12.7.1</span> Réaliser les analyses avec R en ligne de commande</a></li>
+<li><a class="nav-link" href="#r%C3%A9aliser-les-analyses-avec-easier-en-bo%C3%AEte-de-dialogue"><span class="header-section-number">12.7.2</span> Réaliser les analyses avec easieR en boîte de dialogue</a></li>
+<li><a class="nav-link" href="#r%C3%A9aliser-les-analyses-avec-easier-en-ligne-de-commande"><span class="header-section-number">12.7.3</span> Réaliser les analyses avec easieR en ligne de commande</a></li>
+<li><a class="nav-link" href="#interpr%C3%A9ter-les-sorties-de-r%C3%A9sultats-easier"><span class="header-section-number">12.7.4</span> Interpréter les sorties de résultats easieR</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#section-1"><span class="header-section-number">12.8</span></a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-02-26.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

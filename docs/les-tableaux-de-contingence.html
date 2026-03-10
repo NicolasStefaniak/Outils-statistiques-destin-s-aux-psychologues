@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 13 3 Les tableaux de contingence | Outils statistiques destinés aux psychologues</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="13.1 2.1. Notion d’effectifs conjoints Imaginons une publicité dans laquelle deux acteurs célèbres, par exemple Georges Clooney et Jean Dujardin se retrouvent. Dans cette publicité, les deux...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 13 3 Les tableaux de contingence | Outils statistiques destinés aux psychologues">
+<meta property="og:type" content="book">
+<meta property="og:description" content="13.1 2.1. Notion d’effectifs conjoints Imaginons une publicité dans laquelle deux acteurs célèbres, par exemple Georges Clooney et Jean Dujardin se retrouvent. Dans cette publicité, les deux...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 13 3 Les tableaux de contingence | Outils statistiques destinés aux psychologues">
+<meta name="twitter:description" content="13.1 2.1. Notion d’effectifs conjoints Imaginons une publicité dans laquelle deux acteurs célèbres, par exemple Georges Clooney et Jean Dujardin se retrouvent. Dans cette publicité, les deux...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Outils statistiques destinés aux psychologues</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="licence.html">Licence</a></li>
+<li><a class="" href="pr%C3%A9ambule.html">Préambule</a></li>
+<li><a class="" href="notions-et-symboles-de-math%C3%A9matiques.html">Notions et symboles de mathématiques</a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">10</span> Quel outil choisir</a></li>
+<li><a class="" href="traiter-les-variables-cat%C3%A9gorielles.html"><span class="header-section-number">11</span> Traiter les variables catégorielles</a></li>
+<li><a class="" href="les-chi2-dind%C3%A9pendance.html"><span class="header-section-number">12</span> Les \(\chi^2\) d’indépendance</a></li>
+<li><a class="active" href="les-tableaux-de-contingence.html"><span class="header-section-number">13</span> 3 Les tableaux de contingence</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">14</span> Références</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="les-tableaux-de-contingence" class="section level1" number="13">
+<h1>
+<span class="header-section-number">13</span> 3 Les tableaux de contingence<a class="anchor" aria-label="anchor" href="#les-tableaux-de-contingence"><i class="fas fa-link"></i></a>
+</h1>
+<div id="notion-deffectifs-conjoints" class="section level2" number="13.1">
+<h2>
+<span class="header-section-number">13.1</span> 2.1. Notion d’effectifs conjoints<a class="anchor" aria-label="anchor" href="#notion-deffectifs-conjoints"><i class="fas fa-link"></i></a>
+</h2>
+<p>Imaginons une publicité dans laquelle deux acteurs célèbres, par exemple Georges Clooney et Jean Dujardin se retrouvent. Dans cette publicité, les deux désirent un café. Il ne reste plus qu’une capsule et Georges est arrivé en premier. Jean décide de ruser en envoyant une femme demander ce dernier café à sa place car il sait que Georges est incapable de refuser quoique ce soit à une jolie femme.</p>
+<p>Des chercheurs pensent que l’interprétation de cette publicité peut être interprété de différentes manières, et dépend de la préférence de spectateur en termes d’acteurs. Ceux qui préfèrent Dujardin penseront plutôt qu’il faut être prêt à tout pour arriver à ses fins, ou que Clonney se laisse manipuler facilement par les femmes. Alors que ceux qui sont pro Clooney penseront plutôt que c’est un gentleman.
+<a href="https://www.youtube.com/watch?v=nTrq1e9ZUAw" class="uri">https://www.youtube.com/watch?v=nTrq1e9ZUAw</a></p>
+<div class="tabwid">
+<style>.cl-e65c933a{}.cl-e64b28ac{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e6513030{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e6516a5a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e6516a6e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e6516a78{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e65c933a">
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e6516a5a"><p class="cl-e6513030"><span class="cl-e64b28ac">participant</span></p></th>
+<th class="cl-e6516a5a"><p class="cl-e6513030"><span class="cl-e64b28ac">Préférence_acteur</span></p></th>
+<th class="cl-e6516a5a"><p class="cl-e6513030"><span class="cl-e64b28ac">Interprétation</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_1</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_2</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_3</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_4</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_5</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_6</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_7</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_8</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_9</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_10</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_11</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_12</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_13</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_14</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_15</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_16</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_17</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_18</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_19</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_20</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_21</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_22</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_23</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_24</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Clooney</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_25</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_26</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_27</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_28</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_29</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_30</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_31</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_32</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_33</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_34</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_35</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Gentleman</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_36</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_37</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_38</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_39</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_40</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_41</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_42</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_43</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_44</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_45</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_46</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_47</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_48</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_49</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_50</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_51</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">se_laisse_manipuler</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_52</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_53</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_54</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_55</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_56</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_57</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_58</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_59</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_60</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_61</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_62</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_63</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_64</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_65</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">p_66</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a6e"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e6516a78"><p class="cl-e6513030"><span class="cl-e64b28ac">p_67</span></p></td>
+<td class="cl-e6516a78"><p class="cl-e6513030"><span class="cl-e64b28ac">Dujardin</span></p></td>
+<td class="cl-e6516a78"><p class="cl-e6513030"><span class="cl-e64b28ac">être_prêt_à_tout</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Ainsi dans l’exemple de l’encart 20, un psychologue travaille soit en hôpital, soit en privé, mais il ne peut pas être dans les deux cases. Si certains psychologues étaient dans les deux cases, alors il faudrait ajouter une modalité à la variable « insertion professionnelle » qui serait « hôpital et privé » .
+Encart 18. Notion d’effectifs conjoints
+Le terme « effectifs conjoints » renvoie aux effectifs présents à l’intersection de la modalité x d’une variable A et de la modalité y de variable B. Dans l’exemple, ci-dessous, 53 est l’effectif conjoint pour la modalité « psychologie » de la variable « études » et de la modalité « hôpital » de la variable insertion professionnelle.<br>
+Hôpital Privé
+Psychologie 53 21
+Orthophonie 23 126</p>
+<p>Tous les ² sont basés sur une différence entre des effectifs théoriques (T) et des effectifs observés (O) élevé au carré divisé par les effectifs théoriques :
+∑▒((O-T)²)/T
+Il existe certaines variantes de cette formule. Cependant, afin d’être parcimonieux, je ne présenterai pas les équations alternatives, d’autant que vous ne les calculerez pas à la main.
+Calcul des effectifs théoriques.
+Dans le cas du ² d’ajustement, les effectifs théoriques sont calculés soit sur la base d’une distribution au hasard (je lance une pièce 500 fois, je devrais avoir 250 pile si elle n’est pas biaisée), soit sur la base d’une courbe théorique à laquelle on veut comparer la distribution d’effectifs. On pourrait par exemple comparer la distribution d’effectifs à la courbe qu’on obtiendrait si on avait une courbe normale. Pour les ² d’indépendance et d’homogénéité, il faut partir des effectifs observés. Reprenons l’exemple de l’encart 20 et ajoutons les totaux marginaux :
+Hôpital Privé Totaux marginaux
+Psychologie 53 21 74
+Orthophonie 23
+126 149
+Totaux marginaux 76 147 223</p>
+<p>Les effectifs théoriques sont obtenus par le produit des totaux marginaux de la ligne et de la colonne d’une cellule donnée divisés par les effectifs totaux (cfr. les encadrés rouges dans le tableau ci-dessus pour la case des psychologues qui travaillent en hôpital). Ainsi, pour notre exemple, cela donne :</p>
+<pre><code>Hôpital Privé</code></pre>
+<p>Psychologie (76<em>74)/223 =
+25.22 (147</em>74)/223 =
+48.78
+Orthophonie (76<em>149)/223=
+50.78 (147</em>149)/223 =
+98.22</p>
+<p>Le ² d’indépendance et d’homogénéité
+Nous allons considérer ces deux tests simultanément car la manière de les calculer est strictement identique. Ces tests sont adaptés en présence de deux variables catégorielles pour lesquelles nous avons une distribution d’effectifs.
+La différence majeure entre les deux tests est l’hypothèse qui est posée. Pour le ² d’indépendance, on veut vérifier si la répartition des effectifs sur les différentes modalités d’une variable dépend des modalités de l’autre variable. Pour le ² d’homogénéité, on se demande si la répartition des effectifs sur les différentes modalités d’une variable (par exemple une variable A à cinq modalités, 1, 2, 3, 4, 5) se répartit de manière homogène selon les différentes modalités d’une autre variable (par exemple, la variable B, ayant deux modalités). On peut par exemple se demander si les hommes et les femmes (variables B) se répartissent de manière homogène sur la fréquentation de la bibliothèque en fonction du jour de la semaine (variable A).
+Dans R, comme précédemment, il est possible de réaliser les analyses en utilisant deux types de présentation. La première présentation consiste à préciser pour chacune des observations l’appartenance de l’individu à la modalité de chacune des variables (par exemple, Homme, lundi). L’autre possibilité est d’utiliser toutes les associations possibles entre les deux variables dans les deux premières colonnes et d’encoder les effectifs conjoints dans la troisième colonne. L’option pondération permettra de prendre en compte les effectifs pour chaque association possible. Reprenons l’exemple simple de la table 2×2 présentée en introduction de chapitre :
+Études réalisées Lieu d’exercice Totaux
+Hôpital Privé<br>
+Psychologie 53 21 74
+Orthophonie 23 126 149
+Totaux 76 147 223</p>
+<p>Encart 21. Les effectifs sont dans une troisième colonne : utilisation de la pondération.
+Il arrive qu’on présente les données avec les différentes associations possibles entre les modalités des variables indépendantes et qu’une colonne supplémentaires représente les effectifs de chacune de ces associations. C’est ce qu’on pourrait appeler une présentation courte, par opposition à une présentation longue où chaque ligne représente un participant. Dans la présentation courte, il est important de prendre conscience qu’il faut pondérer par les effectifs les différentes associations entre modalités des variables indépendantes pour refléter les résultats. Dans le cas contraire, chaque association serait représentation par un effectif de 1, ce qui serait erroné.
+Par exemple, la moyenne des données suivantes :
+Xi Effectifs
+5 20
+15 10
+n’est pas (5+15)/2 donc 10, mais ((5<em>20 + 15</em>10))/30 = 11.66
+Cette pondération peut aussi être utile dans le cas des ².</p>
+<p>Ces données pourraient être présentées dans R de deux manières différentes :
+OU</p>
+<p>Remarquez que dans la première présentation, toutes les observations sont encodées dans le fichier. La figure ne représente en effet qu’une partie des données. C’est ce qu’on appellera la présentation longue. Si la seconde présentation semble plus économique, elle est également moins réaliste. En effet, dans la plupart des situations, le recueil des données portent sur un grand nombre de variables, et pas uniquement sur deux. De plus, il est rare d’obtenir une synthèse du tableau dans la réalité. En effet, lorsqu’on récolte les données, l’expérimentateur va rechercher un maximum de psychologues et va noter pour chacun s’il/elle travaille dans le privé ou en hôpital. Il fera la même chose par la suite avec les orthophonistes. Les codes pour les deux types de présentations sont fournis dans le fichier « khi_carre.R ».
+Remarque sur le codage : le nom des variables et des observations ne doivent pas, présenter d’espace (qui sont remplacés par des underscores – tiret sous le 8).
+Pour réaliser l’analyse, nous allons recréer le tableau de la présentation courte.</p>
+<p>Exercice 1.
+Recréez le tableau de la présentation courte dans un objet appelé data1 .</p>
+<p>A l’aide du fichier khi_carre.R, nous allons pouvoir réaliser l’analyse. En allant dans la section consacrée aux ² d’indépendance présentation courte, la première chose que le code propose est d’importer les données. Dans notre cas, comme nous avons créé la table, il n’est pas nécessaire de le faire.</p>
+<p>Nous pouvons néanmoins lancer les lignes « rbind » et « str » pour connaître la structure de data1.</p>
+<p>R nous informe que data1 est composé de 4 observations et trois variables. La première (lieu) est un facteur à deux niveaux, la seconde (profession) est un facteur à deux niveaux et la dernière (Effectifs) est une variable numérique.</p>
+<p>Nous pouvons passer à l’étape suivante, qui consiste à spécifier les variables. En l’occurrence, la première variable d’intérêt est la variable numéro 1, la seconde est la variable numéro 2 et la variable contenant les effectifs est la variable numéro 3. Ces valeurs sont celles encodées par défaut dans R. Nous ne devons dès lors rien changer. Le code est fait de sorte à ce que les analyses ne se fassent jamais sur les données initiales, c’est pourquoi on va recréer un nouveau data.frame avec les variables d’intérêt uniquement. Il suffit de sélectionner cette partie du code et de l’exécuter.</p>
+<p>Nous pouvons ensuite exécuter le code. Par souci de simplicité, nous allons sélectionner tout le code à partir de réaliser les analyses jusque « FIN DU CODE » pour obtenir l’ensemble des résultats. Certaines informations ne sont pas pertinentes dans le cadre de cette analyse, nous nous bornerons à les ignorer.</p>
+<p>Notez qu’on aurait pu créer le second data.frame et réaliser les analyses en une seule étape. C’est d’ailleurs ce que vous ferez par la suite.
+Dans la fenêtre de la console apparaît alors toute une série de résultats.</p>
+<p>Ces résultats correspondent à :
+1) la structure des données qui sont utilisées dans l’analyse, afin de s’assurer qu’on ne s’est pas trompé sur les variables.
+2) Le tableau de contingence avec les effectifs observés, en présentant les totaux marginaux. Ainsi, nous avons par exemple 23 orthophonistes qui travaillent en hôpital, ce qui correspond effectivement à ce que nous avions encodé. Nous constatons au travers de ce tableau que les psychologues ont plutôt tendance à travailler en hôpital, tandis que les orthophonistes ont tendance à travail dans le privé.
+3) Pour rappel, les ² sont des rapports entre des effectifs observés et des effectifs théoriques. Les effectifs attendus vous permettront de connaître les effectifs théoriques sous hypothèse d’indépendance. Les effectifs attendus permettent aussi et surtout de vérifier les conditions d’application. Ils doivent être toujours supérieurs à 1, et pas inférieur à 5 dans plus de 20% des effectifs conjoints. Ainsi, puisque nous avons 4 situations possibles pour les effectifs conjoints (psychologue en privé ou en hôpital et orthophoniste en privé ou en hôpital), nous avons droit à 4<em>20% (ou plus simplement 4/5) de situations inférieures à 5. En l’occurrence, 0.8 situation. Donc, dès que nous n’avons pas 5 observations, nos conditions d’application ne sont pas respectées. En l’occurrence, ils sont tous supérieurs à 5. Notez que ce tableau et le précédant permettent également de vous assurer qu’il n’y avait pas d’erreurs d’encodage dans les données. Il est en effet très aisé de commettre une faute de frappe lors de l’encodage. Si le tableau n’est pas un tableau qui respecte le nombre de lignes et de colonnes attendues, il y a probablement une erreur de frappe. Il est dès lors nécessaire de la corriger avant d’aller plus en avant.
+4) Les résultats fournissent la valeur du ² d’indépendance (69.48), qui est la valeur qui nous intéresse, les degrés de liberté (1), la probabilité associée à ce ² d’indépendance (7.73</em>10-17, ce qui signifie 0.0000000000000000773) et le phi² de Cramér (0.31), qui est la taille de l’effet. Le phi est en quelque sorte un coefficient de corrélation entre des variables nominales. Si la mesure d’association peut avoir du sens sur une table 2×2, Howell (2008) critique cette approche pour les tableaux plus grands. Une mesure qui serait plus intéressante serait le rapport de cote. Élevé au carré le phi ou le V vont représenter une mesure de la taille d’effet. Bien que cette approche soit critiquable , elle permet de donner une idée de l’importance de la taille d’effet. Au niveau de l’interprétation, un phi aux alentours de 0.10 est une petite taille d’effet ; aux alentours de 0.30, il s’agit d’un effet de taille moyenne ; enfin, aux alentours de 0.50, il s’agit d’un effet de grande taille. Bien que cette classification offre des balises, elle doit être utilisée avec des pincettes car des faibles corrélations peuvent être associées à des effets importants .
+Dans notre cas, puisque la probabilité est très inférieure à 0.05, cela signifie qu’il y a un effet significatif. En d’autres termes, le lieu de pratique n’est pas indépendant de la profession. Au contraire, les psychologues ont plutôt tendance à travailler en hôpital, tandis que les orthophonistes ont tendance à travail dans le privé. C’est ce que nous avions identifié en observant le tableau des effectifs observés, cela explique 31% de la variance (qui correspond au 0.31 du phi carré de Cramér, ² ), reflétant une taille d’effet moyenne.
+A titre informatif, la formule du phi carré est :
+ϕ<sup>2=χ</sup>2/(n<em>(k-1))
+5) Fournit l’odd ratio ou le rapport de cote. Cela vous sera expliqué plus dans les sections suivantes. Il ne s’agit pas du point essentiel de ce chapitre.
+6) Le ² d’indépendance pour laquelle on applique la correction de Yates. Il s’agit d’une correction possible lorsque les effectifs sont faibles. Cette correction consiste à diminuer le numérateur de 0.5. Cependant, ce test étant l’objet de débats théoriques sur son intérêt, préférez le Fisher Exact Test.
+7) Le test de McNemar, qui sera décrit plus loin.
+8) Le Fisher exact test permet de calculer la probabilité exacte de la distribution d’effectifs alors que le ² ne permet de calculer qu’une approximation. Sans entrer dans la présentation des calculs de ce test, il est simplement suffisant de savoir qu’il est très gourmand en ressource de calcul (c’est pourquoi il est presque impossible de le calculer à la main). Ce test est particulièrement intéressant pour les tableaux 2×2 et devrait être préféré au ². Cependant, étant peu connu, la plupart des étudiants et des chercheurs préfèrent le ². Notez que ce test DOIT être utilisé lorsque les conditions d’application du ² ne sont pas respectées et qu’il n’y a pas de possibilités de regroupements entre les modalités de la (des) variable(s) qui fait (font) défaut(s) car il n’est pas sensible à la taille des échantillons, contrairement au ². Notez encore que le Fisher Exact Test (ou test exact de Fisher) ne renvoie pas une statistique relative à une distribution d’échantillonnage pour laquelle on peut calculer la probabilité de dépassement associée, mais renvoie directement la probabilité d’observer une telle configuration. Ainsi, dans notre situation, il y a une probabilité de 2.2</em>10-16 d’observer une telle configuration en raison du hasard, ce qui est asseez proche de la probabilité obtenue par le ².
+Pour information : dans un tableau à 4 cases, comme dans notre situation, le Fisher Exact Test correspond à :
+p=(a+b)!(c+d)!(a+c)!(b+d)!/a!b!c!d!n!
+où n correspond à la taille de l’échantillon et a, b, c, d correspondent aux effectifs conjoints dans un tableau de contingence tel que celui-ci :
+ </p>
+<pre><code>Variable 1 modalité 1   Variable 1 modalité 2</code></pre>
+<p>Variable 2 modalité 1 a b
+Variable 2 modalité 2 c d</p>
+<p>Dans notre exemple, ce serait
+Études réalisées
+Lieu d’exercice Totaux
+Hôpital Privé<br>
+Psychologie 53 21 74
+Orthophonie 23 126 149
+Totaux 76 147 223</p>
+<p>p=(53+21)!(23+126)!(53+23)!(21+126)!/53!21!23!126!223!
+La procédure pour la présentation longue est fondamentalement la même que celle de la présentation courte. Seule quelques lignes de code changent. Nous ne la décrirons dès lors pas plus.
+Présentation des résultats
+Pour rapporter vos résultats, une manière standard de les présenter est de la manière suivante :
+Pour tester l’hypothèse selon laquelle le lieu d’exercice dépend du type de profession, nous avions réalisé un ² d’indépendance avec les variables « profession » (2 modalités : psychologue vs. orthophoniste) et « lieu d’exercice » (2 modalités : hôpital vs privé). Cette analyse révèle que le lieu d’exercice dépend significativement de la profession, ²(1) = 69.47, p&lt;.001, ²= 0.31, montrant que l’insertion professionnelle dépend du type d’études réalisées. Les données de cette analyse sont résumées dans le tableau ci-dessous.
+ </p>
+<p>Études réalisées
+Lieu d’exercice Totaux
+Hôpital Privé<br>
+Psychologie 53 21 74
+Orthophonie 23 126 149
+Totaux 76 147 223</p>
+<p>Notez que les degrés de liberté peuvent aussi vous permettre de vous assurer que vous avez réalisé les données sur les bonnes données. En effet, les degrés de liberté correspondent au nombre de ligne du tableau de contingence moins 1 (L-1) multiplié par le nombre de colonnes moins 1 (C-1), donc (L-1)×(C-1). Si, en l’occurrence la taille d’effet est importante, il est nécessaire de rester prudent dans l’interprétation du phi² (voir l’interprétation du phi).
+Lorsque vous présentez vos résultats, la meilleure représentation pour les ² est le tableau de contingence.
+Notez que les ² ne peuvent être effectués que sur deux variables catégorielles. Les étudiants ou les chercheurs voulant analyser des données pour plus de deux variables catégorielles doivent soit effectuer plusieurs analyses, multipliant ainsi le risque de première espèce, soit réaliser une analyse log-linéaire. Les conditions d’application des analyses log-linéaires restant les mêmes que pour les ², en particulier en ce qui concerne l’indépendance des observations.
+La section suivante vous permettra de traiter les données lorsqu’une des variables est en mesure répétée.
+Le test de McNemar : une des variables catégorielles est en mesure répétée
+Le test de McNemar a été développé pour pouvoir traiter les mesures répétées lorsque nous avions des variables nominales dont une des variables est en mesure répétée. Cependant, le test de McNemar ne s’applique qu’à des tableaux 2x2 .
+Prenons l’exemple d’un enseignant de statistiques qui évalue la compréhension des statistiques de ses étudiants avant et après leur avoir donné un cours. Les données pourraient être représentées comme ci-dessous :
+après
+faible élevé
+avant faible 25 40
+élevé 6 15</p>
+<p>La question que nous nous posons n’est pas de savoir si les étudiants qui avaient une bonne compréhension continuent à être bons ou inversement, ceux qui présentent des difficultés continuent à en présenter. Les étudiants qui nous intéressent sont ceux qui changent de situation : ceux qui ne comprenaient pas bien avant le cours mais comprennent après le cours et ceux qui comprenaient mais qui cessent de comprendre parce que le cours les a embrouillé. En d’autres termes, nous allons faire un ² sur deux cases : les 40 étudiants qui éprouvaient des difficultés et qui s’améliorent et les 6 qui sont dans la situation inverse. De manière théorique, si le cours n’avait pas d’impact, on devrait avoir autant d’étudiants dont la situation se détériore que d’étudiants dont la situation s’améliore. Puisque nous avons 40+6 = 46 étudiants dont la situation change, on devrait en avoir 23 dans chaque condition. Nous pouvons donc faire le ², comme habituellement avec 23 comme valeur théorique.
+χ<sup>2=(〖(40-23)〗</sup>2+〖(6-23)〗^2)/23=25.13
+Cette formule peut être résumée de la manière suivante :
+χ<sup>2=〖(40-6)〗</sup>2/(40+6)=25.13
+En d’autres termes, si on résume les situations qui changent par les E pour échec et S pour succès, les personnes qui passent d’un échec à un succès sont les ES tandis que les personnes qui passent d’un succès à un échec sont les SE. On peut donc définir la formule de la manière suivante :
+χ<sup>2=〖(ES-SE)〗</sup>2/(ES+SE)</p>
+<p>Cependant, cette formule a été critiquée et améliorée par Edwards (1948), qui lui a appliquée une correction consistant à soustraire 1 de la différence entre ES et SE en valeur absolue. En d’autres termes, il s’agit d’une correction similaire à celle que Yates avait proposée au ², que nous avons abordé précédemment. En effet, cette correction permet à la distribution d’échantillonnage des données de mieux s’adapter un distribution ². La formule devient donc :
+χ<sup>2=〖(|ES-SE|-1)〗</sup>2/(ES+SE)
+Ce qui donne dans notre situation :
+χ<sup>2=〖(|40-6|-1)〗</sup>2/(40+6)=23.67
+Notez que la présentation suivante rendrait impossible le traitement des données car il est impossible de savoir qui était élevé avant et après la formation, qui était élevé avant et faible après … En d’autres termes, les observations ne seraient pas indépendantes. En l’absence des informations concernant les personnes qui ne sont pas restées stables dans le temps, il serait impossible de calculer le McNemar.
+comp_stat formation effectifs
+faible avant 25
+élevé avant 15
+faible après 10
+élevé après 30</p>
+<p>En d’autres termes, les données doivent être présentées dans R de la manière suivante :
+Avant Après Effectif
+faible faible 25
+faible élevé 40
+élevé faible 6
+élevé élevé 15
+ou</p>
+<p>Avant Après
+faible faible
+faible élevé
+élevé faible
+élevé élevé
+faible élevé
+élevé faible
+élevé élevé
+élevé élevé
+faible faible …</p>
+<p>Par contre, en aucune manière, il faut les présenter comme dans la seconde table.
+En termes de conditions d’application, comme l’information qui nous intéresse est seulement celle des personnes qui changent de situation (soit elles s’améliorent, soit elles se détériorent), il est nécessaire que la somme de ces deux situations soit supérieure à 10 (ce qui fait un minimum de 5 de manière théorique dans chaque case). Si vous ne comprenez pas pourquoi, relisez le début de la section jusqu’à la première formule utilisée pour calculer le test de McNemar.</p>
+<p>Exercice 2.
+Créez la table adéquate et appelez-là data1.
+Réalisez l’analyse.</p>
+<p>Vous devez obtenir les résultats suivant :</p>
+<p>De tous ces résultats, seule une petite partie nous intéresse (celle encadrée). Nous obtenons un ² de 23.67 , avec un degré de liberté de 1 et une probabilité de 1.14*10-6, ce qui indique qu’il y a significativement plus d’étudiants qui ont compris les statistiques après le cours qu’avant celui. Vous savez donc que ces résultats sont fictifs !
+Pour la présentation et l’interprétation des résultats, la présentation peut suivre celle qui est présentée pour le ² d’indépendance.
+Pour aller plus loin
+Les rapports de cotes : risque de présenter un comportement (ou une maladie) lorsqu’on présente certaines caractéristiques
+Vous avez déjà entendu des phrases du type « une personne qui fume a deux fois plus de chances de développer un cancer du poumon ». On obtient cette information en calculant le rapport de cote, ou Odd Ratio.
+Nous allons donc nous demander à quel point le fait de fumer augmente le risque de développer un cancer du poumon, ou présenté autrement, combien de « chances » a personne qui fume de développer un cancer en comparaison avec une personne qui ne fume pas.
+Dans notre exemple, que nous simplifions au maximum pour pouvoir le présenter dans un tableau de contingence à deux entrées, nous pourrions référencer les personnes qui sont atteintes d’un cancer par rapport à celles qui ne le sont pas en fonction de la consommation ou non de tabac. Nous aurions dans l’exemple de la base de données présentées ci-dessus, les résultats suivants :
+Ne fume pas Fume Total
+Sain 302 182 484
+Cancer 74 212 286
+Total 376 394 770</p>
+<p>Ainsi, si nous voulons savoir le risque de développer un cancer chez une personne qui ne fume pas, nous ferions le rapport 74/376. Ce rapport nous informe que le risque de développer un cancer chez une personne qui ne fume pas est de 19.68%. Nous pourrions en faire autant chez les fumeurs. Chez les fumeurs, ce risque est de 53.8%. Ainsi, nous constatons qu’il y a un plus gros pourcentage de personnes qui fument que de personnes qui ne fument pas qui vont développer un cancer. Pour être précis, les fumeurs ont 0.538/0.197, c’est-à-dire 2.73, plus de risques de développer un cancer que les personnes qui ne fument pas. Cette valeur s’appelle le rapport de risque (ou risque relatif). Cependant, ce calcul n’est permis qu’à la condition d’être dans une étude longitudinale et que les variables d’intérêt aient été fixées a priori. La plupart du temps, ce n’est pas le cas. On observe souvent a posteriori les facteurs qui auraient pu être des déclencheurs d’un phénomène, ou d’une maladie. Dans ce cas, on doit utiliser un autre indice pour évaluer les risques : le rapport de cote. Ce rapport de cote sera la pierre angulaire des régressions logistiques que vous allez découvrir plus tard. Le rapport de cote, connu également sous son appellation anglophone odds ratio (OR, seul acronyme que nous utiliserons), s’obtient donc par la formule :
+OR= (〖cancer〗<em>fumeur×〖sain〗</em>(non fumeur))/(〖cancer〗_(non fumeur)×〖sain〗_fumeur )
+Dans le cas de notre exemple, le rapport de cote est donc de :
+OR= (212×302)/(74×182)=4.75</p>
+<p>Le rapport de cote indique qu’il y a 4.75 fois plus de risque de développer un cancer quand on fume que lorsqu’on ne fume pas.
+La formule a été écrite en l’occurrence dans le cadre de notre exemple qui porte sur une maladie. Il est possible de transposer cette formule à n’importe quel type de problème. Pour l’extrapoler à toutes les situations possibles, si nous avons un tableau pour lequel la présence de la maladie est codée 1 et son absence 0, tandis que la présence du facteur de risque est codé 1 et son absence 0, il va prendre la forme :
+Facteur de risque Maladie
+0 1
+0 00 01
+1 10 11</p>
+<p>La formule pour l’OR est le rapport entre le produit des situations congruentes (présence/présence et absence/absence) sur le produit des situations incongruentes (absence/présence et présence/absence
+OR= (11×00)/(10×01)
+Si l’OR est supérieur à 1, cela signifie que le risque est plus élevé ; s’il est inférieur à 1, c’est qu’il est moins élevé.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="les-chi2-dind%C3%A9pendance.html"><span class="header-section-number">12</span> Les \(\chi^2\) d’indépendance</a></div>
+<div class="next"><a href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">14</span> Références</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#les-tableaux-de-contingence"><span class="header-section-number">13</span> 3 Les tableaux de contingence</a></li>
+<li><a class="nav-link" href="#notion-deffectifs-conjoints"><span class="header-section-number">13.1</span> 2.1. Notion d’effectifs conjoints</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-02-26.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

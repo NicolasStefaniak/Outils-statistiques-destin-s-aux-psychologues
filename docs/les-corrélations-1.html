@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 13 Les corrélations | Outils statistiques destinés aux psychologues</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="Afin de pouvoir adopter les bonnes mesures éducatives pour leurs enfants, des chercheurs se sont demandés où ils risquaient le moins d’être arrêtés en possession de marijuana. Ces chercheurs se...">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 13 Les corrélations | Outils statistiques destinés aux psychologues">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Afin de pouvoir adopter les bonnes mesures éducatives pour leurs enfants, des chercheurs se sont demandés où ils risquaient le moins d’être arrêtés en possession de marijuana. Ces chercheurs se...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 13 Les corrélations | Outils statistiques destinés aux psychologues">
+<meta name="twitter:description" content="Afin de pouvoir adopter les bonnes mesures éducatives pour leurs enfants, des chercheurs se sont demandés où ils risquaient le moins d’être arrêtés en possession de marijuana. Ces chercheurs se...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Outils statistiques destinés aux psychologues</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="licence.html">Licence</a></li>
+<li><a class="" href="pr%C3%A9ambule.html">Préambule</a></li>
+<li><a class="" href="notions-et-symboles-de-math%C3%A9matiques.html">Notions et symboles de mathématiques</a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">10</span> Quel outil choisir</a></li>
+<li><a class="" href="la-famille-des-chi2.html"><span class="header-section-number">11</span> La famille des \(\chi^2\)</a></li>
+<li><a class="" href="les-corr%C3%A9lations.html"><span class="header-section-number">12</span> Les corrélations</a></li>
+<li><a class="active" href="les-corr%C3%A9lations-1.html"><span class="header-section-number">13</span> Les corrélations</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">14</span> Références</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="les-corrélations-1" class="section level1" number="13">
+<h1>
+<span class="header-section-number">13</span> Les corrélations<a class="anchor" aria-label="anchor" href="#les-corr%C3%A9lations-1"><i class="fas fa-link"></i></a>
+</h1>
+<p>Afin de pouvoir adopter les bonnes mesures éducatives pour leurs enfants, des chercheurs se sont demandés où ils risquaient le moins d’être arrêtés en possession de marijuana.
+Ces chercheurs se sont donc demandés s’il existait un lien entre le nombre de colonies d’abeilles productrices de miel dans une région et le nombre d’arrestations pour possession de marijuana.
+(Cet exemple s’inspire des données présentées ici : <a href="http://tylervigen.com/view_correlation?id=1582" class="uri">http://tylervigen.com/view_correlation?id=1582</a>).</p>
+<div id="exercices-1" class="section level2 tabset tabset-fade tabset-pills" number="13.1">
+<h2>
+<span class="header-section-number">13.1</span> Exercices<a class="anchor" aria-label="anchor" href="#exercices-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="enoncés-1" class="section level3" number="13.1.1">
+<h3>
+<span class="header-section-number">13.1.1</span> Enoncés<a class="anchor" aria-label="anchor" href="#enonc%C3%A9s-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Importer le jeu de données dans la feuille de calcul “miel” en ligne de commande.
+Donnez lui le nom “miel”.</p>
+</div>
+<div id="solution" class="section level3" number="13.1.2">
+<h3>
+<span class="header-section-number">13.1.2</span> Solution<a class="anchor" aria-label="anchor" href="#solution"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb661"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/import.html">import</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">'Exercices.Bruxelles.xlsx'</span>,</span>
+<span>       dir<span class="op">=</span><span class="st">"C:/Users/votre_nom/votre_dossier/"</span>,</span>
+<span>       type<span class="op">=</span><span class="st">'Fichier Excel'</span>,</span>
+<span>       dec<span class="op">=</span><span class="st">'.'</span>,</span>
+<span>       sep<span class="op">=</span><span class="st">';'</span>,</span>
+<span>       na.strings<span class="op">=</span><span class="st">'NA'</span>,</span>
+<span>       sheet<span class="op">=</span><span class="st">'miel'</span>,</span>
+<span>       name<span class="op">=</span><span class="st">'miel'</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="réaliser-une-corrélation" class="section level2" number="13.2">
+<h2>
+<span class="header-section-number">13.2</span> Réaliser une corrélation<a class="anchor" aria-label="anchor" href="#r%C3%A9aliser-une-corr%C3%A9lation"><i class="fas fa-link"></i></a>
+</h2>
+<div id="corrélations-complètes" class="section level3 tabset tabset-fade tabset-pills" number="13.2.1">
+<h3>
+<span class="header-section-number">13.2.1</span> Corrélations complètes<a class="anchor" aria-label="anchor" href="#corr%C3%A9lations-compl%C3%A8tes"><i class="fas fa-link"></i></a>
+</h3>
+<div id="avec-les-boîtes-de-dialogue-2" class="section level4" number="13.2.1.1">
+<h4>
+<span class="header-section-number">13.2.1.1</span> Avec les boîtes de dialogue<a class="anchor" aria-label="anchor" href="#avec-les-bo%C3%AEtes-de-dialogue-2"><i class="fas fa-link"></i></a>
+</h4>
+<p>Pour réaliser une corrélation avec <code>easieR</code>, il faut choisir ‘analyses - Tests d’hypothèses’ (Figure <a href="les-corr%C3%A9lations-1.html#fig:im26">13.1</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im26"></span>
+<img src="corr/corr1.png" alt="On commence par choisir 'Analyses - Tests d'hypothèses'." width="274"><p class="caption">
+Figure 13.1: On commence par choisir ‘Analyses - Tests d’hypothèses’.
+</p>
+</div>
+<p>Ensuite, on choisit corrélations (Figure <a href="les-corr%C3%A9lations-1.html#fig:im27">13.2</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im27"></span>
+<img src="corr/corr2.png" alt=" Dans le premier menu, il faut choisir 'analyses - Tests d'hypothèses." width="134"><p class="caption">
+Figure 13.2:  Dans le premier menu, il faut choisir ’analyses - Tests d’hypothèses.
+</p>
+</div>
+<p>Le menu suivant permet de choisir le type d’analyses de corrélations qu’on veut réaliser.
+La différence majeure entre l’analyse détaillée et la matrice de corrélations est qu’il y a plus d’informations fournies avec l’analyse détaillée.
+Elle est adaptée quand on fait une analyse ou un petit nombre d’analyses.
+Quand le nombre d’analyses augmente, il est préférable de choisir l’option ‘Matrice de corrélations’ (Figure <a href="les-corr%C3%A9lations-1.html#fig:im28">13.3</a>).
+Les deux autres options seront développées ultérieurement.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im28"></span>
+<img src="corr/corr3.png" alt="Choisir l'analyse détaillée.." width="244"><p class="caption">
+Figure 13.3: Choisir l’analyse détaillée..
+</p>
+</div>
+<p>Pour le moment, nous n’avons pas abordé la distinction entre une corrélation et une corrélation partielle/semi-partielle (Figure <a href="les-corr%C3%A9lations-1.html#fig:im29">13.4</a>).
+Les corrélations renvoient au lien entre deux variables alors que les corrélations partielles renvoient au lien entre des variables quand on a contrôlé l’impact de variables parasites.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im29"></span>
+<img src="corr/corr4.png" alt="Choisir 'Correlations'" width="126"><p class="caption">
+Figure 13.4: Choisir ‘Correlations’
+</p>
+</div>
+<p>On peut directement accéder à cette étape en utilisant la fonction <code>corr.complet</code></p>
+<div class="sourceCode" id="cb662"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/corr.complet.html">corr.complet</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>L’étape suivante consiste à choisir le jeu de données.
+Dans l’exemple présenté, il s’agit de “miel” (Figure <a href="les-corr%C3%A9lations-1.html#fig:im30">13.5</a>).
+Il faut noter que cette étape peut ne pas exister s’il n’y a qu’un seul jeu de données dans la mémoire de R.
+S’il n’y a pas de jeu de données, <code>easieR</code> va automatiquement proposer d’importer les données.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im30"></span>
+<img src="corr/corr5.png" alt="Choix du jeu de données" width="95"><p class="caption">
+Figure 13.5: Choix du jeu de données
+</p>
+</div>
+<p>On entre à présent dans les choix propres à l’analyse.
+Si une corrélation est un lien sans direction, la représentation graphique est un nuage de points et il faudra placer une variable en ordonnées et une en abcisse (Figure <a href="#fig:im31"><strong>??</strong></a>).
+Dans notre exemple, nous pensons que c’est le nombre de colonies d’abeilles productries de miel (Figure <a href="#fig:im31"><strong>??</strong></a>, gauche) qui est le prédicteur du nombre d’arrestations pour possession de marijuana (Figure <a href="#fig:im31"><strong>??</strong></a>, droite).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im31-1"></span>
+<img src="corr/corr6.png" alt=" Choix de la variable en abcisse (à gauche) et en ordonnée (à droite)" width="111"><p class="caption">
+Figure 13.6:  Choix de la variable en abcisse (à gauche) et en ordonnée (à droite)
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:im31-2"></span>
+<img src="corr/corr7.png" alt=" Choix de la variable en abcisse (à gauche) et en ordonnée (à droite)" width="110"><p class="caption">
+Figure 13.7:  Choix de la variable en abcisse (à gauche) et en ordonnée (à droite)
+</p>
+</div>
+<p>Ensuite, on a la possibilité de choisir des sous-groupes.
+Si on ne veut pas de sous-groupes, cela signifie que l’analyse sera réalisée sur l’intégralité des données.
+En revanche, si on choisit des sous-groupes, la corrélation sera calculée pour chaque sous-groupe.
+Cela implique d’avoir une variable qualitative pour laquelle il est possible de subidiviser le jeu de données en un ensemble plus petit de jeux de données.
+En l’occurence, nous voulons réaliser l’analyse sur l’intégralité des données (Figure <a href="les-corr%C3%A9lations-1.html#fig:im32">13.8</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im32"></span>
+<img src="corr/corr8.png" alt="En choisissant 'non', on fait l'analyse sur l'échantillon complet " width="84"><p class="caption">
+Figure 13.8: En choisissant ‘non’, on fait l’analyse sur l’échantillon complet
+</p>
+</div>
+<p>L’option suivante permet de décider quelles analyses seront réalisées.
+L’analyse paramétrique permet d’obtenir la corrélation de Bravais-Pearson, le test non paramétrique permet d’obtenir le <span class="math inline">\(\rho\)</span> de Spearman et le <span class="math inline">\(\tau\)</span> de Kendall.
+Les statistiques robustes consistent à estimer l’intervalle de confiance autour de la corrélation estimée à l’aide de bootsrap.
+Enfin, les facteurs bayesiens permettent de réaliser l’analyse en utilisant une approche bayesienne plutôt que fréquentiste (Figure <a href="les-corr%C3%A9lations-1.html#fig:im33">13.9</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im33"></span>
+<img src="corr/corr9.png" alt="Choix des analyses à devoir réaliser." width="139"><p class="caption">
+Figure 13.9: Choix des analyses à devoir réaliser.
+</p>
+</div>
+<p>Comme les statistiques robustes et/ou les facteurs bayesiens ont été choisis, il faut préciser le nombre d’itérations souhaitées.
+Il faut choisir un grand nombre, avec un minimum de 500.
+Il est assez fréquent d’utiliser 1000 comme seuil.
+Cette valeur représente un bon compromis entre précision et vitesse (Figure <a href="les-corr%C3%A9lations-1.html#fig:im34">13.10</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im34"></span>
+<img src="corr/corr10.png" alt="Choix du nombre d'itérations pour le bootstrap." width="182"><p class="caption">
+Figure 13.10: Choix du nombre d’itérations pour le bootstrap.
+</p>
+</div>
+<p>Par ailleurs, comme nous avons opté pour les facteurs bayesiens, il faut fixer un prior.
+Ce prior est la taille de la corrélation (en valeur absolue) qu’on s’attend à avoir.
+Si easieR permet de préciser la valeur numérique en ligne de commande, les boîtes de dialogue ne permettent d’utiliser que les étiquettes préprogrammées.
+En l’occurrence, on a peu de raison de penser que la corrélation va être élevée.
+Nous optons donc sur la plus petite des taille d’effet (Figure <a href="les-corr%C3%A9lations-1.html#fig:im35">13.11</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im35"></span>
+<img src="corr/corr11.png" alt="Prior pour les facteurs bayesiens." width="84"><p class="caption">
+Figure 13.11: Prior pour les facteurs bayesiens.
+</p>
+</div>
+<p>La plupart du temps, il est préférable d’analyser les données sans les valeurs influentes.
+Néanmoins, il y a des exceptions : quand on travaille avec une population pathologique, il est normal de s’attendre à des valeurs influentes.
+Par ailleurs, certains chercheurs préférent laisser toutes les observations ou utiliser une autre alternative (e.g., les tests non paramétriques) que de supprimer les valeurs influentes.
+Une attitude minimale est d’aller identifier s’il y a des valeurs influentes.
+Par défaut, c’est le test de Grubbs qui est utilisé pour identifier la présence des valeurs influentes.
+Entre l’analyse “sans les valeurs influentes” et “avec les valeurs influentes”, il est préférable de choisir “sans” dans la majorité des cas.
+Néanmoins, je trouve toujours intéressant de regarder si l’interprétation change lorsque les valeurs influentes sont présentes ou non, peu importe le sens. En effet, cela donne une appréciation de la robustesse de l’effet, et permet de s’assurer que la présence/absence de l’effet ne dépend pas que de quelques observations, c’est pourquoi je laisse tout cocher dans la Figure <a href="les-corr%C3%A9lations-1.html#fig:im36">13.12</a>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im36"></span>
+<img src="corr/corr12.png" alt="Attitude par rapport aux valeurs influentes." width="122"><p class="caption">
+Figure 13.12: Attitude par rapport aux valeurs influentes.
+</p>
+</div>
+<p>La Figure <a href="les-corr%C3%A9lations-1.html#fig:im37">13.13</a> permet d’enregistrer les résultats en format Word.
+Comme précédemment, nous utiliserons plus loin une autre solution.
+Nous pouvons cocher FALSE en attendant.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im37"></span>
+<img src="corr/corr13.png" alt="Faut-il enregistrer le document en ms word ?" width="84"><p class="caption">
+Figure 13.13: Faut-il enregistrer le document en ms word ?
+</p>
+</div>
+</div>
+<div id="avec-les-lignes-de-commande-1" class="section level4" number="13.2.1.2">
+<h4>
+<span class="header-section-number">13.2.1.2</span> Avec les lignes de commande<a class="anchor" aria-label="anchor" href="#avec-les-lignes-de-commande-1"><i class="fas fa-link"></i></a>
+</h4>
+<p>La fonction ‘easieR’ qui permet de réaliser une analyse de corrélation détaillée est la fonction <code>corr.complet</code>.
+Les arguments de la fonction sont :</p>
+<ul>
+<li><p>X : caractère qui correspond au nom de la variable ou des variables en abcisse ;</p></li>
+<li><p>Y : caractère qui correspond au nom de la variable ou des variables en ordonnée ;</p></li>
+<li><p>Z : caractère qui correspond au nom de la variable ou des variables à contrôler (pour des corrélations parielles) ;</p></li>
+<li><p>data : nom du jeu de données ;</p></li>
+<li><p>group : caractère correspondant à la ou les variables permettant de réaliser les analyses par groupe (voir section consacrée à cet effet) ;</p></li>
+<li><p>param : caractère indiquant quelles analyses doivent être faites.
+Les valeurs autorisées sont : ‘Test parametrique’,‘Test non parametrique’,‘Test robustes - impliquant des bootstraps’,‘Facteurs bayesiens’, ou leur version abrégée ‘param’, ‘non param’, ‘robustes’, ‘Bayes’</p></li>
+<li><p>save : logique indiquant s’il faut une sauvegarde en fichier msword</p></li>
+<li><p>outlier : caractère indiquant si les analyses doivent être réalisées sur l’ensemble des données, s’il faut identifier les valeurs influentes et s’il faut réaliser l’analyse sans les valeurs influentes.
+Les valeurs autorisées sont : ‘Donnees completes’,‘Identification des valeurs influentes’,‘Donnees sans valeur influente’</p></li>
+<li><p>z : notez qu’il s’agit d’un z miniscule par opposition du z majuscule présenté précédemment.
+Pour supprimer les valeurs influente, on peut utiliser le test de Grubbs (par défaut) ou le score z.
+Si z vaut NULL, le test de Grubbs sera utilisé.
+Si le z a une valeur numérique, cette valeur numérique sera utilisée pour déterminer l’éloignement en écart-type à partir duquel le résidu standardisé d’une observation va être considéré comme influent.
+Les valeurs habituelles sont : 1.96 (5%), 2.56 (1%), 3.26 (0.1%).</p></li>
+<li><p>info : il s’agit d’un logique qui indique si des messages d’informations doivent être affichés dans la console pour expliquer à quoi correspond les boîtes de dialogue.
+Par défaut, la valeur est TRUE.</p></li>
+<li><p>rscale : il s’agit du prior si ‘Bayes’ ou ‘Facteurs bayesiens’est sélectionné pour ’param’ .
+Cela correspond approximativement à la valeur de la corrélation qu’on s’attend à avoir.</p></li>
+<li><p>n.boot : nombre du bootstrap pour les statistiques robustes et pour le posterior des facteurs bayesiens</p></li>
+<li><p>html : logique.
+Indique s’il faut une sortie html.</p></li>
+</ul>
+<div class="sourceCode" id="cb663"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/corr.complet.html">corr.complet</a></span><span class="op">(</span></span>
+<span>  X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Miel'</span><span class="op">)</span>, </span>
+<span>  Y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Arrestations'</span><span class="op">)</span>, </span>
+<span>  Z <span class="op">=</span><span class="cn">NULL</span>,</span>
+<span>  data<span class="op">=</span><span class="va">miel</span>, </span>
+<span>  group<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>  param<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Test parametrique'</span>,<span class="st">'Test non parametrique'</span>,<span class="st">'Test robustes - impliquant des bootstraps'</span>,<span class="st">'Facteurs bayesiens'</span><span class="op">)</span>, </span>
+<span>  save<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>  outlier<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Donnees completes'</span>,<span class="st">'Identification des valeurs influentes'</span>,<span class="st">'Donnees sans valeur influente'</span><span class="op">)</span>,</span>
+<span>  z<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>  info<span class="op">=</span><span class="cn">T</span>, </span>
+<span>  rscale<span class="op">=</span><span class="fl">0.353553390593274</span>, </span>
+<span>  n.boot<span class="op">=</span><span class="fl">1000</span>, </span>
+<span>  html<span class="op">=</span><span class="cn">F</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<pre><code>## NULL</code></pre>
+<pre><code>## $`Correlation entre la variable Miel et la variable Arrestations`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Statistiques descriptives`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Statistiques descriptives`$`Variables numériques`
+##              vars   n     mean       sd  median  trimmed     mad  min   max
+## Miel            1 202  2714.01   592.45  2608.0  2656.06  192.74 1200 1e+04
+## Arrestations    2 202 76383.35 27169.82 90017.5 81031.52 6635.38 3500 1e+05
+##              range  skew kurtosis      se
+## Miel          8800  9.19   110.57   41.68
+## Arrestations 96500 -1.35     0.12 1911.66
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Statistiques descriptives`$Graphiques
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Statistiques descriptives`$Graphiques[[1]]</code></pre>
+<pre><code>## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Statistiques descriptives`$Graphiques[[2]]</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Statistiques descriptives`$`Informations sur les graphiques`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Statistiques descriptives`$`Informations sur les graphiques`[[1]]
+## [1] "L'epaisseur du graphique donne la densite, permettant de mieux cerner la distribution."
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Statistiques descriptives`$`Informations sur les graphiques`[[2]]
+## [1] "Le point rouge est la moyenne. La barre d'erreur est l'ecart-type"
+## 
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Tests de normalite`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Tests de normalite`$`Tests de normalite`
+##   W de Shapiro-Wilk valeur.p SW D de Lilliefors valeur.p Llfrs
+## W            0.2177           0          0.3275              0
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Tests de normalite`$`Distribution des residus`</code></pre>
+<pre><code>## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Tests de normalite`$QQplot</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test parametrique`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test parametrique`$Graphiques
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test parametrique`$Graphiques[[1]]</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test parametrique`$`Correlation de Bravais-Pearson`
+##           r R.deux IC lim inf lim.sup       t ddl valeur.p Bca.lim.inf
+## cor -0.3248 0.1055     -0.443 -0.1955 -4.8562 200        0     -0.9006
+##     Bca.lim.sup
+## cor     -0.0658
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test non parametrique`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test non parametrique`$Graphiques
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test non parametrique`$Graphiques[[1]]</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test non parametrique`$`Rho de Spearman`
+##       rho rho.deux       S valeur.p Bca.lim.inf Bca.lim.sup
+## rho -0.64   0.4096 2252875        0     -0.7452     -0.5149
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Test non parametrique`$`Tau de Kendall`
+##         tau      z valeur.p
+## tau -0.4482 -9.466        0
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Facteurs bayesiens`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Facteurs bayesiens`$`Facteurs Bayesiens pour la correlation de Bravais-Pearson`
+##                                      Facteur bayesien Erreur          r
+## En faveur de l'hypothese alternative       6122.57535      0 -0.3247731
+## En faveur de l'hypothese nulle                0.00016      0 -0.3247731
+##                                        R.carre
+## En faveur de l'hypothese alternative 0.1054776
+## En faveur de l'hypothese nulle       0.1054776
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Facteurs bayesiens`$`Facteurs Bayesiens pour la correlation de Spearman`
+##                                      Facteur bayesien Erreur
+## En faveur de l'hypothese alternative           &gt;10000  6e-05
+## En faveur de l'hypothese nulle                      0  6e-05
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees completes`$`Facteurs bayesiens sequentiels`</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Valeurs influentes`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Valeurs influentes`$`Test de Grubbs`
+##          G        U valeur.p
+## G 13.30141 0.115384        0
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Valeurs influentes`$`Valeur la plus elevee`
+## [1] "highest value 7453.23397513205 is an outlier"
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Valeurs influentes`$`observations influentes`
+##      Miel Arrestations       res    residu
+## 202 10000       100000  7453.234  7453.234
+## 201  1200         3500 -2030.161 -2030.161
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Valeurs influentes`$`Synthese des observations influentes`
+##                                     Information Synthèse
+## n                Nombre d'observations retirees        2
+##   % d'observations considerees comme influentes   0.99 %
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Statistiques descriptives`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Statistiques descriptives`$`Variables numériques`
+##              vars   n     mean       sd  median  trimmed     mad   min   max
+## Miel            1 200  2685.16   274.60  2608.0  2654.26  190.51  2304  3388
+## Arrestations    2 200 76629.68 26759.32 90017.5 81309.46 6527.89 16281 98751
+##              range  skew kurtosis      se
+## Miel          1084  0.97    -0.01   19.42
+## Arrestations 82470 -1.35     0.12 1892.17
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Statistiques descriptives`$Graphiques
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Statistiques descriptives`$Graphiques[[1]]</code></pre>
+<pre><code>## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Statistiques descriptives`$Graphiques[[2]]</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Statistiques descriptives`$`Informations sur les graphiques`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Statistiques descriptives`$`Informations sur les graphiques`[[1]]
+## [1] "L'epaisseur du graphique donne la densite, permettant de mieux cerner la distribution."
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Statistiques descriptives`$`Informations sur les graphiques`[[2]]
+## [1] "Le point rouge est la moyenne. La barre d'erreur est l'ecart-type"
+## 
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Tests de normalite`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Tests de normalite`$`Tests de normalite`
+##   W de Shapiro-Wilk valeur.p SW D de Lilliefors valeur.p Llfrs
+## W            0.9891      0.1331           0.047         0.3468
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Tests de normalite`$`Distribution des residus`</code></pre>
+<pre><code>## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Tests de normalite`$QQplot</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test parametrique`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test parametrique`$Graphiques
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test parametrique`$Graphiques[[1]]</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test parametrique`$`Correlation de Bravais-Pearson`
+##           r R.deux IC lim inf lim.sup        t ddl valeur.p Bca.lim.inf
+## cor -0.9108 0.8295    -0.9318 -0.8837 -31.0337 198        0     -0.9324
+##     Bca.lim.sup
+## cor     -0.8824
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test non parametrique`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test non parametrique`$Graphiques
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test non parametrique`$Graphiques[[1]]</code></pre>
+<pre><code>## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test non parametrique`$`Rho de Spearman`
+##         rho rho.deux       S valeur.p Bca.lim.inf Bca.lim.sup
+## rho -0.6897   0.4757 2252876        0     -0.7744      -0.579
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Test non parametrique`$`Tau de Kendall`
+##         tau        z valeur.p
+## tau -0.4774 -10.0318        0
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Facteurs bayesiens`
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Facteurs bayesiens`$`Facteurs Bayesiens pour la correlation de Bravais-Pearson`
+##                                      Facteur bayesien Erreur          r
+## En faveur de l'hypothese alternative           &gt;10000  1e-04 -0.9107527
+## En faveur de l'hypothese nulle                      0  1e-04 -0.9107527
+##                                        R.carre
+## En faveur de l'hypothese alternative 0.8294704
+## En faveur de l'hypothese nulle       0.8294704
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Facteurs bayesiens`$`Facteurs Bayesiens pour la correlation de Spearman`
+##                                      Facteur bayesien Erreur
+## En faveur de l'hypothese alternative           &gt;10000  6e-05
+## En faveur de l'hypothese nulle                      0  6e-05
+## 
+## 
+## $`Correlation entre la variable Miel et la variable Arrestations`$`Donnees sans valeur influente`$`Facteurs bayesiens sequentiels`</code></pre>
+<pre><code>## 
+## 
+## 
+## $Call
+## [1] "corr.complet(X=c('Miel'), Y=c('Arrestations'), Z =NULL,data=miel, group=NULL, param=c('Test parametrique','Test non parametrique','Test robustes - impliquant des bootstraps','Facteurs bayesiens'), save=FALSE,outlier=c('Donnees completes','Identification des valeurs influentes','Donnees sans valeur influente'),z=NULL, info=T, rscale=0.353553390593274, n.boot=1000, html=FALSE)"
+## 
+## $References
+## R Core Team (2025). _R: A Language and Environment for Statistical
+## Computing_. R Foundation for Statistical Computing, Vienna, Austria.
+## &lt;https://www.R-project.org/&gt;.
+## 
+## Morey RD, Rouder JN (2024). _BayesFactor: Computation of Bayes Factors
+## for Common Designs_. doi:10.32614/CRAN.package.BayesFactor
+## &lt;https://doi.org/10.32614/CRAN.package.BayesFactor&gt;, R package version
+## 0.9.12-4.7, &lt;https://CRAN.R-project.org/package=BayesFactor&gt;.
+## 
+## Angelo Canty, B. D. Ripley (2024). _boot: Bootstrap R (S-Plus)
+## Functions_. R package version 1.3-31.
+## 
+## A. C. Davison, D. V. Hinkley (1997). _Bootstrap Methods and Their
+## Applications_. Cambridge University Press, Cambridge. ISBN
+## 0-521-57391-2, &lt;doi:10.1017/CBO9780511802843&gt;.
+## 
+## Wickham H (2016). _ggplot2: Elegant Graphics for Data Analysis_.
+## Springer-Verlag New York. ISBN 978-3-319-24277-4,
+## &lt;https://ggplot2.tidyverse.org&gt;.
+## 
+## Kim S (2015). _ppcor: Partial and Semi-Partial (Part) Correlation_.
+## doi:10.32614/CRAN.package.ppcor
+## &lt;https://doi.org/10.32614/CRAN.package.ppcor&gt;, R package version 1.1,
+## &lt;https://CRAN.R-project.org/package=ppcor&gt;.
+## 
+## Komsta L (2022). _outliers: Tests for Outliers_.
+## doi:10.32614/CRAN.package.outliers
+## &lt;https://doi.org/10.32614/CRAN.package.outliers&gt;, R package version
+## 0.15, &lt;https://CRAN.R-project.org/package=outliers&gt;.
+## 
+## William Revelle (2025). _psych: Procedures for Psychological,
+## Psychometric, and Personality Research_. Northwestern University,
+## Evanston, Illinois. R package version 2.5.6,
+## &lt;https://CRAN.R-project.org/package=psych&gt;.
+## 
+## Grosjean P, Engels G (2025). "'SciViews::R' - Data Science R Dialect."
+## &lt;https://sciviews.r-universe.dev/&gt;.
+## 
+## Francois R, Hernangómez D (2023). _bibtex: Bibtex Parser_.
+## doi:10.32614/CRAN.package.bibtex
+## &lt;https://doi.org/10.32614/CRAN.package.bibtex&gt;, R package version
+## 0.5.1, &lt;https://CRAN.R-project.org/package=bibtex&gt;.</code></pre>
+<p>Afin d’illustrer quelques fonctionnalités qui rendent ‘easieR’ intéressant, voici un exemple où nous avons plusieurs variables en X, plusieurs variables en Y et où on utilise le score z plutôt que le test de Grubbs.
+Ainsi, on va fixer le seuil du résidu standardisé à 2.56, pour un seuil à 1%.
+Le jeu de données utilisé est inclu directement dans R et s’appelle ‘mtcars’</p>
+<div class="sourceCode" id="cb681"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mtcars</span><span class="op">&lt;-</span><span class="va">mtcars</span></span>
+<span><span class="va">r.out</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/corr.complet.html">corr.complet</a></span><span class="op">(</span></span>
+<span>  X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'mpg'</span>, <span class="st">"cyl"</span><span class="op">)</span>, </span>
+<span>  Y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'disp'</span>, <span class="st">"hp"</span><span class="op">)</span>, </span>
+<span>  Z <span class="op">=</span><span class="cn">NULL</span>,</span>
+<span>  data<span class="op">=</span><span class="va">mtcars</span>, </span>
+<span>  group<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>  param<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Test parametrique'</span><span class="op">)</span>, </span>
+<span>  save<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>  outlier<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Identification des valeurs influentes'</span>,<span class="st">'Donnees sans valeur influente'</span><span class="op">)</span>,</span>
+<span>  z<span class="op">=</span><span class="fl">2.56</span>, </span>
+<span>  info<span class="op">=</span><span class="cn">T</span>, </span>
+<span>  rscale<span class="op">=</span><span class="fl">0.353553390593274</span>, </span>
+<span>  n.boot<span class="op">=</span><span class="fl">1000</span>, </span>
+<span>  html<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">r.out</span></span></code></pre></div>
+</div>
+</div>
+<div id="interprétez-les-résultats-1" class="section level3" number="13.2.2">
+<h3>
+<span class="header-section-number">13.2.2</span> Interprétez les résultats<a class="anchor" aria-label="anchor" href="#interpr%C3%A9tez-les-r%C3%A9sultats-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Pour la sortie de résultats, nous commencerons les explications sur la partie identification des valeurs influentes.
+La partie sans et la partie avec s’interprétant exactement de la même manière.</p>
+<p>Dans le Tableau 12, nous avons les résultats du test de Grubbs dont l’hypothèse nulle est qu’il n’y a pas de valeurs influentes.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c35">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c35">Table 13.1: </span> Tableau 12. Test de Grubbs testant l'absence de valeurs influentes.</caption>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">G</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">U</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p</th>
+</tr></thead>
+<tbody><tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">G</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">13.3</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">0.115</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr></tbody>
+</table></div>
+<p>Comme la probabilité pour le test de Grubbs est &lt;.001, on rejette l’hypothèse nulle.
+Cela amène donc à considérer qu’il existe au moins une valeur influente.
+La valeur influente naturelle sera celle qui s’éloigne le plus de la moyenne :</p>
+<pre><code>## [1] "highest value 7453.23397513205 is an outlier"</code></pre>
+<p>L’important est d’identifier quelles sont les observations influentes et pourquoi elles sont considérées comme influentes.
+Le Tableau 13 nous permet de le faire.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c37">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c37">Table 13.2: </span> Tableau 13. Valeur identifiées comme influentes.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Miel</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Arrestations</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">res</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">residu</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">202</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1e+04      </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1e+05      </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">7.45e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">7.45e+03</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">201</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">1.2e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">3.5e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-2.03e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-2.03e+03</td>
+</tr>
+</tbody>
+</table></div>
+<p>En l’occurrence, il apparaît que 1200 colonies d’abeilles est particulièrement faible.
+En effet, le nombre de colonies d’abeilles est compris entre 2500 et 3500.
+Il s’agit sans doute d’une erreur.
+Pour la seconde observations, les choses sont moins claires car, bien que se comportant de manière différente de l’ensemble des autres observations, cette observation, en termes de valeurs, est compatible avec les autres données.
+Dans notre exemple, cela représente 2 observations sur 200, ce qui représentent moins de 1% des observations considérées comme influentes (Tableau 14).
+Ce pourcentage étant particulièrement faible, on ne va pas perdre en puissance statistique.
+On peut donc les supprimer puisqu’il est difficile d’expliquer ces deux observations par rapport aux autres.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c38">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c38">Table 13.3: </span> Tableau 14. Nombre d'observations considérées comme influentes et pourcentage de l'échantillon total.</caption>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Information</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Synthèse</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">n</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">Nombre d'observations retirees</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">% d'observations considerees comme influentes</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0.99 %</td>
+</tr>
+</tbody>
+</table></div>
+<p>L’étape suivante consiste à regarder les statistiques descriptives.
+A cette étape, on va être attentif au nombre d’observations (est-ce que je fais bien l’analyse sur tout mon échantiillon), au minimum, au maximum (est-ce que ces valeurs sont compatibles avec mes données), à la moyenne et à la médiane (si elles sont proches, c’est que la distribution est symétrique, sinon ce n’est pas le cas) et éventuellement identifier des tendances (mais ce n’est pas quelque chose qu’on peut faire ici)(Tableau 15).</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c39">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c39">Table 13.4: </span> Tableau 15. Tableau des statistiques descriptives.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">vars</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">n</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">mean</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">sd</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">median</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">trimmed</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">mad</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">min</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">max</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">range</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">skew</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">kurtosis</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">se</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">Miel</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">200</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.69e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">275       </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.61e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.65e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">191       </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.3e+03 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">3.39e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1.08e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0.973</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">-0.0118</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">19.4     </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">Arrestations</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">200</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">7.66e+04</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2.68e+04</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">9e+04       </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">8.13e+04</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">6.53e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">1.63e+04</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">9.88e+04</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">8.25e+04</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-1.35 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0.121 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">1.89e+03</td>
+</tr>
+</tbody>
+</table></div>
+<p>L’étape suivante est de regarder les graphiques pour chaque variable (Figure 33).
+Ces graphiques permettent d’identifier la présence de valeurs influentes (les points qui s’éloignent particulièrement).
+Dans la Figure de droite, nous n’avons pas encore enlever les valeurs influentes, dans les figures de gauche les valeurs influentes ont été enlevées.
+Les graphiques du haut représent les colonies d’abeilles et ceux du bas représentent les arrestations.
+Il ne s’agit pas de la disposition habituelle dans la sortie easieR, mais cette comparaison permet d’identifier la modification de la distribution et comment on peut identifier des valeurs influentes sur la base d’un graphique.</p>
+<div class="inline-figure"><img src="Outils-statistiques-destin%C3%A9s-aux-psychologues_files/figure-html/c40-1.png" width="672"></div>
+<p><small>Figure 33.
+Représentation graphique des différentes variables</small></p>
+<p>Pour identifier la forme de la distribution, il suffit de faire un quart de tour avec sa tête d’un côté ou de l’autre.
+Si vous tracez une ligne verticale entre au milieu de la distribution, cela donne la forme de votre distribution.
+La Figure 34 illustre ce qu’on devrait obtenir pour une distribution normale.</p>
+<div class="sourceCode" id="cb683"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10000</span><span class="op">)</span></span>
+<span><span class="va">data</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span> </span>
+<span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span> ,y<span class="op">=</span><span class="va">y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">p</span><span class="op">&lt;-</span><span class="va">p</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>, size<span class="op">=</span><span class="fl">1.5</span><span class="op">)</span></span>
+<span><span class="va">p</span></span></code></pre></div>
+<div class="inline-figure"><img src="Outils-statistiques-destin%C3%A9s-aux-psychologues_files/figure-html/c41-1.png" width="672"></div>
+<p><small>Figure 34.
+Graphique violon pour une distribution normale.</small></p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c42">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c42">Table 13.5: </span> Tableau 17. Tests de normalité.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">W de Shapiro-Wilk</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p SW</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">D de Lilliefors</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p Llfrs</th>
+</tr></thead>
+<tbody><tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">W</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">0.989</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">.1331</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">0.047</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;">.3468</td>
+</tr></tbody>
+</table></div>
+<p>Deux tests de normalité ont été réalisé.
+Le premier (et le plus puissant) est le test de Shapiro-Wilk.
+La probabilité associée à ce test est de 0.13.
+Elle est supérieure à 0.05, on tolère l’hypothèse nulle selon laquelle la distribution des données ne se distingue pas d’une distribution normale.
+Le test de Lilliefors fonctionne sur le même principe : avec une probabilité de 0.35, on tolère l’hypothèse nulle selon laquelle la distribution suit une distribution normale.
+Ainsi, ici les deux tests aboutissent à la même conclusion.
+Lorsque les deux tests n’aboutissent pas à la même conclusion, il faut privilégier le test de Shapiro-Wilk lorsque l’échantillon est petit (moins de 50 personnes) car ce test est plus puissant et le test de Lilliefors pour les grands échantillons (plusieurs centaines de personnes).
+En effet, avec les gros échantillons, de minimes violations de la normalité aboutissent au rejet de l’hypothèse nulle avec le test de Shapiro-Wilk.</p>
+<div class="inline-figure"><img src="Outils-statistiques-destin%C3%A9s-aux-psychologues_files/figure-html/c44-1.png" width="672"></div>
+<p><small>Figure 34.
+Distribution des résidus en fonction d’une distribution normale théorique et QQplot </small></p>
+<p>Si, sur la distribution des résidus, on peut identifier des divergences entre la distribution des résidus et la distribution normale, le QQplot suit plutôt bien une ligne droite ce qui permet de considérer que la distribution est normale.</p>
+<p>Nous pouvons donc à présent regarder si la distribution des résidus est homogènes :</p>
+<div class="inline-figure"><img src="Outils-statistiques-destin%C3%A9s-aux-psychologues_files/figure-html/c45-1.png" width="672"></div>
+<p><small>Figure 35.
+Nuage de points pour la corrélation de Bravais-Pearson.
+On constate que la ligne verticale rouge est bien plus courte que la ligne verticale verte.
+</small></p>
+<p>Sur ce nuage, on peut constater que les variances ne sont pas homogènes.
+En effet, a ligne verticale rouge est bien plus courte que la ligne verticale verte.
+Ainsi, on devrait privilégier les statistiques robustes ou le <span class="math inline">\(\rho\)</span> de Spearman.</p>
+<p>L’étape suivante consiste à analyser les résultats de la corrélation (Tableau 18)</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c46">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c46">Table 13.6: </span> Tableau 18. Corrélation de Bravais-Pearson.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">r</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">R.deux</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">IC lim inf</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">lim.sup</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">t</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">ddl</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Bca.lim.inf</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Bca.lim.sup</th>
+</tr></thead>
+<tbody><tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">cor</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.911</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">0.83</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.932</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.884</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-31</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">198</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.932</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.88</span></td>
+</tr></tbody>
+</table></div>
+<p>La corrélation de Bravais-Pearson vaut -0.91.
+La taille d’effet R² vaut 0.83.
+Le calcul de la statistique <em>t</em> aboutit à une valeur de -31, et avec 198 degrés de liberté, la probabilité associée est &lt;.001.
+Ainsi, on rejette l’hypothèse nulle.
+La corrélation est significative (i.e., elle ne vaut pas 0) et elle est négative.
+L’intervalle de confiance créé par boostrap (donc les statistiques robustes) indiquent que la vraie corrélation à 95% de chance de se situer entre -0.932 et -0.882.
+Comme cet intervalle de confiance ne recouvre pas le 0, il est très probable que la valeur de la vraie corrélation ne soit pas égale à 0.</p>
+<p>Etant donné que nous avons coché la case relative aux tests non paramétriques, le <span class="math inline">\(\rho\)</span> de Spearman est également réalisé.
+Ainsi, comme cette analyse est une corrélation de Bravais-Pearson sur les rangs, la représentation graphique des données consiste à représenter les rangs des observations (Figure 36).</p>
+<pre><code>## [[1]]</code></pre>
+<div class="inline-figure"><img src="Outils-statistiques-destin%C3%A9s-aux-psychologues_files/figure-html/c47-1.png" width="672"></div>
+<p><small>Figure 36.
+Nuage de points pour le <span class="math inline">\(\rho\)</span> de Spearman.
+</small></p>
+<p>Le tableau du <span class="math inline">\(\rho\)</span> de Spearman (Tableau 19) s’interprète de la même manière que celui de la corrélation de Bravais-Pearson, excepté que la valeur de la statistique est un <em>S</em> au lieu d’un <em>t</em>.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c48">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c48">Table 13.7: </span> Tableau 19. Rho de Spearman.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">rho</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">rho.deux</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">S</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Bca.lim.inf</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Bca.lim.sup</th>
+</tr></thead>
+<tbody><tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">rho</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.69</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">0.476</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">2.25e+06</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.776</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.568</span></td>
+</tr></tbody>
+</table></div>
+<p>Le <span class="math inline">\(\tau\)</span> de Kendall est une autre alternative non paramétrique à la corrélation de Bravai-Pearson.
+Les puristes pourraient préférer cette mesure car elle est plus précise que le <span class="math inline">\(\rho\)</span> (Tableau 20).</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c49">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c49">Table 13.8: </span> Tableau 20. Tau de Kendall.</caption>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">tau</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">z</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p</th>
+</tr></thead>
+<tbody><tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">tau</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.477</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">-10</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr></tbody>
+</table></div>
+<p>Il est intéressant de constater que, si les trois analyses aboutissent à la conclusion qu’il existe une corrélation négative, la valeur du r de Bravais-Pearson est de -0.91, celle du <span class="math inline">\(\rho\)</span> est de -0.69 et celle du <span class="math inline">\(\tau\)</span> est de -0.48.
+Cela permet de prendre conscience de la différence en termes d’estimation quand les conditions d’application sont respectées et lorsqu’elles ne le sont pas.
+Pour l’illustrer, ci-dessous, vous pouvez comparer la valeur de la corrélation pour le r de Bravais-Pearson et le <span class="math inline">\(\rho\)</span> de Spearman lorsque les conditions d’application sont respectées.
+Vous pouvez observer que ces deux valeurs sont très similaires.</p>
+<div class="sourceCode" id="cb685"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">samples</span> <span class="op">=</span> <span class="fl">200</span></span>
+<span><span class="va">r</span> <span class="op">=</span> <span class="fl">0.83</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://www.stats.ox.ac.uk/pub/MASS4/">'MASS'</a></span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">mvrnorm</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">samples</span>, mu<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>, Sigma<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">r</span>, <span class="va">r</span>, <span class="fl">1</span><span class="op">)</span>, nrow<span class="op">=</span><span class="fl">2</span><span class="op">)</span>, empirical<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">X</span> <span class="op">=</span> <span class="va">data</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span>  </span>
+<span><span class="va">Y</span> <span class="op">=</span> <span class="va">data</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span>  </span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/corr.test.html">corr.test</a></span><span class="op">(</span><span class="va">X</span>, <span class="va">Y</span>, method <span class="op">=</span> <span class="st">"pearson"</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## Call:corr.test(x = X, y = Y, method = "pearson")
+## Correlation matrix 
+## [1] 0.83
+## Sample Size 
+## [1] 200
+## These are the unadjusted probability values.
+##   The probability values  adjusted for multiple tests are in the p.adj object. 
+## [1] 0
+## 
+##  To see confidence intervals of the correlations, print with the short=FALSE option</code></pre>
+<div class="sourceCode" id="cb687"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/corr.test.html">corr.test</a></span><span class="op">(</span><span class="va">X</span>, <span class="va">Y</span>, method <span class="op">=</span> <span class="st">"spearman"</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## Call:corr.test(x = X, y = Y, method = "spearman")
+## Correlation matrix 
+## [1] 0.83
+## Sample Size 
+## [1] 200
+## These are the unadjusted probability values.
+##   The probability values  adjusted for multiple tests are in the p.adj object. 
+## [1] 0
+## 
+##  To see confidence intervals of the correlations, print with the short=FALSE option</code></pre>
+</div>
+<div id="exercices-2" class="section level3 tabset tabset-fade tabset-pills" number="13.2.3">
+<h3>
+<span class="header-section-number">13.2.3</span> 3 Exercices<a class="anchor" aria-label="anchor" href="#exercices-2"><i class="fas fa-link"></i></a>
+</h3>
+<div id="enoncés-2" class="section level4" number="13.2.3.1">
+<h4>
+<span class="header-section-number">13.2.3.1</span> Enoncés<a class="anchor" aria-label="anchor" href="#enonc%C3%A9s-2"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Exercice 1</strong></p>
+<p>Des chercheurs s’intéressent au niveau de détresse émotionnelle et formulent l’hypothèse selon laquelle la détresse serait inversement reliée à l’adoption de stratégies de coping.
+Ces chercheurs demandent à leurs participants d’évaluer sur une échelle de 1 (pas du tout) à 7 (en totale détresse) leur niveau de détresse émotionnelle.
+Ils leur demandent ensuite d’expliquer les comportements qu’ils adoptent lorsqu’ils ne se sentent pas bien.
+Les chercheurs attendent 30 réponses.
+Une fois, les réponses récoltées, ils comptent le nombre de comportements de coping.
+Par ailleurs, les chercheurs ont également utilisé une échelle d’anxiété sur 50 et ont demandé l’âge des participants.</p>
+<p>Réaliser une corrélation partielle entre la détresse émotionnelle et les stratégies de coping, en contrôlant l’effet de l’âge.
+Comparez la sortie de résultats avec celle d’une corrélation classique.</p>
+<p>Les données sont présentées la feuille ‘Detresse’.
+Utilisez au choix les boites de dialogue ou la ligne de commande.</p>
+<p><strong>Exercice 2</strong></p>
+<p>Aux USA, il existe une forte une corrélation entre la consommation de margarine et le taux de divorce.
+Nous émettons l’hypothèse que ce n’est pas la consommation de margarine en tant que telle qui influence le taux de divorce, mais que le taux de divorce augmente quand la consommation de maragrine augmente en raison de la prise poids.
+Testez cette hypothèse.</p>
+<center>
+<img src="poids.gif">
+</center>
+<p>En vous appuyant sur la ligne de commande issu de l’exercice 1, réaliser une corrélation partielle en utilisant la ligne de commande.</p>
+<p>Les données sont dans la feuille de calcul ‘poids’.</p>
+<p><strong>Exercice 3</strong></p>
+<p>Pour les plus rapides, importer la feuille de calcul AI, réaliser une corrélation entre le BLOC1 et le BLOC2 en faisant l’analyse par groupe.
+Faites cette analyse au choix avec les boîtes de dialogue ou les lignes de commande.</p>
+</div>
+<div id="solutions-1" class="section level4" number="13.2.3.2">
+<h4>
+<span class="header-section-number">13.2.3.2</span> Solutions<a class="anchor" aria-label="anchor" href="#solutions-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Exercice 1</strong></p>
+<div class="sourceCode" id="cb689"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/import.html">import</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">'Exercices.Bruxelles.xlsx'</span>,</span>
+<span>       dir<span class="op">=</span><span class="st">"C:/Users/stefan01/Dropbox/BePsy/a_relire"</span>,</span>
+<span>       type<span class="op">=</span><span class="st">'Fichier Excel'</span>,</span>
+<span>       dec<span class="op">=</span><span class="st">'.'</span>,</span>
+<span>       sep<span class="op">=</span><span class="st">';'</span>,</span>
+<span>       na.strings<span class="op">=</span><span class="st">'NA'</span>,</span>
+<span>       sheet<span class="op">=</span><span class="st">'Detresse'</span>,</span>
+<span>       name<span class="op">=</span><span class="st">'Detresse'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/corr.complet.html">corr.complet</a></span><span class="op">(</span></span>
+<span>  X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'detresse'</span><span class="op">)</span>, </span>
+<span>  Y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'coping'</span><span class="op">)</span>, </span>
+<span>  Z <span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'age'</span><span class="op">)</span>,</span>
+<span>  data<span class="op">=</span><span class="va">Detresse</span>, </span>
+<span>  group<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>  param<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Test parametrique'</span>,<span class="st">'Test non parametrique'</span><span class="op">)</span>, </span>
+<span>  save<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>  outlier<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Donnees completes'</span>,<span class="st">'Identification des valeurs influentes'</span>,<span class="st">'Donnees sans valeur influente'</span><span class="op">)</span>,</span>
+<span>  z<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>  info<span class="op">=</span><span class="cn">T</span>, </span>
+<span>  rscale<span class="op">=</span><span class="fl">0.353553390593274</span>, </span>
+<span>  n.boot<span class="op">=</span><span class="fl">1000</span>, </span>
+<span>  html<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></code></pre></div>
+<p>La sortie de résultats sont sensiblement les mêmes, mais avec une différence sur le tableau de corrélation : on obtient la valeur de la corrélation partielle et semi-partielle.</p>
+<p><strong>Exercice 2</strong></p>
+<div class="sourceCode" id="cb690"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/import.html">import</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">'Exercices.Bruxelles.xlsx'</span>,</span>
+<span>       dir<span class="op">=</span><span class="st">"C:/Users/stefan01/Dropbox/BePsy/a_relire"</span>,</span>
+<span>       type<span class="op">=</span><span class="st">'Fichier Excel'</span>,</span>
+<span>       dec<span class="op">=</span><span class="st">'.'</span>,</span>
+<span>       sep<span class="op">=</span><span class="st">';'</span>,</span>
+<span>       na.strings<span class="op">=</span><span class="st">'NA'</span>,</span>
+<span>       sheet<span class="op">=</span><span class="st">'poids'</span>,</span>
+<span>       name<span class="op">=</span><span class="st">'poids'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/corr.complet.html">corr.complet</a></span><span class="op">(</span></span>
+<span>  X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'margarine'</span><span class="op">)</span>, </span>
+<span>  Y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'divorces'</span><span class="op">)</span>, </span>
+<span>  Z <span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'prise_poids_10ans'</span><span class="op">)</span>,</span>
+<span>  data<span class="op">=</span><span class="va">poids</span>, </span>
+<span>  group<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>  param<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Test parametrique'</span>,<span class="st">'Test non parametrique'</span><span class="op">)</span>, </span>
+<span>  save<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>  outlier<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Donnees completes'</span>,<span class="st">'Identification des valeurs influentes'</span>,<span class="st">'Donnees sans valeur influente'</span><span class="op">)</span>,</span>
+<span>  z<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>  info<span class="op">=</span><span class="cn">T</span>, </span>
+<span>  rscale<span class="op">=</span><span class="fl">0.353553390593274</span>, </span>
+<span>  n.boot<span class="op">=</span><span class="fl">1000</span>, </span>
+<span>  html<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></code></pre></div>
+<p><strong>Exercice 3</strong></p>
+<div class="sourceCode" id="cb691"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/import.html">import</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">'Exercices.Bruxelles.xlsx'</span>,</span>
+<span>       dir<span class="op">=</span><span class="st">"C:/Users/stefan01/Dropbox/BePsy/a_relire"</span>,</span>
+<span>       type<span class="op">=</span><span class="st">'Fichier Excel'</span>,</span>
+<span>       dec<span class="op">=</span><span class="st">'.'</span>,</span>
+<span>       sep<span class="op">=</span><span class="st">';'</span>,</span>
+<span>       na.strings<span class="op">=</span><span class="st">'NA'</span>,</span>
+<span>       sheet<span class="op">=</span><span class="st">'AI'</span>,</span>
+<span>       name<span class="op">=</span><span class="st">'AI'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/corr.complet.html">corr.complet</a></span><span class="op">(</span></span>
+<span>  X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'BLOC1'</span><span class="op">)</span>, </span>
+<span>  Y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'BLOC2'</span><span class="op">)</span>, </span>
+<span>  Z <span class="op">=</span><span class="cn">NULL</span>,</span>
+<span>  data<span class="op">=</span><span class="va">AI</span>, </span>
+<span>  group<span class="op">=</span><span class="st">"TYPE"</span>, </span>
+<span>  param<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Test parametrique'</span>,<span class="st">'Test non parametrique'</span><span class="op">)</span>, </span>
+<span>  save<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>  outlier<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Donnees completes'</span>,<span class="st">'Identification des valeurs influentes'</span>,<span class="st">'Donnees sans valeur influente'</span><span class="op">)</span>,</span>
+<span>  z<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>  info<span class="op">=</span><span class="cn">T</span>, </span>
+<span>  rscale<span class="op">=</span><span class="fl">0.353553390593274</span>, </span>
+<span>  n.boot<span class="op">=</span><span class="fl">1000</span>, </span>
+<span>  html<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="les-matrices-de-corrélations" class="section level2" number="13.3">
+<h2>
+<span class="header-section-number">13.3</span> Les matrices de corrélations<a class="anchor" aria-label="anchor" href="#les-matrices-de-corr%C3%A9lations"><i class="fas fa-link"></i></a>
+</h2>
+<p>Pour traiter de la problématique des matrice de corrélations, nous allons utiliser les données du Big Five Inventory disponible dans le package ‘psych’.
+Comme le package a été chargé grâce à easieR, on peut sans difficulté y accéder de la manière suivante :</p>
+<div class="sourceCode" id="cb692"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">bfi</span><span class="op">&lt;-</span><span class="va">bfi</span> <span class="co"># permet aux données bfi stockées dans le package psych d'être actives dans la mémoire de R. </span></span></code></pre></div>
+<div id="réaliser-une-matrice-de-corrélations" class="section level3 tabset tabset-fade tabset-pills" number="13.3.1">
+<h3>
+<span class="header-section-number">13.3.1</span> Réaliser une matrice de corrélations<a class="anchor" aria-label="anchor" href="#r%C3%A9aliser-une-matrice-de-corr%C3%A9lations"><i class="fas fa-link"></i></a>
+</h3>
+<div id="avec-les-boîtes-de-dialogue-3" class="section level4" number="13.3.1.1">
+<h4>
+<span class="header-section-number">13.3.1.1</span> Avec les boîtes de dialogue<a class="anchor" aria-label="anchor" href="#avec-les-bo%C3%AEtes-de-dialogue-3"><i class="fas fa-link"></i></a>
+</h4>
+<p>Comme précédemment, on peut accéder à la matrice de corrélations en partant de la fonction <code>easieR</code>, mais nous ne reprendrons pas le début de la procédure.</p>
+<p>Nous commencerons à développer la partie de la procédure à laquelle on peut accéder grâve à la fonction <code>corr.matrice()</code>.</p>
+<p>Le premier choix consiste à déterminer si on veut faire une matrice de corrélations ou une matrice de corrélations partielles (Figure <a href="les-corr%C3%A9lations-1.html#fig:im38">13.14</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im38"></span>
+<img src="corr/corr14.png" alt="Choix du type de corrélations désirées." width="85"><p class="caption">
+Figure 13.14: Choix du type de corrélations désirées.
+</p>
+</div>
+<p>Une fois ce choix réalisé, il faut préciser le jeu de données sur lequel les analyses vont être réalisées.
+S’il n’y a qu’un jeu de données dans la mémoire de R, ce sera ce jeu de données qui sera choisi par défaut.
+En l’occurrence, ce sera le bfi (Figure <a href="les-corr%C3%A9lations-1.html#fig:im39">13.15</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im39"></span>
+<img src="corr/corr15.png" alt="Choix du jeu de données." width="84"><p class="caption">
+Figure 13.15: Choix du jeu de données.
+</p>
+</div>
+<p>Les matrices de corrélations peuvent être carrées ou rectangulaires.</p>
+<p>Une matrice carrée est une matrice pour laquelle on fait les corrélations de l’ensemble des variables entre elles.</p>
+<pre><code>##        A1     A2     A3     A4     A5
+## A1  1.000 -0.340 -0.266 -0.147 -0.183
+## A2 -0.340  1.000  0.485  0.335  0.388
+## A3 -0.266  0.485  1.000  0.362  0.504
+## A4 -0.147  0.335  0.362  1.000  0.308
+## A5 -0.183  0.388  0.504  0.308  1.000</code></pre>
+<p>A l’inverse, dans une matrice rectangulaire, on fait les corrélations entre un premier jeu de variables avec un second jeu de variables.</p>
+<pre><code>##        A4     A5
+## A1 -0.147 -0.183
+## A2  0.335  0.388
+## A3  0.362  0.504</code></pre>
+<p>On va privilégier la matrice rectangulaire par rapport à la carrée quand on va tester des hypothèses et qu’on va interpréter les corrélations significatives.
+En effet, on ne testera que les corrélations qui correspondent à des hypothèses diminuant donc le nombre de corrélations et la correction de la probabilité appliquée.</p>
+<p>On privilégie les matrices carrées quand l’objectif est plus exploratoire ou quand il s’agit d’une étape préalable à une analyse factorielle par exemple.</p>
+<p>Il va de soi qu’il y a des situations où les matrices carrées pourront être utilisées pour répondre à des hypothèses.</p>
+<p>Dans ce cas, nous allons réaliser une matrice de corrélations carrée (Figure <a href="les-corr%C3%A9lations-1.html#fig:im40">13.16</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im40"></span>
+<img src="corr/corr16.png" alt="Choix du type de matrice de corrélations désirées." width="84"><p class="caption">
+Figure 13.16: Choix du type de matrice de corrélations désirées.
+</p>
+</div>
+<p>L’étape suivante consiste à choisir les variables d’intérêt.
+En l’occurrence, nous choisirons les 5 variables d’agréabilité (Figure <a href="les-corr%C3%A9lations-1.html#fig:im41">13.17</a>).</p>
+<p>Si nous avions choisi un matrice rectangulaire, il aurait fallu choisir un premier jeu de données (par exemple les variables A1, A2 et A3) et ensuite un second jeu de données (par exemple A4 et A5).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im41"></span>
+<img src="corr/corr17.png" alt="Choix des variables pour la matrice de corrélations." width="106"><p class="caption">
+Figure 13.17: Choix des variables pour la matrice de corrélations.
+</p>
+</div>
+<p>Comme pour l’analyse complète, on peut faire les matrices de corrélations par sous-groupes.
+Si on choisit ‘oui’ (Figure <a href="les-corr%C3%A9lations-1.html#fig:im42">13.18</a>), il faudra préciser la variable qualitative qui permettra de subdiviser l’échantillon en plusieurs sous-groupes.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im42"></span>
+<img src="corr/corr8.png" alt="Faut-il réaliser les analyses par sous-groupe ?" width="84"><p class="caption">
+Figure 13.18: Faut-il réaliser les analyses par sous-groupe ?
+</p>
+</div>
+<p>Comme pour l’analyse complète, la question qui se pose est de savoir si on fait la matrice de corrélations sur les données complètes ou sur les données pour lesquelles on a enlevé les valeurs influentes.
+Les valeurs influentes sont déterminées sur la base de la distance de Mahalanobis (Figure <a href="les-corr%C3%A9lations-1.html#fig:im43">13.19</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im43"></span>
+<img src="corr/corr18.png" alt="Faut-il supprimer les valeurs influentes avant de faire les analyses ?" width="106"><p class="caption">
+Figure 13.19: Faut-il supprimer les valeurs influentes avant de faire les analyses ?
+</p>
+</div>
+<p>En l’occurrence, nous avons choisi de ne pas les supprimer.
+Si nous avions choisi de les supprimer, Lorsque les choix ont été faits, easieR vous avertit du nombre d’observations considérées comme influentes (Figure <a href="les-corr%C3%A9lations-1.html#fig:im44">13.20</a>).
+En l’occurrence, 1.11% des observations sont considérées comme influentes.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im44"></span>
+<img src="corr/corr24.png" alt="Pourcentage d'observations considérées comme influentes." width="243"><p class="caption">
+Figure 13.20: Pourcentage d’observations considérées comme influentes.
+</p>
+</div>
+<p>Lorsque ce pourcentage est différent de 0%, easieR vous propose de les supprimer toutes en une fois ou une par une.
+Le fait de les supprimer une par une permet de les identifier et comprendre pourquoi elles sont influentes.
+En l’occurrence, à titre de démonstration, nous les enlèverons une par une (Figure <a href="les-corr%C3%A9lations-1.html#fig:im45">13.21</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im45"></span>
+<img src="corr/corr25.png" alt="Faut-il supprimer les valeurs influentes avant de faire les analyses ?" width="162"><p class="caption">
+Figure 13.21: Faut-il supprimer les valeurs influentes avant de faire les analyses ?
+</p>
+</div>
+<p>Quand on choisit de supprimer les observations manuellement, la valeur la plus extrême avec l’identifiant du participant et sa distance de Mahalanobis est affiché dans la console (Figure <a href="les-corr%C3%A9lations-1.html#fig:im46">13.22</a>).
+Il faut appuyer sur entrée pour continuer.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im46"></span>
+<img src="corr/corr26.png" alt="Valeur la plus extrêment considérée comme influente." width="222"><p class="caption">
+Figure 13.22: Valeur la plus extrêment considérée comme influente.
+</p>
+</div>
+<p>Après avoir analysé l’observation, easieR va proposer si vous souhaitez la supprimer (Figure <a href="les-corr%C3%A9lations-1.html#fig:im47">13.23</a>).
+Si vous cliquez que “oui”, easieR va supprimer cette observation, et détecter l’observation suivante la plus influente.
+Cette opération est réitérée jusqu’à ce plus aucune observation ne soit considérée comme influente ou jusqu’à ce que l’utilisateur ne veuille plus supprimer les observations.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im47"></span>
+<img src="corr/corr27.png" alt="Faut-il supprimer la dernière observations affichée dans la console et considérée comme étant la plus influente encore dans le jeu de données." width="194"><p class="caption">
+Figure 13.23: Faut-il supprimer la dernière observations affichée dans la console et considérée comme étant la plus influente encore dans le jeu de données.
+</p>
+</div>
+<p><strong>ATTENTION</strong> Dans le cas où les observations sont supprimées manuellement une à une et qu’elles ne sont pas toutes, il peut y avoir un problème de reproductibilité du code.</p>
+<p>Quand on utilise easieR en ligne de commande, il peut faire l’analyse sur l’échantillon complet ou sur l’échantillon sans les valeurs influentes.
+En revanche, la ligne de commande ne prévoit pas la situation où seules certaines observations influentes sont supprimées de l’échantillon.
+Si naturellement, on pourrait considérer qu’on enlève ou non les valeurs influentes, des situations intermédiaires pourraient survenir, à la condition d’avoir fixé le critère de suppression A PRIORI.</p>
+<p>L’étape suivante consiste à choisir le type de corrélations que vous souhaitez.
+Naturellement, on a tendance à choisir les corrélations de Bravais-Pearson.
+Notez néanmoins que les variables étant ordinales ici, les <span class="math inline">\(\rho\)</span> de Spearman ou les <span class="math inline">\(\tau\)</span> de Kendall aurait pu/dû être privilégiés (Figure <a href="les-corr%C3%A9lations-1.html#fig:im48">13.24</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im48"></span>
+<img src="corr/corr19.png" alt="Faut-il supprimer la dernière observations affichée dans la console et considérée comme étant la plus influente encore dans le jeu de données." width="84"><p class="caption">
+Figure 13.24: Faut-il supprimer la dernière observations affichée dans la console et considérée comme étant la plus influente encore dans le jeu de données.
+</p>
+</div>
+<p>Vous aurez encore la possibilité de faire l’analyse en adoptant les tests d’hypothèse nulle, les facteurs bayesiens ou les deux (Figure <a href="les-corr%C3%A9lations-1.html#fig:im49">13.25</a>).
+En l’occurrence, nous focaliserons uniquement sur les tests d’hypothèse nulle.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im49"></span>
+<img src="corr/corr20.png" alt="Choix entre tests d'hypothèse nulle, facteurs bayesiens ou les deux." width="85"><p class="caption">
+Figure 13.25: Choix entre tests d’hypothèse nulle, facteurs bayesiens ou les deux.
+</p>
+</div>
+<p>Lorsque les tests d’hypothèse nulle ont été choisis, il faut corriger la probabilité pour éviter la multiplication de l’erreur de première espèce.
+LA correction la plus connue est la correction de Bonferroni mais la correction de Holm représente un choix plus judificieux (Figure <a href="les-corr%C3%A9lations-1.html#fig:im50">13.26</a>).
+En effet, cette correction contrôle autant le risque de commettre une erreur de première espèce mais contrôle mieux le risque de commettre une erreur de seconde espèce.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im50"></span>
+<img src="corr/corr21.png" alt="Choix du type de correction pour maintenir l'erreur de première espèce par famille constant." width="83"><p class="caption">
+Figure 13.26: Choix du type de correction pour maintenir l’erreur de première espèce par famille constant.
+</p>
+</div>
+<p>Lorsque des valeurs sont manquantes dnas le jeu de données, easieR vous force à prendre une décision.
+Il commence par indiquer que certaines observations sont manquantes (Figure <a href="les-corr%C3%A9lations-1.html#fig:im51">13.27</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:im51"></span>
+<img src="corr/corr22.png" alt="Gestion des valeurs manquantes sur les variables qui sont analysées." width="199"><p class="caption">
+Figure 13.27: Gestion des valeurs manquantes sur les variables qui sont analysées.
+</p>
+</div>
+<p>Il faut donc prendre une décision (Figure <a href="les-corr%C3%A9lations-1.html#fig:im52">13.28</a>).
+Une première décision peut être de faire les analyses avec les informations disponibles et de continuer avec l’échantillon tel qu’il est.
+Cela peut se justifier sur un grand échantillon où il y a peu de valeurs manquantes.
+En revanche, c’est plus embêtant quand les valeurs manquantes sont nombreuses sur certaines variables et beaucoup moins fréquentes sur d’autres.
+La raison du souci est que la significativité n’est plus estimée en utilisant les mêmes degrés de liberté.
+Plusieurs solutions peuvent être envisagées pour avoir l’ensemble des corrélations calculées sur la même taille d’échantillon.
+On peut supprimer les observations où il y a des valeurs manquantes (au risque de perdre en puissance statistique).
+On peut égaleent remplacer les observations par la moyenne (pour les variables continues) ou par la médiane (pour les variables continues et ordinales).
+Enfin, il est possible de s’appuyer sur les corrélations avec les autres variables pour imputer la valeur que le participant aurait dû avoir au regard de ses scores aux autres variables.
+C’est ce qu’on appelle l’imputation multiple.
+Il existe plusieurs méthodes, Dans le cas de easieR, il s’appuie sur le package Amelia.</p>
+<div class="figure">
+<span style="display:block;" id="fig:im52"></span>
+<img src="corr/corr23.png" alt="Choix possibles pour traiter les valeurs manquantes." width="174"><p class="caption">
+Figure 13.28: Choix possibles pour traiter les valeurs manquantes.
+</p>
+</div>
+<p>Comme précédemment, on termine en décidant si on souhaite sauvegarder les résultats.</p>
+</div>
+<div id="avec-les-lignes-de-commande-2" class="section level4" number="13.3.1.2">
+<h4>
+<span class="header-section-number">13.3.1.2</span> Avec les lignes de commande<a class="anchor" aria-label="anchor" href="#avec-les-lignes-de-commande-2"><i class="fas fa-link"></i></a>
+</h4>
+<p>A nouveau, il est possible de réaliser des matrices de corrélations en utilisant la fonction <code>corr.matrice()</code></p>
+<ul>
+<li><p>X : caractère qui correspond au nom du premier ensemble de variables (si Y n’est pas précisé, crée une matrice carrée) ;</p></li>
+<li><p>Y : caractère qui correspond au nom du second ensemble de variables ;</p></li>
+<li><p>Z : caractère qui correspond des variables variables à contrôler (pour des corrélations parielles) ;</p></li>
+<li><p>data : nom du jeu de données ;</p></li>
+<li><p>group : caractère correspondant à la ou aux variables permettant de réaliser les analyses par groupe (voir section consacrée à cet effet) ;</p></li>
+<li><p>param : caractère indiquant quelles analyses doivent être faites.
+Les valeurs autorisées sont : ‘Test de H0’, ‘Facteurs bayesiens’, ou leur version abrégée, à savoir ‘FB’ et ‘H0’.</p></li>
+<li><p>method : type de corrélations souhaitées.
+Il s’agit d’une valeur de type caractère parmi “pearson”, “spearman”, “kendall”.</p></li>
+<li><p>p.adjust : type de correction des probabilités pour contrôler l’erreur de famille.
+Il s’agit une valeur caractère à choisir parmi : “holm”, “hochberg”, “hommel”, “bonferroni”, “BH”, “BY”,“fdr”, “none”</p></li>
+<li><p>save : logique indiquant s’il faut une sauvegarde en fichier msword</p></li>
+<li><p>outlier : caractère indiquant si les analyses doivent être réalisées sur l’ensemble des données, s’il faut identifier les valeurs influentes et s’il faut réaliser l’analyse sans les valeurs influentes.
+Les valeurs autorisées sont : ‘Donnees completes’,‘Donnees sans valeur influente’.</p></li>
+<li><p>info : il s’agit d’un logique qui indique si des messages d’informations doivent être affichés dans la console pour expliquer à quoi correspond les boîtes de dialogue.
+Par défaut, la valeur est TRUE.</p></li>
+<li><p>rscale : il s’agit du prior pour les facteurs bayesiens.
+Cela correspond approximativement à la valeur de la corrélation qu’on s’attend à avoir.</p></li>
+<li><p>n.boot : nombre du bootstrap pour les statistiques robustes et pour le posterior des facteurs bayesiens</p></li>
+<li><p>html : logique.
+Indique s’il faut une sortie html.</p></li>
+</ul>
+<div class="sourceCode" id="cb695"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">corr.matrice</span><span class="op">(</span>X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'A1'</span>,<span class="st">'A2'</span>,<span class="st">'A3'</span>,<span class="st">'A4'</span>,<span class="st">'A5'</span><span class="op">)</span>, </span>
+<span>        Y<span class="op">=</span><span class="cn">NULL</span>, Z <span class="op">=</span><span class="cn">NULL</span>,data<span class="op">=</span><span class="va">bfi</span>, method<span class="op">=</span><span class="st">"pearson"</span>,</span>
+<span>        p.adjust<span class="op">=</span><span class="st">'holm'</span>, group<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>        param<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Tests de H0'</span><span class="op">)</span>, save<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>        outlier<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Donnees completes'</span><span class="op">)</span>, info<span class="op">=</span><span class="cn">T</span>, rscale<span class="op">=</span><span class="cn">NULL</span>, n.boot<span class="op">=</span><span class="fl">1</span>, html<span class="op">=</span><span class="cn">T</span><span class="op">)</span>  </span></code></pre></div>
+<p><strong>ATTENTION</strong> Dans le cas où il y a des valeurs manquantes qui n’ont pas été traitées avant de réaliser l’analyse, easieR va le détecter comme une décision à prendre, il faut donc terminer l’analyse avec les boîtes de dialogue.</p>
+</div>
+</div>
+<div id="interpréter-la-sortie-de-résultats" class="section level3" number="13.3.2">
+<h3>
+<span class="header-section-number">13.3.2</span> Interpréter la sortie de résultats<a class="anchor" aria-label="anchor" href="#interpr%C3%A9ter-la-sortie-de-r%C3%A9sultats"><i class="fas fa-link"></i></a>
+</h3>
+<p>Dans la sortie de résultats, le premier tableau (Tableau 21).
+A cette étape, on va être attentif au nombre d’observations (est-ce que je fais bien l’analyse sur tout mon échantiillon), au minimum, au maximum (est-ce que ces valeurs sont compatibles avec mes données), à la moyenne et à la médiane (si elles sont proches, c’est que la distribution est symétrique, sinon ce n’est pas le cas).
+Remarquez en l’occurrence, qu’il peut y avoir jusqu’à une centaine d’observations en moins sur certaines variables.
+Cela doit donc amener à s’interroger sur la pertinence d’avoir choisi de ne rien faire pour les valeurs manquantes.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c58">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c58">Table 13.9: </span> Tableau 21. Statistiques descriptives pour l'ensemble des variables de l'analyse.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.vars</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.n</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.mean</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.sd</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.median</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.trimmed</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.mad</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.min</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.max</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.range</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.skew</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.kurtosis</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Variables.numériques.se</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">A1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.76e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.41</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1.41</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.23</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1.48</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0.822</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">-0.311 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0.0268</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A2</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.76e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4.8 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1.17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4.97</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1.48</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-1.12 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1.06  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.0223</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A3</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">3</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4.6 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1.3 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4.78</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1.48</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-0.996</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.432 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.0249</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A4</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4.69</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1.48</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">4.92</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1.48</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-1.03 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.0265</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.0283</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">A5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">4.56</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">1.26</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">4.71</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">1.48</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-0.849</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0.167 </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0.024 </td>
+</tr>
+</tbody>
+</table></div>
+<p>Le second tableau permet de vérifier si la multinormalité est respectée (Tableau 22).
+Cette multinormalité n’est affichée que pour les corrélations de Bravais-Pearson.
+En l’occurrence, ce n’est pas le cas.
+En effet, tant la symétrie (skewness) n’est pas respectée (il y a asymétrie) et il y a soit un aplatissement ou plutôt pointue.
+En l’occurrence, la valeur étant plutôt élevée, on doit considérée que la distribution est trop pointue pour une distribution normale.
+Il aurait donc été préférable de faire des <span class="math inline">\(\rho\)</span> de Spearman ou des <span class="math inline">\(\tau\)</span> de Kendall.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c59">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c59">Table 13.10: </span> Tableau 22. Tableau testant la multinormalité.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">n</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">test</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">Statistique de Mardia</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">1</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">2709</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">Asymetrie multivariee de Mardia</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">5.26    </span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">2</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">2709</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">Aplatissement multivariee de Mardia</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">45       </span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">3</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">2709</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">Asymetrie multivariee de Mardia pour petits echantillons</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">2.38e+03</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>Le troisième tableau est le tableau avec les corrélations (Tableau 23).</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c60">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c60">Table 13.11: </span> Tableau 23. Matrice de corrélations.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A1</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A2</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A3</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A4</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A5</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">A1</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">-0.34</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">-0.266</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">-0.147</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">-0.183</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.485</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.335</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.388</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A3</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.362</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.504</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A4</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.308</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">A5</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Comme le nombre d’observations n’est pas le même pour toutes les variables, le tableau suivant informe sur le nombre d’observations utilisées pour chaque corrélation 2 à 2 (Tableau 24).</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c61">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c61">Table 13.12: </span> Tableau 24. Nombre d'observations pour chaque combinaison de variables 2 à 2.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A1</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A2</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A3</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A4</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A5</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">A1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.76e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.76e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">2.74e+03</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A2</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.76e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.76e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A3</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.72e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.72e+03</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A4</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.72e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">2.73e+03</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">A5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2.74e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2.72e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2.73e+03</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">2.74e+03</td>
+</tr>
+</tbody>
+</table></div>
+<p>Le Tableau 25 donne les probabilités associées à chacune des probabilités.
+Il faut noter ici que les données au-dessus de la diagonales ont été corrigées en appliquant la correction de Holm (notre choix), tandis que celles en-dessous n’ont pas été corrigées.
+Cela permet d’identifier les corrélations qui sont significatives sans corrections et qui deviennent non significatives après correction.
+Ces corrélations sont sans doute de l’erreur de première espèce.
+En l’occurrence, corrigées ou non, toutes les corrélations sont significatives.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c62">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c62">Table 13.13: </span> Tableau 25. Matrice des probabilités.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A1</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A2</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A3</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A4</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A5</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">A1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A2</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A3</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A4</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">A5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ces corrélations sont représentées sous la forme d’un heatmap afin de pouvoir identifier plus facilement et plus rapidement les corrélations significatives.</p>
+<div class="inline-figure"><img src="Outils-statistiques-destin%C3%A9s-aux-psychologues_files/figure-html/c62b-1.png" width="672"></div>
+<p>Il est toujours appréciable d’identifier le pourcentage de variance expliquée lorsqu’on réalise une corrélation.
+La matrice des R² (Tableau 26) fournit cette information.</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c63">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c63">Table 13.14: </span> Tableau 26. Pourcentage de variance expliquée pour chaque corrélation.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A1</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A2</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A3</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A4</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">A5</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">A1</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0.116</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0.071</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0.021</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;">0.033</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.235</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.112</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.15</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A3</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.131</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.254</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">A4</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.095</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">A5</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;">-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pour terminer,il y a un tableau de synthèse avec l’intervalle de confiance, la valeur de la corrélation et la probabilité associée.
+En l’occurrence, l’intervalle de confiance sur la corrélation est calculé sur la base d’une distribution normale.
+Si nous avions choisi les statistiques robustes, il aurait été estimé sur la base de boostrap (Tableau 27)</p>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c64">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c64">Table 13.15: </span> Tableau 27. Corrélation, intervalle de confiance autour de la corrélation et probabilité associée à la valeur de la corrélation.</caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;"> </th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">lim.inf</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">r</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">lim.sup</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 1pt 0pt 1pt 0pt;      font-weight: normal;">valeur.p</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A1-A2</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.373</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.34 </span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.307</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A1-A3</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.301</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.266</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.231</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A1-A4</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.183</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.147</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.11 </span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A1-A5</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.219</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.183</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">-0.146</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A2-A3</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.456</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.485</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.513</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A2-A4</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.301</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.335</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.368</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A2-A5</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.356</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.388</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.419</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A3-A4</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.329</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.362</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.394</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">A3-A5</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.475</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.504</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">0.531</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">A4-A5</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">0.274</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">0.308</span></td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">0.341</span></td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;"><span style="color: rgb(255, 0, 0);">&lt;.0001</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>Par ailleurs, noter dans la sortie HTML, qu’il y a une page qui s’ouvre avec la matrice uniquement, comprenant la valeur de la corrélation, la probabilité et le pourcentage de variance expliquée.
+L’objectif est de facilité les copier-coller quand on veut reporter la matrice dans un article.</p>
+</div>
+<div id="exercices-3" class="section level3 tabset tabset-fade tabset-pills" number="13.3.3">
+<h3>
+<span class="header-section-number">13.3.3</span> Exercices<a class="anchor" aria-label="anchor" href="#exercices-3"><i class="fas fa-link"></i></a>
+</h3>
+<div id="enoncés-3" class="section level4" number="13.3.3.1">
+<h4>
+<span class="header-section-number">13.3.3.1</span> Enoncés<a class="anchor" aria-label="anchor" href="#enonc%C3%A9s-3"><i class="fas fa-link"></i></a>
+</h4>
+<p>Un professeur de statistiques veut développer un nouvel outil pour mieux cerner les difficultés de ses étudiants.
+Il se demande s’il va pouvoir utiliser son questionnaire pour pouvoir apporter l’aide appropriée en fonction des difficultés de ses étudiants.
+Voici le questionnaire :</p>
+<p>Pour les items qui suivent, veuillez préciser à quel point vous vous reconnaissez sur une échelle allant de fortement en désaccord (FD = 1), désaccord (D), neutre (N), accord (A), fortement d’accord (FA = 5).
+(cet exemple est inspiré de Field et al., 2013)</p>
+<ol style="list-style-type: decimal">
+<li>Les statistiques me font pleurer<br>
+</li>
+<li>Mes amis pensent que je suis stupide de ne pas être capable d’utiliser R<br>
+</li>
+<li>Les écart-types, ça m’excite<br>
+</li>
+<li>Je rêve que Pearson m’attaque avec des coefficients de corrélation<br>
+</li>
+<li>Je ne comprends rien aux statistiques<br>
+</li>
+<li>J’ai peu d’expérience avec les ordinateurs<br>
+</li>
+<li>Les ordinateurs me détestent<br>
+</li>
+<li>Je n’ai jamais été bon en mathématique<br>
+</li>
+<li>Mes amis sont meilleurs que moi en statistiques<br>
+</li>
+<li>Les ordinateurs, c’est seulement fait pour jouer<br>
+</li>
+<li>Je m’en sortais mal en mathématiques à l’école<br>
+</li>
+<li>Les gens essaient de t’expliquer que R rend les statistiques plus simples à comprendre, mais c’est pas vrai<br>
+</li>
+<li>Je m’inquiète de créer des dégâts irréparables sur les ordinateurs en raison de mon incompétence<br>
+</li>
+<li>Les ordinateurs ont leur propre volonté et décident volontairement de ne pas fonctionner quand je les utilise<br>
+</li>
+<li>Les ordinateurs ne me comprennent pas<br>
+</li>
+<li>Je sanglote ouvertement quand j’entends « tendance centrale »<br>
+</li>
+<li>Je m’évanouis dès que je vois une équation<br>
+</li>
+<li>R crash chaque fois que je l’utilise<br>
+</li>
+<li>Tout le monde me regarde quand j’utilise R<br>
+20.. Je n’arrive plus à dormir parce que je rumine sur les valeurs propres<br>
+</li>
+<li>Je me réveille sous ma couverture en étant persuadé que je suis piégé sous une distribution normale<br>
+</li>
+<li>Mes amis sont meilleurs que moi pour utiliser R<br>
+</li>
+<li>Si je suis bon en statistiques, mes amis vont penser que je suis un nerd</li>
+</ol>
+<p>Importer le fichier diff.stat, réaliser une matrice de corrélations carrée sur l’ensemble des variables.
+Analysez la sortie de résultats.
+Vous pouvez le faire en boîte de dialogue ou en ligne de commande.
+Identifiez les corrélations qui ne sont pas significatives après correction alors qu’elles le sont avant correction.</p>
+</div>
+<div id="correction" class="section level4" number="13.3.3.2">
+<h4>
+<span class="header-section-number">13.3.3.2</span> Correction<a class="anchor" aria-label="anchor" href="#correction"><i class="fas fa-link"></i></a>
+</h4>
+<p>Pour les personnes qui ont choisi de réaliser l’analyse en ligne de commande, il peut être fastidieux de renommer l’ensemble des variables.
+On peut aller beaucoup plus vite grâve à la fonction <code>dput</code> qui n’est pas dans easieR.
+L’idée est de faire un vecteur avec le nom des variables :</p>
+<div class="sourceCode" id="cb696"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/easieR/man/import.html">import</a></span><span class="op">(</span>file<span class="op">=</span><span class="st">'illustration.easieR.xlsx'</span>,</span>
+<span>       dir<span class="op">=</span><span class="st">"./introR/"</span>,</span>
+<span>       type<span class="op">=</span><span class="st">'Fichier Excel'</span>,</span>
+<span>       dec<span class="op">=</span><span class="st">'.'</span>,</span>
+<span>       sep<span class="op">=</span><span class="st">';'</span>,</span>
+<span>       na.strings<span class="op">=</span><span class="st">'NA'</span>,</span>
+<span>       sheet<span class="op">=</span><span class="st">'diff.stat'</span>,</span>
+<span>       name<span class="op">=</span><span class="st">'diff.stat'</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Dans quel format est enregistre votre fichier ?"
+## Veuillez specifier la feuille de calcul que vous souhaitez importer
+## Des caracteres non autorises ont ete utilises pour le nom. Ces caracteres ont ete remplaces par des points
+## 'data.frame':    2571 obs. of  23 variables:
+##  $ Q01: num  4 5 4 3 4 4 4 4 3 4 ...
+##  $ Q02: num  5 5 3 5 5 5 3 4 3 2 ...
+##  $ Q03: num  2 2 4 5 3 3 3 3 5 2 ...
+##  $ Q04: num  4 3 4 2 4 4 4 4 2 3 ...
+##  $ Q05: num  4 4 2 3 4 2 4 4 1 4 ...
+##  $ Q06: num  4 4 5 3 3 2 4 4 3 5 ...
+##  $ Q07: num  3 4 4 2 3 2 4 4 1 4 ...
+##  $ Q08: num  5 4 4 4 4 4 4 4 1 4 ...
+##  $ Q09: num  5 1 4 4 2 2 3 2 3 3 ...
+##  $ Q10: num  4 4 4 2 4 3 4 4 3 4 ...
+##  $ Q11: num  5 4 3 4 4 4 4 4 1 4 ...
+##  $ Q12: num  4 3 3 4 3 2 4 3 1 3 ...
+##  $ Q13: num  4 5 4 4 3 3 4 4 1 4 ...
+##  $ Q14: num  4 3 2 3 4 3 4 4 1 5 ...
+##  $ Q15: num  4 2 4 3 4 1 4 3 1 4 ...
+##  $ Q16: num  3 3 3 3 4 4 4 4 1 3 ...
+##  $ Q17: num  5 4 4 4 4 3 4 4 1 4 ...
+##  $ Q18: num  4 4 3 2 3 1 4 4 1 4 ...
+##  $ Q19: num  3 3 5 4 3 5 3 2 4 3 ...
+##  $ Q20: num  4 2 2 2 2 1 4 3 1 3 ...
+##  $ Q21: num  4 2 3 2 4 3 4 4 1 4 ...
+##  $ Q22: num  4 2 4 2 2 5 2 2 3 2 ...
+##  $ Q23: num  1 4 4 3 2 2 2 2 3 2 ...</code></pre>
+<pre><code>## [[1]]
+## [1] "les donnees ont ete importees correctement"
+## 
+## $call
+## [1] "import(file='illustration.easieR.xlsx',dir='C:/Users/stefan01/OneDrive - URCA/reims/cours_Reims/Cours de statistiques/Livre/introR',type='Fichier Excel',dec='.',sep=';',na.strings='NA',sheet='diff.stat',name='diff.stat')"</code></pre>
+<div class="sourceCode" id="cb699"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dput.html">dput</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">diff.stat</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## c("Q01", "Q02", "Q03", "Q04", "Q05", "Q06", "Q07", "Q08", "Q09", 
+## "Q10", "Q11", "Q12", "Q13", "Q14", "Q15", "Q16", "Q17", "Q18", 
+## "Q19", "Q20", "Q21", "Q22", "Q23")</code></pre>
+<p>On peut ensuite réaliser la matrice de corrélation en faisant un copier coller du vecteur.</p>
+<div class="sourceCode" id="cb701"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">corr.out</span><span class="op">&lt;-</span><span class="fu">corr.matrice</span><span class="op">(</span>X<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Q01"</span>, <span class="st">"Q02"</span>, <span class="st">"Q03"</span>, <span class="st">"Q04"</span>, <span class="st">"Q05"</span>, <span class="st">"Q06"</span>, <span class="st">"Q07"</span>, <span class="st">"Q08"</span>, <span class="st">"Q09"</span>, </span>
+<span>                <span class="st">"Q10"</span>, <span class="st">"Q11"</span>, <span class="st">"Q12"</span>, <span class="st">"Q13"</span>, <span class="st">"Q14"</span>, <span class="st">"Q15"</span>, <span class="st">"Q16"</span>, <span class="st">"Q17"</span>, <span class="st">"Q18"</span>, </span>
+<span>                    <span class="st">"Q19"</span>, <span class="st">"Q20"</span>, <span class="st">"Q21"</span>, <span class="st">"Q22"</span>, <span class="st">"Q23"</span><span class="op">)</span>, </span>
+<span>        Y<span class="op">=</span><span class="cn">NULL</span>, Z <span class="op">=</span><span class="cn">NULL</span>,data<span class="op">=</span><span class="va">diff.stat</span>, </span>
+<span>        p.adjust<span class="op">=</span><span class="st">'holm'</span>, group<span class="op">=</span><span class="cn">NULL</span>, </span>
+<span>        param<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Tests de H0'</span><span class="op">)</span>, save<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>        outlier<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Donnees completes'</span><span class="op">)</span>, info<span class="op">=</span><span class="cn">T</span>, rscale<span class="op">=</span><span class="cn">NULL</span>, n.boot<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<p>Il y a de nombreuses corrélations qui perdent leur significativité après correction.
+C’est notamment le cas entre la variable 2 et 6.</p>
+
+</div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="les-corr%C3%A9lations.html"><span class="header-section-number">12</span> Les corrélations</a></div>
+<div class="next"><a href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">14</span> Références</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#les-corr%C3%A9lations-1"><span class="header-section-number">13</span> Les corrélations</a></li>
+<li>
+<a class="nav-link" href="#exercices-1"><span class="header-section-number">13.1</span> Exercices</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#enonc%C3%A9s-1"><span class="header-section-number">13.1.1</span> Enoncés</a></li>
+<li><a class="nav-link" href="#solution"><span class="header-section-number">13.1.2</span> Solution</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#r%C3%A9aliser-une-corr%C3%A9lation"><span class="header-section-number">13.2</span> Réaliser une corrélation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#corr%C3%A9lations-compl%C3%A8tes"><span class="header-section-number">13.2.1</span> Corrélations complètes</a></li>
+<li><a class="nav-link" href="#interpr%C3%A9tez-les-r%C3%A9sultats-1"><span class="header-section-number">13.2.2</span> Interprétez les résultats</a></li>
+<li><a class="nav-link" href="#exercices-2"><span class="header-section-number">13.2.3</span> 3 Exercices</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#les-matrices-de-corr%C3%A9lations"><span class="header-section-number">13.3</span> Les matrices de corrélations</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r%C3%A9aliser-une-matrice-de-corr%C3%A9lations"><span class="header-section-number">13.3.1</span> Réaliser une matrice de corrélations</a></li>
+<li><a class="nav-link" href="#interpr%C3%A9ter-la-sortie-de-r%C3%A9sultats"><span class="header-section-number">13.3.2</span> Interpréter la sortie de résultats</a></li>
+<li><a class="nav-link" href="#exercices-3"><span class="header-section-number">13.3.3</span> Exercices</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-03-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
