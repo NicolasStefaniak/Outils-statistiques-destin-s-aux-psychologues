@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 14 Illustration de la présence de valeurs influentes. | Outils statistiques destinés aux psychologues</title>
+<meta name="author" content="Nicolas Stefaniak">
+<meta name="description" content="Les données sont des données réelles montrant qu’il existe un lien fort entre le nombre de colonies d’abeilles productrices de miel et le nombre d’arrestation pour possession de marijuana....">
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 14 Illustration de la présence de valeurs influentes. | Outils statistiques destinés aux psychologues">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Les données sont des données réelles montrant qu’il existe un lien fort entre le nombre de colonies d’abeilles productrices de miel et le nombre d’arrestation pour possession de marijuana....">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 14 Illustration de la présence de valeurs influentes. | Outils statistiques destinés aux psychologues">
+<meta name="twitter:description" content="Les données sont des données réelles montrant qu’il existe un lien fort entre le nombre de colonies d’abeilles productrices de miel et le nombre d’arrestation pour possession de marijuana....">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
+<script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.34.0/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Outils statistiques destinés aux psychologues</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"></a></li>
+<li><a class="" href="licence.html">Licence</a></li>
+<li><a class="" href="pr%C3%A9ambule.html">Préambule</a></li>
+<li><a class="" href="notions-et-symboles-de-math%C3%A9matiques.html">Notions et symboles de mathématiques</a></li>
+<li><a class="" href="pourquoi-les-statistiques.html"><span class="header-section-number">1</span> Pourquoi les statistiques</a></li>
+<li><a class="" href="quel-logiciel-utiliser-et-pourquoi.html"><span class="header-section-number">2</span> Quel logiciel utiliser et pourquoi ?</a></li>
+<li><a class="" href="installer-le-logiciel-de-traitement-de-donn%C3%A9es.html"><span class="header-section-number">3</span> Installer le logiciel de traitement de données</a></li>
+<li><a class="" href="d%C3%A9buter-avec-son-logiciel-de-statistiques.html"><span class="header-section-number">4</span> Débuter avec son logiciel de statistiques</a></li>
+<li><a class="" href="les-donn%C3%A9es.html"><span class="header-section-number">5</span> Les données</a></li>
+<li><a class="" href="organiser-les-donn%C3%A9es.html"><span class="header-section-number">6</span> Organiser les données</a></li>
+<li><a class="" href="pr%C3%A9parer-les-donn%C3%A9es.html"><span class="header-section-number">7</span> Préparer les données</a></li>
+<li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
+<li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
+<li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">10</span> Quel outil choisir</a></li>
+<li><a class="" href="les-facteurs-qui-influences-les-r%C3%A9sultats.html"><span class="header-section-number">11</span> Les facteurs qui influences les résultats</a></li>
+<li><a class="" href="comment-les-identifier.html"><span class="header-section-number">12</span> Comment les identifier ?</a></li>
+<li><a class="" href="que-faire.html"><span class="header-section-number">13</span> Que faire ?</a></li>
+<li><a class="active" href="illustration-de-la-pr%C3%A9sence-de-valeurs-influentes..html"><span class="header-section-number">14</span> Illustration de la présence de valeurs influentes.</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">15</span> Références</a></li>
+<li><a class="" href="la-famille-des-chi2.html"><span class="header-section-number">16</span> La famille des \(\chi^2\)</a></li>
+<li><a class="" href="les-corr%C3%A9lations.html"><span class="header-section-number">17</span> Les corrélations</a></li>
+<li><a class="" href="r%C3%A9f%C3%A9rences-1.html"><span class="header-section-number">18</span> Références</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="illustration-de-la-présence-de-valeurs-influentes." class="section level1" number="14">
+<h1>
+<span class="header-section-number">14</span> Illustration de la présence de valeurs influentes.<a class="anchor" aria-label="anchor" href="#illustration-de-la-pr%C3%A9sence-de-valeurs-influentes."><i class="fas fa-link"></i></a>
+</h1>
+<p>Les données sont des données réelles montrant qu’il existe un lien fort entre le nombre de colonies d’abeilles productrices de miel et le nombre d’arrestation pour possession de marijuana.</p>
+<div class="sourceCode" id="cb511"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data1</span><span class="op">&lt;-</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./introR/Donnees.easieR.xlsx"</span>, sheet<span class="op">=</span><span class="st">"miel"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data1</span><span class="op">)</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"miel"</span>, <span class="st">"arrestation"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">data1</span><span class="op">)</span> <span class="co"># fournit la structure de la base de données</span></span></code></pre></div>
+<pre><code>## tibble [202 × 2] (S3: tbl_df/tbl/data.frame)
+##  $ miel       : num [1:202] 3220 3211 3045 2875 2783 ...
+##  $ arrestation: num [1:202] 20940 16490 25004 37915 61003 ...</code></pre>
+<p>Pour avoir une représentation de ces données, nous allons faire un nuage de points auquel on va ajouter la droite de régression (la ligne qui résumé le mieux les données).</p>
+<div class="sourceCode" id="cb513"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/djnavarro/lsr">lsr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">miel</span><span class="op">~</span><span class="va">arrestation</span>, data<span class="op">=</span><span class="va">data1</span><span class="op">)</span><span class="op">-&gt;</span><span class="va">modele</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">miel</span><span class="op">~</span><span class="va">data1</span><span class="op">$</span><span class="va">arrestation</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">modele</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-figure"><img src="Outils-statistiques-destin%C3%A9s-aux-psychologues_files/figure-html/unnamed-chunk-257-1.png" width="672"></div>
+<p>On constate que les données sont liées. Cela est confirmé par le calcul de la corrélation entre ces deux variables.</p>
+<div class="sourceCode" id="cb514"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">data1</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"miel"</span>, <span class="st">"arrestation"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##                   miel arrestation
+## miel         1.0000000  -0.3247731
+## arrestation -0.3247731   1.0000000</code></pre>
+<p>Si nous ajoutons à présent deux observations influentes sur un jeu de données qui en comprend 200.</p>
+<div class="sourceCode" id="cb516"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">data1</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1200</span>,<span class="fl">10000</span><span class="op">)</span><span class="op">)</span><span class="op">-&gt;</span><span class="va">data1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">data1</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3500</span>,<span class="fl">100000</span><span class="op">)</span><span class="op">)</span><span class="op">-&gt;</span><span class="va">data1</span></span></code></pre></div>
+<p>On peut recommencer l’analyse, à la fois le graphique (où on identifie aisément les deux points qui ont été ajoutés)</p>
+<div class="sourceCode" id="cb517"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">miel</span><span class="op">~</span><span class="va">data1</span><span class="op">$</span><span class="va">arrestation</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">miel</span><span class="op">~</span><span class="va">data1</span><span class="op">$</span><span class="va">arrestation</span><span class="op">)</span><span class="op">-&gt;</span><span class="va">modele</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">modele</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-figure"><img src="Outils-statistiques-destin%C3%A9s-aux-psychologues_files/figure-html/unnamed-chunk-260-1.png" width="672"></div>
+<p>et la corrélation, qui est à présent de -0.74, au lieu de -0.91 précédemment.</p>
+<div class="sourceCode" id="cb518"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">data1</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"miel"</span>,<span class="st">"arrestation"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##                   miel arrestation
+## miel         1.0000000  -0.2776633
+## arrestation -0.2776633   1.0000000</code></pre>
+<p>Est-ce que ces deux corrélations sont de taille identique ?</p>
+<p>Il est facile de tester si ces deux corrélations sont d’amplitude relativement similaires grâce à la fonction <code>zdifference</code></p>
+<div class="sourceCode" id="cb520"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="fu">zdifference</span><span class="op">(</span><span class="op">-</span><span class="fl">0.91</span>, <span class="op">-</span><span class="fl">0.74</span>, <span class="fl">200</span>, <span class="fl">202</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Z Difference:  -5.74145247505407"
+## [1] "One-Tailed P-Value:  4.69339522801704e-09"</code></pre>
+<p>On constate que l’estimation des deux corrélations est significativement différente uniquement en raison de la présence de ces deux valeurs influentes.</p>
+<p>Lorsqu’on veut identifier et supprimer les valeurs influentes, on commence par récupérer les résidus. Le résidu est la différence entre chaque point est la droite de régression.</p>
+<div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">modele</span><span class="op">$</span><span class="va">residu</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">]</span></span></code></pre></div>
+<pre><code>##          1          2          3          4          5          6          7 
+##  173.87601  137.83153   23.57460  -67.95995  -19.64469  -19.94614  -59.32313 
+##          8          9         10         11         12         13         14 
+##   29.17119   19.49755   22.68306   31.81551  -33.34132  -78.13154  -40.12588 
+##         15         16         17         18         19         20 
+##  -86.29274 -224.04847 -201.30167 -136.79819 -265.93053 -122.78425</code></pre>
+<p>et on peut tester la présence de valeurs influentes grâce au test du Grubbs, dont la fonction <code>grubbs.test</code> est présente dans le package ‘outliers’.</p>
+<div class="sourceCode" id="cb524"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.R-project.org">outliers</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+## Attachement du package : 'outliers'</code></pre>
+<pre><code>## L'objet suivant est masqué depuis 'package:psych':
+## 
+##     outlier</code></pre>
+<div class="sourceCode" id="cb527"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">modele</span><span class="op">$</span><span class="va">residu</span><span class="op">-&gt;</span><span class="va">data1</span><span class="op">$</span><span class="va">residu</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/outliers/man/grubbs.test.html">grubbs.test</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">residu</span>, type <span class="op">=</span> <span class="fl">10</span>, opposite <span class="op">=</span> <span class="cn">FALSE</span>, two.sided <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Grubbs test for one outlier
+## 
+## data:  data1$residu
+## G.202 = 12.86455, U = 0.18073, p-value &lt; 2.2e-16
+## alternative hypothesis: highest value 7434.35609645622 is an outlier</code></pre>
+<p>Le test de Grubbs indique que des observations peuvent être considérées comme influentes comme on rejette l’hypothèse nulle de l’absence de valeurs influentes.</p>
+<p>Pour retirer les valeurs influentes, on va aller identifier la ligne qui correspond à l’observation qui a le plus grand résidu en valeur absolue, et on retire cette observation.</p>
+<div class="sourceCode" id="cb529"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">residu</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## [1] 7434.356</code></pre>
+<div class="sourceCode" id="cb531"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/which.min.html">which.max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">data1</span><span class="op">$</span><span class="va">residu</span><span class="op">)</span><span class="op">)</span><span class="op">-&gt;</span><span class="va">ligne_max</span> <span class="co">#observation avec le plus grand résidu en valeur absolue</span></span>
+<span><span class="va">ligne_max</span>          </span></code></pre></div>
+<pre><code>## 202 
+## 202</code></pre>
+<div class="sourceCode" id="cb533"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data1</span><span class="op">[</span><span class="op">-</span><span class="va">ligne_max</span>,<span class="op">]</span><span class="op">-&gt;</span><span class="va">data2</span> <span class="co"># suppression de cette observation</span></span></code></pre></div>
+<p>On peut vérifier s’il y a encore des valeurs influentes et il apparaît qu’il y en a encore :</p>
+<div class="sourceCode" id="cb534"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/outliers/man/grubbs.test.html">grubbs.test</a></span><span class="op">(</span><span class="va">data2</span><span class="op">$</span><span class="va">residu</span>, type <span class="op">=</span> <span class="fl">10</span>, opposite <span class="op">=</span> <span class="cn">FALSE</span>, two.sided <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## 
+##  Grubbs test for one outlier
+## 
+## data:  data2$residu
+## G.201 = 7.77759, U = 0.69906, p-value &lt; 2.2e-16
+## alternative hypothesis: lowest value -1952.1140364002 is an outlier</code></pre>
+<div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">data2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## tibble [203 × 3] (S3: tbl_df/tbl/data.frame)
+##  $ miel       : num [1:203] 3220 3211 3045 2875 2783 ...
+##  $ arrestation: num [1:203] 20940 16490 25004 37915 61003 ...
+##  $ residu     : Named num [1:203] 173.9 137.8 23.6 -68 -19.6 ...
+##   ..- attr(*, "names")= chr [1:203] "1" "2" "3" "4" ...</code></pre>
+<p>On va donc répéter l’opération réalisée précédemment pour enlever une seconde observation influente.</p>
+<div class="sourceCode" id="cb538"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">data2</span><span class="op">$</span><span class="va">residu</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1952.114</code></pre>
+<div class="sourceCode" id="cb540"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>    <span class="fu"><a href="https://rdrr.io/r/base/which.min.html">which.max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">data2</span><span class="op">$</span><span class="va">residu</span><span class="op">)</span><span class="op">)</span><span class="op">-&gt;</span><span class="va">ligne_max</span> </span>
+<span>    <span class="va">ligne_max</span>          </span></code></pre></div>
+<pre><code>## 201 
+## 201</code></pre>
+<div class="sourceCode" id="cb542"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>    <span class="va">data2</span><span class="op">[</span><span class="op">-</span><span class="va">ligne_max</span>,<span class="op">]</span><span class="op">-&gt;</span><span class="va">data3</span></span></code></pre></div>
+<p>Cette fois, après la suppression de la seconde observation, on tolère l’hypothèse nulle selon laquelle il n’y a pas d’observation influente dans le jeu de données.</p>
+<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>    <span class="fu"><a href="https://rdrr.io/pkg/outliers/man/grubbs.test.html">grubbs.test</a></span><span class="op">(</span><span class="va">data3</span><span class="op">$</span><span class="va">residu</span>, type <span class="op">=</span> <span class="fl">10</span>, opposite <span class="op">=</span> <span class="cn">FALSE</span>, two.sided <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## 
+##  Grubbs test for one outlier
+## 
+## data:  data3$residu
+## G.203 = 9.13377, U = 0.58288, p-value &lt; 2.2e-16
+## alternative hypothesis: lowest value -1912.61086682956 is an outlier</code></pre>
+<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>     <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">data3</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## tibble [202 × 3] (S3: tbl_df/tbl/data.frame)
+##  $ miel       : num [1:202] 3220 3211 3045 2875 2783 ...
+##  $ arrestation: num [1:202] 20940 16490 25004 37915 61003 ...
+##  $ residu     : Named num [1:202] 173.9 137.8 23.6 -68 -19.6 ...
+##   ..- attr(*, "names")= chr [1:202] "1" "2" "3" "4" ...</code></pre>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="que-faire.html"><span class="header-section-number">13</span> Que faire ?</a></div>
+<div class="next"><a href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">15</span> Références</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#illustration-de-la-pr%C3%A9sence-de-valeurs-influentes."><span class="header-section-number">14</span> Illustration de la présence de valeurs influentes.</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-03-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

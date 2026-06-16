@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 Quel logiciel utiliser et pourquoi ? | Outils statistiques destinés aux psychologues</title>
 <meta name="author" content="Nicolas Stefaniak">
-<meta name="description" content="“Science advances by questioning results, not by hiding them. (La science avance en questionnant les résultats, non pas en les cachant” — Karl Popper  2.1 Introduction Aborder les statistiques...">
-<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta name="description" content="“Science advances by questioning results, not by hiding them. (La science avance en questionnant les résultats, non pas en les cachant” Karl Popper  2.1 Introduction Aborder les statistiques dans...">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Quel logiciel utiliser et pourquoi ? | Outils statistiques destinés aux psychologues">
 <meta property="og:type" content="book">
-<meta property="og:description" content="“Science advances by questioning results, not by hiding them. (La science avance en questionnant les résultats, non pas en les cachant” — Karl Popper  2.1 Introduction Aborder les statistiques...">
+<meta property="og:description" content="“Science advances by questioning results, not by hiding them. (La science avance en questionnant les résultats, non pas en les cachant” Karl Popper  2.1 Introduction Aborder les statistiques dans...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 2 Quel logiciel utiliser et pourquoi ? | Outils statistiques destinés aux psychologues">
-<meta name="twitter:description" content="“Science advances by questioning results, not by hiding them. (La science avance en questionnant les résultats, non pas en les cachant” — Karl Popper  2.1 Introduction Aborder les statistiques...">
+<meta name="twitter:description" content="“Science advances by questioning results, not by hiding them. (La science avance en questionnant les résultats, non pas en les cachant” Karl Popper  2.1 Introduction Aborder les statistiques dans...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.11.0/transition.js"></script><script src="libs/bs3compat-0.11.0/tabs.js"></script><script src="libs/bs3compat-0.11.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.3.0/panelset.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
@@ -88,9 +88,9 @@
 <li><a class="" href="les-statistiques-descriptives.html"><span class="header-section-number">8</span> Les statistiques descriptives</a></li>
 <li><a class="" href="les-diff%C3%A9rentes-m%C3%A9thodes-dinf%C3%A9rences-statistiques.html"><span class="header-section-number">9</span> Les différentes méthodes d’inférences statistiques</a></li>
 <li><a class="" href="quel-outil-choisir.html"><span class="header-section-number">10</span> Quel outil choisir</a></li>
-<li><a class="" href="la-famille-des-chi2.html"><span class="header-section-number">11</span> La famille des \(\chi^2\)</a></li>
-<li><a class="" href="les-corr%C3%A9lations.html"><span class="header-section-number">12</span> Les corrélations</a></li>
-<li><a class="" href="les-corr%C3%A9lations-1.html"><span class="header-section-number">13</span> Les corrélations</a></li>
+<li><a class="" href="influence.html"><span class="header-section-number">11</span> Les facteurs qui influencent les résultats</a></li>
+<li><a class="" href="la-famille-des-chi2.html"><span class="header-section-number">12</span> La famille des \(\chi^2\)</a></li>
+<li><a class="" href="corr%C3%A9lations-et-droite-de-r%C3%A9gression.html"><span class="header-section-number">13</span> Corrélations et droite de régression</a></li>
 <li><a class="" href="r%C3%A9f%C3%A9rences.html"><span class="header-section-number">14</span> Références</a></li>
 </ul>
 
@@ -105,8 +105,8 @@
 </h1>
 <blockquote>
 <p>“Science advances by questioning results, not by hiding them. (La science avance en questionnant les résultats, non pas en les cachant”</p>
-<footer>
-— Karl Popper
+<footer class="blockquote-footer" style="text-align: right;">
+Karl Popper
 </footer>
 </blockquote>
 <div id="introduction" class="section level2" number="2.1">
@@ -120,9 +120,9 @@
 <h2>
 <span class="header-section-number">2.2</span> Qu’est-ce R et pourquoi l’utiliser ?<a class="anchor" aria-label="anchor" href="#quest-ce-r-et-pourquoi-lutiliser"><i class="fas fa-link"></i></a>
 </h2>
-<div class="inline-figure"><img src="cover/Rlogo-1.png" width="72"></div>
+<div class="inline-figure"><img src="cover/Rlogo-1.png" alt="" width="72"></div>
 <p>Sorti pour la première fois en 1995, R est un langage de programmation ouvert, issu de langage S, spécialisé dans le traitement des données.</p>
-<p>Á l’heure actuelle, il s’agit d’un des logiciels les plus utilisés dans le monde académique. D’après Choueiry <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-Choueiry2021">Choueiry, 2021</a>)</span>, non seulement R arrive en seconde position pour traiter les données dans le domaine de la recherche en santé, mais arrive quasiment à égalité de la première place lorsqu’on s’intéresse aux articles publiés dans les meilleures revues (si on considère que le facteur d’impact d’une revue informe d’une manière ou d’une autre sur la qualité des articles qui y sont publiés). De plus, R fait partie des langages de programmation les plus demandés dans les offres d’emploi de l’IEEE <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-ieee2016">https://www.facebook.com/48576411181</a>)</span>, Á l’heure actuelle, de nombreux mastodontes de l’informatique, en particulier celles qui utilisent l’intelligence artificielle, comme google et Facebook, l’utilisent. Etant donné que R a pour vocation première le traitement des données statistiques, il est légitime de se demander ce qui le rend aussi populaire et pourquoi vous devriez utiliser R.</p>
+<p>Á l’heure actuelle, il s’agit d’un des logiciels les plus utilisés dans le monde académique. D’après Choueiry <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-Choueiry2021">Choueiry, 2021</a>)</span>, non seulement R arrive en seconde position pour traiter les données dans le domaine de la recherche en santé, mais arrive quasiment à égalité de la première place lorsqu’on s’intéresse aux articles publiés dans les meilleures revues (si on considère que le facteur d’impact d’une revue informe d’une manière ou d’une autre sur la qualité des articles qui y sont publiés). De plus, R fait partie des langages de programmation les plus demandés dans les offres d’emploi de l’IEEE <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-ieee2016"><span class="nocase">https://www.facebook.com/48576411181</span></a>)</span>, Á l’heure actuelle, de nombreux mastodontes de l’informatique, en particulier celles qui utilisent l’intelligence artificielle, comme google et Facebook, l’utilisent. Etant donné que R a pour vocation première le traitement des données statistiques, il est légitime de se demander ce qui le rend aussi populaire et pourquoi vous devriez utiliser R.</p>
 <p>Utiliser R, c’est avant tout s’engager vis-à-vis d’un système de valeurs dans lequel on considère que l’accès au savoir et à la science doit être ouvert et transparent, que l’évolution des connaissances doit être un processus collaboratif dont le but est de faire progresser l’Humanité dans son ensemble. Peut-être pensez-vous que ce projet est utopique, mais de plus en plus de personnes, et en particuliers de plus en plus de scientifiques ont la conviction qu’une science ouverte et transparente est l’avenir de la science. La place que prend R dans la publication dans les revues les plus prestigieuses, tel que nous venons de l’évoquer, n’est pas un phénomène irrationnel, mais est le fruit d’un double processus qui interagit : d’une part, les lignes éditoriales de ces revues imposent aux auteurs plus de transparence à la fois sur les données, mais également sur la manière dont elles ont été traitées et R est un outil parfaitement adapté pour répondre à ce critère ; d’autre part, les chercheurs qui adoptent les pratiques de la science ouverte vont avoir plus de citations, plus d’attention des médias, plus de collaborateurs potentiels, plus d’opportunités d’emploi et plus de facilités pour obtenir des financements <span class="citation">(<a href="r%C3%A9f%C3%A9rences.html#ref-McKiernan2016">McKiernan et al., 2016</a>)</span>. Pour la seconde raison, la question de la poule et de l’oeuf se pose : est-ce les meilleurs chercheurs qui favorisent la science ouverte ou est-ce le fait de favoriser la science ouverte qui rend un chercheur meilleur? Sans doute un peu les deux.</p>
 <p>Utiliser R est un pas vers cet objectif de science ouverte car R est un logiciel ouvert. Cela signifie qu’il est gratuit (ce qui est une bonne nouvelle pour vous), que vous pouvez analyser le code utilisé pour programmer les fonctions que vous allez utiliser, et vous pourrez également, si vous le souhaitez, contribuer à son développement. En d’autres termes, R est collaboratif, et ce processus collaboratif n’est pas restreint aux contributions que chacun peut faire. Le côté collaboratif de R se manifeste également par la communauté d’entraide qui existe sur les forums en ligne et par le fait que chaque utilisateur a la possibilité d’informer un des contributeurs s’il y a une erreur ou un bug dans son code.</p>
 <p>Pour comprendre en quoi cette manière de penser est avantageuse, prenons le temps de nous créer une représentation mentale de la manière dont vos logiciels commerciaux préférés fonctionnent et comparons ce fonctionnement avec celui de R. Pour le logiciel que vous avez à l’esprit, connaissez-vous les auteurs du logiciel et leurs compétences ? Probablement que non. Dans le cas de R, il y a des milliers de contributeurs, certains étant des anonymes qui veulent apporter leur pierre à l’édifice, mais d’autres sont d’éminents spécialistes, de domaines parfois très spécialisés.
@@ -222,233 +222,233 @@ Figure 2.2: Structure de l’analyse des données avec easieR.
 </h4>
 <p>Les fonctions principales de easieR sont résumées dans le tableau <a href="quel-logiciel-utiliser-et-pourquoi.html#tab:optionseasieR">2.1</a></p>
 <div class="tabwid">
-<style>.cl-3c509f7e{}.cl-3c3ad018{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-3c43d168{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-3c440c64{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c6e{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c78{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c79{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c7a{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c82{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c83{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c8c{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c8d{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c8e{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c96{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440c97{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440ca0{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440ca1{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440ca2{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440caa{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cab{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cb4{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cb5{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cb6{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cbe{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cbf{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cc0{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cc8{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cc9{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cca{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cd2{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cd3{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cd4{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cdc{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440ce6{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440ce7{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440ce8{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cf0{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cf1{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cf2{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cfa{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440cfb{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d04{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d05{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d06{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d0e{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d0f{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d10{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d18{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d19{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d1a{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d22{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d23{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d24{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d2c{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3c440d2d{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-3c509f7e">
+<style>.cl-9d76305e{}.cl-9d62ffc0{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-9d69d570{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-9d6a1f3a{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f4e{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f4f{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f50{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f58{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f59{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f62{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f63{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f64{width:2.247in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f6c{width:3.267in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f6d{width:8.31in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9d6a1f76{width:6.281in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-9d76305e">
 <caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">
 <span id="tab:optionseasieR">Table 2.1: </span><span>Tableau synthétique reprenant les principales fonctions d'easieR</span>
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-3c440c64"><p class="cl-3c43d168"><span class="cl-3c3ad018">Choix dans le menu principal</span></p></th>
-<th class="cl-3c440c6e"><p class="cl-3c43d168"><span class="cl-3c3ad018">Fonction principale</span></p></th>
-<th class="cl-3c440c78"><p class="cl-3c43d168"><span class="cl-3c3ad018">Analyse alternative</span></p></th>
-<th class="cl-3c440c79"><p class="cl-3c43d168"><span class="cl-3c3ad018">L'option utile</span></p></th>
+<th class="cl-9d6a1f3a"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Choix dans le menu principal</span></p></th>
+<th class="cl-9d6a1f4e"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Fonction principale</span></p></th>
+<th class="cl-9d6a1f4f"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Analyse alternative</span></p></th>
+<th class="cl-9d6a1f50"><p class="cl-9d69d570"><span class="cl-9d62ffc0">L'option utile</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018">Données</span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Importer (en différents formats)</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Données</span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Importer (en différents formats)</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Rxporter (en différents formats)</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Rxporter (en différents formats)</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c8d"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c8e"><p class="cl-3c43d168"><span class="cl-3c3ad018">Visualiser</span></p></td>
-<td class="cl-3c440c96"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c97"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Visualiser</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440ca0"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440ca1"><p class="cl-3c43d168"><span class="cl-3c3ad018">Générer un rapport de résultats</span></p></td>
-<td class="cl-3c440ca2"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440caa"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Générer un rapport de résultats</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cab"><p class="cl-3c43d168"><span class="cl-3c3ad018">Préparation des données</span></p></td>
-<td class="cl-3c440cb4"><p class="cl-3c43d168"><span class="cl-3c3ad018">Filrer des observations</span></p></td>
-<td class="cl-3c440cb5"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cb6"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Préparation des données</span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Filrer des observations</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cbe"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cbf"><p class="cl-3c43d168"><span class="cl-3c3ad018">Sélectionner des variables</span></p></td>
-<td class="cl-3c440cc0"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cc8"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Sélectionner des variables</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Transformer en rangs</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Transformer en rangs</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cc9"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cca"><p class="cl-3c43d168"><span class="cl-3c3ad018">Imputation de valeurs manquantes</span></p></td>
-<td class="cl-3c440cd2"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cd3"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Imputation de valeurs manquantes</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cbe"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cbf"><p class="cl-3c43d168"><span class="cl-3c3ad018">Centrer réduire</span></p></td>
-<td class="cl-3c440cc0"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cc8"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Centrer réduire</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c8d"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c8e"><p class="cl-3c43d168"><span class="cl-3c3ad018">Trier</span></p></td>
-<td class="cl-3c440c96"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c97"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Trier</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cab"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cb4"><p class="cl-3c43d168"><span class="cl-3c3ad018">Réaliser des opérations mathématiques</span></p></td>
-<td class="cl-3c440cb5"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cb6"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Réaliser des opérations mathématiques</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Passer d'un format large au format long</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Passer d'un format large au format long</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440ca0"><p class="cl-3c43d168"><span class="cl-3c3ad018">Graphiques</span></p></td>
-<td class="cl-3c440ca1"><p class="cl-3c43d168"><span class="cl-3c3ad018">Boxplot</span></p></td>
-<td class="cl-3c440ca2"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440caa"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Graphiques</span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Boxplot</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cd4"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cdc"><p class="cl-3c43d168"><span class="cl-3c3ad018">Nuage des points</span></p></td>
-<td class="cl-3c440ce6"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440ce7"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Nuage des points</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440ce8"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cf0"><p class="cl-3c43d168"><span class="cl-3c3ad018">Densité</span></p></td>
-<td class="cl-3c440cf1"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cf2"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Densité</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cc9"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cca"><p class="cl-3c43d168"><span class="cl-3c3ad018">Violin plot</span></p></td>
-<td class="cl-3c440cd2"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cd3"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Violin plot</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cd4"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cdc"><p class="cl-3c43d168"><span class="cl-3c3ad018">Histogrammes</span></p></td>
-<td class="cl-3c440ce6"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440ce7"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Histogrammes</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018">Analyses</span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Chi carré d'ajustement</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018">simulation de Monte Carlo</span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Analyses</span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Chi carré d'ajustement</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">simulation de Monte Carlo</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Chi carré d'indépendance</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018">simulation de Monte Carlo, correction de continuité</span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018">Contrastes pour identifier les cases qui s'écartent significativement</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Chi carré d'indépendance</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">simulation de Monte Carlo, correction de continuité</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Contrastes pour identifier les cases qui s'écartent significativement</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cbe"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cbf"><p class="cl-3c43d168"><span class="cl-3c3ad018">Test de McNemar</span></p></td>
-<td class="cl-3c440cc0"><p class="cl-3c43d168"><span class="cl-3c3ad018">Correction de continuité</span></p></td>
-<td class="cl-3c440cc8"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Test de McNemar</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Correction de continuité</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440ca0"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440ca1"><p class="cl-3c43d168"><span class="cl-3c3ad018">t de Student comparaison à une norme</span></p></td>
-<td class="cl-3c440ca2"><p class="cl-3c43d168"><span class="cl-3c3ad018">test de Wilcoxon, M-estimator,bootstrap</span></p></td>
-<td class="cl-3c440caa"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">t de Student comparaison à une norme</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">test de Wilcoxon, M-estimator,bootstrap</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440ca0"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440ca1"><p class="cl-3c43d168"><span class="cl-3c3ad018">t de Student pour échantillons appariés</span></p></td>
-<td class="cl-3c440ca2"><p class="cl-3c43d168"><span class="cl-3c3ad018">Test de Wilcoxon, M estimator, bootstrap</span></p></td>
-<td class="cl-3c440caa"><p class="cl-3c43d168"><span class="cl-3c3ad018">Graphique selon les recommandations de Loftus</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">t de Student pour échantillons appariés</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Test de Wilcoxon, M estimator, bootstrap</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Graphique selon les recommandations de Loftus</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">t de Student pour échantillons indépendants</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018">Mann-Whitney, correction de Satterthwaite, t sur les médianes, t sur les moyennes tronquées (avec ou sans bootstrap)</span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">t de Student pour échantillons indépendants</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Mann-Whitney, correction de Satterthwaite, t sur les médianes, t sur les moyennes tronquées (avec ou sans bootstrap)</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cfa"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cfb"><p class="cl-3c43d168"><span class="cl-3c3ad018">ANOVA simple à groupes indépendants</span></p></td>
-<td class="cl-3c440d04"><p class="cl-3c43d168"><span class="cl-3c3ad018">Kruskall-Wallis, correction de Welch, anova sur les médianes ou moyennes tronquées</span></p></td>
-<td class="cl-3c440d05"><p class="cl-3c43d168"><span class="cl-3c3ad018">Tous les contrastes sont possibles</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">ANOVA simple à groupes indépendants</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Kruskall-Wallis, correction de Welch, anova sur les médianes ou moyennes tronquées</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Tous les contrastes sont possibles</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440d06"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440d0e"><p class="cl-3c43d168"><span class="cl-3c3ad018">ANOVA à mesure répétées</span></p></td>
-<td class="cl-3c440d0f"><p class="cl-3c43d168"><span class="cl-3c3ad018">ANOVA de Friedman, correction de Greenhouse et Geisser, anova sur les médianes</span></p></td>
-<td class="cl-3c440d10"><p class="cl-3c43d168"><span class="cl-3c3ad018">Tous les contrastes sont possibles</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">ANOVA à mesure répétées</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">ANOVA de Friedman, correction de Greenhouse et Geisser, anova sur les médianes</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Tous les contrastes sont possibles</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cc9"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cca"><p class="cl-3c43d168"><span class="cl-3c3ad018">ANOVA factorielles</span></p></td>
-<td class="cl-3c440cd2"><p class="cl-3c43d168"><span class="cl-3c3ad018">anova sur les médianes</span></p></td>
-<td class="cl-3c440cd3"><p class="cl-3c43d168"><span class="cl-3c3ad018">Tous les contrastes sont possibles</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">ANOVA factorielles</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">anova sur les médianes</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Tous les contrastes sont possibles</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cc9"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cca"><p class="cl-3c43d168"><span class="cl-3c3ad018">ANOVA mixtes</span></p></td>
-<td class="cl-3c440cd2"><p class="cl-3c43d168"><span class="cl-3c3ad018">anova sur les médianes</span></p></td>
-<td class="cl-3c440cd3"><p class="cl-3c43d168"><span class="cl-3c3ad018">Tous les contrastes sont possibles</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">ANOVA mixtes</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">anova sur les médianes</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Tous les contrastes sont possibles</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cd4"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cdc"><p class="cl-3c43d168"><span class="cl-3c3ad018">Analyse de covariance</span></p></td>
-<td class="cl-3c440ce6"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440ce7"><p class="cl-3c43d168"><span class="cl-3c3ad018">Tous les contrastes sont possibles</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Analyse de covariance</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Tous les contrastes sont possibles</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440d18"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440d19"><p class="cl-3c43d168"><span class="cl-3c3ad018">Régressions</span></p></td>
-<td class="cl-3c440d1a"><p class="cl-3c43d168"><span class="cl-3c3ad018">Boostrap,M-estimator</span></p></td>
-<td class="cl-3c440d22"><p class="cl-3c43d168"><span class="cl-3c3ad018">Effets de modérations et  effets non linéaires</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Régressions</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Boostrap,M-estimator</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Effets de modérations et  effets non linéaires</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cbe"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cbf"><p class="cl-3c43d168"><span class="cl-3c3ad018">Coefficient de concordance</span></p></td>
-<td class="cl-3c440cc0"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cc8"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Coefficient de concordance</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cfa"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cfb"><p class="cl-3c43d168"><span class="cl-3c3ad018">Alpha de Cronbach</span></p></td>
-<td class="cl-3c440d04"><p class="cl-3c43d168"><span class="cl-3c3ad018">Omega de McDonald</span></p></td>
-<td class="cl-3c440d05"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Alpha de Cronbach</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Omega de McDonald</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440cbe"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cbf"><p class="cl-3c43d168"><span class="cl-3c3ad018">Coefficient de corrélation intraclasse</span></p></td>
-<td class="cl-3c440cc0"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440cc8"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Coefficient de corrélation intraclasse</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Coefficient de corrélations de Pearson</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018">Rho de Spearman, tau de Kendall, boostrap</span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018">Analyse par groupe analyse complète ou matrice de corrélation (rectangulaire ou carrée)</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Coefficient de corrélations de Pearson</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Rho de Spearman, tau de Kendall, boostrap</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Analyse par groupe analyse complète ou matrice de corrélation (rectangulaire ou carrée)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Analyse factorielle exploratoire</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018">Estimateurs robustes</span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018">Utilisation des corrélations tétrachoriques/polychoriques</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Analyse factorielle exploratoire</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Estimateurs robustes</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Utilisation des corrélations tétrachoriques/polychoriques</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440c7a"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440c82"><p class="cl-3c43d168"><span class="cl-3c3ad018">Analyse factorielle confirmatoire</span></p></td>
-<td class="cl-3c440c83"><p class="cl-3c43d168"><span class="cl-3c3ad018">Estimateurs robustes</span></p></td>
-<td class="cl-3c440c8c"><p class="cl-3c43d168"><span class="cl-3c3ad018">Utilisation des corrélations tétrachoriques/polychoriques</span></p></td>
+<td class="cl-9d6a1f58"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f59"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Analyse factorielle confirmatoire</span></p></td>
+<td class="cl-9d6a1f62"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Estimateurs robustes</span></p></td>
+<td class="cl-9d6a1f63"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Utilisation des corrélations tétrachoriques/polychoriques</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-3c440d23"><p class="cl-3c43d168"><span class="cl-3c3ad018"></span></p></td>
-<td class="cl-3c440d24"><p class="cl-3c43d168"><span class="cl-3c3ad018">Analyse en composantes principales</span></p></td>
-<td class="cl-3c440d2c"><p class="cl-3c43d168"><span class="cl-3c3ad018">Estimateurs robustes</span></p></td>
-<td class="cl-3c440d2d"><p class="cl-3c43d168"><span class="cl-3c3ad018">Utilisation des corrélations tétrachoriques/polychoriques</span></p></td>
+<td class="cl-9d6a1f64"><p class="cl-9d69d570"><span class="cl-9d62ffc0"></span></p></td>
+<td class="cl-9d6a1f6c"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Analyse en composantes principales</span></p></td>
+<td class="cl-9d6a1f6d"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Estimateurs robustes</span></p></td>
+<td class="cl-9d6a1f76"><p class="cl-9d69d570"><span class="cl-9d62ffc0">Utilisation des corrélations tétrachoriques/polychoriques</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -490,7 +490,7 @@ Figure 2.2: Structure de l’analyse des données avec easieR.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-03-07.</p>
+    <p>"<strong>Outils statistiques destinés aux psychologues</strong>" was written by Nicolas Stefaniak. It was last built on 2026-06-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
